@@ -131,6 +131,7 @@
 			
 
 
+
 			<article>
 				<p>I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.</p>
 
@@ -162,6 +163,20 @@
 <p>One key point to note here is that you must concatenate your name space and bundle name. So <strong>Namespace:BundleName</strong> won&rsquo;t work but <strong>NamespaceBundleName</strong> will. This is the mistake I was making. It turns out that when you create a bundle it&rsquo;s given an alias and by default it&rsquo;s a concatenation of your namespace and bundlename, so when referencing it in TWIG it appears you need to use this alias.</p>
 
 			</article>
+
+			
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				var disqus_developer = 0;
+				var disqus_shortname = 'deanclatworthy';
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			
 
 
 		</main>
