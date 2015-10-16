@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		WordPress plugin deployment script (GIT to SVN)
+		
+	</title>
+
+	
+	<meta property="og:title" content="WordPress plugin deployment script (GIT to SVN)" />
+	
+
+	
+	<meta name="description" content="Short Version: This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN. Long Version: Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository." />
+	<meta property="og:description" content="Short Version: This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN. Long Version: Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository." />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2011/01/wordpress-plugin-deployment-script-git-to-svn/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>WordPress plugin deployment script (GIT to SVN)</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>01 January 2011</span>
+			</div>
+			
+
+
+			<article>
+				<p><strong>Short Version:</strong> This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN.</p>
+
+<p><strong>Long Version:</strong></p>
+
+<p>Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository. Along with most developers nowadays, I&rsquo;ve switched to Git (for numerous reasons), so I was left with the dilemna of how to manage my plugin within git and host it on Github, but sync all changes to the SVN repository whenever a new version was ready. There&rsquo;s quite a lot of work involved when trying to do this so I wanted to automate the whole thing. The result is a bash script shown below which will:</p>
+
+<ol>
+<li>Check that the version numbers in your readme.txt match up with those in your PHP file.</li>
+<li>Commit the latest outstanding changes to your git repository if any are left</li>
+<li>Push the latest changes to github</li>
+<li>Export the contents at the HEAD of your &lsquo;master&rsquo; branch in git to the trunk of your SVN repository.</li>
+<li>Commit the changes to SVN and therefore push them  back to wordpress.org</li>
+<li>Create an SVN tag for wordpress.org to use and commit it (this will be the same value as Stable Tag: <tagnumber> in your readme.txt)</li>
+<li>Update the version number for future reference.</li>
+</ol>
+
+<p>Hopefully this should make life a little easier for those WordPress plugin developers who wish to manage their projects in GIT :)</p>
+
+<p>[Download the script here][1]</p>
+
+<p>Enjoy!</p>
+
+<p>[1]: <a href="https://github.com/deanc/wordpress-plugin-git-svn">https://github.com/deanc/wordpress-plugin-git-svn</a></p>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2011 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

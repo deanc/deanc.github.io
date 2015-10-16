@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		Migrating Jekyll to Hugo - my experience
+		
+	</title>
+
+	
+	<meta property="og:title" content="Migrating Jekyll to Hugo - my experience" />
+	
+
+	
+	<meta name="description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site. For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
+	<meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site. For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2015/10/15/migrating-jekyll-to-hugo-my-experience/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>Migrating Jekyll to Hugo - my experience</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>10 October 2015</span>
+			</div>
+			
+
+
+			<article>
+				
+
+<p>For those that haven&rsquo;t yet heard about it <a href="http://gohugo.io">Hugo</a> is a lightning-fast, and powerful static generator
+built using golang. For the last couple of years I&rsquo;ve used <a href="https://jekyllrb.com/">Jekyll</a> to build this site, but even
+with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.</p>
+
+<p>For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
+correctly first, specifically making sure you only
+<a href="http://jekyllrb.com/docs/configuration/">include/exclude relevent files from your build process</a>. If you have, and
+it&rsquo;s still to slow for your taste and you feel like trying something new then carry on reading below.</p>
+
+<p>I&rsquo;m not going to go through every little detail here on setting up hugo. The documentation is awesome so go
+<a href="https://gohugo.io/overview/quickstart/">set up hugo</a> first. I&rsquo;ll now outline the things that caught me off-guard
+when trying to migrate my content and theme.</p>
+
+<h3 id="using-html-extensions-for-pages:f43ae83312b4adba3b464c359e0e8afd">Using *.html extensions for pages</h3>
+
+<p>Set up <code>uglyURLs: &quot;true&quot;</code> in your <code>config.yml</code>.</p>
+
+<h3 id="migrating-your-post-urls:f43ae83312b4adba3b464c359e0e8afd">Migrating your post URLs</h3>
+
+<p>Follow this checklist:
+* Move all your posts under <code>content/post</code>
+* Open up each file and make sure your front-matter contains the URL you want e.g. <code>url: /2012/01/how-to-rip-music-from-the-hype-machine/</code></p>
+
+<p>An alternative to this is to configure permalinks for posts via <code>config.yml</code>:</p>
+
+<pre><code>permalinks:
+  post: /:year/:month/:day/:slug/
+</code></pre>
+
+<p>The downside to this is that a) you must define a <code>date</code> key in your front-matter &amp; b) the slug that is generated
+may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.</p>
+
+<h3 id="how-to-access-the-current-date-in-templates:f43ae83312b4adba3b464c359e0e8afd">How to access the current date in templates</h3>
+
+<p>This is pretty straightforward:</p>
+
+<pre><code>{{ .Date.Format &quot;2006&quot; }}
+</code></pre>
+
+<h3 id="how-to-create-a-global-site-menu:f43ae83312b4adba3b464c359e0e8afd">How to create a global site menu</h3>
+
+<p>The documentation on menus is pretty good but here&rsquo;s some info on quickly setting it up. Define your homepage URL in
+<code>config.yml</code> if you want it to appear in the menu:</p>
+
+<pre><code>menu:
+  main:
+      - Name: &quot;Home&quot;
+        Weight: 1
+        Identifier: &quot;home&quot;
+        URL: &quot;/&quot;
+</code></pre>
+
+<p>If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
+for the content e.g.</p>
+
+<pre><code>menu:
+  main:
+    weight: 60
+</code></pre>
+
+<p>The weight is basically a display order.</p>
+
+<h3 id="how-to-not-go-insane-when-generating-meta-title-description-tags:f43ae83312b4adba3b464c359e0e8afd">How to not go insane when generating meta title/description tags</h3>
+
+<p>Just use this:</p>
+
+<pre><code>&lt;title&gt;
+    {{ if isset .Params &quot;og_title&quot; }}
+    {{ .Params.og_title }}
+    {{ else if eq .URL &quot;/&quot; }}
+    {{ .Site.Params.TitleSuffix }}
+    {{ else if eq .Section &quot;post&quot; }}
+    {{ .Title }}
+    {{ else }}
+    {{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
+&lt;/title&gt;
+
+{{ if isset .Params &quot;og_title&quot; }}
+&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Params.og_title }}&quot; /&gt;
+{{ else if eq .URL &quot;/&quot; }}
+&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Site.Params.TitleSuffix }}&quot; /&gt;
+{{ else if eq .Section &quot;post&quot; }}
+&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Title }}&quot; /&gt;
+{{ else }}
+&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&quot; /&gt;
+{{ end }}
+
+{{ if eq .URL &quot;/&quot; }}
+&lt;meta name=&quot;description&quot; content=&quot;{{ .Site.Params.Tagline }}&quot; /&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;{{ .Site.Params.Tagline }}&quot; /&gt;
+{{ else if eq .Section &quot;post&quot; }}
+&lt;meta name=&quot;description&quot; content=&quot;{{ .Summary }}&quot; /&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;{{ .Summary }}&quot; /&gt;
+{{ else }}
+&lt;meta name=&quot;description&quot; content=&quot;{{ .Description }}&quot; /&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;{{ .Description }}&quot; /&gt;
+{{ end }}
+</code></pre>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2015 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		How to speed up your WordPress site by 200% in less than 5 minutes and save bandwidth
+		
+	</title>
+
+	
+	<meta property="og:title" content="How to speed up your WordPress site by 200% in less than 5 minutes and save bandwidth" />
+	
+
+	
+	<meta name="description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the [WP Super Cache plugin][1] for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
+
+
+Minify and join CSS &amp; Javascript files
+Load JS asynchronously at the bottom of the page where possible
+Load static pages if you can
+Let the user cache everything if possible.
+
+" />
+	<meta property="og:description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the [WP Super Cache plugin][1] for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
+
+
+Minify and join CSS &amp; Javascript files
+Load JS asynchronously at the bottom of the page where possible
+Load static pages if you can
+Let the user cache everything if possible.
+
+" />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>How to speed up your WordPress site by 200% in less than 5 minutes and save bandwidth</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>12 December 2012</span>
+			</div>
+			
+
+
+			<article>
+				<p>I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the <a href="http://wordpress.org/extend/plugins/wp-super-cache/">WP Super Cache plugin</a> for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):</p>
+
+<ul>
+<li>Minify and join CSS &amp; Javascript files</li>
+<li>Load JS asynchronously at the bottom of the page where possible</li>
+<li>Load static pages if you can</li>
+<li>Let the user cache everything if possible.</li>
+</ul>
+
+<p>The WP Super Cache plugin basically did all these things. What I didn&rsquo;t like is that as I&rsquo;m using  shared hosting for this simple blog, it cached pages to disk which isn&rsquo;t as quick as caching to memcache or something more efficient. I also didn&rsquo;t like how I had to go through a script to check to see if my minified and joined files were already cached and then make another read to disk. WP Super Cache does a great job at taking a bare bones WordPress and speeding it up on shared hosting but I wondered what else I could do.</p>
+
+<p>Those of you lucky folks on VPS&rsquo;s and your own boxes aren&rsquo;t bound by these limitations, and have access to memcache, APC or something like Varnish, so you can <em>probably</em> stop reading now.</p>
+
+<p>My solution was to use the fantastic, and <strong>free</strong> service provided by <a href="http://www.cloudflare.com">Cloudflare</a>. Essentially, what Cloudflare does is cache your whole site, optimise your static assets automatically and then delivers it efficiently using their Content Delivery Network (CDN). They also provided different levels of protection from hacking, so you are less likely to be attacked by an SQL injection or XSS attack on your WordPress install when security issues arise. I&rsquo;ve not had any practical experience using this feature though.</p>
+
+<p>The huge advantage of Cloudflare is that it serves your website for you, not your hosting provider. Everything is still hosted on your servers, but as Clouldflare caches it, they can deliver the page and assets for you, meaning you don&rsquo;t use as much bandwidth. Furthermore, as they have servers distributed all over the world they can deliver your content to your users in a more efficient way than you can by detecting where the user came from and delivering it from the closest location possible to them.</p>
+
+<p>So to summarise:</p>
+
+<ul>
+<li>Cloudflare delivers your pages and static content (most of the time) saving you bandwidth.</li>
+<li>Cloudflare can keep your site online if your hosting goes down because it has cached versions of the pages and static assets.</li>
+<li>Cloudflare can deliver content quicker to your users from a server close to them, meaning they get your page delivered to them faster.</li>
+<li>Cloudflare can automatically minify and join your CSS/Javascript files</li>
+<li>Cloudflare can load your JS files asynchronously if you don&rsquo;t do this already.</li>
+</ul>
+
+<p>Setting up your site to use Cloudflare is incredibly simple but make sure you disable any caching or minifying plugins before you begin. Because the Cloudflare setup process is so simple I&rsquo;m not going to write a long tutorial with screenshots as they&rsquo;ve made it so easy. All you&rsquo;ll need to do is sign up, add your domain, check that it imported your DNS settings correctly (99% of you won&rsquo;t need to change any of these values) then choose the Cloudflare features you want to enable. Finally, change your DNS to point at Cloudflare. You can do all of this within five minutes.</p>
+
+<p>The way I measured my performance increase was using [Pingdom&rsquo;s website performance tool][3]. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.</p>
+
+<p>Finally, this is by no means an empirical test, but I believe that Cloudflare is a no brainer for anyone wanting to be able to deliver their WordPress site to a global audience in the quickest time possible.</p>
+
+<p>Please let me know your results in the comments.</p>
+
+<p>[3]: <a href="http://tools.pingdom.com/fpt">http://tools.pingdom.com/fpt</a></p>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2012 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

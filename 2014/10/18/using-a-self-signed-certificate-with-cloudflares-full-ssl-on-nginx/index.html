@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		Using a self signed certificate with Cloudflare&#39;s Full SSL on nginx
+		
+	</title>
+
+	
+	<meta property="og:title" content="Using a self signed certificate with Cloudflare&#39;s Full SSL on nginx" />
+	
+
+	
+	<meta name="description" content="Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure. Cloudflare offers two levels of SSL on their free package: Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page." />
+	<meta property="og:description" content="Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure. Cloudflare offers two levels of SSL on their free package: Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page." />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>Using a self signed certificate with Cloudflare&#39;s Full SSL on nginx</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>10 October 2014</span>
+			</div>
+			
+
+
+			<article>
+				
+
+<h3 id="overview:20c4dc6a50d1fab9ccec72476dd0c471">Overview</h3>
+
+<p>Cloudflare recently launched <a href="https://blog.cloudflare.com/introducing-universal-ssl/">the biggest deployment of SSL in the history of the internet</a>,
+and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take
+to make it more secure.</p>
+
+<p>Cloudflare offers two levels of SSL on their free package:</p>
+
+<ul>
+<li>Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network
+which in turn downloads or delivers the cached version of the page. Unfortunately the downside of this is that Cloudflare&rsquo;s
+request to your server is sent in cleartext. Think of this this way: if Bob visits Jane&rsquo;s site, his connection is secure
+but if Cloudflare doesn&rsquo;t have a fresh copy of the page the request is forwarded by Cloudflare to your server, in clear text.</li>
+<li>Full SSL - The visitor&rsquo;s connection to your site is secure, and you also have an SSL certificate on your server so Cloudflare
+can make secure requests to download/cache your content.</li>
+</ul>
+
+<p>Whilst Flexible SSL is great for most cases, ideally you should be using Full SSL. This post will walk you through on how
+to set that up.</p>
+
+<h3 id="instructions:20c4dc6a50d1fab9ccec72476dd0c471">Instructions</h3>
+
+<h4 id="part-1:20c4dc6a50d1fab9ccec72476dd0c471">Part 1</h4>
+
+<ul>
+<li>First of all log in to your Cloudflare account and enable Flexible SSL.</li>
+<li>Set up a page rule for <code>\*yourdomain.com\*</code> and tick &ldquo;Always use https&rdquo; and save the rule. This will make Cloudflare redirect
+all requests to http pages to https pages. Hooray!</li>
+<li>Make sure your application is using schema-less URI&rsquo;s. When referencing a URL on your own domain always use <code>//yourdomain.com</code>
+and not <code>http://yourdomain.com</code></li>
+<li>Now go check your site and you should have a working SSL set up. If so continue to part two.</li>
+</ul>
+
+<h4 id="part-2:20c4dc6a50d1fab9ccec72476dd0c471">Part 2</h4>
+
+<ul>
+<li>We will now generate a self-signed certificate to install on your site. This
+<a href="http://msol.io/blog/tech/2013/10/06/create-a-self-signed-ecc-certificate/">guide</a> is great so generate your files
+using the information there.</li>
+<li>Next step is to configure nginx correctly.</li>
+</ul>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2014 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

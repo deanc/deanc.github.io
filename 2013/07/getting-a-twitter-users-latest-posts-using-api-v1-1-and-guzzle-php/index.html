@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)
+		
+	</title>
+
+	
+	<meta property="og:title" content="Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)" />
+	
+
+	
+	<meta name="description" content="I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer: {% highlight javascript %} { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } } {% endhighlight %} Then use the following code: {% highlight php startinline %} $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody()); {% endhighlight %} Don&rsquo;t forget to put your constants somewhere." />
+	<meta property="og:description" content="I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer: {% highlight javascript %} { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } } {% endhighlight %} Then use the following code: {% highlight php startinline %} $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody()); {% endhighlight %} Don&rsquo;t forget to put your constants somewhere." />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>07 July 2013</span>
+			</div>
+			
+
+
+			<article>
+				<p>I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer:</p>
+
+<p>{% highlight javascript %}</p>
+
+<pre><code>    {
+        &quot;require&quot;: {
+            &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot;
+        }
+    }
+</code></pre>
+
+<p>{% endhighlight %}</p>
+
+<p>Then use the following code:</p>
+
+<p>{% highlight php startinline %}</p>
+
+<pre><code>    $twitter_client = new \Guzzle\Http\Client('https://api.twitter.com/{version}', array(
+        'version' =&gt; '1.1'
+    ));
+    $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array(
+        'consumer_key'  =&gt; TWITTER_CONSUMER_KEY,
+        'consumer_secret' =&gt; TWITTER_CONSUMER_SECRET,
+        'token'       =&gt; TWITTER_ACCESS_TOKEN,
+        'token_secret'  =&gt; TWITTER_ACCESS_TOKEN_SECRET
+    )));
+
+    $request = $twitter_client-&gt;get('statuses/user_timeline.json');
+    $request-&gt;getQuery()-&gt;set('count', 5);
+    $request-&gt;getQuery()-&gt;set('screen_name', 'YOURUSERNAME');
+    $response = $request-&gt;send();
+
+    $tweets = json_decode($response-&gt;getBody());
+</code></pre>
+
+<p>{% endhighlight %}</p>
+
+<p>Don&rsquo;t forget to put your constants somewhere.</p>
+
+<p>[1]: <a href="http://guzzlephp.org/index.html">http://guzzlephp.org/index.html</a></p>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2013 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

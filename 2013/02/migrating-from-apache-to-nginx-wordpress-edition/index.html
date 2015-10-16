@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		Migrating from apache to nginx (wordpress edition)
+		
+	</title>
+
+	
+	<meta property="og:title" content="Migrating from apache to nginx (wordpress edition)" />
+	
+
+	
+	<meta name="description" content="Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&rsquo;s also an opportunity for me to try something new.
+
+I&rsquo;ll cut straight to the chase. There&rsquo;s some [great information][1] [already available][2]. At the time of this writing though, both sets of instructions didn&rsquo;t work for me. I&rsquo;ll come to why later.
+" />
+	<meta property="og:description" content="Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&rsquo;s also an opportunity for me to try something new.
+
+I&rsquo;ll cut straight to the chase. There&rsquo;s some [great information][1] [already available][2]. At the time of this writing though, both sets of instructions didn&rsquo;t work for me. I&rsquo;ll come to why later.
+" />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2013/02/migrating-from-apache-to-nginx-wordpress-edition/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>Migrating from apache to nginx (wordpress edition)</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>02 February 2013</span>
+			</div>
+			
+
+
+			<article>
+				<p>Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&rsquo;s also an opportunity for me to try something new.</p>
+
+<p>I&rsquo;ll cut straight to the chase. There&rsquo;s some <a href="http://codex.wordpress.org/Nginx">great information</a> <a href="http://wiki.nginx.org/WordPress">already available</a>. At the time of this writing though, both sets of instructions didn&rsquo;t work for me. I&rsquo;ll come to why later.</p>
+
+<p>The first thing you want to do is install nginx and php5-fpm. Before you do this [add dotdeb to your sources list][3]. Don&rsquo;t forget to update your packages.</p>
+
+<p>Now we can install nginx and php5-fpm:</p>
+
+<pre><code>    sudo apt-get install nginx php5-fpm
+</code></pre>
+
+<p>In nginx, there&rsquo;s no such thing as virtual hosts. We call them server blocks, but they work similarly. Let&rsquo;s create one. Create a file at
+<code>/etc/nginx/sites-available/</code> called <code>yourdomain.com</code> with these contents:</p>
+
+<pre><code>    server {
+        listen 80;
+        server_name yourdomain.com;
+
+        access_log /var/log/nginx/yourdomain.com.access_log;
+        error_log /var/log/nginx/yourdomain.com.error_log;
+
+        root /var/www/yourdomain.com/public_html;
+        index index.php index.htm index.html;
+
+        include /etc/nginx/global/wordpress.conf;
+        include /etc/nginx/global/restrictions.conf;
+    }
+</code></pre>
+
+<p>This creates a server block, which listens on port 80, with webroot at /var/www/yourdomain.com/public_html. It then includes two configuration files which we&rsquo;ll come to now.</p>
+
+<p>Now create a file at <code>/etc/nginx/global/wordpress.conf</code> with contents:</p>
+
+<pre><code>    # WordPress single blog rules.
+    # Designed to be included in any server {} block.
+
+    # This order might seem weird - this is attempted to match last if rules below fail.
+    # http://wiki.nginx.org/HttpCoreModule
+    location / {
+            try_files $uri $uri/ /index.php?$args;
+    }
+
+    # Add trailing slash to */wp-admin requests.
+    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+    # Directives to send expires headers and turn off 404 error logging.
+    location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+           access_log off; log_not_found off; expires max;
+    }
+
+    # Uncomment one of the lines below for the appropriate caching plugin (if used).
+    #include global/wordpress-wp-super-cache.conf;
+    #include global/wordpress-w3-total-cache.conf;
+
+    # Pass all .php files onto a php-fpm/php-fcgi server.
+    location ~ \.php$ {
+            # Zero-day exploit defense.
+            # http://forum.nginx.org/read.php?2,88845,page=3
+            # Won't work properly (404 error) if the file is not stored on this server, which is entirely possible with php-fpm/php-fcgi.
+            # Comment the 'try_files' line out if you set up php-fpm/php-fcgi on another machine.  And then cross your fingers that you won't get hacked.
+            try_files $uri =404;
+
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            #NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini
+
+            include fastcgi_params;
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #       fastcgi_intercept_errors on;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+    }
+</code></pre>
+
+<p>This file is very important and one value particularly is of interest to us. The <code>fastcgi_pass</code> variable is critical if you want PHP to work. When PHP-FPM is running, it listens on a socket. Dependent on your distribution and package this value might be different. Every tutorial I tried suggested pointing this value to <code>127.0.0.1:9000</code> but this was not the case with my system. If you open <code>/etc/php5/fpm/pool.d/www.conf</code> there is a configuration value called <code>listen</code>. This is what you should set the <code>fastcgi_pass</code> variable to.</p>
+
+<p>Finally, create a file at <code>/etc/nginx/global/restrictions.conf</code> to handle some security:</p>
+
+<pre><code>    # Global restrictions configuration file.
+    # Designed to be included in any server {} block.&amp;lt;/p&gt;
+    location = /favicon.ico {
+            log_not_found off;
+            access_log off;
+    }
+
+    location = /robots.txt {
+            allow all;
+            log_not_found off;
+            access_log off;
+    }
+
+    # Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
+    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+    location ~ /\. {
+            deny all;
+    }
+
+    # Deny access to any files with a .php extension in the uploads directory
+    # Works in sub-directory installs and also in multisite network
+    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+    location ~* /(?:uploads|files)/.*\.php$ {
+            deny all;
+    }
+</code></pre>
+
+<p>Now all of our configuration is in place, we need to shut down apache, and start nginx and php5-fpm:</p>
+
+<pre><code>    sudo /etc/init.d/apache2 stop
+    sudo /etc/init.d/php5-fpm restart
+    sudo /etc/init.d/nginx start
+</code></pre>
+
+<p>Your site should now be running nginx. Confirm this by visiting it and of course checking to see if the process is running:</p>
+
+<pre><code>    ps aux | grep nginx
+</code></pre>
+
+<p>Enjoy!</p>
+
+<p>[3]: <a href="http://www.dotdeb.org/instructions/">http://www.dotdeb.org/instructions/</a></p>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2013 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

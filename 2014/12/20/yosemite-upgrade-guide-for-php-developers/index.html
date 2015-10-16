@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		OSX Yosemite upgrade guide for PHP developers
+		
+	</title>
+
+	
+	<meta property="og:title" content="OSX Yosemite upgrade guide for PHP developers" />
+	
+
+	
+	<meta name="description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things: Search for vhosts and uncomment the line: Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows: &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+	<meta property="og:description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things: Search for vhosts and uncomment the line: Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows: &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2014/12/20/yosemite-upgrade-guide-for-php-developers/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>OSX Yosemite upgrade guide for PHP developers</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>12 December 2014</span>
+			</div>
+			
+
+
+			<article>
+				
+
+<h2 id="yosemite-upgrade-guide-v1-0:c68ffd1514c2a6d269ef0b7be96f54c4">Yosemite upgrade guide v1.0</h2>
+
+<h3 id="apache:c68ffd1514c2a6d269ef0b7be96f54c4">Apache</h3>
+
+<p>Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the <code>/etc/apache/httpd.conf</code> file. In this file you need to do a few things:</p>
+
+<p>Search for <code>vhosts</code> and uncomment the line:</p>
+
+<pre><code>    Include /private/etc/apache2/extra/httpd-vhosts.conf
+</code></pre>
+
+<p>Also find the <code>&lt;Directory /&gt;</code> block and make sure it reads as follows:</p>
+
+<pre><code>    &lt;Directory /&gt;
+        AllowOverride All
+        Require all granted
+    &lt;/Directory&gt;
+</code></pre>
+
+<p>Then open up <code>/etc/apache2/extra/vhosts.conf</code> and find any instances that begin with <code>Allow from</code> or <code>Order allow,deny</code> or <code>Order deny,allow</code>.
+Remove them and change to:</p>
+
+<pre><code>    Require all granted
+</code></pre>
+
+<p>After all this make sure you restart apache: <code>sudo apachectl restart</code></p>
+
+<p>Finally, if you still have problems, try to start Apache in debug mode and see what errors you get:</p>
+
+<pre><code>    sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
+</code></pre>
+
+<h2 id="mysql:c68ffd1514c2a6d269ef0b7be96f54c4">MySQL</h2>
+
+<p>It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
+Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/775007">launch MySQL automatically</a>.</p>
+
+<h2 id="phpstorm:c68ffd1514c2a6d269ef0b7be96f54c4">PHPStorm</h2>
+
+<p>PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. <a href="https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks">More info here</a></p>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2014 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

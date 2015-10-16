@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+
+	<title>
+		
+		A chrome extension to revert to the old-style facebook chat
+		
+	</title>
+
+	
+	<meta property="og:title" content="A chrome extension to revert to the old-style facebook chat" />
+	
+
+	
+	<meta name="description" content="Let it be known, that I&rsquo;m not a big fan of Facebook. I&rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&rsquo;s not very accurate and I was disappointed that a chat service didn&rsquo;t display all online friends in one group.
+" />
+	<meta property="og:description" content="Let it be known, that I&rsquo;m not a big fan of Facebook. I&rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&rsquo;s not very accurate and I was disappointed that a chat service didn&rsquo;t display all online friends in one group.
+" />
+	
+
+	<meta property="og:url" content="http://127.0.0.1:1313/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+	
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+
+	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+
+	
+	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
+	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<meta name="msapplication-TileColor" content="#428bca">
+	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+
+
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+
+
+</head>
+
+	<body>
+		<div class="blog-masthead">
+  <div class="container">
+    <a class="blog-nav-toggle"><i class="fa fa-navicon"></i></a>
+    <ul class="blog-nav">
+      
+
+      
+      
+      
+      <li class="">
+      <a class="" href="/">Home</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/skills.html">My Skills</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/portfolio.html">Portfolio</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/testimonials.html">Testimonials</a>
+      </li>
+      
+      <li class=" active">
+      <a class="" href="/archive.html">My writings</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/tools.html">Tools</a>
+      </li>
+      
+      <li class="">
+      <a class="" href="/contact.html">Contact</a>
+      </li>
+      
+
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-header">
+    <h1 class="blog-title">Hello. I&#39;m Dean Clatworthy</h1>
+    <p class="lead blog-description">I build websites for a living. PHP/MySQL, Javascript, CSS, HTML5</p>
+  </div>
+</div>
+
+<div class="container">
+		<main>
+
+			<div class="page-header">
+				<h1>A chrome extension to revert to the old-style facebook chat</h1>
+			</div>
+
+			
+			<div class="date">
+				<span>09 September 2011</span>
+			</div>
+			
+
+
+			<article>
+				<p>Let it be known, that I&rsquo;m not a big fan of Facebook. I&rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&rsquo;s not very accurate and I was disappointed that a chat service didn&rsquo;t display all online friends in one group.</p>
+
+<p>These changes made the chat unusable for me as it took too long to scan a long list on a 24&#8243; monitor and see only those who were online and actually available to chat with me. So I wrote a chrome extension to only display online contacts in the sidebar, which is similar to how the old facebook chat worked.</p>
+
+<p><strong>Update 12/10/2013: The extension is no longer available. I&rsquo;m sorry.</strong></p>
+
+			</article>
+
+
+		</main>
+		</div>
+
+<div class="blog-footer">
+  <p>&copy; 2011 Dean Clatworthy</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</div>
+	<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
