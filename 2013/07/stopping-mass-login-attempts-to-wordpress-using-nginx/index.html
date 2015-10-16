@@ -19,9 +19,9 @@
 	<meta property="og:description" content="Rather than rehash all the information, let me point you in the direction of this great blog post: http://ethitter.com/2013/04/protecting-wp-login-in-nginx/ If you have problems with wp-login.php being downloaded to the user then your PHP configuration using this tutorial is wrong. See this article I wrote about it: http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/" />
 	
 
-	<meta property="og:url" content="http://127.0.0.1:1313/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/">
+	<meta property="og:url" content="https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -35,33 +35,33 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 
 
-	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+	<link rel="stylesheet" href="https://deanclatworthy.com/css/style.css">
 
 	
-	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
-	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/manifest.json">
+	<link rel="shortcut icon" href="https://deanclatworthy.com/img/favicons/favicon.ico">
 	<meta name="msapplication-TileColor" content="#428bca">
-	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
-	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="msapplication-TileImage" content="https://deanclatworthy.com/img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="https://deanclatworthy.com/img/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
 
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
 
 
 </head>
@@ -149,8 +149,5 @@
     <a href="#">Back to top</a>
   </p>
 </div>
-	<script data-no-instant>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+	</body>
 </html>

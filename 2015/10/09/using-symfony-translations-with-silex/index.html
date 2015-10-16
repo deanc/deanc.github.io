@@ -19,9 +19,9 @@
 	<meta property="og:description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component. This is because they are named validators.en.xlf and not validators.en_GB.xlf. The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__.&#39;/../vendor/symfony/validator/Resources/translations/validators.fi.xlf&#39;, &#39;fi_FI&#39;, &#39;validators&#39;); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__.&#39;/../vendor/symfony/validator/Resources/translations/validators.en.xlf&#39;, &#39;en_GB&#39;, &#39;validators&#39;); // now load your own $translator-&gt;addLoader(&#39;yaml&#39;, new Symfony\Component\Translation\Loader\YamlFileLoader()); $translator-&gt;addResource(&#39;yaml&#39;, __DIR__.&#39;/../translations/messages.en_GB.yml&#39;, &#39;en_GB&#39;, &#39;messages&#39;); $translator-&gt;addResource(&#39;yaml&#39;, __DIR__.&#39;/../translations/messages.fi_FI.yml&#39;, &#39;fi_FI&#39;, &#39;messages&#39;); return $translator; })); The path to the translations may vary depending on which version of Symfony you are using." />
 	
 
-	<meta property="og:url" content="http://127.0.0.1:1313/2015/10/09/using-symfony-translations-with-silex/">
+	<meta property="og:url" content="https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -35,33 +35,33 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 
 
-	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+	<link rel="stylesheet" href="https://deanclatworthy.com/css/style.css">
 
 	
-	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
-	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/manifest.json">
+	<link rel="shortcut icon" href="https://deanclatworthy.com/img/favicons/favicon.ico">
 	<meta name="msapplication-TileColor" content="#428bca">
-	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
-	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="msapplication-TileImage" content="https://deanclatworthy.com/img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="https://deanclatworthy.com/img/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
 
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
 
 
 </head>
@@ -170,8 +170,5 @@ is that when using a <a target="_blank" href="https://en.wikipedia.org/wiki/IETF
     <a href="#">Back to top</a>
   </p>
 </div>
-	<script data-no-instant>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+	</body>
 </html>

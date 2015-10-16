@@ -19,9 +19,9 @@
 	<meta property="og:description" content="I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer: {% highlight javascript %} { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } } {% endhighlight %} Then use the following code: {% highlight php startinline %} $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody()); {% endhighlight %} Don&rsquo;t forget to put your constants somewhere." />
 	
 
-	<meta property="og:url" content="http://127.0.0.1:1313/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/">
+	<meta property="og:url" content="https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="http://127.0.0.1:1313//img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
 
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -35,33 +35,33 @@
 	<script>hljs.initHighlightingOnLoad();</script>
 
 
-	<link rel="stylesheet" href="http://127.0.0.1:1313//css/style.css">
+	<link rel="stylesheet" href="https://deanclatworthy.com/css/style.css">
 
 	
-	<link rel="apple-touch-icon" sizes="57x57" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="http://127.0.0.1:1313//img/favicons/apple-touch-icon-180x180.png">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-32x32.png" sizes="32x32">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/android-chrome-192x192.png" sizes="192x192">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-96x96.png" sizes="96x96">
-	<link rel="icon" type="image/png" href="http://127.0.0.1:1313//img/favicons/favicon-16x16.png" sizes="16x16">
-	<link rel="manifest" href="http://127.0.0.1:1313//img/favicons/manifest.json">
-	<link rel="shortcut icon" href="http://127.0.0.1:1313//img/favicons/favicon.ico">
+	<link rel="apple-touch-icon" sizes="57x57" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon-180x180.png">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/android-chrome-192x192.png" sizes="192x192">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/manifest.json">
+	<link rel="shortcut icon" href="https://deanclatworthy.com/img/favicons/favicon.ico">
 	<meta name="msapplication-TileColor" content="#428bca">
-	<meta name="msapplication-TileImage" content="http://127.0.0.1:1313//img/favicons/mstile-144x144.png">
-	<meta name="msapplication-config" content="http://127.0.0.1:1313//img/favicons/browserconfig.xml">
+	<meta name="msapplication-TileImage" content="https://deanclatworthy.com/img/favicons/mstile-144x144.png">
+	<meta name="msapplication-config" content="https://deanclatworthy.com/img/favicons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
 
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://127.0.0.1:1313//index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
 
 
 </head>
@@ -184,8 +184,5 @@
     <a href="#">Back to top</a>
   </p>
 </div>
-	<script data-no-instant>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+	</body>
 </html>
