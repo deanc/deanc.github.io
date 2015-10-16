@@ -130,8 +130,6 @@
 			</div>
 			
 
-
-
 			<article>
 				<p>Last week I deployed a new Facebook application into a production environment. Everything seemed to be working perfectly, but then I received a report that the application wasn&rsquo;t working correctly in IE8+. I narrowed down the problem, and then realised that sessions weren&rsquo;t working. It turns out IE8+ has a security policy that prevents iframes from setting cookies if the parent domain is different. Therefore because my PHP session cooking wouldn&rsquo;t set, the sessions obviously didn&rsquo;t work between pages.</p>
 
@@ -161,7 +159,7 @@
 			<div id="disqus_thread"></div>
 			<script type="text/javascript">
 				var disqus_developer = 0;
-				var disqus_shortname = 'deanclatworthy';
+				var disqus_shortname = '';
 					(function() {
 						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
 						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
