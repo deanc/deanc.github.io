@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Osx on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/osx.html</link>
+    <description>Recent content in Osx on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/osx.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Stop OSX saving SSH private key password</title>
+      <link>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</link>
+      <pubDate>Thu, 10 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
+      <description>&lt;p&gt;When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:&lt;/p&gt;
+
+&lt;div class=&#34;wp_syntax&#34;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;code&#34;&gt;
+        &lt;pre class=&#34;bash&#34; style=&#34;font-family:monospace;&#34;&gt;launchctl unload &lt;span style=&#34;color: #660033;&#34;&gt;-w&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;/&lt;/span&gt;System&lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;/&lt;/span&gt;Library&lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;/&lt;/span&gt;LaunchAgents&lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;/&lt;/span&gt;org.openbsd.ssh-agent.plist&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Hat tip to [mr_dbr on reddit][1] for this.&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;http://www.reddit.com/r/apple/comments/9fnnc/ask_rapple_how_do_i_disable_sshagent/c0cmh99&#34;&gt;http://www.reddit.com/r/apple/comments/9fnnc/ask_rapple_how_do_i_disable_sshagent/c0cmh99&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to fix hanging gem install on a fresh OSX Lion install</title>
+      <link>https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</link>
+      <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve now tried to use &lt;code&gt;gem install &amp;lt;package&amp;gt;&lt;/code&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&amp;rdquo; 2011 and Macbook Pro 15&amp;rdquo; 2012. Both have suffered from the same issue of the gem installer hanging.&lt;/p&gt;
+
+&lt;p&gt;This was my symptom.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $ gem install cocoapods
+    ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&amp;lt;/pre&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The strange thing was, if this was solely an issue with permissions, then it should not take almost &lt;em&gt;three minutes&lt;/em&gt; to give that error message. Something more sinister is obviously going on&amp;#8230;&lt;/p&gt;
+
+&lt;p&gt;After some investigation I came across several topics on stackoverflow discussing gem install hanging, but all of them implied it was some connection issue and suggesting several solutions. None of them worked individually, but here is what worked for me:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open up Xcode and go to XCode &amp;gt; Preferences and switch to the Downloads tab. Once there, install the command line tools if you haven&amp;rsquo;t already.&lt;a href=&#34;http://www.deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/screen-shot-2012-12-26-at-1-18-35-pm/&#34; rel=&#34;attachment wp-att-259&#34;&gt;&lt;img class=&#34;alignnone size-medium wp-image-259&#34; alt=&#34;Screen Shot 2012-12-26 at 1.18.35 PM&#34; src=&#34;//deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-26-at-1.18.35-PM-300x219.png&#34; width=&#34;300&#34; height=&#34;219&#34; /&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Install RVM and the latest stable version of Ruby by typing this on command line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -L https://get.rvm.io | bash -s stable --ruby
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now you should be able to install gems.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Enjoy the guide, and please, if you have any feedback on why gem install doesn&amp;rsquo;t work out the box then share it in the comments.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

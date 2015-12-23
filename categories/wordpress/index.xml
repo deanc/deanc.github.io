@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/wordpress.html</link>
+    <description>Recent content in Wordpress on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jul 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/wordpress.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Stopping mass-login attempts to WordPress using nginx</title>
+      <link>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</link>
+      <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</guid>
+      <description>&lt;p&gt;Rather than rehash all the information, let me point you in the direction of this great blog post:&lt;br /&gt;
+&lt;a href=&#34;http://ethitter.com/2013/04/protecting-wp-login-in-nginx/&#34;&gt;http://ethitter.com/2013/04/protecting-wp-login-in-nginx/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have problems with wp-login.php being downloaded to the user then your PHP configuration using this tutorial is wrong. See this article I wrote about it:&lt;br /&gt;
+&lt;a href=&#34;http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/&#34;&gt;http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migrating from apache to nginx (wordpress edition)</title>
+      <link>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</link>
+      <pubDate>Thu, 28 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
+      <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.&lt;/p&gt;
+
+&lt;p&gt;The first thing you want to do is install nginx and php5-fpm. Before you do this [add dotdeb to your sources list][3]. Don&amp;rsquo;t forget to update your packages.&lt;/p&gt;
+
+&lt;p&gt;Now we can install nginx and php5-fpm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo apt-get install nginx php5-fpm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In nginx, there&amp;rsquo;s no such thing as virtual hosts. We call them server blocks, but they work similarly. Let&amp;rsquo;s create one. Create a file at
+&lt;code&gt;/etc/nginx/sites-available/&lt;/code&gt; called &lt;code&gt;yourdomain.com&lt;/code&gt; with these contents:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    server {
+        listen 80;
+        server_name yourdomain.com;
+
+        access_log /var/log/nginx/yourdomain.com.access_log;
+        error_log /var/log/nginx/yourdomain.com.error_log;
+
+        root /var/www/yourdomain.com/public_html;
+        index index.php index.htm index.html;
+
+        include /etc/nginx/global/wordpress.conf;
+        include /etc/nginx/global/restrictions.conf;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This creates a server block, which listens on port 80, with webroot at /var/www/yourdomain.com/public_html. It then includes two configuration files which we&amp;rsquo;ll come to now.&lt;/p&gt;
+
+&lt;p&gt;Now create a file at &lt;code&gt;/etc/nginx/global/wordpress.conf&lt;/code&gt; with contents:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # WordPress single blog rules.
+    # Designed to be included in any server {} block.
+
+    # This order might seem weird - this is attempted to match last if rules below fail.
+    # http://wiki.nginx.org/HttpCoreModule
+    location / {
+            try_files $uri $uri/ /index.php?$args;
+    }
+
+    # Add trailing slash to */wp-admin requests.
+    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+    # Directives to send expires headers and turn off 404 error logging.
+    location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+           access_log off; log_not_found off; expires max;
+    }
+
+    # Uncomment one of the lines below for the appropriate caching plugin (if used).
+    #include global/wordpress-wp-super-cache.conf;
+    #include global/wordpress-w3-total-cache.conf;
+
+    # Pass all .php files onto a php-fpm/php-fcgi server.
+    location ~ \.php$ {
+            # Zero-day exploit defense.
+            # http://forum.nginx.org/read.php?2,88845,page=3
+            # Won&#39;t work properly (404 error) if the file is not stored on this server, which is entirely possible with php-fpm/php-fcgi.
+            # Comment the &#39;try_files&#39; line out if you set up php-fpm/php-fcgi on another machine.  And then cross your fingers that you won&#39;t get hacked.
+            try_files $uri =404;
+
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            #NOTE: You should have &amp;quot;cgi.fix_pathinfo = 0;&amp;quot; in php.ini
+
+            include fastcgi_params;
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #       fastcgi_intercept_errors on;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This file is very important and one value particularly is of interest to us. The &lt;code&gt;fastcgi_pass&lt;/code&gt; variable is critical if you want PHP to work. When PHP-FPM is running, it listens on a socket. Dependent on your distribution and package this value might be different. Every tutorial I tried suggested pointing this value to &lt;code&gt;127.0.0.1:9000&lt;/code&gt; but this was not the case with my system. If you open &lt;code&gt;/etc/php5/fpm/pool.d/www.conf&lt;/code&gt; there is a configuration value called &lt;code&gt;listen&lt;/code&gt;. This is what you should set the &lt;code&gt;fastcgi_pass&lt;/code&gt; variable to.&lt;/p&gt;
+
+&lt;p&gt;Finally, create a file at &lt;code&gt;/etc/nginx/global/restrictions.conf&lt;/code&gt; to handle some security:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # Global restrictions configuration file.
+    # Designed to be included in any server {} block.&amp;amp;lt;/p&amp;gt;
+    location = /favicon.ico {
+            log_not_found off;
+            access_log off;
+    }
+
+    location = /robots.txt {
+            allow all;
+            log_not_found off;
+            access_log off;
+    }
+
+    # Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
+    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+    location ~ /\. {
+            deny all;
+    }
+
+    # Deny access to any files with a .php extension in the uploads directory
+    # Works in sub-directory installs and also in multisite network
+    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+    location ~* /(?:uploads|files)/.*\.php$ {
+            deny all;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now all of our configuration is in place, we need to shut down apache, and start nginx and php5-fpm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo /etc/init.d/apache2 stop
+    sudo /etc/init.d/php5-fpm restart
+    sudo /etc/init.d/nginx start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your site should now be running nginx. Confirm this by visiting it and of course checking to see if the process is running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    ps aux | grep nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;p&gt;[3]: &lt;a href=&#34;http://www.dotdeb.org/instructions/&#34;&gt;http://www.dotdeb.org/instructions/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to remove WordPress admin &amp; other pointless WordPress things from your Google Analytics</title>
+      <link>https://deanclatworthy.com/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</link>
+      <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</guid>
+      <description>&lt;p&gt;I have spent the last few hours taking a look at the Google Analytics for my blog and whilst doing so I realised that it&amp;rsquo;s logging a lot of stuff that I don&amp;rsquo;t need. This tutorial will allow you to exclude any traffic to your wordpress admin, or login script (that which you see before landing on the admin page) from your Google Analytics.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Log into [Google Analytics][1]&lt;/li&gt;
+&lt;li&gt;Click &amp;lsquo;Admin&amp;rsquo; in the top right.&lt;/li&gt;
+&lt;li&gt;Choose the account you wish to apply this filter to.&lt;/li&gt;
+&lt;li&gt;Chose the correct property (domain) you wish to apply this filter for.&lt;/li&gt;
+&lt;li&gt;Choose the relevent profile you have set up. Normally there is only one here unless you&amp;rsquo;re doing anything custom.&lt;/li&gt;
+&lt;li&gt;Click the &amp;lsquo;Filters&amp;rsquo; tab and add a new filter. Set up like so:
+&lt;br&gt;&lt;img class=&#34;alignnone size-full wp-image-274&#34; alt=&#34;Exclude wp-admin from Google Analytics&#34; src=&#34;https://deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-29-at-3.46.12-PM.png&#34; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Add another filter to exclude hits to the login script:
+&lt;br&gt;&lt;img class=&#34;alignnone size-full wp-image-275&#34; alt=&#34;Exclude wp-login.php from Google Analytics&#34; src=&#34;https://deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-29-at-3.51.09-PM.png&#34; /&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;http://www.google.com/analytics&#34;&gt;http://www.google.com/analytics&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to speed up your WordPress site by 200% in less than 5 minutes and save bandwidth</title>
+      <link>https://deanclatworthy.com/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/</link>
+      <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been meaning to tweak my WordPress install for a while now. I&amp;rsquo;ve been using the &lt;a href=&#34;http://wordpress.org/extend/plugins/wp-super-cache/&#34;&gt;WP Super Cache plugin&lt;/a&gt; for about half a year, but I&amp;rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Minify and join CSS &amp;amp; Javascript files&lt;/li&gt;
+&lt;li&gt;Load JS asynchronously at the bottom of the page where possible&lt;/li&gt;
+&lt;li&gt;Load static pages if you can&lt;/li&gt;
+&lt;li&gt;Let the user cache everything if possible.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The WP Super Cache plugin basically did all these things. What I didn&amp;rsquo;t like is that as I&amp;rsquo;m using  shared hosting for this simple blog, it cached pages to disk which isn&amp;rsquo;t as quick as caching to memcache or something more efficient. I also didn&amp;rsquo;t like how I had to go through a script to check to see if my minified and joined files were already cached and then make another read to disk. WP Super Cache does a great job at taking a bare bones WordPress and speeding it up on shared hosting but I wondered what else I could do.&lt;/p&gt;
+
+&lt;p&gt;Those of you lucky folks on VPS&amp;rsquo;s and your own boxes aren&amp;rsquo;t bound by these limitations, and have access to memcache, APC or something like Varnish, so you can &lt;em&gt;probably&lt;/em&gt; stop reading now.&lt;/p&gt;
+
+&lt;p&gt;My solution was to use the fantastic, and &lt;strong&gt;free&lt;/strong&gt; service provided by &lt;a href=&#34;http://www.cloudflare.com&#34;&gt;Cloudflare&lt;/a&gt;. Essentially, what Cloudflare does is cache your whole site, optimise your static assets automatically and then delivers it efficiently using their Content Delivery Network (CDN). They also provided different levels of protection from hacking, so you are less likely to be attacked by an SQL injection or XSS attack on your WordPress install when security issues arise. I&amp;rsquo;ve not had any practical experience using this feature though.&lt;/p&gt;
+
+&lt;p&gt;The huge advantage of Cloudflare is that it serves your website for you, not your hosting provider. Everything is still hosted on your servers, but as Clouldflare caches it, they can deliver the page and assets for you, meaning you don&amp;rsquo;t use as much bandwidth. Furthermore, as they have servers distributed all over the world they can deliver your content to your users in a more efficient way than you can by detecting where the user came from and delivering it from the closest location possible to them.&lt;/p&gt;
+
+&lt;p&gt;So to summarise:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cloudflare delivers your pages and static content (most of the time) saving you bandwidth.&lt;/li&gt;
+&lt;li&gt;Cloudflare can keep your site online if your hosting goes down because it has cached versions of the pages and static assets.&lt;/li&gt;
+&lt;li&gt;Cloudflare can deliver content quicker to your users from a server close to them, meaning they get your page delivered to them faster.&lt;/li&gt;
+&lt;li&gt;Cloudflare can automatically minify and join your CSS/Javascript files&lt;/li&gt;
+&lt;li&gt;Cloudflare can load your JS files asynchronously if you don&amp;rsquo;t do this already.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Setting up your site to use Cloudflare is incredibly simple but make sure you disable any caching or minifying plugins before you begin. Because the Cloudflare setup process is so simple I&amp;rsquo;m not going to write a long tutorial with screenshots as they&amp;rsquo;ve made it so easy. All you&amp;rsquo;ll need to do is sign up, add your domain, check that it imported your DNS settings correctly (99% of you won&amp;rsquo;t need to change any of these values) then choose the Cloudflare features you want to enable. Finally, change your DNS to point at Cloudflare. You can do all of this within five minutes.&lt;/p&gt;
+
+&lt;p&gt;The way I measured my performance increase was using [Pingdom&amp;rsquo;s website performance tool][3]. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.&lt;/p&gt;
+
+&lt;p&gt;Finally, this is by no means an empirical test, but I believe that Cloudflare is a no brainer for anyone wanting to be able to deliver their WordPress site to a global audience in the quickest time possible.&lt;/p&gt;
+
+&lt;p&gt;Please let me know your results in the comments.&lt;/p&gt;
+
+&lt;p&gt;[3]: &lt;a href=&#34;http://tools.pingdom.com/fpt&#34;&gt;http://tools.pingdom.com/fpt&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WordPress plugin deployment script (GIT to SVN)</title>
+      <link>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</link>
+      <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Short Version:&lt;/strong&gt; This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Long Version:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository. Along with most developers nowadays, I&amp;rsquo;ve switched to Git (for numerous reasons), so I was left with the dilemna of how to manage my plugin within git and host it on Github, but sync all changes to the SVN repository whenever a new version was ready. There&amp;rsquo;s quite a lot of work involved when trying to do this so I wanted to automate the whole thing. The result is a bash script shown below which will:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Check that the version numbers in your readme.txt match up with those in your PHP file.&lt;/li&gt;
+&lt;li&gt;Commit the latest outstanding changes to your git repository if any are left&lt;/li&gt;
+&lt;li&gt;Push the latest changes to github&lt;/li&gt;
+&lt;li&gt;Export the contents at the HEAD of your &amp;lsquo;master&amp;rsquo; branch in git to the trunk of your SVN repository.&lt;/li&gt;
+&lt;li&gt;Commit the changes to SVN and therefore push them  back to wordpress.org&lt;/li&gt;
+&lt;li&gt;Create an SVN tag for wordpress.org to use and commit it (this will be the same value as Stable Tag: &lt;tagnumber&gt; in your readme.txt)&lt;/li&gt;
+&lt;li&gt;Update the version number for future reference.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hopefully this should make life a little easier for those WordPress plugin developers who wish to manage their projects in GIT :)&lt;/p&gt;
+
+&lt;p&gt;[Download the script here][1]&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;https://github.com/deanc/wordpress-plugin-git-svn&#34;&gt;https://github.com/deanc/wordpress-plugin-git-svn&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

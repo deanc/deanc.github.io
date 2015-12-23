@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zend Framework on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/zend-framework.html</link>
+    <description>Recent content in Zend Framework on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Jul 2012 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/zend-framework.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Unique filenames when uploading using Zend_Filter_File_Rename (Zend Framework)</title>
+      <link>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</link>
+      <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
+      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Create a new form element&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Whether you do this in a new instance of Zend_Form or one you instantiate in your controller is up to you. My example adds it to an instance of Zend_Form:&lt;/p&gt;
+
+&lt;div class=&#34;wp_syntax&#34;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;code&#34;&gt;
+        &lt;pre class=&#34;php&#34; style=&#34;font-family:monospace;&#34;&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$element&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;new&lt;/span&gt; Zend_Form_Element_File&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;screenshot&#39;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #000088;&#34;&gt;$element&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;setLabel&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900; font-weight: bold;&#34;&gt;null&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;setDestination&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;APPLICATION_PATH &lt;span style=&#34;color: #339933;&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;/path/to/uploads&#39;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #000088;&#34;&gt;$element&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;addValidator&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;Count&#39;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #009900; font-weight: bold;&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #cc66cc;&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #000088;&#34;&gt;$element&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;addValidator&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;Extension&#39;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #009900; font-weight: bold;&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;jpg,png,gif&#39;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #000088;&#34;&gt;$element&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;setRequired&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900; font-weight: bold;&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color: #000088;&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;addElement&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$element&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;foo&#39;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Handle the upload before the file is saved in your controller:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;By getting access to Zend_File_Transfer_Adapter_Http we can intercept the file before it is moved to the already-defined destination path. At this point we apply a filter to the upload which will rename the file.&lt;/p&gt;
+
+&lt;div class=&#34;wp_syntax&#34;&gt;
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;td class=&#34;code&#34;&gt;
+        &lt;pre class=&#34;php&#34; style=&#34;font-family:monospace;&#34;&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$post&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000088;&#34;&gt;$request&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;getPost&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #666666; font-style: italic;&#34;&gt;// This contains the POST params&lt;/span&gt;
+&amp;nbsp;
+        &lt;span style=&#34;color: #b1b100;&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$request&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;isPost&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#123;&lt;/span&gt;
+            &lt;span style=&#34;color: #b1b100;&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$form&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;isValid&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$post&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#123;&lt;/span&gt;
+&amp;nbsp;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$upload&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;new&lt;/span&gt; Zend_File_Transfer_Adapter_Http&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$filename&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000088;&#34;&gt;$upload&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;getFilename&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$filename&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #990000;&#34;&gt;basename&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$filename&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&amp;nbsp;
+&amp;nbsp;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$uniqueToken&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #990000;&#34;&gt;md5&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #990000;&#34;&gt;uniqid&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #990000;&#34;&gt;mt_rand&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #009900; font-weight: bold;&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$filterRename&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold;&#34;&gt;new&lt;/span&gt; Zend_Filter_File_Rename&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #990000;&#34;&gt;array&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;target&#39;&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;/path/to/uploads/&#39;&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #000088;&#34;&gt;$uniqueToken&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$filename&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;overwrite&#39;&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #009900; font-weight: bold;&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$upload&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;addFilter&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$filterRename&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+&amp;nbsp;
+                &lt;span style=&#34;color: #b1b100;&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color: #000088;&#34;&gt;$upload&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;receive&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#123;&lt;/span&gt;
+                    &lt;span style=&#34;color: #000088;&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;view&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;Error receiving the file&#39;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+                    &lt;span style=&#34;color: #b1b100;&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+                &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#125;&lt;/span&gt;
+&amp;nbsp;
+                &lt;span style=&#34;color: #000088;&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;view&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color: #004000;&#34;&gt;message&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;&#39;Screenshot(s) successfully uploaded&#39;&lt;/span&gt;&lt;span style=&#34;color: #339933;&#34;&gt;;&lt;/span&gt;
+            &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#125;&lt;/span&gt;
+        &lt;span style=&#34;color: #009900;&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

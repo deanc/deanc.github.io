@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Chrome on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/google-chrome.html</link>
+    <description>Recent content in Google Chrome on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Sep 2011 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/google-chrome.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A chrome extension to revert to the old-style facebook chat</title>
+      <link>https://deanclatworthy.com/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</link>
+      <pubDate>Sat, 10 Sep 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</guid>
+      <description>&lt;p&gt;Let it be known, that I&amp;rsquo;m not a big fan of Facebook. I&amp;rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&amp;rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&amp;rsquo;s not very accurate and I was disappointed that a chat service didn&amp;rsquo;t display all online friends in one group.&lt;/p&gt;
+
+&lt;p&gt;These changes made the chat unusable for me as it took too long to scan a long list on a 24&amp;#8243; monitor and see only those who were online and actually available to chat with me. So I wrote a chrome extension to only display online contacts in the sidebar, which is similar to how the old facebook chat worked.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update 12/10/2013: The extension is no longer available. I&amp;rsquo;m sorry.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

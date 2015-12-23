@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/git.html</link>
+    <description>Recent content in Git on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/git.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A bash alias to export a git repository to a zip file</title>
+      <link>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</link>
+      <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll keep this short and sweet. This bash alias will allow you to export your git repo&amp;rsquo;s master branch to a zip file.&lt;/p&gt;
+
+&lt;p&gt;To use it:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure that your work is committed.&lt;/li&gt;
+&lt;li&gt;Make sure you are in the root directory of your project.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make this script work run the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    echo alias gitpack=\&#39;git archive --format zip --output download_$(date +%d-%m-%Y-%H.%M).zip master\&#39; &amp;gt;&amp;gt; ~/.bashrc
+    source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now just type &lt;code&gt;gitpack&lt;/code&gt; and you will get a zip file.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Useful GIT commands</title>
+      <link>https://deanclatworthy.com/2011/01/useful-git-commands/</link>
+      <pubDate>Mon, 24 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2011/01/useful-git-commands/</guid>
+      <description>
+
+&lt;p&gt;I&amp;rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&amp;rsquo;ll help you also.&lt;/p&gt;
+
+&lt;h2 id=&#34;scenario-1:91476d5cf2241beb856306a5640f4b1e&#34;&gt;Scenario #1&lt;/h2&gt;
+
+&lt;p&gt;You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&amp;rsquo;ll probably see something like this when you run &lt;code&gt;git status&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # On branch devel
+    # Your branch is ahead of origin/devel by 2 commits.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Solution:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    git reset --hard origin/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This resets your current branch to an identical state of the current HEAD of the origin &lt;branch&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;scenario-2:91476d5cf2241beb856306a5640f4b1e&#34;&gt;Scenario #2&lt;/h2&gt;
+
+&lt;p&gt;You have created a branch B from branch A and made a few commits. Assuming you write useful commit messages it&amp;rsquo;s useful for other developers to see the changes you&amp;rsquo;ve made and the features you&amp;rsquo;ve added since you branched. To do this type the following command:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    git log $(git merge-base A B)..B #
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;scenario-3:91476d5cf2241beb856306a5640f4b1e&#34;&gt;Scenario #3&lt;/h2&gt;
+
+&lt;p&gt;List all branches, ordered by last-commit date (with last-commit date visible):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    for k in `git branch|perl -pe s/^..//`;do echo -e `git show &amp;amp;#8211;pretty=format:&amp;amp;#8221;%Cgreen%ci %Cblue%cr%Creset&amp;amp;#8221; $k|head -n 1`\\t$k;done|sort -r
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WordPress plugin deployment script (GIT to SVN)</title>
+      <link>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</link>
+      <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Short Version:&lt;/strong&gt; This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Long Version:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository. Along with most developers nowadays, I&amp;rsquo;ve switched to Git (for numerous reasons), so I was left with the dilemna of how to manage my plugin within git and host it on Github, but sync all changes to the SVN repository whenever a new version was ready. There&amp;rsquo;s quite a lot of work involved when trying to do this so I wanted to automate the whole thing. The result is a bash script shown below which will:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Check that the version numbers in your readme.txt match up with those in your PHP file.&lt;/li&gt;
+&lt;li&gt;Commit the latest outstanding changes to your git repository if any are left&lt;/li&gt;
+&lt;li&gt;Push the latest changes to github&lt;/li&gt;
+&lt;li&gt;Export the contents at the HEAD of your &amp;lsquo;master&amp;rsquo; branch in git to the trunk of your SVN repository.&lt;/li&gt;
+&lt;li&gt;Commit the changes to SVN and therefore push them  back to wordpress.org&lt;/li&gt;
+&lt;li&gt;Create an SVN tag for wordpress.org to use and commit it (this will be the same value as Stable Tag: &lt;tagnumber&gt; in your readme.txt)&lt;/li&gt;
+&lt;li&gt;Update the version number for future reference.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Hopefully this should make life a little easier for those WordPress plugin developers who wish to manage their projects in GIT :)&lt;/p&gt;
+
+&lt;p&gt;[Download the script here][1]&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;https://github.com/deanc/wordpress-plugin-git-svn&#34;&gt;https://github.com/deanc/wordpress-plugin-git-svn&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

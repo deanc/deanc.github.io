@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/post.html</link>
+    <description>Recent content in Posts on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/post.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Migrating Jekyll to Hugo - my experience</title>
+      <link>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</link>
+      <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</guid>
+      <description>
+
+&lt;p&gt;For those that haven&amp;rsquo;t yet heard about it &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is a lightning-fast, and powerful static generator
+built using golang. For the last couple of years I&amp;rsquo;ve used &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to build this site, but even
+with this few pages &amp;amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.&lt;/p&gt;
+
+&lt;p&gt;For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
+correctly first, specifically making sure you only
+&lt;a href=&#34;http://jekyllrb.com/docs/configuration/&#34;&gt;include/exclude relevent files from your build process&lt;/a&gt;. If you have, and
+it&amp;rsquo;s still to slow for your taste and you feel like trying something new then carry on reading below.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not going to go through every little detail here on setting up hugo. The documentation is awesome so go
+&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;set up hugo&lt;/a&gt; first. I&amp;rsquo;ll now outline the things that caught me off-guard
+when trying to migrate my content and theme.&lt;/p&gt;
+
+&lt;h3 id=&#34;using-html-extensions-for-pages:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;Using *.html extensions for pages&lt;/h3&gt;
+
+&lt;p&gt;Set up &lt;code&gt;uglyURLs: &amp;quot;true&amp;quot;&lt;/code&gt; in your &lt;code&gt;config.yml&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;migrating-your-post-urls:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;Migrating your post URLs&lt;/h3&gt;
+
+&lt;p&gt;Follow this checklist:
+* Move all your posts under &lt;code&gt;content/post&lt;/code&gt;
+* Open up each file and make sure your front-matter contains the URL you want e.g. &lt;code&gt;url: /2012/01/how-to-rip-music-from-the-hype-machine/&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;An alternative to this is to configure permalinks for posts via &lt;code&gt;config.yml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;permalinks:
+  post: /:year/:month/:day/:slug/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The downside to this is that a) you must define a &lt;code&gt;date&lt;/code&gt; key in your front-matter &amp;amp; b) the slug that is generated
+may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-to-access-the-current-date-in-templates:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to access the current date in templates&lt;/h3&gt;
+
+&lt;p&gt;This is pretty straightforward:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{ .Date.Format &amp;quot;2006&amp;quot; }}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;how-to-create-a-global-site-menu:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to create a global site menu&lt;/h3&gt;
+
+&lt;p&gt;The documentation on menus is pretty good but here&amp;rsquo;s some info on quickly setting it up. Define your homepage URL in
+&lt;code&gt;config.yml&lt;/code&gt; if you want it to appear in the menu:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;menu:
+  main:
+      - Name: &amp;quot;Home&amp;quot;
+        Weight: 1
+        Identifier: &amp;quot;home&amp;quot;
+        URL: &amp;quot;/&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
+for the content e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;menu:
+  main:
+    weight: 60
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The weight is basically a display order.&lt;/p&gt;
+
+&lt;h3 id=&#34;how-to-not-go-insane-when-generating-meta-title-description-tags:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to not go insane when generating meta title/description tags&lt;/h3&gt;
+
+&lt;p&gt;Just use this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;title&amp;gt;
+    {{ if isset .Params &amp;quot;og_title&amp;quot; }}
+    {{ .Params.og_title }}
+    {{ else if eq .URL &amp;quot;/&amp;quot; }}
+    {{ .Site.Params.TitleSuffix }}
+    {{ else if eq .Section &amp;quot;post&amp;quot; }}
+    {{ .Title }}
+    {{ else }}
+    {{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
+&amp;lt;/title&amp;gt;
+
+{{ if isset .Params &amp;quot;og_title&amp;quot; }}
+&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Params.og_title }}&amp;quot; /&amp;gt;
+{{ else if eq .URL &amp;quot;/&amp;quot; }}
+&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Params.TitleSuffix }}&amp;quot; /&amp;gt;
+{{ else if eq .Section &amp;quot;post&amp;quot; }}
+&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt;
+{{ else }}
+&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&amp;quot; /&amp;gt;
+{{ end }}
+
+{{ if eq .URL &amp;quot;/&amp;quot; }}
+&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ .Site.Params.Tagline }}&amp;quot; /&amp;gt;
+&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ .Site.Params.Tagline }}&amp;quot; /&amp;gt;
+{{ else if eq .Section &amp;quot;post&amp;quot; }}
+&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ .Summary }}&amp;quot; /&amp;gt;
+&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ .Summary }}&amp;quot; /&amp;gt;
+{{ else }}
+&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ .Description }}&amp;quot; /&amp;gt;
+&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ .Description }}&amp;quot; /&amp;gt;
+{{ end }}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to use native Symfony Validator translations in a Silex application</title>
+      <link>https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/</guid>
+      <description>&lt;p&gt;One of the problems I&amp;rsquo;ve encountered using the Symfony &lt;code&gt;Translation&lt;/code&gt; component in Silex
+is that when using a &lt;a target=&#34;_blank&#34; href=&#34;https://en.wikipedia.org/wiki/IETF_language_tag&#34;&gt;fully qualified locale&lt;/a&gt;
+(e.g. &lt;code&gt;en_GB&lt;/code&gt; vs &lt;code&gt;en&lt;/code&gt;) it doesn&amp;rsquo;t use the translations that come shipped with the &lt;code&gt;Validation&lt;/code&gt; component.&lt;/p&gt;
+
+&lt;p&gt;This is because they are named &lt;code&gt;validators.en.xlf&lt;/code&gt; and not &lt;code&gt;validators.en_GB.xlf&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The way around this is to simply load them into the correct domain when initialising the &lt;code&gt;TranslationServiceProvider&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $app[&#39;locale&#39;] = &#39;en_GB&#39;;
+    $app[&#39;translator&#39;] = $app-&amp;gt;share($app-&amp;gt;extend(&#39;translator&#39;, function($translator, $app) {
+
+        // load SF validation messages
+        $translator-&amp;gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader());
+        $translator-&amp;gt;addResource(&#39;xlf&#39;, __DIR__.&#39;/../vendor/symfony/validator/Resources/translations/validators.fi.xlf&#39;, &#39;fi_FI&#39;, &#39;validators&#39;);
+        $translator-&amp;gt;addResource(&#39;xlf&#39;, __DIR__.&#39;/../vendor/symfony/validator/Resources/translations/validators.en.xlf&#39;, &#39;en_GB&#39;, &#39;validators&#39;);
+
+        // now load your own
+        $translator-&amp;gt;addLoader(&#39;yaml&#39;, new Symfony\Component\Translation\Loader\YamlFileLoader());
+        $translator-&amp;gt;addResource(&#39;yaml&#39;, __DIR__.&#39;/../translations/messages.en_GB.yml&#39;, &#39;en_GB&#39;, &#39;messages&#39;);
+        $translator-&amp;gt;addResource(&#39;yaml&#39;, __DIR__.&#39;/../translations/messages.fi_FI.yml&#39;, &#39;fi_FI&#39;, &#39;messages&#39;);
+
+        return $translator;
+    }));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The path to the translations may vary depending on which version of Symfony you are using.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to set up Apache vhosts correctly on Debian Jessie 8</title>
+      <link>https://deanclatworthy.com/2015/06/29/debian-jessie-apache-vhosts/</link>
+      <pubDate>Mon, 29 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2015/06/29/debian-jessie-apache-vhosts/</guid>
+      <description>&lt;p&gt;After spinning up a new server today at DigitalOcean and trying to set up a new vhost, I couldn&amp;rsquo;t get
+the default Apache page to go away and load my vhost&amp;rsquo;s content.&lt;/p&gt;
+
+&lt;p&gt;It turns out that in Debian Jessie vhost configuration files are required to end in &lt;code&gt;*.conf&lt;/code&gt;. So, if you are
+naming your vhost configuration file &lt;code&gt;example.com&lt;/code&gt; just rename it &lt;code&gt;example.com.conf&lt;/code&gt; and it should load.&lt;/p&gt;
+
+&lt;p&gt;Another tip to see what&amp;rsquo;s going on if a vhost doesn&amp;rsquo;t load after a reboot, run this command to check it&amp;rsquo;s
+actually being loaded:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    apachectl -S
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>OSX Yosemite upgrade guide for PHP developers</title>
+      <link>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</link>
+      <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</guid>
+      <description>
+
+&lt;h2 id=&#34;yosemite-upgrade-guide-v1-0:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;Yosemite upgrade guide v1.0&lt;/h2&gt;
+
+&lt;h3 id=&#34;apache:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;Apache&lt;/h3&gt;
+
+&lt;p&gt;Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the &lt;code&gt;/etc/apache/httpd.conf&lt;/code&gt; file. In this file you need to do a few things:&lt;/p&gt;
+
+&lt;p&gt;Search for &lt;code&gt;vhosts&lt;/code&gt; and uncomment the line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Include /private/etc/apache2/extra/httpd-vhosts.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also find the &lt;code&gt;&amp;lt;Directory /&amp;gt;&lt;/code&gt; block and make sure it reads as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    &amp;lt;Directory /&amp;gt;
+        AllowOverride All
+        Require all granted
+    &amp;lt;/Directory&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then open up &lt;code&gt;/etc/apache2/extra/vhosts.conf&lt;/code&gt; and find any instances that begin with &lt;code&gt;Allow from&lt;/code&gt; or &lt;code&gt;Order allow,deny&lt;/code&gt; or &lt;code&gt;Order deny,allow&lt;/code&gt;.
+Remove them and change to:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Require all granted
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After all this make sure you restart apache: &lt;code&gt;sudo apachectl restart&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, if you still have problems, try to start Apache in debug mode and see what errors you get:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;mysql:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;MySQL&lt;/h2&gt;
+
+&lt;p&gt;It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
+Next, follow these instructions to &lt;a href=&#34;http://stackoverflow.com/a/26706416/775007&#34;&gt;launch MySQL automatically&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;phpstorm:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;PHPStorm&lt;/h2&gt;
+
+&lt;p&gt;PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. &lt;a href=&#34;https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks&#34;&gt;More info here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using a self signed certificate with Cloudflare&#39;s Full SSL on nginx</title>
+      <link>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</link>
+      <pubDate>Sat, 18 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</guid>
+      <description>
+
+&lt;h3 id=&#34;overview:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Overview&lt;/h3&gt;
+
+&lt;p&gt;Cloudflare recently launched &lt;a href=&#34;https://blog.cloudflare.com/introducing-universal-ssl/&#34;&gt;the biggest deployment of SSL in the history of the internet&lt;/a&gt;,
+and better yet they made it free. For users, it&amp;rsquo;s as simple as flicking a switch, but there a few steps you should take
+to make it more secure.&lt;/p&gt;
+
+&lt;p&gt;Cloudflare offers two levels of SSL on their free package:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network
+which in turn downloads or delivers the cached version of the page. Unfortunately the downside of this is that Cloudflare&amp;rsquo;s
+request to your server is sent in cleartext. Think of this this way: if Bob visits Jane&amp;rsquo;s site, his connection is secure
+but if Cloudflare doesn&amp;rsquo;t have a fresh copy of the page the request is forwarded by Cloudflare to your server, in clear text.&lt;/li&gt;
+&lt;li&gt;Full SSL - The visitor&amp;rsquo;s connection to your site is secure, and you also have an SSL certificate on your server so Cloudflare
+can make secure requests to download/cache your content.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Whilst Flexible SSL is great for most cases, ideally you should be using Full SSL. This post will walk you through on how
+to set that up.&lt;/p&gt;
+
+&lt;h3 id=&#34;instructions:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Instructions&lt;/h3&gt;
+
+&lt;h4 id=&#34;part-1:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Part 1&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;First of all log in to your Cloudflare account and enable Flexible SSL.&lt;/li&gt;
+&lt;li&gt;Set up a page rule for &lt;code&gt;\*yourdomain.com\*&lt;/code&gt; and tick &amp;ldquo;Always use https&amp;rdquo; and save the rule. This will make Cloudflare redirect
+all requests to http pages to https pages. Hooray!&lt;/li&gt;
+&lt;li&gt;Make sure your application is using schema-less URI&amp;rsquo;s. When referencing a URL on your own domain always use &lt;code&gt;//yourdomain.com&lt;/code&gt;
+and not &lt;code&gt;http://yourdomain.com&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Now go check your site and you should have a working SSL set up. If so continue to part two.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;part-2:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Part 2&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We will now generate a self-signed certificate to install on your site. This
+&lt;a href=&#34;http://msol.io/blog/tech/2013/10/06/create-a-self-signed-ecc-certificate/&#34;&gt;guide&lt;/a&gt; is great so generate your files
+using the information there.&lt;/li&gt;
+&lt;li&gt;Next step is to configure nginx correctly.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Stopping mass-login attempts to WordPress using nginx</title>
+      <link>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</link>
+      <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</guid>
+      <description>&lt;p&gt;Rather than rehash all the information, let me point you in the direction of this great blog post:&lt;br /&gt;
+&lt;a href=&#34;http://ethitter.com/2013/04/protecting-wp-login-in-nginx/&#34;&gt;http://ethitter.com/2013/04/protecting-wp-login-in-nginx/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you have problems with wp-login.php being downloaded to the user then your PHP configuration using this tutorial is wrong. See this article I wrote about it:&lt;br /&gt;
+&lt;a href=&#34;http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/&#34;&gt;http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)</title>
+      <link>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</link>
+      <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer:&lt;/p&gt;
+
+&lt;p&gt;{% highlight javascript %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    {
+        &amp;quot;require&amp;quot;: {
+            &amp;quot;guzzle/guzzle&amp;quot;: &amp;quot;~3.1.1&amp;quot;
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;Then use the following code:&lt;/p&gt;
+
+&lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array(
+        &#39;version&#39; =&amp;gt; &#39;1.1&#39;
+    ));
+    $twitter_client-&amp;gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array(
+        &#39;consumer_key&#39;  =&amp;gt; TWITTER_CONSUMER_KEY,
+        &#39;consumer_secret&#39; =&amp;gt; TWITTER_CONSUMER_SECRET,
+        &#39;token&#39;       =&amp;gt; TWITTER_ACCESS_TOKEN,
+        &#39;token_secret&#39;  =&amp;gt; TWITTER_ACCESS_TOKEN_SECRET
+    )));
+
+    $request = $twitter_client-&amp;gt;get(&#39;statuses/user_timeline.json&#39;);
+    $request-&amp;gt;getQuery()-&amp;gt;set(&#39;count&#39;, 5);
+    $request-&amp;gt;getQuery()-&amp;gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;);
+    $response = $request-&amp;gt;send();
+
+    $tweets = json_decode($response-&amp;gt;getBody());
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t forget to put your constants somewhere.&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;http://guzzlephp.org/index.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Facebook: The new giant of advertising?</title>
+      <link>https://deanclatworthy.com/2013/06/facebook-the-new-giant-of-advertising/</link>
+      <pubDate>Tue, 18 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/06/facebook-the-new-giant-of-advertising/</guid>
+      <description>&lt;p&gt;Last week Facebook &lt;a href=&#34;http://newsroom.fb.com/News/600/Adding-What-You-re-Doing-to-Status-Updates&#34;&gt;rolled out a new update&lt;/a&gt; that lets people tag what they&amp;rsquo;re doing in their post or say how they are feeling. Users can say they are watching a movie or reading a book &amp;#8211; amongst other things. What makes this different from before is that your status update is providing more structured data to Facebook about your activity.&lt;/p&gt;
+
+&lt;p&gt;For example, when you went to the movie theatre, before you might have just typed a status update such as: &amp;#8220;At the movies seeing the new Batman&amp;#8221;. Unfortunately for Facebook there are 1000s of different ways to say you&amp;rsquo;re at the movies, across 1000s of different languages used on their platform. The problem of trying to analyse what a user is doing from text is a difficult one to solve. But Facebook now made it easier.&lt;/p&gt;
+
+&lt;p&gt;More worryingly, however, is that facebook now lets you tag how you are feeling. The only way to do this previously was using sentiment analysis where the text you type is analysed for keywords to detect the sentiment in what you are saying, or in other words how you are feeling. This is an extremely difficult problem to solve, far more than looking for keywords that try and figure out what you are doing. Now whenever you attach your &amp;#8220;feeling&amp;#8221; to a facebook post, facebook knows in that moment much more about you.&lt;/p&gt;
+
+&lt;p&gt;Facebook now has one of the biggest advertising platforms around, [bringing in revenue of $1.25 billion in Q1, 2013][2]. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
+
+&lt;p&gt;The new changes to Facebook will most likely allow Facebook to allow advertisers to target advertising not only based on who you are, what you are interested in but how you are feeling at the time. Last week, Microsoft announced to gamers that their console would cost $100 more at launch than Sony&amp;rsquo;s. Gaming is a hot topic on social networks, so Sony could specifically target advertising at key moments where users on social media are &amp;#8220;feeling angry&amp;#8221; and have an interest in Microsoft&amp;rsquo;s console. Another example could be targeting people who are &amp;#8220;feeling tired&amp;#8221; with energy drinks.&lt;/p&gt;
+
+&lt;p&gt;The current market leader in online advertising, Google, has their own social network they could use to leverage this data and target advertisements more effectively, but there aren&amp;rsquo;t as many people using it and they don&amp;rsquo;t have as much aggregated meta-data on their users. Furthermore their advertising efforts are centered around browsing history and search history, rather than who the user is.&lt;/p&gt;
+
+&lt;p&gt;Facebook has positioned itself to become the market leader in online advertising. Through its variety of methods they can target users far more accurately at a specific moment in time than any other advertiser currently can, and with the amount of users they have information on, and the amount of information they posses about them, revenues will continue to rise as advertisers realise the potential opportunities of the platform.&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;[2]: &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Web fonts not loading in Firefox</title>
+      <link>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</guid>
+      <description>&lt;p&gt;I encountered a peculiar issue today regarding web fonts on firefox. On all browsers except Firefox the web fonts were loading correctly. I found multiple references suggesting that Firefox was picky with using quotes when referencing where the font file is hosted. However my findings were more interesting:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Firefox does not support embedding webfont files from a different domain&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The good news is the fix is simple. Simply send the following header:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Access-Control-Allow-Origin *
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ensuring facebook canvas applications work in IE8 / IE9 / IE10</title>
+      <link>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</link>
+      <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</guid>
+      <description>&lt;p&gt;Last week I deployed a new Facebook application into a production environment. Everything seemed to be working perfectly, but then I received a report that the application wasn&amp;rsquo;t working correctly in IE8+. I narrowed down the problem, and then realised that sessions weren&amp;rsquo;t working. It turns out IE8+ has a security policy that prevents iframes from setting cookies if the parent domain is different. Therefore because my PHP session cooking wouldn&amp;rsquo;t set, the sessions obviously didn&amp;rsquo;t work between pages.&lt;/p&gt;
+
+&lt;p&gt;The good news is the fix is simple. Add this header to your page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    header(&#39;p3p: CP=&amp;quot;NOI ADM DEV PSAi COM NAV OUR OTR STP IND DEM&amp;quot;&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to read more about this check this page:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/P3P&#34;&gt;http://en.wikipedia.org/wiki/P3P&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Bonus: if using silex add this middleware:&lt;/p&gt;
+
+&lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $app-&amp;gt;after(function (Request $request, Response $response) {
+        $response-&amp;gt;headers-&amp;gt;set(&#39;p3p&#39;, &#39;CP=&amp;quot;NOI ADM DEV PSAi COM NAV OUR OTR STP IND DEM&amp;quot;&#39;);
+    });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to install different locales on a fresh debian installation</title>
+      <link>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</guid>
+      <description>&lt;p&gt;Simples:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo dpkg-reconfigure locale
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will load a GUI where you should select the new locales to install, then follow the onscreen instructions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Silex Tip #1: How to quickly invalidate a form field in your controller</title>
+      <link>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
+      <description>&lt;p&gt;You should be using [custom constraints][1] to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:&lt;/p&gt;
+
+&lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $form-&amp;gt;get(&#39;username&#39;)-&amp;gt;addError(new \Symfony\Component\Form\FormError(&amp;quot;This email is already in use&amp;quot;));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&#34;&gt;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Crawling UTF-8 pages using the Symfony2 DomCrawler component</title>
+      <link>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</link>
+      <pubDate>Sun, 21 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</guid>
+      <description>&lt;p&gt;Just a small gotcha for anyone using Symfony2&amp;rsquo;s &lt;code&gt;DomCrawler&lt;/code&gt; component. The standard behaviour of the class (from the current docs) is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $crawler = new Crawler($html);
+
+    foreach ($crawler as $domElement) {
+        print $domElement-&amp;gt;nodeName;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $crawler = new Crawler;
+    $crawler-&amp;gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;);
+
+    foreach ($crawler as $domElement) {
+        print $domElement-&amp;gt;nodeName;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The second parameter to &lt;code&gt;addHTMLContent&lt;/code&gt; is &lt;code&gt;UTF-8&lt;/code&gt; by default, but I&amp;rsquo;ve added it to illustrate that you could use other character sets too.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Intel X25-M SSD&#39;s don&#39;t work with Mac OSX 10.8.3</title>
+      <link>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m writing this informative post to try and help anyone who had the same problem as me. I upgraded to OSX 10.8.3, and after it restarted the machine the Apple logo and spinner was on screen for about a minute followed by a stop/forbidden/no entry symbol that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//deanclatworthy.com/wp-content/uploads/2013/04/osx-noentry.jpg&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-335&#34; alt=&#34;osx-noentry&#34; src=&#34;https://deanclatworthy.com/img/uploads/2013/04/osx-noentry.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t boot into safe mode (by holding shift on boot). I could enter the internet recovery mode, but a drive repair and permissions fix did nothing. I tried using the internet recovery mode to reinstall OSX (without losing data) and that didn&amp;rsquo;t work.&lt;/p&gt;
+
+&lt;p&gt;Next I reinstalled OSX from a bootable USB recovery drive. This installed 10.8.2 again which worked perfectly. I immediately upgraded to 10.8.3 and the no entry sign was back. This told me there was some issue with my hardware and 10.8.3. A quick google around found that Intel X25-M drives don&amp;rsquo;t work on 10.8.3 unless you upgrade to the most recent firmware. The good news is this is super easy.&lt;/p&gt;
+
+&lt;p&gt;Download the [Intel SSD toolbox][2] on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t do what I did and wipe your data, as there is no need!&lt;/p&gt;
+
+&lt;p&gt;Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.&lt;/p&gt;
+
+&lt;p&gt;[2]: &lt;a href=&#34;http://www.intel.com/go/ssdtoolbox&#34;&gt;http://www.intel.com/go/ssdtoolbox&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migrating from apache to nginx (wordpress edition)</title>
+      <link>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</link>
+      <pubDate>Thu, 28 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
+      <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.&lt;/p&gt;
+
+&lt;p&gt;The first thing you want to do is install nginx and php5-fpm. Before you do this [add dotdeb to your sources list][3]. Don&amp;rsquo;t forget to update your packages.&lt;/p&gt;
+
+&lt;p&gt;Now we can install nginx and php5-fpm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo apt-get install nginx php5-fpm
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In nginx, there&amp;rsquo;s no such thing as virtual hosts. We call them server blocks, but they work similarly. Let&amp;rsquo;s create one. Create a file at
+&lt;code&gt;/etc/nginx/sites-available/&lt;/code&gt; called &lt;code&gt;yourdomain.com&lt;/code&gt; with these contents:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    server {
+        listen 80;
+        server_name yourdomain.com;
+
+        access_log /var/log/nginx/yourdomain.com.access_log;
+        error_log /var/log/nginx/yourdomain.com.error_log;
+
+        root /var/www/yourdomain.com/public_html;
+        index index.php index.htm index.html;
+
+        include /etc/nginx/global/wordpress.conf;
+        include /etc/nginx/global/restrictions.conf;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This creates a server block, which listens on port 80, with webroot at /var/www/yourdomain.com/public_html. It then includes two configuration files which we&amp;rsquo;ll come to now.&lt;/p&gt;
+
+&lt;p&gt;Now create a file at &lt;code&gt;/etc/nginx/global/wordpress.conf&lt;/code&gt; with contents:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # WordPress single blog rules.
+    # Designed to be included in any server {} block.
+
+    # This order might seem weird - this is attempted to match last if rules below fail.
+    # http://wiki.nginx.org/HttpCoreModule
+    location / {
+            try_files $uri $uri/ /index.php?$args;
+    }
+
+    # Add trailing slash to */wp-admin requests.
+    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+    # Directives to send expires headers and turn off 404 error logging.
+    location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+           access_log off; log_not_found off; expires max;
+    }
+
+    # Uncomment one of the lines below for the appropriate caching plugin (if used).
+    #include global/wordpress-wp-super-cache.conf;
+    #include global/wordpress-w3-total-cache.conf;
+
+    # Pass all .php files onto a php-fpm/php-fcgi server.
+    location ~ \.php$ {
+            # Zero-day exploit defense.
+            # http://forum.nginx.org/read.php?2,88845,page=3
+            # Won&#39;t work properly (404 error) if the file is not stored on this server, which is entirely possible with php-fpm/php-fcgi.
+            # Comment the &#39;try_files&#39; line out if you set up php-fpm/php-fcgi on another machine.  And then cross your fingers that you won&#39;t get hacked.
+            try_files $uri =404;
+
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            #NOTE: You should have &amp;quot;cgi.fix_pathinfo = 0;&amp;quot; in php.ini
+
+            include fastcgi_params;
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #       fastcgi_intercept_errors on;
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This file is very important and one value particularly is of interest to us. The &lt;code&gt;fastcgi_pass&lt;/code&gt; variable is critical if you want PHP to work. When PHP-FPM is running, it listens on a socket. Dependent on your distribution and package this value might be different. Every tutorial I tried suggested pointing this value to &lt;code&gt;127.0.0.1:9000&lt;/code&gt; but this was not the case with my system. If you open &lt;code&gt;/etc/php5/fpm/pool.d/www.conf&lt;/code&gt; there is a configuration value called &lt;code&gt;listen&lt;/code&gt;. This is what you should set the &lt;code&gt;fastcgi_pass&lt;/code&gt; variable to.&lt;/p&gt;
+
+&lt;p&gt;Finally, create a file at &lt;code&gt;/etc/nginx/global/restrictions.conf&lt;/code&gt; to handle some security:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # Global restrictions configuration file.
+    # Designed to be included in any server {} block.&amp;amp;lt;/p&amp;gt;
+    location = /favicon.ico {
+            log_not_found off;
+            access_log off;
+    }
+
+    location = /robots.txt {
+            allow all;
+            log_not_found off;
+            access_log off;
+    }
+
+    # Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
+    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+    location ~ /\. {
+            deny all;
+    }
+
+    # Deny access to any files with a .php extension in the uploads directory
+    # Works in sub-directory installs and also in multisite network
+    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
+    location ~* /(?:uploads|files)/.*\.php$ {
+            deny all;
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now all of our configuration is in place, we need to shut down apache, and start nginx and php5-fpm:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    sudo /etc/init.d/apache2 stop
+    sudo /etc/init.d/php5-fpm restart
+    sudo /etc/init.d/nginx start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your site should now be running nginx. Confirm this by visiting it and of course checking to see if the process is running:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    ps aux | grep nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;p&gt;[3]: &lt;a href=&#34;http://www.dotdeb.org/instructions/&#34;&gt;http://www.dotdeb.org/instructions/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

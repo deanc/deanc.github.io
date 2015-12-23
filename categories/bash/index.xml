@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bash on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/bash.html</link>
+    <description>Recent content in Bash on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/bash.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>A bash alias to export a git repository to a zip file</title>
+      <link>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</link>
+      <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ll keep this short and sweet. This bash alias will allow you to export your git repo&amp;rsquo;s master branch to a zip file.&lt;/p&gt;
+
+&lt;p&gt;To use it:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure that your work is committed.&lt;/li&gt;
+&lt;li&gt;Make sure you are in the root directory of your project.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;To make this script work run the following commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    echo alias gitpack=\&#39;git archive --format zip --output download_$(date +%d-%m-%Y-%H.%M).zip master\&#39; &amp;gt;&amp;gt; ~/.bashrc
+    source ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now just type &lt;code&gt;gitpack&lt;/code&gt; and you will get a zip file.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

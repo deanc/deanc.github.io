@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uncategorized on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/uncategorized.html</link>
+    <description>Recent content in Uncategorized on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Apr 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/uncategorized.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Intel X25-M SSD&#39;s don&#39;t work with Mac OSX 10.8.3</title>
+      <link>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m writing this informative post to try and help anyone who had the same problem as me. I upgraded to OSX 10.8.3, and after it restarted the machine the Apple logo and spinner was on screen for about a minute followed by a stop/forbidden/no entry symbol that looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//deanclatworthy.com/wp-content/uploads/2013/04/osx-noentry.jpg&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-335&#34; alt=&#34;osx-noentry&#34; src=&#34;https://deanclatworthy.com/img/uploads/2013/04/osx-noentry.jpg&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;I couldn&amp;rsquo;t boot into safe mode (by holding shift on boot). I could enter the internet recovery mode, but a drive repair and permissions fix did nothing. I tried using the internet recovery mode to reinstall OSX (without losing data) and that didn&amp;rsquo;t work.&lt;/p&gt;
+
+&lt;p&gt;Next I reinstalled OSX from a bootable USB recovery drive. This installed 10.8.2 again which worked perfectly. I immediately upgraded to 10.8.3 and the no entry sign was back. This told me there was some issue with my hardware and 10.8.3. A quick google around found that Intel X25-M drives don&amp;rsquo;t work on 10.8.3 unless you upgrade to the most recent firmware. The good news is this is super easy.&lt;/p&gt;
+
+&lt;p&gt;Download the [Intel SSD toolbox][2] on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.&lt;/p&gt;
+
+&lt;p&gt;Don&amp;rsquo;t do what I did and wipe your data, as there is no need!&lt;/p&gt;
+
+&lt;p&gt;Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.&lt;/p&gt;
+
+&lt;p&gt;[2]: &lt;a href=&#34;http://www.intel.com/go/ssdtoolbox&#34;&gt;http://www.intel.com/go/ssdtoolbox&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Browse safely, and avoid drive-by attacks in Google Chrome</title>
+      <link>https://deanclatworthy.com/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</link>
+      <pubDate>Tue, 26 Feb 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</guid>
+      <description>&lt;p&gt;With the &lt;a href=&#34;http://www.theregister.co.uk/2013/02/22/nbc_hack/&#34;&gt;increased&lt;/a&gt; &lt;a href=&#34;http://threatpost.com/en_us/blogs/mysqlcom-site-hacked-was-serving-malware-092611&#34;&gt;number&lt;/a&gt; of &lt;a href=&#34;http://nakedsecurity.sophos.com/2012/12/03/dockster-mac-malware-dalai-lama/&#34;&gt;drive-by&lt;/a&gt; &lt;a href=&#34;http://www.messagingnews.com/eyeonmessaging/stephanie-jordan/several-large-frequently-visited-sites-still-serving-malware&#34;&gt;attacks&lt;/a&gt; happening lately, I decided to investigate how these attacks work and what can be done to prevent them.&lt;/p&gt;
+
+&lt;p&gt;The way in which drive-by attacks work is simple. A hacker breaks into a website and edits the source code of the page to deliver &lt;a href=&#34;http://en.wikipedia.org/wiki/Malware&#34;&gt;malware&lt;/a&gt; to the user. Usually this works by the hacker creating their own web page and then loading that through an iframe on the site they broke into. This results in a subtle, but very effect method of attacking user&amp;rsquo;s machines as the iframe is normally hidden so the user doesn&amp;rsquo;t even see it.&lt;/p&gt;
+
+&lt;p&gt;The reason this is called a drive-by attack is because you are extremely unlikely to have noticed it happened. The most effective hackers will use a &lt;a href=&#34;http://en.wikipedia.org/wiki/Zero-day_attack&#34;&gt;0-day attack&lt;/a&gt; which often means that the malware is not present in anti-virus databases, so the only method of detection from an anti-virus is to rely on heuristic methods which detect unusual activity on your system. Experience has shown that this is extremely difficult to do and often these drive-by attacks go unseen.&lt;/p&gt;
+
+&lt;p&gt;The exploits used in most of these attacks target browser plug-ins as they are installed on almost every browser of every system. Popular plugins such as Flash and Java are installed on most new machines by default, and if they aren&amp;rsquo;t updated by the user then they become a common attack vector for hackers.&lt;/p&gt;
+
+&lt;p&gt;So that leads me to my question: what can we do about it?&lt;/p&gt;
+
+&lt;p&gt;More recent builds of Google Chrome come with a fantastic feature which enables you to disable plugins by default, and only allow them to play if you explicitly click them. Let&amp;rsquo;s look into how to turn that on. In the top right corner of your browser click the menu icon and go to settings (If you&amp;rsquo;re on Windows you can click Ctrl+, or Mac Command+,).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//deanclatworthy.com/wp-content/uploads/2013/02/Screen-Shot-2013-02-26-at-1.11.02-PM.png&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-320&#34; alt=&#34;Screen Shot 2013-02-26 at 1.11.02 PM&#34; src=&#34;https://deanclatworthy.com/img/uploads/2013/02/Screen-Shot-2013-02-26-at-1.11.02-PM.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Next, at the bottom of the page click &amp;#8220;Show advanced settings&amp;#8221;.&lt;/p&gt;
+
+&lt;p&gt;Under the &amp;#8220;Privacy&amp;#8221; section click the &amp;#8220;Content Settings&amp;#8221; button and scroll down to the &amp;#8220;Plugins&amp;#8221; section. We want to change this setting to &amp;#8220;Click to Play&amp;#8221;:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//deanclatworthy.com/wp-content/uploads/2013/02/Screen-Shot-2013-02-26-at-1.13.09-PM.png&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-321&#34; alt=&#34;Screen Shot 2013-02-26 at 1.13.09 PM&#34; src=&#34;https://deanclatworthy.com/img/uploads/2013/02/Screen-Shot-2013-02-26-at-1.13.09-PM.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Finally, click the &amp;#8220;Manage exceptions&amp;#8230;&amp;#8221; button so that we can whitelist some sites that are most likely safe to run plugins on. I have added youtube like so:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;//deanclatworthy.com/wp-content/uploads/2013/02/Screen-Shot-2013-02-26-at-1.14.25-PM.png&#34;&gt;&lt;img class=&#34;alignnone size-full wp-image-322&#34; alt=&#34;Screen Shot 2013-02-26 at 1.14.25 PM&#34; src=&#34;https://deanclatworthy.com/img/uploads/2013/02/Screen-Shot-2013-02-26-at-1.14.25-PM.png&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Remember, when you add a site to this whitelist all plugins will run on it, so only add to this list if a site relies on a plugin to operate or it becomes really inconvenient having to click every time.&lt;/p&gt;
+
+&lt;p&gt;And that&amp;rsquo;s it! Enjoy browsing the web more safely and please give feedback in the comments or [follow me on twitter][10].&lt;/p&gt;
+
+&lt;p&gt;[10]: &lt;a href=&#34;https://twitter.com/deanclatworthy&#34;&gt;https://twitter.com/deanclatworthy&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to run Internet Explorer on a Mac (IE6, IE7, IE8, IE9, IE10, IE11)</title>
+      <link>https://deanclatworthy.com/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</link>
+      <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</guid>
+      <description>&lt;p&gt;Just a quick tip for anyone doing web development on macs, it&amp;rsquo;s quite easy to get internet explorer running now with a brilliant tool created by Greg Thornton over at github. This essential automates the creation of the free Microsoft testing virtual machines for IE and builds them in to virtualbox. Make sure you install virtualbox first and then follow the instructions over at github:
+&lt;a href=&#34;https://github.com/xdissent/ievms&#34;&gt;https://github.com/xdissent/ievms&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Essentially though, it&amp;rsquo;s a simple as typing this command in the terminal:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will install IE6-IE11. Make sure you give it some time as it has to download over 10GB of data.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to use responsive twitter bootstrap &amp; masonry together</title>
+      <link>https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/</link>
+      <pubDate>Thu, 27 Sep 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/</guid>
+      <description>&lt;p&gt;Getting twitter bootstrap&amp;rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&amp;rsquo;s the code:&lt;/p&gt;
+
+&lt;p&gt;Javascript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $(document).ready(function () {
+
+            $(&amp;quot;#posts&amp;quot;).masonry({
+                itemSelector: &#39;.post&#39;,
+                isAnimated: true,
+                columnWidth: function( containerWidth ) {
+
+                    // do nothing for browsers with no media query support
+                    // .container will always be 940px
+                    if($(&amp;quot;.container&amp;quot;).width() == 940) {
+                        return 240;
+                    }
+
+                    var width = $(window).width();
+                    var col = 300;
+
+                    if(width &amp;lt; 1200 &amp;amp;&amp;amp; width &amp;gt;= 980) {
+                        col = 240;
+                    }
+                    else if(width &amp;lt; 980 &amp;amp;&amp;amp; width &amp;gt;= 768) {
+                        col = 186;
+                    }
+
+                    return col;
+                }
+            });
+    });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Demo (make sure you resize the frame in the bottom right):&lt;br /&gt;
+&lt;a href=&#34;http://jsfiddle.net/mWtmY/288/&#34;&gt;http://jsfiddle.net/mWtmY/288/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to rip music from the hype machine</title>
+      <link>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</link>
+      <pubDate>Mon, 02 Jan 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</guid>
+      <description>&lt;p&gt;Occasionally on the [Hype Machine][1], a song is linked to in an external blog that no longer exists or the path has changed. If the song works when clicking play on HM then there&amp;rsquo;s a simple way to find out the URL and download it using Google Chrome as your browser.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Load up Chrome, and press Ctrl+Shit+I to open the WebKit Inspector.&lt;/li&gt;
+&lt;li&gt;Go to the network tab then go to the relevant HM page. If nothing appears in the Network tab refresh the page again. Wait a while for everything to appear.&lt;/li&gt;
+&lt;li&gt;Click the &amp;#8220;clear&amp;#8221; button at the bottom of the network window (it looks like a forbidden icon and it&amp;rsquo;s to the left of where it says &amp;#8220;All&amp;#8221;)&lt;/li&gt;
+&lt;li&gt;Then move your mouse over the play button on HM and click it.&lt;/li&gt;
+&lt;li&gt;You should see a few things scroll in the &amp;#8220;Network&amp;#8221; window and one of those will be the MP3 file. Right click it and open in a new tab. Chrome will begin to play the mp3. Right click it and click &amp;#8220;Save as&amp;#8221; and bada bing bada boom you have your MP3 :)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;http://hypem.com/&#34;&gt;http://hypem.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Facebook privacy issue with tagged photos</title>
+      <link>https://deanclatworthy.com/2010/09/facebook-privacy-issue-with-tagged-photos/</link>
+      <pubDate>Mon, 06 Sep 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2010/09/facebook-privacy-issue-with-tagged-photos/</guid>
+      <description>&lt;p&gt;Facebook has garnered a rather bad reputation over its privacy controls in recent months, but things are now beginning to stabilise. You can control the privacy of:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Individual wall posts&lt;/li&gt;
+&lt;li&gt;Almost all aspects of your profile (location, interests etc.)&lt;/li&gt;
+&lt;li&gt;Individual photo albums&lt;/li&gt;
+&lt;li&gt;Individual videos&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With the addition of friend lists it makes it fairly simple to filter content to certain people, as long as you don&amp;rsquo;t have too many friends.&lt;/p&gt;
+
+&lt;p&gt;However, this morning I came across a new issue after speaking with a former colleague. It seems that if you have been tagged in a  friend&amp;rsquo;s photo album that has its privacy set to &amp;#8220;Friends only&amp;#8221;, this setting overrides your personal settings regarding visibility of photos and videos you are tagged in.&lt;/p&gt;
+
+&lt;p&gt;Imagine a situation where Person A is friends with B &amp;amp; C, but B &amp;amp; C are not friends. If friend B tags you in their photo album that is set to &amp;#8220;Friends Only&amp;#8221;, Person C will no longer be able to see on Person A&amp;rsquo;s profile that they&amp;rsquo;ve been tagged. In previous iterations of facebook Person C would see in Person A&amp;rsquo;s feed that they had been tagged, and would only be able to view those individual photos that they are tagged in. This makes the &amp;#8220;Photos and videos I&amp;rsquo;m tagged in&amp;#8221; privacy setting obsolete if ultimately you cannot control photos you are tagged in.&lt;/p&gt;
+
+&lt;p&gt;Steps to reproduce:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Go to your privacy settings and set &amp;#8220;Photos and videos I&amp;rsquo;m tagged in&amp;#8221; to &amp;#8220;Friends Only&amp;#8221;.&lt;/li&gt;
+&lt;li&gt;Find a friend with a photo album whose privacy setting is set to &amp;#8220;Friends Only&amp;#8221; and tag yourself in a photo.&lt;/li&gt;
+&lt;li&gt;Ask a separate friend to then check your profile to see if they can see this photo anywhere. They will not be able to.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Whilst I understand that privacy should ultimately lie with the &amp;#8220;owner&amp;#8221; of the data, I believe this to be a glitch in the system. There is no point in tagging yourself in photo albums of friends or letting yourself be tagged if only you can see them. Facebook is suddenly seeming less social.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Jump In Camp video</title>
+      <link>https://deanclatworthy.com/2010/04/jump-in-camp-video/</link>
+      <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2010/04/jump-in-camp-video/</guid>
+      <description>&lt;p&gt;Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:&lt;/p&gt;
+
+&lt;div class=&#34;embed-responsive embed-responsive-16by9&#34;&gt;
+&lt;iframe width=&#34;1280&#34; height=&#34;720&#34; src=&#34;//www.youtube-nocookie.com/embed/2P1zSkNd5Ho&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

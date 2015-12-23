@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Silex on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/silex.html</link>
+    <description>Recent content in Silex on Hello. I&#39;m Dean Clatworthy</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 17 May 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://deanclatworthy.com/categories/silex.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ensuring facebook canvas applications work in IE8 / IE9 / IE10</title>
+      <link>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</link>
+      <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</guid>
+      <description>&lt;p&gt;Last week I deployed a new Facebook application into a production environment. Everything seemed to be working perfectly, but then I received a report that the application wasn&amp;rsquo;t working correctly in IE8+. I narrowed down the problem, and then realised that sessions weren&amp;rsquo;t working. It turns out IE8+ has a security policy that prevents iframes from setting cookies if the parent domain is different. Therefore because my PHP session cooking wouldn&amp;rsquo;t set, the sessions obviously didn&amp;rsquo;t work between pages.&lt;/p&gt;
+
+&lt;p&gt;The good news is the fix is simple. Add this header to your page:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    header(&#39;p3p: CP=&amp;quot;NOI ADM DEV PSAi COM NAV OUR OTR STP IND DEM&amp;quot;&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to read more about this check this page:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/P3P&#34;&gt;http://en.wikipedia.org/wiki/P3P&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Bonus: if using silex add this middleware:&lt;/p&gt;
+
+&lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $app-&amp;gt;after(function (Request $request, Response $response) {
+        $response-&amp;gt;headers-&amp;gt;set(&#39;p3p&#39;, &#39;CP=&amp;quot;NOI ADM DEV PSAi COM NAV OUR OTR STP IND DEM&amp;quot;&#39;);
+    });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Silex Tip #1: How to quickly invalidate a form field in your controller</title>
+      <link>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</link>
+      <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
+      <description>&lt;p&gt;You should be using [custom constraints][1] to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:&lt;/p&gt;
+
+&lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    $form-&amp;gt;get(&#39;username&#39;)-&amp;gt;addError(new \Symfony\Component\Form\FormError(&amp;quot;This email is already in use&amp;quot;));
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;[1]: &lt;a href=&#34;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&#34;&gt;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
