@@ -6,21 +6,8 @@
     <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 29 Mar 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Finland I love you! But you&#39;re bringing me down</title>
-      <link>https://deanclatworthy.com/2016/03/29/2016-03-29-finland-i-love-you-but-youre-bring-me-down/</link>
-      <pubDate>Tue, 29 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://deanclatworthy.com/2016/03/29/2016-03-29-finland-i-love-you-but-youre-bring-me-down/</guid>
-      <description>&lt;p&gt;I have lived in Finland now, for over six years of my adult life. Whilst I&amp;rsquo;ve been here I&amp;rsquo;ve had three jobs, been in a
-relationship for four of those, seen the northern lights, learnt how to ice skate backwards and swam in a circle in the
-ice hole of lake. I&amp;rsquo;ve had some brilliant life experiences here. I&amp;rsquo;ve met some wonderful people. I&amp;rsquo;ve worked with some
-incredibly talented colleagues. I have loved Finland, but it&amp;rsquo;s bringing me down.&lt;/p&gt;
-</description>
-    </item>
     
     <item>
       <title>Migrating Jekyll to Hugo - my experience</title>
@@ -888,6 +875,23 @@ using the information there.&lt;/li&gt;
 &lt;p&gt;Facebook has positioned itself to become the market leader in online advertising. Through its variety of methods they can target users far more accurately at a specific moment in time than any other advertiser currently can, and with the amount of users they have information on, and the amount of information they posses about them, revenues will continue to rise as advertisers realise the potential opportunities of the platform.&lt;/p&gt;
 
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Web fonts not loading in Firefox</title>
+      <link>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</link>
+      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</guid>
+      <description>&lt;p&gt;I encountered a peculiar issue today regarding web fonts on firefox. On all browsers except Firefox the web fonts were loading correctly. I found multiple references suggesting that Firefox was picky with using quotes when referencing where the font file is hosted. However my findings were more interesting:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Firefox does not support embedding webfont files from a different domain&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The good news is the fix is simple. Simply send the following header:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Access-Control-Allow-Origin *
+&lt;/code&gt;&lt;/pre&gt;
+</description>
     </item>
     
   </channel>
