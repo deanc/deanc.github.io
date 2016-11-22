@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zend Framework on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/zend-framework.html</link>
-    <description>Recent content in Zend Framework on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/zend-framework.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Jul 2012 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/zend-framework.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -15,7 +14,8 @@
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
-      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.&lt;/p&gt;
+      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
+&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Create a new form element&lt;/strong&gt;&lt;/p&gt;
 
@@ -69,8 +69,7 @@
       &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/table&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
     </item>
     
   </channel>

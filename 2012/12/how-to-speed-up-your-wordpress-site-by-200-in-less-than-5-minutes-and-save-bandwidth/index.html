@@ -16,22 +16,24 @@
 	
 
 	
-	<meta name="description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the [WP Super Cache plugin][1] for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
+	<meta name="description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the WP Super Cache plugin for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
 
 
 Minify and join CSS &amp; Javascript files
 Load JS asynchronously at the bottom of the page where possible
 Load static pages if you can
 Let the user cache everything if possible.
+
 
 " />
-	<meta property="og:description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the [WP Super Cache plugin][1] for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
+	<meta property="og:description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the WP Super Cache plugin for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
 
 
 Minify and join CSS &amp; Javascript files
 Load JS asynchronously at the bottom of the page where possible
 Load static pages if you can
 Let the user cache everything if possible.
+
 
 " />
 	
@@ -127,6 +129,12 @@ Let the user cache everything if possible.
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -149,6 +157,8 @@ Let the user cache everything if possible.
 <li>Let the user cache everything if possible.</li>
 </ul>
 
+<p></p>
+
 <p>The WP Super Cache plugin basically did all these things. What I didn&rsquo;t like is that as I&rsquo;m using  shared hosting for this simple blog, it cached pages to disk which isn&rsquo;t as quick as caching to memcache or something more efficient. I also didn&rsquo;t like how I had to go through a script to check to see if my minified and joined files were already cached and then make another read to disk. WP Super Cache does a great job at taking a bare bones WordPress and speeding it up on shared hosting but I wondered what else I could do.</p>
 
 <p>Those of you lucky folks on VPS&rsquo;s and your own boxes aren&rsquo;t bound by these limitations, and have access to memcache, APC or something like Varnish, so you can <em>probably</em> stop reading now.</p>
@@ -169,14 +179,11 @@ Let the user cache everything if possible.
 
 <p>Setting up your site to use Cloudflare is incredibly simple but make sure you disable any caching or minifying plugins before you begin. Because the Cloudflare setup process is so simple I&rsquo;m not going to write a long tutorial with screenshots as they&rsquo;ve made it so easy. All you&rsquo;ll need to do is sign up, add your domain, check that it imported your DNS settings correctly (99% of you won&rsquo;t need to change any of these values) then choose the Cloudflare features you want to enable. Finally, change your DNS to point at Cloudflare. You can do all of this within five minutes.</p>
 
-<p>The way I measured my performance increase was using [Pingdom&rsquo;s website performance tool][3]. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.</p>
+<p>The way I measured my performance increase was using <a href="http://tools.pingdom.com/fpt">Pingdom&rsquo;s website performance tool</a>. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.</p>
 
 <p>Finally, this is by no means an empirical test, but I believe that Cloudflare is a no brainer for anyone wanting to be able to deliver their WordPress site to a global audience in the quickest time possible.</p>
 
 <p>Please let me know your results in the comments.</p>
-
-<p>[3]: <a href="http://tools.pingdom.com/fpt">http://tools.pingdom.com/fpt</a></p>
-
 			</article>
 
 			

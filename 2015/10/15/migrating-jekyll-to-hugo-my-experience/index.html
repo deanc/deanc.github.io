@@ -16,8 +16,10 @@
 	
 
 	
-	<meta name="description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site. For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
-	<meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site. For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
+	<meta name="description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
+For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
+	<meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
+For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/">
@@ -111,6 +113,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -139,11 +147,11 @@ it&rsquo;s still to slow for your taste and you feel like trying something new t
 <a href="https://gohugo.io/overview/quickstart/">set up hugo</a> first. I&rsquo;ll now outline the things that caught me off-guard
 when trying to migrate my content and theme.</p>
 
-<h3 id="using-html-extensions-for-pages:f43ae83312b4adba3b464c359e0e8afd">Using *.html extensions for pages</h3>
+<h3 id="using-html-extensions-for-pages">Using *.html extensions for pages</h3>
 
 <p>Set up <code>uglyURLs: &quot;true&quot;</code> in your <code>config.yml</code>.</p>
 
-<h3 id="migrating-your-post-urls:f43ae83312b4adba3b464c359e0e8afd">Migrating your post URLs</h3>
+<h3 id="migrating-your-post-urls">Migrating your post URLs</h3>
 
 <p>Follow this checklist:
 * Move all your posts under <code>content/post</code>
@@ -158,14 +166,14 @@ when trying to migrate my content and theme.</p>
 <p>The downside to this is that a) you must define a <code>date</code> key in your front-matter &amp; b) the slug that is generated
 may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.</p>
 
-<h3 id="how-to-access-the-current-date-in-templates:f43ae83312b4adba3b464c359e0e8afd">How to access the current date in templates</h3>
+<h3 id="how-to-access-the-current-date-in-templates">How to access the current date in templates</h3>
 
 <p>This is pretty straightforward:</p>
 
 <pre><code>{{ .Date.Format &quot;2006&quot; }}
 </code></pre>
 
-<h3 id="how-to-create-a-global-site-menu:f43ae83312b4adba3b464c359e0e8afd">How to create a global site menu</h3>
+<h3 id="how-to-create-a-global-site-menu">How to create a global site menu</h3>
 
 <p>The documentation on menus is pretty good but here&rsquo;s some info on quickly setting it up. Define your homepage URL in
 <code>config.yml</code> if you want it to appear in the menu:</p>
@@ -188,7 +196,7 @@ for the content e.g.</p>
 
 <p>The weight is basically a display order.</p>
 
-<h3 id="how-to-not-go-insane-when-generating-meta-title-description-tags:f43ae83312b4adba3b464c359e0e8afd">How to not go insane when generating meta title/description tags</h3>
+<h3 id="how-to-not-go-insane-when-generating-meta-title-description-tags">How to not go insane when generating meta title/description tags</h3>
 
 <p>Just use this:</p>
 

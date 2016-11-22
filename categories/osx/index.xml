@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Osx on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/osx.html</link>
-    <description>Recent content in Osx on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/osx.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jan 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/osx.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -27,9 +26,7 @@
   &lt;/table&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Hat tip to [mr_dbr on reddit][1] for this.&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://www.reddit.com/r/apple/comments/9fnnc/ask_rapple_how_do_i_disable_sshagent/c0cmh99&#34;&gt;http://www.reddit.com/r/apple/comments/9fnnc/ask_rapple_how_do_i_disable_sshagent/c0cmh99&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Hat tip to &lt;a href=&#34;http://www.reddit.com/r/apple/comments/9fnnc/ask_rapple_how_do_i_disable_sshagent/c0cmh99&#34;&gt;mr_dbr on reddit&lt;/a&gt; for this.&lt;/p&gt;
 </description>
     </item>
     

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Photoshop on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/photoshop.html</link>
-    <description>Recent content in Photoshop on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/photoshop.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/photoshop.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -29,10 +28,7 @@
 
 &lt;p&gt;You can download the template by clicking here:&lt;/p&gt;
 
-&lt;p&gt;[Download Now][2]&lt;/p&gt;
-
-&lt;p&gt;[2]: &lt;a href=&#34;http://bit.ly/Z1jp00&#34;&gt;http://bit.ly/Z1jp00&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;a href=&#34;http://bit.ly/Z1jp00&#34;&gt;Download Now&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

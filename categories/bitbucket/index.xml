@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bitbucket on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/bitbucket.html</link>
-    <description>Recent content in Bitbucket on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/bitbucket.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jan 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/bitbucket.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,6 +15,8 @@
       
       <guid>https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</guid>
       <description>&lt;p&gt;One of the things that &lt;a href=&#34;https://github.com/blog/1364-downtime-last-saturday&#34;&gt;recent github outages&lt;/a&gt; have highlighted is that although git is designed to be decentralized version control system, many people are not treating it that way. Rather than having multiple remotes, people push to the same place and generally rely too much on github. I&amp;rsquo;ve seen people build their whole infrastructure around github, including deploy scripts for their sites and install scripts for new developers. Furthermore, dependency managers such as &lt;a href=&#34;http://getcomposer.org/&#34;&gt;Composer&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://cocoapods.org/&#34;&gt;Cocoapods&lt;/a&gt; (not intending to single anyone out) rely on github to pull in dependencies. If github goes down, you can&amp;rsquo;t fix your dependencies or pull in new ones. In an ideal world these dependency managers should have built in support for mirrors, but I&amp;rsquo;m not aware of any such feature at the time of writing.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;What I&amp;rsquo;m going to illustrate is how easy it is to set up your git remotes so you push to two places&lt;/strong&gt;. If github goes down, it doesn&amp;rsquo;t matter, assuming everyone on your team follows this guide the code will also be on bitbucket, or wherever else you choose. But this tutorial will mirror to github &amp;amp; bitbucket. Let&amp;rsquo;s begin.&lt;/p&gt;
 
@@ -54,10 +55,7 @@ git push -u bitbucket --all
 
 &lt;p&gt;Recent of versions of git allow you to add multiple places per remote like this using git commands, but I prefer to see exactly what is going on in the configuration.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Update #1: &lt;/strong&gt;reddit user MatmaRex [makes a very valid point][4] to be careful renaming remotes if you have any remote branches. I&amp;rsquo;ve updated the instructions to reflect this.&lt;/p&gt;
-
-&lt;p&gt;[4]: &lt;a href=&#34;http://www.reddit.com/r/programming/comments/16jk97/how_to_avoid_relying_on_github_mirror_your/c7wnycx&#34;&gt;http://www.reddit.com/r/programming/comments/16jk97/how_to_avoid_relying_on_github_mirror_your/c7wnycx&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&lt;strong&gt;Update #1: &lt;/strong&gt;reddit user MatmaRex &lt;a href=&#34;http://www.reddit.com/r/programming/comments/16jk97/how_to_avoid_relying_on_github_mirror_your/c7wnycx&#34;&gt;makes a very valid point&lt;/a&gt; to be careful renaming remotes if you have any remote branches. I&amp;rsquo;ve updated the instructions to reflect this.&lt;/p&gt;</description>
     </item>
     
   </channel>

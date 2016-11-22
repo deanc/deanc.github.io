@@ -2,12 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/</link>
+    <link>https://deanclatworthy.com/index.xml</link>
     <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Finland I love you! But you&#39;re bringing me down</title>
+      <link>https://deanclatworthy.com/2016/03/29/2016-03-29-finland-i-love-you-but-youre-bring-me-down/</link>
+      <pubDate>Tue, 29 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2016/03/29/2016-03-29-finland-i-love-you-but-youre-bring-me-down/</guid>
+      <description>&lt;p&gt;I have lived in Finland now, for over six years of my adult life. Whilst I&amp;rsquo;ve been here I&amp;rsquo;ve had three jobs, been in a
+relationship for four of those, seen the northern lights, learnt how to ice skate backwards and swam in a circle in the
+ice hole of lake. I&amp;rsquo;ve had some brilliant life experiences here. I&amp;rsquo;ve met some wonderful people. I&amp;rsquo;ve worked with some
+incredibly talented colleagues. I have loved Finland, but it&amp;rsquo;s bringing me down.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Migrating Jekyll to Hugo - my experience</title>
@@ -30,11 +43,11 @@ it&amp;rsquo;s still to slow for your taste and you feel like trying something n
 &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;set up hugo&lt;/a&gt; first. I&amp;rsquo;ll now outline the things that caught me off-guard
 when trying to migrate my content and theme.&lt;/p&gt;
 
-&lt;h3 id=&#34;using-html-extensions-for-pages:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;Using *.html extensions for pages&lt;/h3&gt;
+&lt;h3 id=&#34;using-html-extensions-for-pages&#34;&gt;Using *.html extensions for pages&lt;/h3&gt;
 
 &lt;p&gt;Set up &lt;code&gt;uglyURLs: &amp;quot;true&amp;quot;&lt;/code&gt; in your &lt;code&gt;config.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;migrating-your-post-urls:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;Migrating your post URLs&lt;/h3&gt;
+&lt;h3 id=&#34;migrating-your-post-urls&#34;&gt;Migrating your post URLs&lt;/h3&gt;
 
 &lt;p&gt;Follow this checklist:
 * Move all your posts under &lt;code&gt;content/post&lt;/code&gt;
@@ -49,14 +62,14 @@ when trying to migrate my content and theme.&lt;/p&gt;
 &lt;p&gt;The downside to this is that a) you must define a &lt;code&gt;date&lt;/code&gt; key in your front-matter &amp;amp; b) the slug that is generated
 may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.&lt;/p&gt;
 
-&lt;h3 id=&#34;how-to-access-the-current-date-in-templates:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to access the current date in templates&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-access-the-current-date-in-templates&#34;&gt;How to access the current date in templates&lt;/h3&gt;
 
 &lt;p&gt;This is pretty straightforward:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ .Date.Format &amp;quot;2006&amp;quot; }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;how-to-create-a-global-site-menu:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to create a global site menu&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-create-a-global-site-menu&#34;&gt;How to create a global site menu&lt;/h3&gt;
 
 &lt;p&gt;The documentation on menus is pretty good but here&amp;rsquo;s some info on quickly setting it up. Define your homepage URL in
 &lt;code&gt;config.yml&lt;/code&gt; if you want it to appear in the menu:&lt;/p&gt;
@@ -79,7 +92,7 @@ for the content e.g.&lt;/p&gt;
 
 &lt;p&gt;The weight is basically a display order.&lt;/p&gt;
 
-&lt;h3 id=&#34;how-to-not-go-insane-when-generating-meta-title-description-tags:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to not go insane when generating meta title/description tags&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-not-go-insane-when-generating-meta-title-description-tags&#34;&gt;How to not go insane when generating meta title/description tags&lt;/h3&gt;
 
 &lt;p&gt;Just use this:&lt;/p&gt;
 
@@ -140,7 +153,7 @@ for the content e.g.&lt;/p&gt;
 
 &lt;p&gt;On this page I&amp;rsquo;ll detail my areas of expertise.&lt;/p&gt;
 
-&lt;h3 id=&#34;php:a36058eafe01cd26b16c80f89806a069&#34;&gt;PHP&lt;/h3&gt;
+&lt;h3 id=&#34;php&#34;&gt;PHP&lt;/h3&gt;
 
 &lt;p&gt;PHP has been my language of choice for over 15 years. I took an early interest in the language when trying to modify
 forum software. Since then I&amp;rsquo;ve specialised in it, and built more websites than I can count with it. The PHP ecosystem
@@ -164,7 +177,7 @@ bank&amp;rsquo;s data and track your spending and balance over time.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/deanc/flotlib&#34;&gt;Flotlib&lt;/a&gt; - A dirty hack to generate client-side flot libraries from the server. Ew ;-)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;html-css-javascript:a36058eafe01cd26b16c80f89806a069&#34;&gt;HTML / CSS/ Javascript&lt;/h3&gt;
+&lt;h3 id=&#34;html-css-javascript&#34;&gt;HTML / CSS/ Javascript&lt;/h3&gt;
 
 &lt;p&gt;Throughout my career I&amp;rsquo;ve often been responsible for developing the front-end of many of my projects as well as the
 back-end. I like to think that my front-end skillset is equally as sharp as my back-end skillset. I&amp;rsquo;ve been writing
@@ -175,7 +188,7 @@ slowly.&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;ve plenty of experience writing vanilla Javascript, but am familiar with many modern JS frameworks including:
 &lt;a href=&#34;http://jquery.com/&#34;&gt;jQuery&lt;/a&gt;, &lt;a href=&#34;https://angularjs.org/&#34;&gt;AngularJS&lt;/a&gt;, &lt;a href=&#34;http://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; &amp;amp; others.&lt;/p&gt;
 
-&lt;h3 id=&#34;mysql:a36058eafe01cd26b16c80f89806a069&#34;&gt;MySQL&lt;/h3&gt;
+&lt;h3 id=&#34;mysql&#34;&gt;MySQL&lt;/h3&gt;
 
 &lt;p&gt;I&amp;rsquo;ve worked on MySQL databases for the majority of my career - after all, you need somewhere to store data. I&amp;rsquo;ve dealt
 with tables with 100s of millions of rows, working feverishly to optimise queries using indexes and balance load across
@@ -183,7 +196,7 @@ multiple MySQL servers.&lt;/p&gt;
 
 &lt;p&gt;I couldn&amp;rsquo;t have learnt so much without this brilliant book: &lt;a href=&#34;http://shop.oreilly.com/product/0636920022343.do&#34;&gt;High Performance MySQL&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;server-management:a36058eafe01cd26b16c80f89806a069&#34;&gt;Server management&lt;/h3&gt;
+&lt;h3 id=&#34;server-management&#34;&gt;Server management&lt;/h3&gt;
 
 &lt;p&gt;One of the more recent areas of interest for me has been managing servers. Having been relatively new to the unix
 toolchain when I moved to Finland in 2010 it&amp;rsquo;s now become second nature to me. I&amp;rsquo;ve set up, secured and managed
@@ -194,7 +207,7 @@ in. It&amp;rsquo;s quite useful to be able to use provisioning services on top o
 everyone working on a project. These provisioning files can also then be modified and used to spin up servers in the
 production environment also potentially.&lt;/p&gt;
 
-&lt;h3 id=&#34;systems-architecture-design:a36058eafe01cd26b16c80f89806a069&#34;&gt;Systems architecture &amp;amp; design&lt;/h3&gt;
+&lt;h3 id=&#34;systems-architecture-design&#34;&gt;Systems architecture &amp;amp; design&lt;/h3&gt;
 
 &lt;p&gt;One of the most important skills I have learned to focus on is planning and system design. It is important to plan and
 design a system that will meet all the goals of the project. This can often include making sure the application is
@@ -202,12 +215,12 @@ designed in such a way that it&amp;rsquo;s easily maintained and modified, that 
 problems that may occur further down the line. Having had many years of experience I have learnt to identify very early
 on in the life cycle of a project what potential pitfalls might occur and address the risks before they happen.&lt;/p&gt;
 
-&lt;h3 id=&#34;mobile-application-development:a36058eafe01cd26b16c80f89806a069&#34;&gt;Mobile application development&lt;/h3&gt;
+&lt;h3 id=&#34;mobile-application-development&#34;&gt;Mobile application development&lt;/h3&gt;
 
 &lt;p&gt;I am currently learning the &lt;a href=&#34;https://developer.apple.com/swift/&#34;&gt;Swift&lt;/a&gt; programming language, with the goal of being
 able to build iOS applications.&lt;/p&gt;
 
-&lt;h3 id=&#34;misc-programming-languages:a36058eafe01cd26b16c80f89806a069&#34;&gt;Misc programming languages&lt;/h3&gt;
+&lt;h3 id=&#34;misc-programming-languages&#34;&gt;Misc programming languages&lt;/h3&gt;
 
 &lt;p&gt;Whilst not my no.1 programming languages, I have experimented and used the other following programming languages:&lt;/p&gt;
 
@@ -248,7 +261,28 @@ and helped them become more successful as an online entity.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;metsä-plan-b:08e0386ce22622b66038f29292f02cb1&#34;&gt;Metsä: Plan B&lt;/h3&gt;
+&lt;h3 id=&#34;tallinksilja-complaint-booth-banner&#34;&gt;TallinkSilja: Complaint Booth + Banner&lt;/h3&gt;
+
+&lt;p&gt;[Agency: hasan &amp;amp; partners] We retrofitted an old English phone box with a fake phone, powered by Skype, in order to allow
+visitors to a complaint booth to vent their general frustrations to a moderator on the other end of the phone. If the moderator
+determined the complaint was interesting, they were able to remotely print a free cruise voucher using an internet-connected
+receipt printer.&lt;/p&gt;
+
+&lt;p&gt;We also created a banner which was featured on the front-page of many of Finland&amp;rsquo;s most popular websites, allowing people
+to complaint about their day - and be emailed a free cruise by moderators if the complaint was interesting. The banner
+served millions of views over the course of 5 days.&lt;/p&gt;
+
+&lt;p&gt;Technologies used: PHP, MySQL, HTML5, CSS, Javascript, AWS&lt;/p&gt;
+
+&lt;p&gt;&lt;i class=&#34;fa fa-trophy&#34; style=&#34;color: #ffcc33&#34;&gt;&lt;/i&gt; Awards won: &lt;a href=&#34;http://www.bestadsontv.com/ad/78182/Tallink-Silja-Complaints-Booth&#34;&gt;Best Ads on TV&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;portfolio-assets well well-lg&#34;&gt;
+    &lt;div class=&#34;embed-responsive embed-responsive-16by9&#34;&gt;
+        &lt;iframe src=&#34;//player.vimeo.com/video/152961401?byline=0&amp;badge=0&amp;portrait=0&amp;title=0&#34; frameborder=&#34;0&#34; webkitallowfullscreen mozallowfullscreen allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;metsä-plan-b&#34;&gt;Metsä: Plan B&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] I created a static website, built using Jekyll, to showcase for potential Metsä customers how
 iconic structures might look and function if they were built out of wood.&lt;/p&gt;
@@ -263,7 +297,7 @@ iconic structures might look and function if they were built out of wood.&lt;/p&
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;hasan-partners-eurobest-booth:08e0386ce22622b66038f29292f02cb1&#34;&gt;hasan &amp;amp; partners: Eurobest booth&lt;/h3&gt;
+&lt;h3 id=&#34;hasan-partners-eurobest-booth&#34;&gt;hasan &amp;amp; partners: Eurobest booth&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] For the Eurobest 2014 Festival of Creativity, I was tasked with helping with the development
 of the hasan &amp;amp; partners stand at the Eurobest conference. This featured two installations:&lt;/p&gt;
@@ -282,7 +316,7 @@ of the hasan &amp;amp; partners stand at the Eurobest conference. This featured 
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;sanoma-big-things:08e0386ce22622b66038f29292f02cb1&#34;&gt;Sanoma: Big Things&lt;/h3&gt;
+&lt;h3 id=&#34;sanoma-big-things&#34;&gt;Sanoma: Big Things&lt;/h3&gt;
 
 &lt;div class=&#34;portfolio-assets well well-lg&#34;&gt;
     &lt;div class=&#34;embed-responsive embed-responsive-16by9&#34;&gt;
@@ -295,7 +329,7 @@ biggest media house - to showcase inspirational quotes to do with marketing.&lt;
 
 &lt;p&gt;Technologies used: PHP, MySQL, HTML5, CSS, Javascript&lt;/p&gt;
 
-&lt;h3 id=&#34;plan-sponsor-of-dreams-installation:08e0386ce22622b66038f29292f02cb1&#34;&gt;Plan: Sponsor of dreams installation&lt;/h3&gt;
+&lt;h3 id=&#34;plan-sponsor-of-dreams-installation&#34;&gt;Plan: Sponsor of dreams installation&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] I created an integrated installation for Plan: Finland in Finland&amp;rsquo;s most busiest shopping mall
 which allows users to donate money into a box, and upon a successful donation it takes their photo. Photos are then displayed
@@ -309,7 +343,7 @@ in a loop on the installation when a user is not activating it, and also on all 
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;metsä-tree-online:08e0386ce22622b66038f29292f02cb1&#34;&gt;Metsä: Tree Online&lt;/h3&gt;
+&lt;h3 id=&#34;metsä-tree-online&#34;&gt;Metsä: Tree Online&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] Highly interactive and visual website for one of Finland&amp;rsquo;s biggest companies. Featuring an
 interactive video timeline and plenty of other visual eye candy. A community area was also created to allow Metsä
@@ -338,7 +372,7 @@ interactive video timeline and plenty of other visual eye candy. A community are
 
 &lt;hr /&gt;
 
-&lt;h3 id=&#34;lidl-grillimaisteri-2014:08e0386ce22622b66038f29292f02cb1&#34;&gt;Lidl: Grillimaisteri 2014&lt;/h3&gt;
+&lt;h3 id=&#34;lidl-grillimaisteri-2014&#34;&gt;Lidl: Grillimaisteri 2014&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] Lidl asked us to create a new website for their 2014 activities for the Grillimaisteri brand.
 I created a back-end for the site to manage all the content including recipes, products, competitions, blogs etc. I was
@@ -352,7 +386,7 @@ also responsible for the server configuration and deployment.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;plan-finland-girls-day-printer:08e0386ce22622b66038f29292f02cb1&#34;&gt;Plan Finland: Girls Day Printer&lt;/h3&gt;
+&lt;h3 id=&#34;plan-finland-girls-day-printer&#34;&gt;Plan Finland: Girls Day Printer&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] We were asked to create a campaign where every time an SMS donation is receieved, or the
 website is shared using Facebook or tweeted, a tiny receipt printer in downtown Helsinki will print a few words of the
@@ -371,7 +405,7 @@ was responsible for constructing and a printer software created by &lt;a href=&#
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;kone-nanospace-trade:08e0386ce22622b66038f29292f02cb1&#34;&gt;KONE: NanoSpace&amp;trade;&lt;/h3&gt;
+&lt;h3 id=&#34;kone-nanospace-trade&#34;&gt;KONE: NanoSpace&amp;trade;&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] KONE required a highly interactive website, showing how replacement elevators can really benefit
 building owners. Their new elevators require the same space as the old elevators, but are more spacious inside thanks to modern
@@ -388,7 +422,7 @@ more efficient.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;helsingin-sanomat-for-advertisers:08e0386ce22622b66038f29292f02cb1&#34;&gt;Helsingin Sanomat: For Advertisers&lt;/h3&gt;
+&lt;h3 id=&#34;helsingin-sanomat-for-advertisers&#34;&gt;Helsingin Sanomat: For Advertisers&lt;/h3&gt;
 
 &lt;p&gt;[Agency: hasan &amp;amp; partners] Full front-end and light back-end implementation for the new Helsingin Sanomat business page,
 aimed at promoting advertising opportunities in their digital media.&lt;/p&gt;
@@ -400,7 +434,7 @@ aimed at promoting advertising opportunities in their digital media.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;angry-birds-star-wars:08e0386ce22622b66038f29292f02cb1&#34;&gt;Angry Birds: Star Wars&lt;/h3&gt;
+&lt;h3 id=&#34;angry-birds-star-wars&#34;&gt;Angry Birds: Star Wars&lt;/h3&gt;
 
 &lt;p&gt;[Agency: Luxus] I helped to concept and subsequently implement the official website for Rovio&amp;#8217;s new
 title &amp;#8220;Angry Birds: Star Wars&amp;#8221;. Most of this work was HTML5/CSS3/JavaScript and using Twitter Bootstrap
@@ -415,7 +449,7 @@ for a responsive framework.&lt;/p&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;iitala-online-web-store:08e0386ce22622b66038f29292f02cb1&#34;&gt;Iitala: Online web store&lt;/h3&gt;
+&lt;h3 id=&#34;iitala-online-web-store&#34;&gt;Iitala: Online web store&lt;/h3&gt;
 
 &lt;p&gt;[Agency: Luxus] Front end implementation for the Iittala online webstore. This involved a lengthy process of converting
 wireframes to prototypes to a full front-end implementation into Iittala&amp;rsquo;s CMS. The project lasted almost six months and
@@ -432,7 +466,7 @@ was a great success as one of the first responsive webstores for a leading Finni
     &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&#34;other-projects:08e0386ce22622b66038f29292f02cb1&#34;&gt;Other projects&lt;/h3&gt;
+&lt;h3 id=&#34;other-projects&#34;&gt;Other projects&lt;/h3&gt;
 
 &lt;p&gt;Unfortunately the internet moves quickly. A lot of projects have a lifetime and are no longer online. Here is a list of
 other clients and websites I have worked with that are no longer online and available to show anymore:&lt;/p&gt;
@@ -520,61 +554,61 @@ maintenance for its elevators - and offers users a chance to win dinner at one o
 
 &lt;p&gt;After working on projects with my clients, I like to ask them about how they felt the project went, and if I delivered what they needed. Here is a small list of feedback that I receieved:&lt;/p&gt;
 
-&lt;h3 id=&#34;andrew-robins:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Andrew Robins&lt;/h3&gt;
+&lt;h3 id=&#34;andrew-robins&#34;&gt;Andrew Robins&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Dean joined my team at School Stickers, and then subsequently at Vizwoz, in 2007 /08. Joining as a member of a small team, Dean proved himself from the first day to be a highly dependable member of staff, imaginative in his approach to problem solving, and indeed flagging up potential problems we had not foreseen. He has a propensity to think &amp;#8220;outside the box&amp;#8221; which was highly appreciated in his time with us, and is a highly personable, communicative chap, quick to learn, and always met deadlines. I would highly recommend him.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;simon-day-npower:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Simon Day, npower&lt;/h3&gt;
+&lt;h3 id=&#34;simon-day-npower&#34;&gt;Simon Day, npower&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Dean is one of the most talented CSS/HTML coders I’ve come across. No matter what npower put in front of him he was able to code with precision and skill. All his work was cross browser compatible and I was genuinely sorry when he left. I have not come across anyone else in my career who can code as well as Dean.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;peter-van-den-wyngaert-ultrashock:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Peter Van den Wyngaert, Ultrashock&lt;/h3&gt;
+&lt;h3 id=&#34;peter-van-den-wyngaert-ultrashock&#34;&gt;Peter Van den Wyngaert, Ultrashock&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Dean is a rare super adaptable guy to work with who keeps his promises!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;onne-stark:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Onne Stark&lt;/h3&gt;
+&lt;h3 id=&#34;onne-stark&#34;&gt;Onne Stark&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Dean offered his services when he just started out in the business. His persistence and knowledge made him a great admin at my site. Full of creative ideas and actually making results by establishing them. He took RapSearch to a new and more professional level. The design is great and the programming work is even better. The battle system he created for the boards is one of a kind and the best one out there.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;robert-dalgleish:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Robert Dalgleish&lt;/h3&gt;
+&lt;h3 id=&#34;robert-dalgleish&#34;&gt;Robert Dalgleish&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;I left a request for help to install a hack on my VB forum, previously I nearly lost my forum as I tried to install it myself. Dean replied, his fee was very reasonable and the hack was installed in minutes. Very fast and professional work for less than most charge.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;leonid-kogan:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Leonid Kogan&lt;/h3&gt;
+&lt;h3 id=&#34;leonid-kogan&#34;&gt;Leonid Kogan&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;High quality work done with care and fast! Dean integrated a journal system into our vBulletin forum. He was quick and professional and the end result was exactly what we wanted. I Would recommend Dean for any difficult, or time-sensitive job. If you are looking for efficiency and dedication, Dean is your man!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;steven-rolph:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Steven Rolph&lt;/h3&gt;
+&lt;h3 id=&#34;steven-rolph&#34;&gt;Steven Rolph&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;I hired Dean to design a series of graphics for our website. He was given a strict deadline to complete the project and not only did he complete it two days ahead of schedule, but he delivered a standard of work more impressive than we had imagined. Dean&amp;#8217;s great to work with, takes into account all of your needs, and intertwines them with his areas of expertise to deliver exactly what you want. I&amp;#8217;d reccomend him to anyone!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;ken-iovino-computerproblems-org:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Ken Iovino, ComputerProblems.org&lt;/h3&gt;
+&lt;h3 id=&#34;ken-iovino-computerproblems-org&#34;&gt;Ken Iovino, ComputerProblems.org&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;I just want to start by saying that his speed is what impressed me the most. And the customer service was excellent. We Hired Dean to add some features to our homepage portal. And let me tell you, The company and I were more than impressed. Dean is now the one source we turn to if we need anything extra added to our extending network of websites.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;scott-israel:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Scott Israel&lt;/h3&gt;
+&lt;h3 id=&#34;scott-israel&#34;&gt;Scott Israel&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;I don&amp;#8217;t normally write testomonials, however in this case I am more than happy to. Dean designed and set us up with a unique script to pull information from our forums to be displayed on our home page. I was very impressed with his courtesy and turn around time, which was less than one day! Dean is very knowledgeable and professional and he addressed all of our needs. I was even more impressed with his follow-up. He was prompt and professional and really helped us when new problems arose or needed advice. I&amp;#8217;d recommend him to anyone!&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;ryan-logtenberg-mytravelguide-com:b7f68cf574ad82296808284c9a6854e2&#34;&gt;Ryan Logtenberg, MyTravelGuide.com&lt;/h3&gt;
+&lt;h3 id=&#34;ryan-logtenberg-mytravelguide-com&#34;&gt;Ryan Logtenberg, MyTravelGuide.com&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Dean has been doing contract work for MyTravelGuide.com since November 2003. He has remained punctual with completion dates and conference calls, he has shown creativity in his programming abilities and has remained friendly and open minded with my needs.&lt;/p&gt;
@@ -593,7 +627,7 @@ maintenance for its elevators - and offers users a chance to win dinner at one o
 &lt;p&gt;As a programmer, I like to experiment and build tools to help make my life or others lives easier. On this page you&amp;rsquo;ll
 find some of the tools I have built.&lt;/p&gt;
 
-&lt;h3 id=&#34;silex-starter-pack:392b1cfe5865fa09a3eb545085be9682&#34;&gt;Silex starter pack&lt;/h3&gt;
+&lt;h3 id=&#34;silex-starter-pack&#34;&gt;Silex starter pack&lt;/h3&gt;
 
 &lt;p&gt;A boilerplate project to get you started quickly with the Silex PHP template. Features include:&lt;/p&gt;
 
@@ -606,7 +640,7 @@ find some of the tools I have built.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://github.com/deanc/silex-starter-pack&#34;&gt;The project is hosted on Github&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;silex-web-translator:392b1cfe5865fa09a3eb545085be9682&#34;&gt;Silex Web Translator&lt;/h3&gt;
+&lt;h3 id=&#34;silex-web-translator&#34;&gt;Silex Web Translator&lt;/h3&gt;
 
 &lt;p&gt;A simple provider for Silex which allows web-based translation of translation files.&lt;/p&gt;
 
@@ -677,9 +711,9 @@ actually being loaded:&lt;/p&gt;
       <guid>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</guid>
       <description>
 
-&lt;h2 id=&#34;yosemite-upgrade-guide-v1-0:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;Yosemite upgrade guide v1.0&lt;/h2&gt;
+&lt;h2 id=&#34;yosemite-upgrade-guide-v1-0&#34;&gt;Yosemite upgrade guide v1.0&lt;/h2&gt;
 
-&lt;h3 id=&#34;apache:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;Apache&lt;/h3&gt;
+&lt;h3 id=&#34;apache&#34;&gt;Apache&lt;/h3&gt;
 
 &lt;p&gt;Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the &lt;code&gt;/etc/apache/httpd.conf&lt;/code&gt; file. In this file you need to do a few things:&lt;/p&gt;
 
@@ -709,12 +743,12 @@ Remove them and change to:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;mysql:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;MySQL&lt;/h2&gt;
+&lt;h2 id=&#34;mysql&#34;&gt;MySQL&lt;/h2&gt;
 
 &lt;p&gt;It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
 Next, follow these instructions to &lt;a href=&#34;http://stackoverflow.com/a/26706416/775007&#34;&gt;launch MySQL automatically&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;phpstorm:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;PHPStorm&lt;/h2&gt;
+&lt;h2 id=&#34;phpstorm&#34;&gt;PHPStorm&lt;/h2&gt;
 
 &lt;p&gt;PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. &lt;a href=&#34;https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks&#34;&gt;More info here&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -728,7 +762,7 @@ Next, follow these instructions to &lt;a href=&#34;http://stackoverflow.com/a/26
       <guid>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</guid>
       <description>
 
-&lt;h3 id=&#34;overview:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Overview&lt;/h3&gt;
+&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
 
 &lt;p&gt;Cloudflare recently launched &lt;a href=&#34;https://blog.cloudflare.com/introducing-universal-ssl/&#34;&gt;the biggest deployment of SSL in the history of the internet&lt;/a&gt;,
 and better yet they made it free. For users, it&amp;rsquo;s as simple as flicking a switch, but there a few steps you should take
@@ -748,9 +782,9 @@ can make secure requests to download/cache your content.&lt;/li&gt;
 &lt;p&gt;Whilst Flexible SSL is great for most cases, ideally you should be using Full SSL. This post will walk you through on how
 to set that up.&lt;/p&gt;
 
-&lt;h3 id=&#34;instructions:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Instructions&lt;/h3&gt;
+&lt;h3 id=&#34;instructions&#34;&gt;Instructions&lt;/h3&gt;
 
-&lt;h4 id=&#34;part-1:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Part 1&lt;/h4&gt;
+&lt;h4 id=&#34;part-1&#34;&gt;Part 1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;First of all log in to your Cloudflare account and enable Flexible SSL.&lt;/li&gt;
@@ -761,7 +795,7 @@ and not &lt;code&gt;http://yourdomain.com&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Now go check your site and you should have a working SSL set up. If so continue to part two.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;part-2:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Part 2&lt;/h4&gt;
+&lt;h4 id=&#34;part-2&#34;&gt;Part 2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;We will now generate a self-signed certificate to install on your site. This
@@ -792,7 +826,7 @@ using the information there.&lt;/li&gt;
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer:&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;Guzzle&lt;/a&gt; however you wish, but I recommend using composer:&lt;/p&gt;
 
 &lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
@@ -830,8 +864,6 @@ using the information there.&lt;/li&gt;
 &lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;Don&amp;rsquo;t forget to put your constants somewhere.&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;http://guzzlephp.org/index.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -847,7 +879,7 @@ using the information there.&lt;/li&gt;
 
 &lt;p&gt;More worryingly, however, is that facebook now lets you tag how you are feeling. The only way to do this previously was using sentiment analysis where the text you type is analysed for keywords to detect the sentiment in what you are saying, or in other words how you are feeling. This is an extremely difficult problem to solve, far more than looking for keywords that try and figure out what you are doing. Now whenever you attach your &amp;#8220;feeling&amp;#8221; to a facebook post, facebook knows in that moment much more about you.&lt;/p&gt;
 
-&lt;p&gt;Facebook now has one of the biggest advertising platforms around, [bringing in revenue of $1.25 billion in Q1, 2013][2]. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
+&lt;p&gt;Facebook now has one of the biggest advertising platforms around, &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;bringing in revenue of $1.25 billion in Q1, 2013&lt;/a&gt;. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
 
 &lt;p&gt;The new changes to Facebook will most likely allow Facebook to allow advertisers to target advertising not only based on who you are, what you are interested in but how you are feeling at the time. Last week, Microsoft announced to gamers that their console would cost $100 more at launch than Sony&amp;rsquo;s. Gaming is a hot topic on social networks, so Sony could specifically target advertising at key moments where users on social media are &amp;#8220;feeling angry&amp;#8221; and have an interest in Microsoft&amp;rsquo;s console. Another example could be targeting people who are &amp;#8220;feeling tired&amp;#8221; with energy drinks.&lt;/p&gt;
 
@@ -855,27 +887,7 @@ using the information there.&lt;/li&gt;
 
 &lt;p&gt;Facebook has positioned itself to become the market leader in online advertising. Through its variety of methods they can target users far more accurately at a specific moment in time than any other advertiser currently can, and with the amount of users they have information on, and the amount of information they posses about them, revenues will continue to rise as advertisers realise the potential opportunities of the platform.&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;[2]: &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Web fonts not loading in Firefox</title>
-      <link>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</link>
-      <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
-      
-      <guid>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</guid>
-      <description>&lt;p&gt;I encountered a peculiar issue today regarding web fonts on firefox. On all browsers except Firefox the web fonts were loading correctly. I found multiple references suggesting that Firefox was picky with using quotes when referencing where the font file is hosted. However my findings were more interesting:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Firefox does not support embedding webfont files from a different domain&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The good news is the fix is simple. Simply send the following header:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    Access-Control-Allow-Origin *
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
     </item>
     
   </channel>

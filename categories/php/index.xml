@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/php.html</link>
-    <description>Recent content in Php on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/php.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/php.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -15,7 +14,7 @@
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer:&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;Guzzle&lt;/a&gt; however you wish, but I recommend using composer:&lt;/p&gt;
 
 &lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
@@ -53,8 +52,6 @@
 &lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;Don&amp;rsquo;t forget to put your constants somewhere.&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;http://guzzlephp.org/index.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -94,7 +91,7 @@
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
-      <description>&lt;p&gt;You should be using [custom constraints][1] to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:&lt;/p&gt;
+      <description>&lt;p&gt;You should be using &lt;a href=&#34;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&#34;&gt;custom constraints&lt;/a&gt; to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:&lt;/p&gt;
 
 &lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
 
@@ -102,8 +99,6 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;{% endhighlight %}&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&#34;&gt;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -150,7 +145,8 @@
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
-      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.&lt;/p&gt;
+      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
+&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Create a new form element&lt;/strong&gt;&lt;/p&gt;
 
@@ -204,8 +200,7 @@
       &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/table&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -214,7 +209,8 @@
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</guid>
-      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.&lt;/p&gt;
+      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.
+&lt;/p&gt;
 
 &lt;p&gt;We received an Italian translation file and I proceeded to import it until my colleague noticed a few translations were missing. Baffled, I looked into this further and debugged until I spotted some MySQL errors in the logs. The query looked fine, but gave MySQL error number 1366. After a bit of googling I came across users who had received a similar error and had put it down to character encoding issues. It turns out that the translation file had been saved as ISO 8859-1 (Latin-1) rather than UTF-8. It turned out that MySQL was actually refusing to execute the query because the target string I was inserting into a UTF-8 column wasn&amp;rsquo;t valid.&lt;/p&gt;
 
@@ -233,8 +229,7 @@
   &lt;/table&gt;
 &lt;/div&gt;
 
-&lt;p&gt;As a quick side note, omit the last parameter if you don&amp;rsquo;t want to be 100% strict.&lt;/p&gt;
-</description>
+&lt;p&gt;As a quick side note, omit the last parameter if you don&amp;rsquo;t want to be 100% strict.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -306,9 +301,7 @@
 &lt;a href=&#34;http://www.facebook.com/album.php?aid=2057793&amp;amp;id=1385949843&#34;&gt;http://www.facebook.com/album.php?aid=2057793&amp;amp;id=1385949843&lt;/a&gt; (Vitaly)&lt;br /&gt;
 &lt;a href=&#34;http://picasaweb.google.ch/109246690083550473241/JumpInCampBeerDinner?feat=directlink&#34;&gt;http://picasaweb.google.ch/109246690083550473241/JumpInCampBeerDinner?feat=directlink&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If anyone has any more photos please send me a [tweet][22]&lt;/p&gt;
-
-&lt;p&gt;[22]: &lt;a href=&#34;http://www.twitter.com/deanclatworthy&#34;&gt;http://www.twitter.com/deanclatworthy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If anyone has any more photos please send me a &lt;a href=&#34;http://www.twitter.com/deanclatworthy&#34;&gt;tweet&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

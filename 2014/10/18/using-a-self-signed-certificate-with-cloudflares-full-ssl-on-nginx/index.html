@@ -16,8 +16,12 @@
 	
 
 	
-	<meta name="description" content="Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure. Cloudflare offers two levels of SSL on their free package: Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page." />
-	<meta property="og:description" content="Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure. Cloudflare offers two levels of SSL on their free package: Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page." />
+	<meta name="description" content="Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure.
+Cloudflare offers two levels of SSL on their free package:
+ Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page." />
+	<meta property="og:description" content="Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure.
+Cloudflare offers two levels of SSL on their free package:
+ Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/">
@@ -111,6 +115,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -126,7 +136,7 @@
 			<article>
 				
 
-<h3 id="overview:20c4dc6a50d1fab9ccec72476dd0c471">Overview</h3>
+<h3 id="overview">Overview</h3>
 
 <p>Cloudflare recently launched <a href="https://blog.cloudflare.com/introducing-universal-ssl/">the biggest deployment of SSL in the history of the internet</a>,
 and better yet they made it free. For users, it&rsquo;s as simple as flicking a switch, but there a few steps you should take
@@ -146,9 +156,9 @@ can make secure requests to download/cache your content.</li>
 <p>Whilst Flexible SSL is great for most cases, ideally you should be using Full SSL. This post will walk you through on how
 to set that up.</p>
 
-<h3 id="instructions:20c4dc6a50d1fab9ccec72476dd0c471">Instructions</h3>
+<h3 id="instructions">Instructions</h3>
 
-<h4 id="part-1:20c4dc6a50d1fab9ccec72476dd0c471">Part 1</h4>
+<h4 id="part-1">Part 1</h4>
 
 <ul>
 <li>First of all log in to your Cloudflare account and enable Flexible SSL.</li>
@@ -159,7 +169,7 @@ and not <code>http://yourdomain.com</code></li>
 <li>Now go check your site and you should have a working SSL set up. If so continue to part two.</li>
 </ul>
 
-<h4 id="part-2:20c4dc6a50d1fab9ccec72476dd0c471">Part 2</h4>
+<h4 id="part-2">Part 2</h4>
 
 <ul>
 <li>We will now generate a self-signed certificate to install on your site. This

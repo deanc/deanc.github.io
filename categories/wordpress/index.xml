@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wordpress on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/wordpress.html</link>
-    <description>Recent content in Wordpress on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/wordpress.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jul 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/wordpress.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -31,9 +30,10 @@
       <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
       <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.
+&lt;/p&gt;
 
-&lt;p&gt;The first thing you want to do is install nginx and php5-fpm. Before you do this [add dotdeb to your sources list][3]. Don&amp;rsquo;t forget to update your packages.&lt;/p&gt;
+&lt;p&gt;The first thing you want to do is install nginx and php5-fpm. Before you do this &lt;a href=&#34;http://www.dotdeb.org/instructions/&#34;&gt;add dotdeb to your sources list&lt;/a&gt;. Don&amp;rsquo;t forget to update your packages.&lt;/p&gt;
 
 &lt;p&gt;Now we can install nginx and php5-fpm:&lt;/p&gt;
 
@@ -145,10 +145,7 @@
 &lt;pre&gt;&lt;code&gt;    ps aux | grep nginx
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Enjoy!&lt;/p&gt;
-
-&lt;p&gt;[3]: &lt;a href=&#34;http://www.dotdeb.org/instructions/&#34;&gt;http://www.dotdeb.org/instructions/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Enjoy!&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -160,7 +157,7 @@
       <description>&lt;p&gt;I have spent the last few hours taking a look at the Google Analytics for my blog and whilst doing so I realised that it&amp;rsquo;s logging a lot of stuff that I don&amp;rsquo;t need. This tutorial will allow you to exclude any traffic to your wordpress admin, or login script (that which you see before landing on the admin page) from your Google Analytics.&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Log into [Google Analytics][1]&lt;/li&gt;
+&lt;li&gt;Log into &lt;a href=&#34;http://www.google.com/analytics&#34;&gt;Google Analytics&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Click &amp;lsquo;Admin&amp;rsquo; in the top right.&lt;/li&gt;
 &lt;li&gt;Choose the account you wish to apply this filter to.&lt;/li&gt;
 &lt;li&gt;Chose the correct property (domain) you wish to apply this filter for.&lt;/li&gt;
@@ -170,8 +167,6 @@
 &lt;li&gt;Add another filter to exclude hits to the login script:
 &lt;br&gt;&lt;img class=&#34;alignnone size-full wp-image-275&#34; alt=&#34;Exclude wp-login.php from Google Analytics&#34; src=&#34;https://deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-29-at-3.51.09-PM.png&#34; /&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://www.google.com/analytics&#34;&gt;http://www.google.com/analytics&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -189,6 +184,8 @@
 &lt;li&gt;Load static pages if you can&lt;/li&gt;
 &lt;li&gt;Let the user cache everything if possible.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;The WP Super Cache plugin basically did all these things. What I didn&amp;rsquo;t like is that as I&amp;rsquo;m using  shared hosting for this simple blog, it cached pages to disk which isn&amp;rsquo;t as quick as caching to memcache or something more efficient. I also didn&amp;rsquo;t like how I had to go through a script to check to see if my minified and joined files were already cached and then make another read to disk. WP Super Cache does a great job at taking a bare bones WordPress and speeding it up on shared hosting but I wondered what else I could do.&lt;/p&gt;
 
@@ -210,14 +207,11 @@
 
 &lt;p&gt;Setting up your site to use Cloudflare is incredibly simple but make sure you disable any caching or minifying plugins before you begin. Because the Cloudflare setup process is so simple I&amp;rsquo;m not going to write a long tutorial with screenshots as they&amp;rsquo;ve made it so easy. All you&amp;rsquo;ll need to do is sign up, add your domain, check that it imported your DNS settings correctly (99% of you won&amp;rsquo;t need to change any of these values) then choose the Cloudflare features you want to enable. Finally, change your DNS to point at Cloudflare. You can do all of this within five minutes.&lt;/p&gt;
 
-&lt;p&gt;The way I measured my performance increase was using [Pingdom&amp;rsquo;s website performance tool][3]. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.&lt;/p&gt;
+&lt;p&gt;The way I measured my performance increase was using &lt;a href=&#34;http://tools.pingdom.com/fpt&#34;&gt;Pingdom&amp;rsquo;s website performance tool&lt;/a&gt;. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.&lt;/p&gt;
 
 &lt;p&gt;Finally, this is by no means an empirical test, but I believe that Cloudflare is a no brainer for anyone wanting to be able to deliver their WordPress site to a global audience in the quickest time possible.&lt;/p&gt;
 
-&lt;p&gt;Please let me know your results in the comments.&lt;/p&gt;
-
-&lt;p&gt;[3]: &lt;a href=&#34;http://tools.pingdom.com/fpt&#34;&gt;http://tools.pingdom.com/fpt&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Please let me know your results in the comments.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -244,11 +238,9 @@
 
 &lt;p&gt;Hopefully this should make life a little easier for those WordPress plugin developers who wish to manage their projects in GIT :)&lt;/p&gt;
 
-&lt;p&gt;[Download the script here][1]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/deanc/wordpress-plugin-git-svn&#34;&gt;Download the script here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Enjoy!&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;https://github.com/deanc/wordpress-plugin-git-svn&#34;&gt;https://github.com/deanc/wordpress-plugin-git-svn&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

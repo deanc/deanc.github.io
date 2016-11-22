@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Facebook on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/facebook.html</link>
-    <description>Recent content in Facebook on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/facebook.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Jun 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/facebook.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -21,7 +20,7 @@
 
 &lt;p&gt;More worryingly, however, is that facebook now lets you tag how you are feeling. The only way to do this previously was using sentiment analysis where the text you type is analysed for keywords to detect the sentiment in what you are saying, or in other words how you are feeling. This is an extremely difficult problem to solve, far more than looking for keywords that try and figure out what you are doing. Now whenever you attach your &amp;#8220;feeling&amp;#8221; to a facebook post, facebook knows in that moment much more about you.&lt;/p&gt;
 
-&lt;p&gt;Facebook now has one of the biggest advertising platforms around, [bringing in revenue of $1.25 billion in Q1, 2013][2]. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
+&lt;p&gt;Facebook now has one of the biggest advertising platforms around, &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;bringing in revenue of $1.25 billion in Q1, 2013&lt;/a&gt;. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
 
 &lt;p&gt;The new changes to Facebook will most likely allow Facebook to allow advertisers to target advertising not only based on who you are, what you are interested in but how you are feeling at the time. Last week, Microsoft announced to gamers that their console would cost $100 more at launch than Sony&amp;rsquo;s. Gaming is a hot topic on social networks, so Sony could specifically target advertising at key moments where users on social media are &amp;#8220;feeling angry&amp;#8221; and have an interest in Microsoft&amp;rsquo;s console. Another example could be targeting people who are &amp;#8220;feeling tired&amp;#8221; with energy drinks.&lt;/p&gt;
 
@@ -29,10 +28,7 @@
 
 &lt;p&gt;Facebook has positioned itself to become the market leader in online advertising. Through its variety of methods they can target users far more accurately at a specific moment in time than any other advertiser currently can, and with the amount of users they have information on, and the amount of information they posses about them, revenues will continue to rise as advertisers realise the potential opportunities of the platform.&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;[2]: &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
     </item>
     
     <item>

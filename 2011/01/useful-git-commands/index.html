@@ -16,8 +16,12 @@
 	
 
 	
-	<meta name="description" content="I&rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&rsquo;ll help you also. Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&rsquo;ll probably see something like this when you run git status # On branch devel # Your branch is ahead of origin/devel by 2 commits." />
-	<meta property="og:description" content="I&rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&rsquo;ll help you also. Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&rsquo;ll probably see something like this when you run git status # On branch devel # Your branch is ahead of origin/devel by 2 commits." />
+	<meta name="description" content="I&rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&rsquo;ll help you also.
+Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&rsquo;ll probably see something like this when you run git status
+ # On branch devel # Your branch is ahead of origin/devel by 2 commits." />
+	<meta property="og:description" content="I&rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&rsquo;ll help you also.
+Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&rsquo;ll probably see something like this when you run git status
+ # On branch devel # Your branch is ahead of origin/devel by 2 commits." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2011/01/useful-git-commands/">
@@ -111,6 +115,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -128,7 +138,7 @@
 
 <p>I&rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&rsquo;ll help you also.</p>
 
-<h2 id="scenario-1:91476d5cf2241beb856306a5640f4b1e">Scenario #1</h2>
+<h2 id="scenario-1">Scenario #1</h2>
 
 <p>You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&rsquo;ll probably see something like this when you run <code>git status</code></p>
 
@@ -143,14 +153,14 @@
 
 <p>This resets your current branch to an identical state of the current HEAD of the origin <branch></p>
 
-<h2 id="scenario-2:91476d5cf2241beb856306a5640f4b1e">Scenario #2</h2>
+<h2 id="scenario-2">Scenario #2</h2>
 
 <p>You have created a branch B from branch A and made a few commits. Assuming you write useful commit messages it&rsquo;s useful for other developers to see the changes you&rsquo;ve made and the features you&rsquo;ve added since you branched. To do this type the following command:</p>
 
 <pre><code>    git log $(git merge-base A B)..B #
 </code></pre>
 
-<h2 id="scenario-3:91476d5cf2241beb856306a5640f4b1e">Scenario #3</h2>
+<h2 id="scenario-3">Scenario #3</h2>
 
 <p>List all branches, ordered by last-commit date (with last-commit date visible):</p>
 

@@ -113,6 +113,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -126,7 +132,8 @@
 			
 
 			<article>
-				<p>Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.</p>
+				<p>Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.
+</p>
 
 <p>We received an Italian translation file and I proceeded to import it until my colleague noticed a few translations were missing. Baffled, I looked into this further and debugged until I spotted some MySQL errors in the logs. The query looked fine, but gave MySQL error number 1366. After a bit of googling I came across users who had received a similar error and had put it down to character encoding issues. It turns out that the translation file had been saved as ISO 8859-1 (Latin-1) rather than UTF-8. It turned out that MySQL was actually refusing to execute the query because the target string I was inserting into a UTF-8 column wasn&rsquo;t valid.</p>
 
@@ -146,7 +153,6 @@
 </div>
 
 <p>As a quick side note, omit the last parameter if you don&rsquo;t want to be 100% strict.</p>
-
 			</article>
 
 			

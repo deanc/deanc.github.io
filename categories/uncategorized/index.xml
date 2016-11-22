@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Uncategorized on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/uncategorized.html</link>
-    <description>Recent content in Uncategorized on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/uncategorized.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Apr 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/uncategorized.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -25,14 +24,11 @@
 
 &lt;p&gt;Next I reinstalled OSX from a bootable USB recovery drive. This installed 10.8.2 again which worked perfectly. I immediately upgraded to 10.8.3 and the no entry sign was back. This told me there was some issue with my hardware and 10.8.3. A quick google around found that Intel X25-M drives don&amp;rsquo;t work on 10.8.3 unless you upgrade to the most recent firmware. The good news is this is super easy.&lt;/p&gt;
 
-&lt;p&gt;Download the [Intel SSD toolbox][2] on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.&lt;/p&gt;
+&lt;p&gt;Download the &lt;a href=&#34;http://www.intel.com/go/ssdtoolbox&#34;&gt;Intel SSD toolbox&lt;/a&gt; on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.&lt;/p&gt;
 
 &lt;p&gt;Don&amp;rsquo;t do what I did and wipe your data, as there is no need!&lt;/p&gt;
 
-&lt;p&gt;Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.&lt;/p&gt;
-
-&lt;p&gt;[2]: &lt;a href=&#34;http://www.intel.com/go/ssdtoolbox&#34;&gt;http://www.intel.com/go/ssdtoolbox&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -67,10 +63,7 @@
 
 &lt;p&gt;Remember, when you add a site to this whitelist all plugins will run on it, so only add to this list if a site relies on a plugin to operate or it becomes really inconvenient having to click every time.&lt;/p&gt;
 
-&lt;p&gt;And that&amp;rsquo;s it! Enjoy browsing the web more safely and please give feedback in the comments or [follow me on twitter][10].&lt;/p&gt;
-
-&lt;p&gt;[10]: &lt;a href=&#34;https://twitter.com/deanclatworthy&#34;&gt;https://twitter.com/deanclatworthy&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;And that&amp;rsquo;s it! Enjoy browsing the web more safely and please give feedback in the comments or &lt;a href=&#34;https://twitter.com/deanclatworthy&#34;&gt;follow me on twitter&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -141,7 +134,8 @@
       <pubDate>Mon, 02 Jan 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</guid>
-      <description>&lt;p&gt;Occasionally on the [Hype Machine][1], a song is linked to in an external blog that no longer exists or the path has changed. If the song works when clicking play on HM then there&amp;rsquo;s a simple way to find out the URL and download it using Google Chrome as your browser.&lt;/p&gt;
+      <description>&lt;p&gt;Occasionally on the &lt;a href=&#34;http://hypem.com/&#34;&gt;Hype Machine&lt;/a&gt;, a song is linked to in an external blog that no longer exists or the path has changed. If the song works when clicking play on HM then there&amp;rsquo;s a simple way to find out the URL and download it using Google Chrome as your browser.
+&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Load up Chrome, and press Ctrl+Shit+I to open the WebKit Inspector.&lt;/li&gt;
@@ -151,10 +145,7 @@
 &lt;li&gt;You should see a few things scroll in the &amp;#8220;Network&amp;#8221; window and one of those will be the MP3 file. Right click it and open in a new tab. Chrome will begin to play the mp3. Right click it and click &amp;#8220;Save as&amp;#8221; and bada bing bada boom you have your MP3 :)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Enjoy!&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://hypem.com/&#34;&gt;http://hypem.com/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Enjoy!&lt;/p&gt;</description>
     </item>
     
     <item>

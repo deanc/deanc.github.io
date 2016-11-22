@@ -16,8 +16,18 @@
 	
 
 	
-	<meta name="description" content="I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer: {% highlight javascript %} { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } } {% endhighlight %} Then use the following code: {% highlight php startinline %} $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody()); {% endhighlight %} Don&rsquo;t forget to put your constants somewhere." />
-	<meta property="og:description" content="I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer: {% highlight javascript %} { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } } {% endhighlight %} Then use the following code: {% highlight php startinline %} $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody()); {% endhighlight %} Don&rsquo;t forget to put your constants somewhere." />
+	<meta name="description" content="I&rsquo;ll keep this brief. Install Guzzle however you wish, but I recommend using composer:
+{% highlight javascript %}
+ { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } }  {% endhighlight %}
+Then use the following code:
+{% highlight php startinline %}
+ $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody());  {% endhighlight %}" />
+	<meta property="og:description" content="I&rsquo;ll keep this brief. Install Guzzle however you wish, but I recommend using composer:
+{% highlight javascript %}
+ { &quot;require&quot;: { &quot;guzzle/guzzle&quot;: &quot;~3.1.1&quot; } }  {% endhighlight %}
+Then use the following code:
+{% highlight php startinline %}
+ $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&gt; &#39;1.1&#39; )); $twitter_client-&gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&gt;get(&#39;statuses/user_timeline.json&#39;); $request-&gt;getQuery()-&gt;set(&#39;count&#39;, 5); $request-&gt;getQuery()-&gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&gt;send(); $tweets = json_decode($response-&gt;getBody());  {% endhighlight %}" />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/">
@@ -111,6 +121,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -124,7 +140,7 @@
 			
 
 			<article>
-				<p>I&rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer:</p>
+				<p>I&rsquo;ll keep this brief. Install <a href="http://guzzlephp.org/index.html">Guzzle</a> however you wish, but I recommend using composer:</p>
 
 <p>{% highlight javascript %}</p>
 
@@ -162,8 +178,6 @@
 <p>{% endhighlight %}</p>
 
 <p>Don&rsquo;t forget to put your constants somewhere.</p>
-
-<p>[1]: <a href="http://guzzlephp.org/index.html">http://guzzlephp.org/index.html</a></p>
 
 			</article>
 

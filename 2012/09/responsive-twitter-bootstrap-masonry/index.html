@@ -16,8 +16,12 @@
 	
 
 	
-	<meta name="description" content="Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code: Javascript: $(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col" />
-	<meta property="og:description" content="Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code: Javascript: $(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col" />
+	<meta name="description" content="Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code:
+Javascript:
+ $(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &lt; 1200 &amp;&amp; width &gt;= 980) { col = 240; } else if(width &lt; 980 &amp;&amp; width &gt;= 768) { col = 186; } return col; } }); });  Demo (make sure you resize the frame in the bottom right):" />
+	<meta property="og:description" content="Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code:
+Javascript:
+ $(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &lt; 1200 &amp;&amp; width &gt;= 980) { col = 240; } else if(width &lt; 980 &amp;&amp; width &gt;= 768) { col = 186; } return col; } }); });  Demo (make sure you resize the frame in the bottom right):" />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/">
@@ -111,6 +115,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">

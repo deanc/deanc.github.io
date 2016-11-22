@@ -16,8 +16,10 @@
 	
 
 	
-	<meta name="description" content="I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end. In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twig: {% raw %} {# YourBundleName/Resources/views/Form/field_errors.html.twig #} {% block field_errors %} {% spaceless %} {% if errors|length &gt; 0 %} &lt;ul class=&quot;error_list&quot;&gt; {% for error in errors %} &lt;li&gt;{{ error.messageTemplate|trans(error.messageParameters, &#39;validators&#39;) }}&lt;/li&gt; {% endfor %} &lt;/ul&gt; {% endif %} {% endspaceless %} {% endblock field_errors %} {% endraw %} Then import this into your TWIG template like so: {% raw %} {% form_theme form &#39;&lt;YourNamespace&gt;&lt;BundleName&gt;:Form:field_errors.html.twig&#39; %} {% endraw %} One key point to note here is that you must concatenate your name space and bundle name." />
-	<meta property="og:description" content="I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end. In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twig: {% raw %} {# YourBundleName/Resources/views/Form/field_errors.html.twig #} {% block field_errors %} {% spaceless %} {% if errors|length &gt; 0 %} &lt;ul class=&quot;error_list&quot;&gt; {% for error in errors %} &lt;li&gt;{{ error.messageTemplate|trans(error.messageParameters, &#39;validators&#39;) }}&lt;/li&gt; {% endfor %} &lt;/ul&gt; {% endif %} {% endspaceless %} {% endblock field_errors %} {% endraw %} Then import this into your TWIG template like so: {% raw %} {% form_theme form &#39;&lt;YourNamespace&gt;&lt;BundleName&gt;:Form:field_errors.html.twig&#39; %} {% endraw %} One key point to note here is that you must concatenate your name space and bundle name." />
+	<meta name="description" content="I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.
+In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twig:" />
+	<meta property="og:description" content="I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.
+In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twig:" />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2012/08/theming-error-messages-in-symfony-2/">
@@ -111,6 +113,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">

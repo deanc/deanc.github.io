@@ -16,8 +16,14 @@
 	
 
 	
-	<meta name="description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things: Search for vhosts and uncomment the line: Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows: &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
-	<meta property="og:description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things: Search for vhosts and uncomment the line: Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows: &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+	<meta name="description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
+Search for vhosts and uncomment the line:
+ Include /private/etc/apache2/extra/httpd-vhosts.conf  Also find the &lt;Directory /&gt; block and make sure it reads as follows:
+ &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt;  Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+	<meta property="og:description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
+Search for vhosts and uncomment the line:
+ Include /private/etc/apache2/extra/httpd-vhosts.conf  Also find the &lt;Directory /&gt; block and make sure it reads as follows:
+ &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt;  Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/">
@@ -111,6 +117,12 @@
 </div>
 
 <div class="container">
+
+    <div class="alert alert-success">
+        <p>I'm currently participating in a competition to go on a 300km, dog-sledding arctic expedition. If you found anything useful here, I'd really appreciate your vote (it takes only a few seconds and a FB login).</p><br>
+        <p><a href="http://bitly.com/vote-dean" target="_blank">Vote</a></p>
+    </div>
+
 		<main>
 
 			<div class="page-header">
@@ -126,9 +138,9 @@
 			<article>
 				
 
-<h2 id="yosemite-upgrade-guide-v1-0:c68ffd1514c2a6d269ef0b7be96f54c4">Yosemite upgrade guide v1.0</h2>
+<h2 id="yosemite-upgrade-guide-v1-0">Yosemite upgrade guide v1.0</h2>
 
-<h3 id="apache:c68ffd1514c2a6d269ef0b7be96f54c4">Apache</h3>
+<h3 id="apache">Apache</h3>
 
 <p>Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the <code>/etc/apache/httpd.conf</code> file. In this file you need to do a few things:</p>
 
@@ -158,12 +170,12 @@ Remove them and change to:</p>
 <pre><code>    sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
 </code></pre>
 
-<h2 id="mysql:c68ffd1514c2a6d269ef0b7be96f54c4">MySQL</h2>
+<h2 id="mysql">MySQL</h2>
 
 <p>It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
 Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/775007">launch MySQL automatically</a>.</p>
 
-<h2 id="phpstorm:c68ffd1514c2a6d269ef0b7be96f54c4">PHPStorm</h2>
+<h2 id="phpstorm">PHPStorm</h2>
 
 <p>PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. <a href="https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks">More info here</a></p>
 

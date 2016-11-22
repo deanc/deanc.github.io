@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Microsoft on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/microsoft.html</link>
-    <description>Recent content in Microsoft on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/microsoft.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 May 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/microsoft.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -108,9 +107,7 @@
 &lt;a href=&#34;http://www.facebook.com/album.php?aid=2057793&amp;amp;id=1385949843&#34;&gt;http://www.facebook.com/album.php?aid=2057793&amp;amp;id=1385949843&lt;/a&gt; (Vitaly)&lt;br /&gt;
 &lt;a href=&#34;http://picasaweb.google.ch/109246690083550473241/JumpInCampBeerDinner?feat=directlink&#34;&gt;http://picasaweb.google.ch/109246690083550473241/JumpInCampBeerDinner?feat=directlink&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;If anyone has any more photos please send me a [tweet][22]&lt;/p&gt;
-
-&lt;p&gt;[22]: &lt;a href=&#34;http://www.twitter.com/deanclatworthy&#34;&gt;http://www.twitter.com/deanclatworthy&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If anyone has any more photos please send me a &lt;a href=&#34;http://www.twitter.com/deanclatworthy&#34;&gt;tweet&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

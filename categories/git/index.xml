@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/git.html</link>
-    <description>Recent content in Git on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/git.xml</link>
+    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://deanclatworthy.com/categories/git.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -44,7 +43,7 @@
 
 &lt;p&gt;I&amp;rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&amp;rsquo;ll help you also.&lt;/p&gt;
 
-&lt;h2 id=&#34;scenario-1:91476d5cf2241beb856306a5640f4b1e&#34;&gt;Scenario #1&lt;/h2&gt;
+&lt;h2 id=&#34;scenario-1&#34;&gt;Scenario #1&lt;/h2&gt;
 
 &lt;p&gt;You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&amp;rsquo;ll probably see something like this when you run &lt;code&gt;git status&lt;/code&gt;&lt;/p&gt;
 
@@ -59,14 +58,14 @@
 
 &lt;p&gt;This resets your current branch to an identical state of the current HEAD of the origin &lt;branch&gt;&lt;/p&gt;
 
-&lt;h2 id=&#34;scenario-2:91476d5cf2241beb856306a5640f4b1e&#34;&gt;Scenario #2&lt;/h2&gt;
+&lt;h2 id=&#34;scenario-2&#34;&gt;Scenario #2&lt;/h2&gt;
 
 &lt;p&gt;You have created a branch B from branch A and made a few commits. Assuming you write useful commit messages it&amp;rsquo;s useful for other developers to see the changes you&amp;rsquo;ve made and the features you&amp;rsquo;ve added since you branched. To do this type the following command:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;    git log $(git merge-base A B)..B #
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;scenario-3:91476d5cf2241beb856306a5640f4b1e&#34;&gt;Scenario #3&lt;/h2&gt;
+&lt;h2 id=&#34;scenario-3&#34;&gt;Scenario #3&lt;/h2&gt;
 
 &lt;p&gt;List all branches, ordered by last-commit date (with last-commit date visible):&lt;/p&gt;
 
@@ -99,11 +98,9 @@
 
 &lt;p&gt;Hopefully this should make life a little easier for those WordPress plugin developers who wish to manage their projects in GIT :)&lt;/p&gt;
 
-&lt;p&gt;[Download the script here][1]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/deanc/wordpress-plugin-git-svn&#34;&gt;Download the script here&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Enjoy!&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;https://github.com/deanc/wordpress-plugin-git-svn&#34;&gt;https://github.com/deanc/wordpress-plugin-git-svn&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
