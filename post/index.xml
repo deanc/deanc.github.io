@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/post.html</link>
-    <description>Recent content in Posts on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Post-rsses on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/post.xml</link>
+    <description>Recent content in Post-rsses on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
@@ -30,11 +30,11 @@ it&amp;rsquo;s still to slow for your taste and you feel like trying something n
 &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;set up hugo&lt;/a&gt; first. I&amp;rsquo;ll now outline the things that caught me off-guard
 when trying to migrate my content and theme.&lt;/p&gt;
 
-&lt;h3 id=&#34;using-html-extensions-for-pages:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;Using *.html extensions for pages&lt;/h3&gt;
+&lt;h3 id=&#34;using-html-extensions-for-pages&#34;&gt;Using *.html extensions for pages&lt;/h3&gt;
 
 &lt;p&gt;Set up &lt;code&gt;uglyURLs: &amp;quot;true&amp;quot;&lt;/code&gt; in your &lt;code&gt;config.yml&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h3 id=&#34;migrating-your-post-urls:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;Migrating your post URLs&lt;/h3&gt;
+&lt;h3 id=&#34;migrating-your-post-urls&#34;&gt;Migrating your post URLs&lt;/h3&gt;
 
 &lt;p&gt;Follow this checklist:
 * Move all your posts under &lt;code&gt;content/post&lt;/code&gt;
@@ -49,14 +49,14 @@ when trying to migrate my content and theme.&lt;/p&gt;
 &lt;p&gt;The downside to this is that a) you must define a &lt;code&gt;date&lt;/code&gt; key in your front-matter &amp;amp; b) the slug that is generated
 may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.&lt;/p&gt;
 
-&lt;h3 id=&#34;how-to-access-the-current-date-in-templates:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to access the current date in templates&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-access-the-current-date-in-templates&#34;&gt;How to access the current date in templates&lt;/h3&gt;
 
 &lt;p&gt;This is pretty straightforward:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;{{ .Date.Format &amp;quot;2006&amp;quot; }}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;how-to-create-a-global-site-menu:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to create a global site menu&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-create-a-global-site-menu&#34;&gt;How to create a global site menu&lt;/h3&gt;
 
 &lt;p&gt;The documentation on menus is pretty good but here&amp;rsquo;s some info on quickly setting it up. Define your homepage URL in
 &lt;code&gt;config.yml&lt;/code&gt; if you want it to appear in the menu:&lt;/p&gt;
@@ -79,7 +79,7 @@ for the content e.g.&lt;/p&gt;
 
 &lt;p&gt;The weight is basically a display order.&lt;/p&gt;
 
-&lt;h3 id=&#34;how-to-not-go-insane-when-generating-meta-title-description-tags:f43ae83312b4adba3b464c359e0e8afd&#34;&gt;How to not go insane when generating meta title/description tags&lt;/h3&gt;
+&lt;h3 id=&#34;how-to-not-go-insane-when-generating-meta-title-description-tags&#34;&gt;How to not go insane when generating meta title/description tags&lt;/h3&gt;
 
 &lt;p&gt;Just use this:&lt;/p&gt;
 
@@ -181,9 +181,9 @@ actually being loaded:&lt;/p&gt;
       <guid>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</guid>
       <description>
 
-&lt;h2 id=&#34;yosemite-upgrade-guide-v1-0:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;Yosemite upgrade guide v1.0&lt;/h2&gt;
+&lt;h2 id=&#34;yosemite-upgrade-guide-v1-0&#34;&gt;Yosemite upgrade guide v1.0&lt;/h2&gt;
 
-&lt;h3 id=&#34;apache:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;Apache&lt;/h3&gt;
+&lt;h3 id=&#34;apache&#34;&gt;Apache&lt;/h3&gt;
 
 &lt;p&gt;Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the &lt;code&gt;/etc/apache/httpd.conf&lt;/code&gt; file. In this file you need to do a few things:&lt;/p&gt;
 
@@ -213,12 +213,12 @@ Remove them and change to:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;mysql:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;MySQL&lt;/h2&gt;
+&lt;h2 id=&#34;mysql&#34;&gt;MySQL&lt;/h2&gt;
 
 &lt;p&gt;It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
 Next, follow these instructions to &lt;a href=&#34;http://stackoverflow.com/a/26706416/775007&#34;&gt;launch MySQL automatically&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;phpstorm:c68ffd1514c2a6d269ef0b7be96f54c4&#34;&gt;PHPStorm&lt;/h2&gt;
+&lt;h2 id=&#34;phpstorm&#34;&gt;PHPStorm&lt;/h2&gt;
 
 &lt;p&gt;PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. &lt;a href=&#34;https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks&#34;&gt;More info here&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -232,7 +232,7 @@ Next, follow these instructions to &lt;a href=&#34;http://stackoverflow.com/a/26
       <guid>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</guid>
       <description>
 
-&lt;h3 id=&#34;overview:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Overview&lt;/h3&gt;
+&lt;h3 id=&#34;overview&#34;&gt;Overview&lt;/h3&gt;
 
 &lt;p&gt;Cloudflare recently launched &lt;a href=&#34;https://blog.cloudflare.com/introducing-universal-ssl/&#34;&gt;the biggest deployment of SSL in the history of the internet&lt;/a&gt;,
 and better yet they made it free. For users, it&amp;rsquo;s as simple as flicking a switch, but there a few steps you should take
@@ -252,9 +252,9 @@ can make secure requests to download/cache your content.&lt;/li&gt;
 &lt;p&gt;Whilst Flexible SSL is great for most cases, ideally you should be using Full SSL. This post will walk you through on how
 to set that up.&lt;/p&gt;
 
-&lt;h3 id=&#34;instructions:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Instructions&lt;/h3&gt;
+&lt;h3 id=&#34;instructions&#34;&gt;Instructions&lt;/h3&gt;
 
-&lt;h4 id=&#34;part-1:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Part 1&lt;/h4&gt;
+&lt;h4 id=&#34;part-1&#34;&gt;Part 1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;First of all log in to your Cloudflare account and enable Flexible SSL.&lt;/li&gt;
@@ -265,7 +265,7 @@ and not &lt;code&gt;http://yourdomain.com&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;Now go check your site and you should have a working SSL set up. If so continue to part two.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;part-2:20c4dc6a50d1fab9ccec72476dd0c471&#34;&gt;Part 2&lt;/h4&gt;
+&lt;h4 id=&#34;part-2&#34;&gt;Part 2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;We will now generate a self-signed certificate to install on your site. This
@@ -296,7 +296,7 @@ using the information there.&lt;/li&gt;
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
-      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install [Guzzle][1] however you wish, but I recommend using composer:&lt;/p&gt;
+      <description>&lt;p&gt;I&amp;rsquo;ll keep this brief. Install &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;Guzzle&lt;/a&gt; however you wish, but I recommend using composer:&lt;/p&gt;
 
 &lt;p&gt;{% highlight javascript %}&lt;/p&gt;
 
@@ -334,8 +334,6 @@ using the information there.&lt;/li&gt;
 &lt;p&gt;{% endhighlight %}&lt;/p&gt;
 
 &lt;p&gt;Don&amp;rsquo;t forget to put your constants somewhere.&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://guzzlephp.org/index.html&#34;&gt;http://guzzlephp.org/index.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -351,7 +349,7 @@ using the information there.&lt;/li&gt;
 
 &lt;p&gt;More worryingly, however, is that facebook now lets you tag how you are feeling. The only way to do this previously was using sentiment analysis where the text you type is analysed for keywords to detect the sentiment in what you are saying, or in other words how you are feeling. This is an extremely difficult problem to solve, far more than looking for keywords that try and figure out what you are doing. Now whenever you attach your &amp;#8220;feeling&amp;#8221; to a facebook post, facebook knows in that moment much more about you.&lt;/p&gt;
 
-&lt;p&gt;Facebook now has one of the biggest advertising platforms around, [bringing in revenue of $1.25 billion in Q1, 2013][2]. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
+&lt;p&gt;Facebook now has one of the biggest advertising platforms around, &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;bringing in revenue of $1.25 billion in Q1, 2013&lt;/a&gt;. You&amp;rsquo;ve long been able to target demographics in Facebook as they know so much about you. If you had a new hair spray piloting in the United States, you could target 18-21 year old Females, living in the US. Facebook even allows you to specifically target users based on their interests, so in this example the advertiser might target girls interested in beauty, or hair styling.&lt;/p&gt;
 
 &lt;p&gt;The new changes to Facebook will most likely allow Facebook to allow advertisers to target advertising not only based on who you are, what you are interested in but how you are feeling at the time. Last week, Microsoft announced to gamers that their console would cost $100 more at launch than Sony&amp;rsquo;s. Gaming is a hot topic on social networks, so Sony could specifically target advertising at key moments where users on social media are &amp;#8220;feeling angry&amp;#8221; and have an interest in Microsoft&amp;rsquo;s console. Another example could be targeting people who are &amp;#8220;feeling tired&amp;#8221; with energy drinks.&lt;/p&gt;
 
@@ -359,10 +357,7 @@ using the information there.&lt;/li&gt;
 
 &lt;p&gt;Facebook has positioned itself to become the market leader in online advertising. Through its variety of methods they can target users far more accurately at a specific moment in time than any other advertiser currently can, and with the amount of users they have information on, and the amount of information they posses about them, revenues will continue to rise as advertisers realise the potential opportunities of the platform.&lt;/p&gt;
 
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-
-&lt;p&gt;[2]: &lt;a href=&#34;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&#34;&gt;http://techcrunch.com/2013/05/01/facebook-mobile-ad-revenue/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -433,7 +428,7 @@ using the information there.&lt;/li&gt;
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
-      <description>&lt;p&gt;You should be using [custom constraints][1] to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:&lt;/p&gt;
+      <description>&lt;p&gt;You should be using &lt;a href=&#34;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&#34;&gt;custom constraints&lt;/a&gt; to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:&lt;/p&gt;
 
 &lt;p&gt;{% highlight php startinline %}&lt;/p&gt;
 
@@ -441,8 +436,6 @@ using the information there.&lt;/li&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;{% endhighlight %}&lt;/p&gt;
-
-&lt;p&gt;[1]: &lt;a href=&#34;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&#34;&gt;http://symfony.com/doc/master/cookbook/validation/custom_constraint.html&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -491,14 +484,11 @@ using the information there.&lt;/li&gt;
 
 &lt;p&gt;Next I reinstalled OSX from a bootable USB recovery drive. This installed 10.8.2 again which worked perfectly. I immediately upgraded to 10.8.3 and the no entry sign was back. This told me there was some issue with my hardware and 10.8.3. A quick google around found that Intel X25-M drives don&amp;rsquo;t work on 10.8.3 unless you upgrade to the most recent firmware. The good news is this is super easy.&lt;/p&gt;
 
-&lt;p&gt;Download the [Intel SSD toolbox][2] on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.&lt;/p&gt;
+&lt;p&gt;Download the &lt;a href=&#34;http://www.intel.com/go/ssdtoolbox&#34;&gt;Intel SSD toolbox&lt;/a&gt; on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.&lt;/p&gt;
 
 &lt;p&gt;Don&amp;rsquo;t do what I did and wipe your data, as there is no need!&lt;/p&gt;
 
-&lt;p&gt;Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.&lt;/p&gt;
-
-&lt;p&gt;[2]: &lt;a href=&#34;http://www.intel.com/go/ssdtoolbox&#34;&gt;http://www.intel.com/go/ssdtoolbox&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -509,9 +499,10 @@ using the information there.&lt;/li&gt;
       <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
       <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.
+&lt;/p&gt;
 
-&lt;p&gt;The first thing you want to do is install nginx and php5-fpm. Before you do this [add dotdeb to your sources list][3]. Don&amp;rsquo;t forget to update your packages.&lt;/p&gt;
+&lt;p&gt;The first thing you want to do is install nginx and php5-fpm. Before you do this &lt;a href=&#34;http://www.dotdeb.org/instructions/&#34;&gt;add dotdeb to your sources list&lt;/a&gt;. Don&amp;rsquo;t forget to update your packages.&lt;/p&gt;
 
 &lt;p&gt;Now we can install nginx and php5-fpm:&lt;/p&gt;
 
@@ -623,10 +614,7 @@ using the information there.&lt;/li&gt;
 &lt;pre&gt;&lt;code&gt;    ps aux | grep nginx
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Enjoy!&lt;/p&gt;
-
-&lt;p&gt;[3]: &lt;a href=&#34;http://www.dotdeb.org/instructions/&#34;&gt;http://www.dotdeb.org/instructions/&lt;/a&gt;&lt;/p&gt;
-</description>
+&lt;p&gt;Enjoy!&lt;/p&gt;</description>
     </item>
     
   </channel>
