@@ -66,6 +66,11 @@
 
 window.onload = function () {
 
+    document.querySelector(".blog-nav-toggle").addEventListener("click", function (e) {
+
+        document.querySelector("ul.blog-nav").classList.toggle("open");
+    });
+
     var thumbnails = document.querySelectorAll(".thumbnail");
     for (var i = 0; i < thumbnails.length; i++) {
         thumbnails[i].addEventListener("click", function(e) {

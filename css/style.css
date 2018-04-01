@@ -53,6 +53,28 @@ ul.blog-nav li a {
     padding: 10px; display: block;
 }
 
+ul.blog-nav.open {
+    display: block;
+}
+
+@media (max-width: 767px) {
+
+    ul.blog-nav {
+        margin: 0 -15px;
+        border-top: 1px solid #666;
+        clear: both;
+    }
+
+    ul.blog-nav li a {
+        padding-left: 15px;
+        border-bottom: 1px solid #666;
+    }
+}
+
+.blog-nav-toggle {
+    float: right;
+}
+
 ul.blog-nav li {
     padding: 0;
 }
