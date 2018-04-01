@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://deanclatworthy.com/index.html</loc>
-    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</loc>
@@ -217,13 +213,259 @@
   </url>
   
   <url>
-    <loc>https://deanclatworthy.com/2010/04/13/hello-world/</loc>
+    <loc>https://deanclatworthy.com/2010/04/13/hello-world.html</loc>
     <lastmod>2010-04-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://deanclatworthy.com/2010/04/jump-in-camp/</loc>
     <lastmod>2010-04-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/apache.html</loc>
+    <lastmod>2013-02-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/bash.html</loc>
+    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/bitbucket.html</loc>
+    <lastmod>2013-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/bootstrap.html</loc>
+    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories.html</loc>
+    <lastmod>2013-02-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/css.html</loc>
+    <lastmod>2013-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/debian.html</loc>
+    <lastmod>2013-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/facebook.html</loc>
+    <lastmod>2013-06-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/firefox.html</loc>
+    <lastmod>2013-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/git.html</loc>
+    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/github.html</loc>
+    <lastmod>2013-01-14T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/google-chrome.html</loc>
+    <lastmod>2011-09-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/</loc>
+    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/hugo.html</loc>
+    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/internet-explorer.html</loc>
+    <lastmod>2013-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/javascript.html</loc>
+    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/jekyll.html</loc>
+    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/linux.html</loc>
+    <lastmod>2013-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/microsoft.html</loc>
+    <lastmod>2013-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/nginx.html</loc>
+    <lastmod>2013-02-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/osx.html</loc>
+    <lastmod>2013-01-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/photoshop.html</loc>
+    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/php.html</loc>
+    <lastmod>2013-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/php-mysql-error-utf8.html</loc>
+    <lastmod>2011-06-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/post.html</loc>
+    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/random.html</loc>
+    <lastmod>2010-04-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/ruby.html</loc>
+    <lastmod>2012-12-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/ruby-gems.html</loc>
+    <lastmod>2012-12-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/selenium.html</loc>
+    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/selenium-ide.html</loc>
+    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/silex.html</loc>
+    <lastmod>2013-05-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/ssh.html</loc>
+    <lastmod>2013-01-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/symfony-2.html</loc>
+    <lastmod>2012-08-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/symfony2.html</loc>
+    <lastmod>2013-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags.html</loc>
+    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/testing.html</loc>
+    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/twitter.html</loc>
+    <lastmod>2013-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/uncategorized.html</loc>
+    <lastmod>2013-04-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/webfonts.html</loc>
+    <lastmod>2013-06-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/wordpress.html</loc>
+    <lastmod>2013-07-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/categories/zend-framework.html</loc>
+    <lastmod>2012-07-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

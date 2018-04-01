@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/debian.xml</link>
-    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Debian on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/debian.html</link>
+    <description>Recent content in Debian on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://deanclatworthy.com/categories/debian.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 May 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deanclatworthy.com/categories/debian/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>How to install different locales on a fresh debian installation</title>
@@ -14,13 +17,8 @@
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</guid>
-      <description>&lt;p&gt;Simples:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    sudo dpkg-reconfigure locale
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will load a GUI where you should select the new locales to install, then follow the onscreen instructions.&lt;/p&gt;
-</description>
+      <description>Simples:
+ sudo dpkg-reconfigure locale  This will load a GUI where you should select the new locales to install, then follow the onscreen instructions.</description>
     </item>
     
   </channel>

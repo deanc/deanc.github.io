@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/tags/hugo.xml</link>
-    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Hugo on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/tags/hugo.html</link>
+    <description>Recent content in Hugo on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://deanclatworthy.com/tags/hugo.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deanclatworthy.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Migrating Jekyll to Hugo - my experience</title>
@@ -14,107 +17,8 @@
       <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</guid>
-      <description>
-
-&lt;p&gt;For those that haven&amp;rsquo;t yet heard about it &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is a lightning-fast, and powerful static generator
-built using golang. For the last couple of years I&amp;rsquo;ve used &lt;a href=&#34;https://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to build this site, but even
-with this few pages &amp;amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.&lt;/p&gt;
-
-&lt;p&gt;For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
-correctly first, specifically making sure you only
-&lt;a href=&#34;http://jekyllrb.com/docs/configuration/&#34;&gt;include/exclude relevent files from your build process&lt;/a&gt;. If you have, and
-it&amp;rsquo;s still to slow for your taste and you feel like trying something new then carry on reading below.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m not going to go through every little detail here on setting up hugo. The documentation is awesome so go
-&lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;set up hugo&lt;/a&gt; first. I&amp;rsquo;ll now outline the things that caught me off-guard
-when trying to migrate my content and theme.&lt;/p&gt;
-
-&lt;h3 id=&#34;using-html-extensions-for-pages&#34;&gt;Using *.html extensions for pages&lt;/h3&gt;
-
-&lt;p&gt;Set up &lt;code&gt;uglyURLs: &amp;quot;true&amp;quot;&lt;/code&gt; in your &lt;code&gt;config.yml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;migrating-your-post-urls&#34;&gt;Migrating your post URLs&lt;/h3&gt;
-
-&lt;p&gt;Follow this checklist:
-* Move all your posts under &lt;code&gt;content/post&lt;/code&gt;
-* Open up each file and make sure your front-matter contains the URL you want e.g. &lt;code&gt;url: /2012/01/how-to-rip-music-from-the-hype-machine/&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;An alternative to this is to configure permalinks for posts via &lt;code&gt;config.yml&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;permalinks:
-  post: /:year/:month/:day/:slug/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The downside to this is that a) you must define a &lt;code&gt;date&lt;/code&gt; key in your front-matter &amp;amp; b) the slug that is generated
-may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.&lt;/p&gt;
-
-&lt;h3 id=&#34;how-to-access-the-current-date-in-templates&#34;&gt;How to access the current date in templates&lt;/h3&gt;
-
-&lt;p&gt;This is pretty straightforward:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{ .Date.Format &amp;quot;2006&amp;quot; }}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;how-to-create-a-global-site-menu&#34;&gt;How to create a global site menu&lt;/h3&gt;
-
-&lt;p&gt;The documentation on menus is pretty good but here&amp;rsquo;s some info on quickly setting it up. Define your homepage URL in
-&lt;code&gt;config.yml&lt;/code&gt; if you want it to appear in the menu:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;menu:
-  main:
-      - Name: &amp;quot;Home&amp;quot;
-        Weight: 1
-        Identifier: &amp;quot;home&amp;quot;
-        URL: &amp;quot;/&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
-for the content e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;menu:
-  main:
-    weight: 60
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The weight is basically a display order.&lt;/p&gt;
-
-&lt;h3 id=&#34;how-to-not-go-insane-when-generating-meta-title-description-tags&#34;&gt;How to not go insane when generating meta title/description tags&lt;/h3&gt;
-
-&lt;p&gt;Just use this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;title&amp;gt;
-    {{ if isset .Params &amp;quot;og_title&amp;quot; }}
-    {{ .Params.og_title }}
-    {{ else if eq .URL &amp;quot;/&amp;quot; }}
-    {{ .Site.Params.TitleSuffix }}
-    {{ else if eq .Section &amp;quot;post&amp;quot; }}
-    {{ .Title }}
-    {{ else }}
-    {{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
-&amp;lt;/title&amp;gt;
-
-{{ if isset .Params &amp;quot;og_title&amp;quot; }}
-&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Params.og_title }}&amp;quot; /&amp;gt;
-{{ else if eq .URL &amp;quot;/&amp;quot; }}
-&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Params.TitleSuffix }}&amp;quot; /&amp;gt;
-{{ else if eq .Section &amp;quot;post&amp;quot; }}
-&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt;
-{{ else }}
-&amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&amp;quot; /&amp;gt;
-{{ end }}
-
-{{ if eq .URL &amp;quot;/&amp;quot; }}
-&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ .Site.Params.Tagline }}&amp;quot; /&amp;gt;
-&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ .Site.Params.Tagline }}&amp;quot; /&amp;gt;
-{{ else if eq .Section &amp;quot;post&amp;quot; }}
-&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ .Summary }}&amp;quot; /&amp;gt;
-&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ .Summary }}&amp;quot; /&amp;gt;
-{{ else }}
-&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;{{ .Description }}&amp;quot; /&amp;gt;
-&amp;lt;meta property=&amp;quot;og:description&amp;quot; content=&amp;quot;{{ .Description }}&amp;quot; /&amp;gt;
-{{ end }}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>For those that haven&amp;rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&amp;rsquo;ve used Jekyll to build this site, but even with this few pages &amp;amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
+For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process.</description>
     </item>
     
   </channel>

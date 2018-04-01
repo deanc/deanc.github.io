@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/symfony-2.xml</link>
-    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Symfony 2 on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/symfony-2.html</link>
+    <description>Recent content in Symfony 2 on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://deanclatworthy.com/categories/symfony-2.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Aug 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deanclatworthy.com/categories/symfony-2/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Theming/styling error messages in Symfony 2</title>
@@ -14,35 +17,8 @@
       <pubDate>Fri, 24 Aug 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/08/theming-error-messages-in-symfony-2/</guid>
-      <description>&lt;p&gt;I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.&lt;/p&gt;
-
-&lt;p&gt;In your SF2 bundle create a new file &lt;strong&gt;&lt;BundleName&gt;/Resources/views/Form/field_errors.html.twig&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    {% raw %}
-    {# YourBundleName/Resources/views/Form/field_errors.html.twig #}
-    {% block field_errors %}
-    {% spaceless %}
-    {% if errors|length &amp;gt; 0 %}
-    &amp;lt;ul class=&amp;quot;error_list&amp;quot;&amp;gt;
-        {% for error in errors %}
-        &amp;lt;li&amp;gt;{{ error.messageTemplate|trans(error.messageParameters, &#39;validators&#39;) }}&amp;lt;/li&amp;gt;
-        {% endfor %}
-    &amp;lt;/ul&amp;gt;
-    {% endif %}
-    {% endspaceless %}
-    {% endblock field_errors %}
-    {% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Then import this into your TWIG template like so:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{% raw %}
-{% form_theme form &#39;&amp;lt;YourNamespace&amp;gt;&amp;lt;BundleName&amp;gt;:Form:field_errors.html.twig&#39; %}
-{% endraw %}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;One key point to note here is that you must concatenate your name space and bundle name. So &lt;strong&gt;Namespace:BundleName&lt;/strong&gt; won&amp;rsquo;t work but &lt;strong&gt;NamespaceBundleName&lt;/strong&gt; will. This is the mistake I was making. It turns out that when you create a bundle it&amp;rsquo;s given an alias and by default it&amp;rsquo;s a concatenation of your namespace and bundlename, so when referencing it in TWIG it appears you need to use this alias.&lt;/p&gt;
-</description>
+      <description>I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.
+In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twig:</description>
     </item>
     
   </channel>

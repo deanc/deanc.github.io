@@ -29,6 +29,7 @@
 	
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/wallop/2.4.1/css/wallop.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/tomorrow-night.min.css">
 	<link rel="stylesheet" href="https://deanclatworthy.com/css/style.css">
 
@@ -128,11 +129,55 @@
 over the course of my career so far. I have worked with small businesses &amp; large corporations on their online presence
 and helped them become more successful as an online entity.</p>
 
-<p><i class="fa fa-trophy" style="color: #ffcc33"></i> I have won two webby awards, and one FWA public shortlist so far, for my work.</p>
+<p><i class="fa fa-trophy" style="color: #ffcc33"></i> I have won numerous awards for my work and will try to highlight them below.</p>
 
 <p>Below are some of my most recent clients &amp; projects.</p>
 
 <hr />
+
+<h3 id="kone-machine-conversations-part-1">KONE: Machine Conversations (Part 1)</h3>
+
+<p>[Agency: hasan &amp; partners] Our pitch was to bring KONE&rsquo;s 24/7 connected services offering to life
+in the form of converting the messages sent by their elevators into a live chat between the elevator
+and KONE&rsquo;s Cloud maintenance. This was a huge undertaking involving close liason with KONE&rsquo;s R&amp;D team.</p>
+
+<p>Messages are forwarded from IBM Bluemix to a listening service which stores all messages and adds them into
+an Amazon SQS queue. A series of worker processes then consume queue items and convert them into text
+conversations and their respective audio. The website then consumes these messages from an API and displays
+them.</p>
+
+<p>An interesting part of this process is how to go from raw data into chat messages. Messages are represented
+as a JSON object featuring all kinds of sensor data including what is happening to the elevator (moving floors, doors opening/closing etc.)
+and then things such as the speed of the elevator and the vibration. This JSON is decoded and then fed into
+Symfony&rsquo;s expression language. This allows content editors to generate chat messages based on what is actually
+happening in the message. For example an expression might look like so:
+<code>elevator.stop_floor &gt;= 0 and elevator.duration &gt;= 5 and elevator.duration &lt;= 35</code> and the corresponding chat
+message might be: <code>Arrived on floor elevator.stop_floor. Travel took elevator.duration seconds.</code> This allows
+us to generate an unlimited amount of variation of content for the chat.</p>
+
+<p>Technologies used: <span class="badge">PHP</span>, <span class="badge">MySQL</span>, <span class="badge">NodeJS</span>, <span class="badge">HTML5</span>, <span class="badge">CSS</span>, <span class="badge">JS</span>, <span class="badge">AWS S3</span>, <span class="badge">AWS SQS</span>, <span class="badge">IBM Bluemix Cloud</span></p>
+
+<div class="portfolio-assets well well-lg">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe src="//player.vimeo.com/video/262703629?byline=0&badge=0&portrait=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+</div>
+
+<h3 id="valio-skiing-pins">Valio: Skiing pins</h3>
+
+<p>[Agency: hasan &amp; partners] Similar to the Fazer Chocolate Hunt project, we utilised a database of outdoor shelter
+locations to create pins on a map that people and their families could visit during the winter months leading up
+to the world skiijumping championships - in order to claim the chance to win a range of prizes.</p>
+
+<p>Technologies used: PHP, MySQL, HTML5, CSS, Javascript</p>
+
+<h3 id="fazer-chocolate-hunt">Fazer: Chocolate Hunt</h3>
+
+<p>[Agency: hasan &amp; partners] For this project we placed virtual pins on a map throughout the course of a week, in a large
+number of locations allowing people to rush to the pins each day and claim a token to be redeemed for free chocolate in
+the Fazer cafe in central Helsinki.</p>
+
+<p>Technologies used: PHP, MySQL, HTML5, CSS, Javascript</p>
 
 <h3 id="tallinksilja-complaint-booth-banner">TallinkSilja: Complaint Booth + Banner</h3>
 
@@ -151,7 +196,7 @@ served millions of views over the course of 5 days.</p>
 
 <div class="portfolio-assets well well-lg">
     <div class="embed-responsive embed-responsive-16by9">
-        <iframe src="//player.vimeo.com/video/152961401?byline=0&badge=0&portrait=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="//player.vimeo.com/video/162279513?byline=0&badge=0&portrait=0&title=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
 </div>
 
@@ -415,6 +460,16 @@ maintenance for its elevators - and offers users a chance to win dinner at one o
 </div>
 </div>
 
+<script id="portfolio-slider" type="x-tmpl-mustache">
+<div class="Wallop">
+  <div class="Wallop-list">
+  {{{items}}}
+  </div>
+  <button class="Wallop-buttonPrevious"><</button>
+  <button class="Wallop-buttonNext">></button>
+</div>
+</script>
+
 			</article>
 
 			
@@ -424,13 +479,17 @@ maintenance for its elevators - and offers users a chance to win dinner at one o
 		</div>
 
 <div class="blog-footer">
-  <p>&copy; 2015 Dean Clatworthy</p>
+  <p>&copy; 2018 Dean Clatworthy</p>
   <p>
     <a href="#top">Back to top</a>
   </p>
 </div>
 
-<script src="//cdn.jsdelivr.net/g/jquery@2.1.4,bootstrap@3.3.5,highlight.js@8.8.0"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/picomodal/3.0.0/picoModal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wallop/2.4.1/js/Wallop.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
 <script src="https://deanclatworthy.com/js/scripts.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <script>

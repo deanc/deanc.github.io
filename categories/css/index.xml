@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/css.xml</link>
-    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Css on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/css.html</link>
+    <description>Recent content in Css on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://deanclatworthy.com/categories/css.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jun 2013 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deanclatworthy.com/categories/css/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Web fonts not loading in Firefox</title>
@@ -14,15 +17,9 @@
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</guid>
-      <description>&lt;p&gt;I encountered a peculiar issue today regarding web fonts on firefox. On all browsers except Firefox the web fonts were loading correctly. I found multiple references suggesting that Firefox was picky with using quotes when referencing where the font file is hosted. However my findings were more interesting:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Firefox does not support embedding webfont files from a different domain&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;The good news is the fix is simple. Simply send the following header:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    Access-Control-Allow-Origin *
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>I encountered a peculiar issue today regarding web fonts on firefox. On all browsers except Firefox the web fonts were loading correctly. I found multiple references suggesting that Firefox was picky with using quotes when referencing where the font file is hosted. However my findings were more interesting:
+Firefox does not support embedding webfont files from a different domain
+The good news is the fix is simple. Simply send the following header:</description>
     </item>
     
     <item>
@@ -33,19 +30,7 @@
       <guid>https://deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; This article is a little out-dated now, as Bootstrap is on version 3 featuring a completely different and fluid grid. It&amp;rsquo;s still applicable if you are working with the older Bootstrap (up to version 2.3.2)&lt;/p&gt;
 
-&lt;p&gt;One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&amp;rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its &lt;a href=&#34;http://getbootstrap.com/2.3.2/scaffolding.html#responsive&#34;&gt;scaffolding guide&lt;/a&gt; it talks about breakpoints at 1200px and 980px but you don&amp;rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid.&lt;/p&gt;
-
-&lt;p&gt;Furthermore, one has to then consider the margins in between the columns on the grid. Rather than leave this to interpretation I created this PSD template. You can just rip out the layers from it and put it on top of your existing design, or use it as a starting point to any of your designs which will utilise Bootstrap. It overlays a translucent grid for the top 3 bootstrap breakpoints: 1200px, 980px and 768px.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/bootstrap-guide/&#34; rel=&#34;attachment wp-att-288&#34;&gt;&lt;img class=&#34;alignnone size-large wp-image-288&#34; alt=&#34;Bootstrap-Guide&#34; src=&#34;//deanclatworthy.com/img/uploads/2013/01/Bootstrap-Guide-1024x682.png&#34; width=&#34;625&#34; height=&#34;416&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can utilise any of the space in green, but do not place anything on the leftmost or rightmost red areas.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;I should, at this point, also stress that if you can/want to use the fluid layout of Bootstrap then this template will obviously be of no use to you.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;You can download the template by clicking here:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://bit.ly/Z1jp00&#34;&gt;Download Now&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&amp;rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its &lt;a href=&#34;http://getbootstrap.com/2.3.2/scaffolding.html#responsive&#34;&gt;scaffolding guide&lt;/a&gt; it talks about breakpoints at 1200px and 980px but you don&amp;rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -54,19 +39,10 @@
       <pubDate>Mon, 19 Apr 2010 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2010/04/css-grid-layouts-using-hashgrid/</guid>
-      <description>&lt;p&gt;Just a heads up to anyone who&amp;rsquo;s planning on designing their next project using a grid. The folks over at &lt;a href=&#34;http://analog.coop/&#34;&gt;Analog&lt;/a&gt; have created a nifty little tool called &lt;a href=&#34;http://www.hashgrid.com&#34;&gt;Hashgrid&lt;/a&gt; to overlay a grid over your web page like so:&lt;/p&gt;
+      <description>Just a heads up to anyone who&amp;rsquo;s planning on designing their next project using a grid. The folks over at Analog have created a nifty little tool called Hashgrid to overlay a grid over your web page like so:
 
-&lt;p&gt;&lt;a href=&#34;//deanclatworthy.com/img/uploads/2010/04/hasgrid.jpg&#34;&gt;&lt;img src=&#34;//deanclatworthy.com/img/uploads/2010/04/hasgrid.jpg&#34; alt=&#34;&#34; title=&#34;hasgrid&#34; width=&#34;600&#34; height=&#34;385&#34; class=&#34;alignnone size-full wp-image-60&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Installation is pretty simple but I ran into a couple of minor issues which hopefully can be remedied in a future version:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The negative margin in the example is half the width of your grid, and whilst that&amp;rsquo;s probably obvious it may be worth adding a comment in the CSS on hashgrid.com just to make that clear&lt;/li&gt;
-&lt;li&gt;I had to add a high z-index to the #grid in the CSS to make sure it correctly overlayed my page. If your grid isn&amp;rsquo;t showing this is probably why.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The hardest part is creating the grid image in photoshop. The quickest way I found to do this is with the selection tool and guides. Once you&amp;rsquo;ve created your guides it takes a few seconds to use the line tool to draw over your guides. If I get some time I might create a quick tool to generate dynamic grid images unless the hashgrid folks want to beat me to it ;-)&lt;/p&gt;
-</description>
+Installation is pretty simple but I ran into a couple of minor issues which hopefully can be remedied in a future version:
+ The negative margin in the example is half the width of your grid, and whilst that&amp;rsquo;s probably obvious it may be worth adding a comment in the CSS on hashgrid.</description>
     </item>
     
   </channel>

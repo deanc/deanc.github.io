@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/selenium-ide.xml</link>
-    <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
+    <title>Selenium Ide on Hello. I&#39;m Dean Clatworthy</title>
+    <link>https://deanclatworthy.com/categories/selenium-ide.html</link>
+    <description>Recent content in Selenium Ide on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://deanclatworthy.com/categories/selenium-ide.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 25 Jan 2011 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://deanclatworthy.com/categories/selenium-ide/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Dynamic/Random Javascript values in Selenium IDE</title>
@@ -15,31 +18,7 @@
       
       <guid>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
       <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;br /&gt;
-&lt;/p&gt;
-
-&lt;div class=&#34;wp_syntax&#34;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td class=&#34;code&#34;&gt;
-        &lt;pre class=&#34;javascript&#34; style=&#34;font-family:monospace;&#34;&gt;javascript&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#91;&lt;/span&gt;code goes here&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#93;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;So let&amp;rsquo;s do this using a more practical example. You have a form where you can&amp;rsquo;t enter the same data twice for example a registration form would require a unique email address. So, record your test as normal, entering real data then once you&amp;rsquo;re finished go back and edit the &lt;code&gt;type&lt;/code&gt; command for the email address field and set the value to:&lt;/p&gt;
-
-&lt;div class=&#34;wp_syntax&#34;&gt;
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td class=&#34;code&#34;&gt;
-        &lt;pre class=&#34;javascript&#34; style=&#34;font-family:monospace;&#34;&gt;javascript&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#123;&lt;/span&gt;&lt;span style=&#34;color: #000066; font-weight: bold;&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;&#34;&gt;Date&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt;.&lt;span style=&#34;color: #660066;&#34;&gt;getTime&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#40;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#41;&lt;/span&gt; &lt;span style=&#34;color: #339933;&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #3366CC;&#34;&gt;&#34;@example.com&#34;&lt;/span&gt;&lt;span style=&#34;color: #009900;&#34;&gt;&amp;#125;&lt;/span&gt;&lt;/pre&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Now you have random data you can pass into your test to ensure it passes any unique validation tests every time.&lt;/p&gt;</description>
+&lt;/p&gt;</description>
     </item>
     
   </channel>
