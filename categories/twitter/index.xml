@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Twitter on Hello. I&#39;m Dean Clatworthy</title>
-    <link>/categories/twitter.html</link>
+    <link>https://deanclatworthy.com/categories/twitter.html</link>
     <description>Recent content in Twitter on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/twitter/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanclatworthy.com/categories/twitter/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)</title>
-      <link>/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</link>
+      <link>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
+      <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
       <description>I&amp;rsquo;ll keep this brief. Install Guzzle however you wish, but I recommend using composer:
 {% highlight javascript %}
  { &amp;quot;require&amp;quot;: { &amp;quot;guzzle/guzzle&amp;quot;: &amp;quot;~3.1.1&amp;quot; } }  {% endhighlight %}

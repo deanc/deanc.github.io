@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Hello. I&#39;m Dean Clatworthy</title>
-    <link>/categories/git.html</link>
+    <link>https://deanclatworthy.com/categories/git.html</link>
     <description>Recent content in Git on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanclatworthy.com/categories/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A bash alias to export a git repository to a zip file</title>
-      <link>/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</link>
+      <link>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
+      <guid>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
       <description>I&amp;rsquo;ll keep this short and sweet. This bash alias will allow you to export your git repo&amp;rsquo;s master branch to a zip file.
 To use it:
  Make sure that your work is committed. Make sure you are in the root directory of your project.  To make this script work run the following commands:
@@ -25,10 +25,10 @@ To use it:
     
     <item>
       <title>Useful GIT commands</title>
-      <link>/2011/01/useful-git-commands/</link>
+      <link>https://deanclatworthy.com/2011/01/useful-git-commands/</link>
       <pubDate>Mon, 24 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>/2011/01/useful-git-commands/</guid>
+      <guid>https://deanclatworthy.com/2011/01/useful-git-commands/</guid>
       <description>I&amp;rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&amp;rsquo;ll help you also.
 Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&amp;rsquo;ll probably see something like this when you run git status
  # On branch devel # Your branch is ahead of origin/devel by 2 commits.</description>
@@ -36,10 +36,10 @@ Scenario #1 You have accidentally made a few commits to a branch and you wish to
     
     <item>
       <title>WordPress plugin deployment script (GIT to SVN)</title>
-      <link>/2011/01/wordpress-plugin-deployment-script-git-to-svn/</link>
+      <link>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</link>
       <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>/2011/01/wordpress-plugin-deployment-script-git-to-svn/</guid>
+      <guid>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</guid>
       <description>Short Version: This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN.
 Long Version:
 Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository.</description>

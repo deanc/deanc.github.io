@@ -2,291 +2,291 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Hello. I&#39;m Dean Clatworthy</title>
-    <link>/categories.html</link>
+    <link>https://deanclatworthy.com/categories.html</link>
     <description>Recent content in Categories on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Feb 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanclatworthy.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Apache</title>
-      <link>/categories/apache.html</link>
+      <link>https://deanclatworthy.com/categories/apache.html</link>
       <pubDate>Thu, 28 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/apache.html</guid>
+      <guid>https://deanclatworthy.com/categories/apache.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bash</title>
-      <link>/categories/bash.html</link>
+      <link>https://deanclatworthy.com/categories/bash.html</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/bash.html</guid>
+      <guid>https://deanclatworthy.com/categories/bash.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bitbucket</title>
-      <link>/categories/bitbucket.html</link>
+      <link>https://deanclatworthy.com/categories/bitbucket.html</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/bitbucket.html</guid>
+      <guid>https://deanclatworthy.com/categories/bitbucket.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Bootstrap</title>
-      <link>/categories/bootstrap.html</link>
+      <link>https://deanclatworthy.com/categories/bootstrap.html</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/bootstrap.html</guid>
+      <guid>https://deanclatworthy.com/categories/bootstrap.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Css</title>
-      <link>/categories/css.html</link>
+      <link>https://deanclatworthy.com/categories/css.html</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/css.html</guid>
+      <guid>https://deanclatworthy.com/categories/css.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Debian</title>
-      <link>/categories/debian.html</link>
+      <link>https://deanclatworthy.com/categories/debian.html</link>
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/debian.html</guid>
+      <guid>https://deanclatworthy.com/categories/debian.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Facebook</title>
-      <link>/categories/facebook.html</link>
+      <link>https://deanclatworthy.com/categories/facebook.html</link>
       <pubDate>Tue, 18 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/facebook.html</guid>
+      <guid>https://deanclatworthy.com/categories/facebook.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Firefox</title>
-      <link>/categories/firefox.html</link>
+      <link>https://deanclatworthy.com/categories/firefox.html</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/firefox.html</guid>
+      <guid>https://deanclatworthy.com/categories/firefox.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>/categories/git.html</link>
+      <link>https://deanclatworthy.com/categories/git.html</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/git.html</guid>
+      <guid>https://deanclatworthy.com/categories/git.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Github</title>
-      <link>/categories/github.html</link>
+      <link>https://deanclatworthy.com/categories/github.html</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/github.html</guid>
+      <guid>https://deanclatworthy.com/categories/github.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Google Chrome</title>
-      <link>/categories/google-chrome.html</link>
+      <link>https://deanclatworthy.com/categories/google-chrome.html</link>
       <pubDate>Sat, 10 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>/categories/google-chrome.html</guid>
+      <guid>https://deanclatworthy.com/categories/google-chrome.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Internet Explorer</title>
-      <link>/categories/internet-explorer.html</link>
+      <link>https://deanclatworthy.com/categories/internet-explorer.html</link>
       <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/internet-explorer.html</guid>
+      <guid>https://deanclatworthy.com/categories/internet-explorer.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>/categories/linux.html</link>
+      <link>https://deanclatworthy.com/categories/linux.html</link>
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/linux.html</guid>
+      <guid>https://deanclatworthy.com/categories/linux.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Microsoft</title>
-      <link>/categories/microsoft.html</link>
+      <link>https://deanclatworthy.com/categories/microsoft.html</link>
       <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/microsoft.html</guid>
+      <guid>https://deanclatworthy.com/categories/microsoft.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nginx</title>
-      <link>/categories/nginx.html</link>
+      <link>https://deanclatworthy.com/categories/nginx.html</link>
       <pubDate>Thu, 28 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/nginx.html</guid>
+      <guid>https://deanclatworthy.com/categories/nginx.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Osx</title>
-      <link>/categories/osx.html</link>
+      <link>https://deanclatworthy.com/categories/osx.html</link>
       <pubDate>Thu, 10 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/osx.html</guid>
+      <guid>https://deanclatworthy.com/categories/osx.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Photoshop</title>
-      <link>/categories/photoshop.html</link>
+      <link>https://deanclatworthy.com/categories/photoshop.html</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/photoshop.html</guid>
+      <guid>https://deanclatworthy.com/categories/photoshop.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Php</title>
-      <link>/categories/php.html</link>
+      <link>https://deanclatworthy.com/categories/php.html</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/php.html</guid>
+      <guid>https://deanclatworthy.com/categories/php.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Random</title>
-      <link>/categories/random.html</link>
+      <link>https://deanclatworthy.com/categories/random.html</link>
       <pubDate>Tue, 13 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>/categories/random.html</guid>
+      <guid>https://deanclatworthy.com/categories/random.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ruby</title>
-      <link>/categories/ruby.html</link>
+      <link>https://deanclatworthy.com/categories/ruby.html</link>
       <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ruby.html</guid>
+      <guid>https://deanclatworthy.com/categories/ruby.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ruby Gems</title>
-      <link>/categories/ruby-gems.html</link>
+      <link>https://deanclatworthy.com/categories/ruby-gems.html</link>
       <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ruby-gems.html</guid>
+      <guid>https://deanclatworthy.com/categories/ruby-gems.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Selenium Ide</title>
-      <link>/categories/selenium-ide.html</link>
+      <link>https://deanclatworthy.com/categories/selenium-ide.html</link>
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>/categories/selenium-ide.html</guid>
+      <guid>https://deanclatworthy.com/categories/selenium-ide.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Silex</title>
-      <link>/categories/silex.html</link>
+      <link>https://deanclatworthy.com/categories/silex.html</link>
       <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/silex.html</guid>
+      <guid>https://deanclatworthy.com/categories/silex.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ssh</title>
-      <link>/categories/ssh.html</link>
+      <link>https://deanclatworthy.com/categories/ssh.html</link>
       <pubDate>Thu, 10 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/ssh.html</guid>
+      <guid>https://deanclatworthy.com/categories/ssh.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Symfony 2</title>
-      <link>/categories/symfony-2.html</link>
+      <link>https://deanclatworthy.com/categories/symfony-2.html</link>
       <pubDate>Fri, 24 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>/categories/symfony-2.html</guid>
+      <guid>https://deanclatworthy.com/categories/symfony-2.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Symfony2</title>
-      <link>/categories/symfony2.html</link>
+      <link>https://deanclatworthy.com/categories/symfony2.html</link>
       <pubDate>Sun, 21 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/symfony2.html</guid>
+      <guid>https://deanclatworthy.com/categories/symfony2.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Twitter</title>
-      <link>/categories/twitter.html</link>
+      <link>https://deanclatworthy.com/categories/twitter.html</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/twitter.html</guid>
+      <guid>https://deanclatworthy.com/categories/twitter.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Uncategorized</title>
-      <link>/categories/uncategorized.html</link>
+      <link>https://deanclatworthy.com/categories/uncategorized.html</link>
       <pubDate>Fri, 12 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/uncategorized.html</guid>
+      <guid>https://deanclatworthy.com/categories/uncategorized.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Webfonts</title>
-      <link>/categories/webfonts.html</link>
+      <link>https://deanclatworthy.com/categories/webfonts.html</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/webfonts.html</guid>
+      <guid>https://deanclatworthy.com/categories/webfonts.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wordpress</title>
-      <link>/categories/wordpress.html</link>
+      <link>https://deanclatworthy.com/categories/wordpress.html</link>
       <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>/categories/wordpress.html</guid>
+      <guid>https://deanclatworthy.com/categories/wordpress.html</guid>
       <description></description>
     </item>
     
     <item>
       <title>Zend Framework</title>
-      <link>/categories/zend-framework.html</link>
+      <link>https://deanclatworthy.com/categories/zend-framework.html</link>
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>/categories/zend-framework.html</guid>
+      <guid>https://deanclatworthy.com/categories/zend-framework.html</guid>
       <description></description>
     </item>
     

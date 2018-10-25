@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zend Framework on Hello. I&#39;m Dean Clatworthy</title>
-    <link>/categories/zend-framework.html</link>
+    <link>https://deanclatworthy.com/categories/zend-framework.html</link>
     <description>Recent content in Zend Framework on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Jul 2012 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/zend-framework/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanclatworthy.com/categories/zend-framework/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Unique filenames when uploading using Zend_Filter_File_Rename (Zend Framework)</title>
-      <link>/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</link>
+      <link>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</link>
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
+      <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
       <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
 &lt;/p&gt;</description>
     </item>

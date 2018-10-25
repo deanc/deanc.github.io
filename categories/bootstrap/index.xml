@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bootstrap on Hello. I&#39;m Dean Clatworthy</title>
-    <link>/categories/bootstrap.html</link>
+    <link>https://deanclatworthy.com/categories/bootstrap.html</link>
     <description>Recent content in Bootstrap on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 04 Jan 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/bootstrap/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanclatworthy.com/categories/bootstrap/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A Photoshop PSD template for Twitter Bootstrap&#39;s responsive grid</title>
-      <link>/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</link>
+      <link>https://deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</guid>
+      <guid>https://deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; This article is a little out-dated now, as Bootstrap is on version 3 featuring a completely different and fluid grid. It&amp;rsquo;s still applicable if you are working with the older Bootstrap (up to version 2.3.2)&lt;/p&gt;
 
 &lt;p&gt;One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&amp;rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its &lt;a href=&#34;http://getbootstrap.com/2.3.2/scaffolding.html#responsive&#34;&gt;scaffolding guide&lt;/a&gt; it talks about breakpoints at 1200px and 980px but you don&amp;rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid.&lt;/p&gt;</description>

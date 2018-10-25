@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Symfony2 on Hello. I&#39;m Dean Clatworthy</title>
-    <link>/categories/symfony2.html</link>
+    <link>https://deanclatworthy.com/categories/symfony2.html</link>
     <description>Recent content in Symfony2 on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Apr 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/symfony2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanclatworthy.com/categories/symfony2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Crawling UTF-8 pages using the Symfony2 DomCrawler component</title>
-      <link>/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</link>
+      <link>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</link>
       <pubDate>Sun, 21 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</guid>
+      <guid>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</guid>
       <description>Just a small gotcha for anyone using Symfony2&amp;rsquo;s DomCrawler component. The standard behaviour of the class (from the current docs) is:
  $crawler = new Crawler($html); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; }  However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
  $crawler = new Crawler; $crawler-&amp;gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; }  The second parameter to addHTMLContent is UTF-8 by default, but I&amp;rsquo;ve added it to illustrate that you could use other character sets too.</description>
