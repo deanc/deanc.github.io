@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Selenium on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/tags/selenium.html</link>
+    <link>/tags/selenium.html</link>
     <description>Recent content in Selenium on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Jan 2011 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://deanclatworthy.com/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/selenium/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dynamic/Random Javascript values in Selenium IDE</title>
-      <link>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</link>
+      <link>/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</link>
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
+      <guid>/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
       <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>

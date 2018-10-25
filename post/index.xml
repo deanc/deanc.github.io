@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/post.html</link>
+    <link>/post.html</link>
     <description>Recent content in Posts on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://deanclatworthy.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Migrating Jekyll to Hugo - my experience</title>
-      <link>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</link>
+      <link>/2015/10/15/migrating-jekyll-to-hugo-my-experience/</link>
       <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</guid>
+      <guid>/2015/10/15/migrating-jekyll-to-hugo-my-experience/</guid>
       <description>For those that haven&amp;rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&amp;rsquo;ve used Jekyll to build this site, but even with this few pages &amp;amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
 For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process.</description>
     </item>
     
     <item>
       <title>How to use native Symfony Validator translations in a Silex application</title>
-      <link>https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/</link>
+      <link>/2015/10/09/using-symfony-translations-with-silex/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/</guid>
+      <guid>/2015/10/09/using-symfony-translations-with-silex/</guid>
       <description>One of the problems I&amp;rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&amp;rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
@@ -35,21 +35,21 @@ The way around this is to simply load them into the correct domain when initiali
     
     <item>
       <title>How to set up Apache vhosts correctly on Debian Jessie 8</title>
-      <link>https://deanclatworthy.com/2015/06/29/debian-jessie-apache-vhosts/</link>
+      <link>/2015/06/29/debian-jessie-apache-vhosts/</link>
       <pubDate>Mon, 29 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2015/06/29/debian-jessie-apache-vhosts/</guid>
-      <description>After spinning up a new server today at DigitalOcean and trying to set up a new vhost, I couldn&amp;rsquo;t get the default Apache page to go away and load my vhost&amp;rsquo;s content.
+      <guid>/2015/06/29/debian-jessie-apache-vhosts/</guid>
+      <description>After spinning up a new server today at DigitalOcean and trying to set up a new vhost, I could not get the default Apache page to go away and load my vhost&amp;rsquo;s content.
 It turns out that in Debian Jessie vhost configuration files are required to end in *.conf. So, if you are naming your vhost configuration file example.com just rename it example.com.conf and it should load.
 Another tip to see what&amp;rsquo;s going on if a vhost doesn&amp;rsquo;t load after a reboot, run this command to check it&amp;rsquo;s actually being loaded:</description>
     </item>
     
     <item>
       <title>OSX Yosemite upgrade guide for PHP developers</title>
-      <link>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</link>
+      <link>/2014/12/20/yosemite-upgrade-guide-for-php-developers/</link>
       <pubDate>Sat, 20 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</guid>
+      <guid>/2014/12/20/yosemite-upgrade-guide-for-php-developers/</guid>
       <description>Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
  Include /private/etc/apache2/extra/httpd-vhosts.conf  Also find the &amp;lt;Directory /&amp;gt; block and make sure it reads as follows:
@@ -58,10 +58,10 @@ Search for vhosts and uncomment the line:
     
     <item>
       <title>Using a self signed certificate with Cloudflare&#39;s Full SSL on nginx</title>
-      <link>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</link>
+      <link>/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</link>
       <pubDate>Sat, 18 Oct 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</guid>
+      <guid>/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</guid>
       <description>Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&amp;rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure.
 Cloudflare offers two levels of SSL on their free package:
  Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page.</description>
@@ -69,10 +69,10 @@ Cloudflare offers two levels of SSL on their free package:
     
     <item>
       <title>Stopping mass-login attempts to WordPress using nginx</title>
-      <link>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</link>
+      <link>/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</link>
       <pubDate>Sat, 27 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</guid>
+      <guid>/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</guid>
       <description>Rather than rehash all the information, let me point you in the direction of this great blog post:
 http://ethitter.com/2013/04/protecting-wp-login-in-nginx/
 If you have problems with wp-login.php being downloaded to the user then your PHP configuration using this tutorial is wrong. See this article I wrote about it:
@@ -81,10 +81,10 @@ http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-editi
     
     <item>
       <title>Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)</title>
-      <link>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</link>
+      <link>/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</link>
       <pubDate>Mon, 15 Jul 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
+      <guid>/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
       <description>I&amp;rsquo;ll keep this brief. Install Guzzle however you wish, but I recommend using composer:
 {% highlight javascript %}
  { &amp;quot;require&amp;quot;: { &amp;quot;guzzle/guzzle&amp;quot;: &amp;quot;~3.1.1&amp;quot; } }  {% endhighlight %}
@@ -95,19 +95,19 @@ Then use the following code:
     
     <item>
       <title>Facebook: The new giant of advertising?</title>
-      <link>https://deanclatworthy.com/2013/06/facebook-the-new-giant-of-advertising/</link>
+      <link>/2013/06/facebook-the-new-giant-of-advertising/</link>
       <pubDate>Tue, 18 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/06/facebook-the-new-giant-of-advertising/</guid>
+      <guid>/2013/06/facebook-the-new-giant-of-advertising/</guid>
       <description>&lt;p&gt;Last week Facebook &lt;a href=&#34;http://newsroom.fb.com/News/600/Adding-What-You-re-Doing-to-Status-Updates&#34;&gt;rolled out a new update&lt;/a&gt; that lets people tag what they&amp;rsquo;re doing in their post or say how they are feeling. Users can say they are watching a movie or reading a book &amp;#8211; amongst other things. What makes this different from before is that your status update is providing more structured data to Facebook about your activity.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Web fonts not loading in Firefox</title>
-      <link>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</link>
+      <link>/2013/06/web-fonts-not-loading-in-firefox/</link>
       <pubDate>Tue, 11 Jun 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</guid>
+      <guid>/2013/06/web-fonts-not-loading-in-firefox/</guid>
       <description>I encountered a peculiar issue today regarding web fonts on firefox. On all browsers except Firefox the web fonts were loading correctly. I found multiple references suggesting that Firefox was picky with using quotes when referencing where the font file is hosted. However my findings were more interesting:
 Firefox does not support embedding webfont files from a different domain
 The good news is the fix is simple. Simply send the following header:</description>
@@ -115,29 +115,29 @@ The good news is the fix is simple. Simply send the following header:</descripti
     
     <item>
       <title>Ensuring facebook canvas applications work in IE8 / IE9 / IE10</title>
-      <link>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</link>
+      <link>/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</link>
       <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</guid>
+      <guid>/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</guid>
       <description>Last week I deployed a new Facebook application into a production environment. Everything seemed to be working perfectly, but then I received a report that the application wasn&amp;rsquo;t working correctly in IE8+. I narrowed down the problem, and then realised that sessions weren&amp;rsquo;t working. It turns out IE8+ has a security policy that prevents iframes from setting cookies if the parent domain is different. Therefore because my PHP session cooking wouldn&amp;rsquo;t set, the sessions obviously didn&amp;rsquo;t work between pages.</description>
     </item>
     
     <item>
       <title>How to install different locales on a fresh debian installation</title>
-      <link>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</link>
+      <link>/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</link>
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</guid>
+      <guid>/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</guid>
       <description>Simples:
  sudo dpkg-reconfigure locale  This will load a GUI where you should select the new locales to install, then follow the onscreen instructions.</description>
     </item>
     
     <item>
       <title>Silex Tip #1: How to quickly invalidate a form field in your controller</title>
-      <link>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</link>
+      <link>/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</link>
       <pubDate>Fri, 10 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
+      <guid>/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
       <description>You should be using custom constraints to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:
 {% highlight php startinline %}
  $form-&amp;gt;get(&#39;username&#39;)-&amp;gt;addError(new \Symfony\Component\Form\FormError(&amp;quot;This email is already in use&amp;quot;));  {% endhighlight %}</description>
@@ -145,10 +145,10 @@ The good news is the fix is simple. Simply send the following header:</descripti
     
     <item>
       <title>Crawling UTF-8 pages using the Symfony2 DomCrawler component</title>
-      <link>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</link>
+      <link>/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</link>
       <pubDate>Sun, 21 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</guid>
+      <guid>/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</guid>
       <description>Just a small gotcha for anyone using Symfony2&amp;rsquo;s DomCrawler component. The standard behaviour of the class (from the current docs) is:
  $crawler = new Crawler($html); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; }  However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
  $crawler = new Crawler; $crawler-&amp;gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; }  The second parameter to addHTMLContent is UTF-8 by default, but I&amp;rsquo;ve added it to illustrate that you could use other character sets too.</description>
@@ -156,19 +156,19 @@ The good news is the fix is simple. Simply send the following header:</descripti
     
     <item>
       <title>Intel X25-M SSD&#39;s don&#39;t work with Mac OSX 10.8.3</title>
-      <link>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</link>
+      <link>/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</link>
       <pubDate>Fri, 12 Apr 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</guid>
+      <guid>/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m writing this informative post to try and help anyone who had the same problem as me. I upgraded to OSX 10.8.3, and after it restarted the machine the Apple logo and spinner was on screen for about a minute followed by a stop/forbidden/no entry symbol that looks like this:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Migrating from apache to nginx (wordpress edition)</title>
-      <link>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</link>
+      <link>/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</link>
       <pubDate>Thu, 28 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
+      <guid>/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
       <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.
@@ -177,19 +177,19 @@ The good news is the fix is simple. Simply send the following header:</descripti
     
     <item>
       <title>Browse safely, and avoid drive-by attacks in Google Chrome</title>
-      <link>https://deanclatworthy.com/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</link>
+      <link>/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</link>
       <pubDate>Tue, 26 Feb 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</guid>
+      <guid>/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</guid>
       <description>&lt;p&gt;With the &lt;a href=&#34;http://www.theregister.co.uk/2013/02/22/nbc_hack/&#34;&gt;increased&lt;/a&gt; &lt;a href=&#34;http://threatpost.com/en_us/blogs/mysqlcom-site-hacked-was-serving-malware-092611&#34;&gt;number&lt;/a&gt; of &lt;a href=&#34;http://nakedsecurity.sophos.com/2012/12/03/dockster-mac-malware-dalai-lama/&#34;&gt;drive-by&lt;/a&gt; &lt;a href=&#34;http://www.messagingnews.com/eyeonmessaging/stephanie-jordan/several-large-frequently-visited-sites-still-serving-malware&#34;&gt;attacks&lt;/a&gt; happening lately, I decided to investigate how these attacks work and what can be done to prevent them.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to avoid relying on github: mirror your repository</title>
-      <link>https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</link>
+      <link>/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</guid>
+      <guid>/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</guid>
       <description>&lt;p&gt;One of the things that &lt;a href=&#34;https://github.com/blog/1364-downtime-last-saturday&#34;&gt;recent github outages&lt;/a&gt; have highlighted is that although git is designed to be decentralized version control system, many people are not treating it that way. Rather than having multiple remotes, people push to the same place and generally rely too much on github. I&amp;rsquo;ve seen people build their whole infrastructure around github, including deploy scripts for their sites and install scripts for new developers. Furthermore, dependency managers such as &lt;a href=&#34;http://getcomposer.org/&#34;&gt;Composer&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://cocoapods.org/&#34;&gt;Cocoapods&lt;/a&gt; (not intending to single anyone out) rely on github to pull in dependencies. If github goes down, you can&amp;rsquo;t fix your dependencies or pull in new ones. In an ideal world these dependency managers should have built in support for mirrors, but I&amp;rsquo;m not aware of any such feature at the time of writing.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -197,20 +197,20 @@ The good news is the fix is simple. Simply send the following header:</descripti
     
     <item>
       <title>Stop OSX saving SSH private key password</title>
-      <link>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</link>
+      <link>/2013/01/stop-osx-saving-ssh-private-key-password/</link>
       <pubDate>Thu, 10 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
+      <guid>/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
       <description>When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:
   launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist     Hat tip to mr_dbr on reddit for this.</description>
     </item>
     
     <item>
       <title>A Photoshop PSD template for Twitter Bootstrap&#39;s responsive grid</title>
-      <link>https://deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</link>
+      <link>/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</guid>
+      <guid>/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Edit:&lt;/strong&gt; This article is a little out-dated now, as Bootstrap is on version 3 featuring a completely different and fluid grid. It&amp;rsquo;s still applicable if you are working with the older Bootstrap (up to version 2.3.2)&lt;/p&gt;
 
 &lt;p&gt;One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&amp;rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its &lt;a href=&#34;http://getbootstrap.com/2.3.2/scaffolding.html#responsive&#34;&gt;scaffolding guide&lt;/a&gt; it talks about breakpoints at 1200px and 980px but you don&amp;rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid.&lt;/p&gt;</description>
@@ -218,10 +218,10 @@ The good news is the fix is simple. Simply send the following header:</descripti
     
     <item>
       <title>A bash alias to export a git repository to a zip file</title>
-      <link>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</link>
+      <link>/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</link>
       <pubDate>Fri, 04 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
+      <guid>/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
       <description>I&amp;rsquo;ll keep this short and sweet. This bash alias will allow you to export your git repo&amp;rsquo;s master branch to a zip file.
 To use it:
  Make sure that your work is committed. Make sure you are in the root directory of your project.  To make this script work run the following commands:
@@ -230,20 +230,20 @@ To use it:
     
     <item>
       <title>How to remove WordPress admin &amp; other pointless WordPress things from your Google Analytics</title>
-      <link>https://deanclatworthy.com/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</link>
+      <link>/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</link>
       <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</guid>
+      <guid>/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</guid>
       <description>I have spent the last few hours taking a look at the Google Analytics for my blog and whilst doing so I realised that it&amp;rsquo;s logging a lot of stuff that I don&amp;rsquo;t need. This tutorial will allow you to exclude any traffic to your wordpress admin, or login script (that which you see before landing on the admin page) from your Google Analytics.
  Log into Google Analytics Click &amp;lsquo;Admin&amp;rsquo; in the top right.</description>
     </item>
     
     <item>
       <title>How to speed up your WordPress site by 200% in less than 5 minutes and save bandwidth</title>
-      <link>https://deanclatworthy.com/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/</link>
+      <link>/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/</link>
       <pubDate>Sat, 29 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/</guid>
+      <guid>/2012/12/how-to-speed-up-your-wordpress-site-by-200-in-less-than-5-minutes-and-save-bandwidth/</guid>
       <description>&lt;p&gt;I&amp;rsquo;ve been meaning to tweak my WordPress install for a while now. I&amp;rsquo;ve been using the &lt;a href=&#34;http://wordpress.org/extend/plugins/wp-super-cache/&#34;&gt;WP Super Cache plugin&lt;/a&gt; for about half a year, but I&amp;rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):&lt;/p&gt;
 
 &lt;ul&gt;
@@ -258,10 +258,10 @@ To use it:
     
     <item>
       <title>How to fix hanging gem install on a fresh OSX Lion install</title>
-      <link>https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</link>
+      <link>/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</link>
       <pubDate>Wed, 26 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</guid>
+      <guid>/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</guid>
       <description>I&amp;rsquo;ve now tried to use gem install &amp;lt;package&amp;gt; on two fresh installs of OSX Lion on a Macbook Pro 13&amp;rdquo; 2011 and Macbook Pro 15&amp;rdquo; 2012. Both have suffered from the same issue of the gem installer hanging.
 This was my symptom.
  $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&amp;lt;/pre&amp;gt;  The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message.</description>
@@ -269,20 +269,20 @@ This was my symptom.
     
     <item>
       <title>How to run Internet Explorer on a Mac (IE6, IE7, IE8, IE9, IE10, IE11)</title>
-      <link>https://deanclatworthy.com/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</link>
+      <link>/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</link>
       <pubDate>Mon, 17 Dec 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</guid>
+      <guid>/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</guid>
       <description>Just a quick tip for anyone doing web development on macs, it&amp;rsquo;s quite easy to get internet explorer running now with a brilliant tool created by Greg Thornton over at github. This essential automates the creation of the free Microsoft testing virtual machines for IE and builds them in to virtualbox. Make sure you install virtualbox first and then follow the instructions over at github: https://github.com/xdissent/ievms
 Essentially though, it&amp;rsquo;s a simple as typing this command in the terminal:</description>
     </item>
     
     <item>
       <title>How to use responsive twitter bootstrap &amp; masonry together</title>
-      <link>https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/</link>
+      <link>/2012/09/responsive-twitter-bootstrap-masonry/</link>
       <pubDate>Thu, 27 Sep 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/</guid>
+      <guid>/2012/09/responsive-twitter-bootstrap-masonry/</guid>
       <description>Getting twitter bootstrap&amp;rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&amp;rsquo;s the code:
 Javascript:
  $(document).ready(function () { $(&amp;quot;#posts&amp;quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&amp;quot;.container&amp;quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &amp;lt; 1200 &amp;amp;&amp;amp; width &amp;gt;= 980) { col = 240; } else if(width &amp;lt; 980 &amp;amp;&amp;amp; width &amp;gt;= 768) { col = 186; } return col; } }); });  Demo (make sure you resize the frame in the bottom right):</description>
@@ -290,70 +290,70 @@ Javascript:
     
     <item>
       <title>Theming/styling error messages in Symfony 2</title>
-      <link>https://deanclatworthy.com/2012/08/theming-error-messages-in-symfony-2/</link>
+      <link>/2012/08/theming-error-messages-in-symfony-2/</link>
       <pubDate>Fri, 24 Aug 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/08/theming-error-messages-in-symfony-2/</guid>
+      <guid>/2012/08/theming-error-messages-in-symfony-2/</guid>
       <description>I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.
 In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twig:</description>
     </item>
     
     <item>
       <title>Unique filenames when uploading using Zend_Filter_File_Rename (Zend Framework)</title>
-      <link>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</link>
+      <link>/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</link>
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
+      <guid>/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
       <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to rip music from the hype machine</title>
-      <link>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</link>
+      <link>/2012/01/how-to-rip-music-from-the-hype-machine/</link>
       <pubDate>Mon, 02 Jan 2012 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</guid>
+      <guid>/2012/01/how-to-rip-music-from-the-hype-machine/</guid>
       <description>&lt;p&gt;Occasionally on the &lt;a href=&#34;http://hypem.com/&#34;&gt;Hype Machine&lt;/a&gt;, a song is linked to in an external blog that no longer exists or the path has changed. If the song works when clicking play on HM then there&amp;rsquo;s a simple way to find out the URL and download it using Google Chrome as your browser.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>A chrome extension to revert to the old-style facebook chat</title>
-      <link>https://deanclatworthy.com/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</link>
+      <link>/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</link>
       <pubDate>Sat, 10 Sep 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</guid>
+      <guid>/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</guid>
       <description>&lt;p&gt;Let it be known, that I&amp;rsquo;m not a big fan of Facebook. I&amp;rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&amp;rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&amp;rsquo;s not very accurate and I was disappointed that a chat service didn&amp;rsquo;t display all online friends in one group.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Bad character encoding causing MySQL errors in PHP</title>
-      <link>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</link>
+      <link>/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</link>
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</guid>
+      <guid>/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</guid>
       <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Dynamic/Random Javascript values in Selenium IDE</title>
-      <link>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</link>
+      <link>/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</link>
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
+      <guid>/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
       <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;br /&gt;
 &lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Useful GIT commands</title>
-      <link>https://deanclatworthy.com/2011/01/useful-git-commands/</link>
+      <link>/2011/01/useful-git-commands/</link>
       <pubDate>Mon, 24 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2011/01/useful-git-commands/</guid>
+      <guid>/2011/01/useful-git-commands/</guid>
       <description>I&amp;rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&amp;rsquo;ll help you also.
 Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&amp;rsquo;ll probably see something like this when you run git status
  # On branch devel # Your branch is ahead of origin/devel by 2 commits.</description>
@@ -361,10 +361,10 @@ Scenario #1 You have accidentally made a few commits to a branch and you wish to
     
     <item>
       <title>WordPress plugin deployment script (GIT to SVN)</title>
-      <link>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</link>
+      <link>/2011/01/wordpress-plugin-deployment-script-git-to-svn/</link>
       <pubDate>Fri, 21 Jan 2011 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2011/01/wordpress-plugin-deployment-script-git-to-svn/</guid>
+      <guid>/2011/01/wordpress-plugin-deployment-script-git-to-svn/</guid>
       <description>Short Version: This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN.
 Long Version:
 Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository.</description>
@@ -372,30 +372,30 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
     
     <item>
       <title>Facebook privacy issue with tagged photos</title>
-      <link>https://deanclatworthy.com/2010/09/facebook-privacy-issue-with-tagged-photos/</link>
+      <link>/2010/09/facebook-privacy-issue-with-tagged-photos/</link>
       <pubDate>Mon, 06 Sep 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2010/09/facebook-privacy-issue-with-tagged-photos/</guid>
+      <guid>/2010/09/facebook-privacy-issue-with-tagged-photos/</guid>
       <description>Facebook has garnered a rather bad reputation over its privacy controls in recent months, but things are now beginning to stabilise. You can control the privacy of:
  Individual wall posts Almost all aspects of your profile (location, interests etc.) Individual photo albums Individual videos  With the addition of friend lists it makes it fairly simple to filter content to certain people, as long as you don&amp;rsquo;t have too many friends.</description>
     </item>
     
     <item>
       <title>Jump In Camp video</title>
-      <link>https://deanclatworthy.com/2010/04/jump-in-camp-video/</link>
+      <link>/2010/04/jump-in-camp-video/</link>
       <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2010/04/jump-in-camp-video/</guid>
+      <guid>/2010/04/jump-in-camp-video/</guid>
       <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:
   </description>
     </item>
     
     <item>
       <title>CSS grid layouts using HashGrid</title>
-      <link>https://deanclatworthy.com/2010/04/css-grid-layouts-using-hashgrid/</link>
+      <link>/2010/04/css-grid-layouts-using-hashgrid/</link>
       <pubDate>Mon, 19 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2010/04/css-grid-layouts-using-hashgrid/</guid>
+      <guid>/2010/04/css-grid-layouts-using-hashgrid/</guid>
       <description>Just a heads up to anyone who&amp;rsquo;s planning on designing their next project using a grid. The folks over at Analog have created a nifty little tool called Hashgrid to overlay a grid over your web page like so:
 
 Installation is pretty simple but I ran into a couple of minor issues which hopefully can be remedied in a future version:
@@ -404,19 +404,19 @@ Installation is pretty simple but I ran into a couple of minor issues which hope
     
     <item>
       <title>Hello world!</title>
-      <link>https://deanclatworthy.com/2010/04/13/hello-world.html</link>
+      <link>/2010/04/13/hello-world.html</link>
       <pubDate>Tue, 13 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2010/04/13/hello-world.html</guid>
+      <guid>/2010/04/13/hello-world.html</guid>
       <description>Welcome to my blog. Over the next few weeks, months, years (perhaps) I&amp;rsquo;ll be posting useful articles on the subjects that interest me and will hopefully interest others. I may even post random musings or rants ;-)</description>
     </item>
     
     <item>
       <title>Jump In Camp</title>
-      <link>https://deanclatworthy.com/2010/04/jump-in-camp/</link>
+      <link>/2010/04/jump-in-camp/</link>
       <pubDate>Tue, 13 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2010/04/jump-in-camp/</guid>
+      <guid>/2010/04/jump-in-camp/</guid>
       <description>(Thanks to Derick Rethans for the picture)
 Introductions
 I was lucky enough to be given the opportunity last week to attend JumpInCamp, a developers conference/workshop ran by Microsoft in the beautiful setting of Zurich. The brief was as follows

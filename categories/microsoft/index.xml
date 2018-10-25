@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Microsoft on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/microsoft.html</link>
+    <link>/categories/microsoft.html</link>
     <description>Recent content in Microsoft on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 17 May 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://deanclatworthy.com/categories/microsoft/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/microsoft/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ensuring facebook canvas applications work in IE8 / IE9 / IE10</title>
-      <link>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</link>
+      <link>/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</link>
       <pubDate>Fri, 17 May 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</guid>
+      <guid>/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</guid>
       <description>Last week I deployed a new Facebook application into a production environment. Everything seemed to be working perfectly, but then I received a report that the application wasn&amp;rsquo;t working correctly in IE8+. I narrowed down the problem, and then realised that sessions weren&amp;rsquo;t working. It turns out IE8+ has a security policy that prevents iframes from setting cookies if the parent domain is different. Therefore because my PHP session cooking wouldn&amp;rsquo;t set, the sessions obviously didn&amp;rsquo;t work between pages.</description>
     </item>
     
     <item>
       <title>Jump In Camp</title>
-      <link>https://deanclatworthy.com/2010/04/jump-in-camp/</link>
+      <link>/2010/04/jump-in-camp/</link>
       <pubDate>Tue, 13 Apr 2010 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2010/04/jump-in-camp/</guid>
+      <guid>/2010/04/jump-in-camp/</guid>
       <description>(Thanks to Derick Rethans for the picture)
 Introductions
 I was lucky enough to be given the opportunity last week to attend JumpInCamp, a developers conference/workshop ran by Microsoft in the beautiful setting of Zurich. The brief was as follows

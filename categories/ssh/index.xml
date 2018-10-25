@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ssh on Hello. I&#39;m Dean Clatworthy</title>
-    <link>https://deanclatworthy.com/categories/ssh.html</link>
+    <link>/categories/ssh.html</link>
     <description>Recent content in Ssh on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jan 2013 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://deanclatworthy.com/categories/ssh/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/ssh/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stop OSX saving SSH private key password</title>
-      <link>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</link>
+      <link>/2013/01/stop-osx-saving-ssh-private-key-password/</link>
       <pubDate>Thu, 10 Jan 2013 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
+      <guid>/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
       <description>When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:
   launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist     Hat tip to mr_dbr on reddit for this.</description>
     </item>
