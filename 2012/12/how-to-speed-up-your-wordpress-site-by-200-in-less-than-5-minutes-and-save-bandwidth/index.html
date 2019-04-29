@@ -23,8 +23,6 @@ Minify and join CSS &amp; Javascript files
 Load JS asynchronously at the bottom of the page where possible
 Load static pages if you can
 Let the user cache everything if possible.
-
-
 " />
 	<meta property="og:description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the WP Super Cache plugin for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
 
@@ -33,8 +31,6 @@ Minify and join CSS &amp; Javascript files
 Load JS asynchronously at the bottom of the page where possible
 Load static pages if you can
 Let the user cache everything if possible.
-
-
 " />
 	
 
@@ -51,7 +47,7 @@ Let the user cache everything if possible.
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.6fa42f2fe5d5eabf25b0400afa5290b065e4a88bda9bed6884c0ac1a25c7b1f4.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -120,8 +116,6 @@ Let the user cache everything if possible.
 <li>Let the user cache everything if possible.</li>
 </ul>
 
-<p></p>
-
 <p>The WP Super Cache plugin basically did all these things. What I didn&rsquo;t like is that as I&rsquo;m using  shared hosting for this simple blog, it cached pages to disk which isn&rsquo;t as quick as caching to memcache or something more efficient. I also didn&rsquo;t like how I had to go through a script to check to see if my minified and joined files were already cached and then make another read to disk. WP Super Cache does a great job at taking a bare bones WordPress and speeding it up on shared hosting but I wondered what else I could do.</p>
 
 <p>Those of you lucky folks on VPS&rsquo;s and your own boxes aren&rsquo;t bound by these limitations, and have access to memcache, APC or something like Varnish, so you can <em>probably</em> stop reading now.</p>
@@ -167,7 +161,7 @@ Let the user cache everything if possible.
 		
 
   <footer>
-    <p>&copy; 2018 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>

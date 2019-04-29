@@ -16,10 +16,8 @@
 	
 
 	
-	<meta name="description" content="Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.
-" />
-	<meta property="og:description" content="Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.
-" />
+	<meta name="description" content="Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined." />
+	<meta property="og:description" content="Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/">
@@ -35,7 +33,7 @@
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.6fa42f2fe5d5eabf25b0400afa5290b065e4a88bda9bed6884c0ac1a25c7b1f4.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -95,8 +93,7 @@
 			
 
 			<article>
-				<p>Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.
-</p>
+				<p>Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.</p>
 
 <p>We received an Italian translation file and I proceeded to import it until my colleague noticed a few translations were missing. Baffled, I looked into this further and debugged until I spotted some MySQL errors in the logs. The query looked fine, but gave MySQL error number 1366. After a bit of googling I came across users who had received a similar error and had put it down to character encoding issues. It turns out that the translation file had been saved as ISO 8859-1 (Latin-1) rather than UTF-8. It turned out that MySQL was actually refusing to execute the query because the target string I was inserting into a UTF-8 column wasn&rsquo;t valid.</p>
 
@@ -136,7 +133,7 @@
 		
 
   <footer>
-    <p>&copy; 2018 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>

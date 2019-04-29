@@ -17,8 +17,7 @@
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
-      <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;br /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;/p&gt;</description>
     </item>
     
   </channel>

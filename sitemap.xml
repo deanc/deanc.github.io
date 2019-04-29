@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</loc>
     <lastmod>2015-10-15T00:00:00+00:00</lastmod>
   </url>
@@ -253,6 +258,12 @@
   </url>
   
   <url>
+    <loc>https://deanclatworthy.com/tags/crashplan.html</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://deanclatworthy.com/categories/css.html</loc>
     <lastmod>2013-06-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -261,6 +272,12 @@
   <url>
     <loc>https://deanclatworthy.com/categories/debian.html</loc>
     <lastmod>2013-05-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/electron.html</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -296,7 +313,7 @@
   
   <url>
     <loc>https://deanclatworthy.com/</loc>
-    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -321,6 +338,12 @@
   <url>
     <loc>https://deanclatworthy.com/tags/jekyll.html</loc>
     <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/linux.html</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -368,7 +391,7 @@
   
   <url>
     <loc>https://deanclatworthy.com/post.html</loc>
-    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -428,7 +451,7 @@
   
   <url>
     <loc>https://deanclatworthy.com/tags.html</loc>
-    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -441,6 +464,12 @@
   <url>
     <loc>https://deanclatworthy.com/categories/twitter.html</loc>
     <lastmod>2013-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deanclatworthy.com/tags/ubuntu.html</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

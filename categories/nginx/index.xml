@@ -19,8 +19,7 @@
       <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
       <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.
-&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.&lt;/p&gt;</description>
     </item>
     
   </channel>

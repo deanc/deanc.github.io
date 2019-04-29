@@ -17,8 +17,7 @@
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
-      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.&lt;/p&gt;</description>
     </item>
     
   </channel>

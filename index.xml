@@ -6,10 +6,22 @@
     <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deanclatworthy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Running Crashplan on Ubuntu 18.10</title>
+      <link>https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/</guid>
+      <description>Crashplan for Small Business is not supported (as of the time of writing) on any other Ubuntu version than 18.04 LTS. This appears to be related to an Electron/glibc issue which has long been fixed. Unfortunately Crashplan seem unwilling to upgrade their client.
+Fortunately there is a workaround. Add this PPA:
+sudo add-apt-repository ppa:maarten-fonville/ppa sudo apt-get update  You will almost certainly need to accept this PPA&amp;rsquo;s keys:
+sudo apt-key adv --keyserver keyserver.</description>
+    </item>
     
     <item>
       <title>Migrating Jekyll to Hugo - my experience</title>
@@ -232,8 +244,7 @@ The good news is the fix is simple. Simply send the following header:</descripti
       <guid>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</guid>
       <description>&lt;p&gt;Today I migrated my whole site from apache to nginx. The main reason for this being that nginx seems to handle load and use less memory on smaller boxes. It&amp;rsquo;s also an opportunity for me to try something new.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.
-&lt;/p&gt;</description>
+&lt;p&gt;I&amp;rsquo;ll cut straight to the chase. There&amp;rsquo;s some &lt;a href=&#34;http://codex.wordpress.org/Nginx&#34;&gt;great information&lt;/a&gt; &lt;a href=&#34;http://wiki.nginx.org/WordPress&#34;&gt;already available&lt;/a&gt;. At the time of this writing though, both sets of instructions didn&amp;rsquo;t work for me. I&amp;rsquo;ll come to why later.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -251,9 +262,7 @@ The good news is the fix is simple. Simply send the following header:</descripti
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</guid>
-      <description>&lt;p&gt;One of the things that &lt;a href=&#34;https://github.com/blog/1364-downtime-last-saturday&#34;&gt;recent github outages&lt;/a&gt; have highlighted is that although git is designed to be decentralized version control system, many people are not treating it that way. Rather than having multiple remotes, people push to the same place and generally rely too much on github. I&amp;rsquo;ve seen people build their whole infrastructure around github, including deploy scripts for their sites and install scripts for new developers. Furthermore, dependency managers such as &lt;a href=&#34;http://getcomposer.org/&#34;&gt;Composer&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://cocoapods.org/&#34;&gt;Cocoapods&lt;/a&gt; (not intending to single anyone out) rely on github to pull in dependencies. If github goes down, you can&amp;rsquo;t fix your dependencies or pull in new ones. In an ideal world these dependency managers should have built in support for mirrors, but I&amp;rsquo;m not aware of any such feature at the time of writing.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the things that &lt;a href=&#34;https://github.com/blog/1364-downtime-last-saturday&#34;&gt;recent github outages&lt;/a&gt; have highlighted is that although git is designed to be decentralized version control system, many people are not treating it that way. Rather than having multiple remotes, people push to the same place and generally rely too much on github. I&amp;rsquo;ve seen people build their whole infrastructure around github, including deploy scripts for their sites and install scripts for new developers. Furthermore, dependency managers such as &lt;a href=&#34;http://getcomposer.org/&#34;&gt;Composer&lt;/a&gt; &amp;amp; &lt;a href=&#34;http://cocoapods.org/&#34;&gt;Cocoapods&lt;/a&gt; (not intending to single anyone out) rely on github to pull in dependencies. If github goes down, you can&amp;rsquo;t fix your dependencies or pull in new ones. In an ideal world these dependency managers should have built in support for mirrors, but I&amp;rsquo;m not aware of any such feature at the time of writing.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -312,9 +321,7 @@ To use it:
 &lt;li&gt;Load JS asynchronously at the bottom of the page where possible&lt;/li&gt;
 &lt;li&gt;Load static pages if you can&lt;/li&gt;
 &lt;li&gt;Let the user cache everything if possible.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/ul&gt;</description>
     </item>
     
     <item>
@@ -365,8 +372,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
-      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -375,8 +381,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Mon, 02 Jan 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</guid>
-      <description>&lt;p&gt;Occasionally on the &lt;a href=&#34;http://hypem.com/&#34;&gt;Hype Machine&lt;/a&gt;, a song is linked to in an external blog that no longer exists or the path has changed. If the song works when clicking play on HM then there&amp;rsquo;s a simple way to find out the URL and download it using Google Chrome as your browser.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Occasionally on the &lt;a href=&#34;http://hypem.com/&#34;&gt;Hype Machine&lt;/a&gt;, a song is linked to in an external blog that no longer exists or the path has changed. If the song works when clicking play on HM then there&amp;rsquo;s a simple way to find out the URL and download it using Google Chrome as your browser.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -385,8 +390,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Sat, 10 Sep 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</guid>
-      <description>&lt;p&gt;Let it be known, that I&amp;rsquo;m not a big fan of Facebook. I&amp;rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&amp;rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&amp;rsquo;s not very accurate and I was disappointed that a chat service didn&amp;rsquo;t display all online friends in one group.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Let it be known, that I&amp;rsquo;m not a big fan of Facebook. I&amp;rsquo;ve not put out a status update or uploaded a photo in over 6 months, but the value in the service lies with being able to message friends and family in a country that I no longer live. It&amp;rsquo;s a great way of keeping in touch. I occasionally log on to the Facebook Chat to have conversations with friends, but recently to my dismay, Facebook *revamped* their chat in to a full-screen sidebar showing a mixture of online and offline friends. The logic behind this is baffling to me. It seems that the online friends which are displayed are mixed in with your most popular offline friends, that is to say those with whom Facebook *thinks *you interact with most (or stalk). It&amp;rsquo;s not very accurate and I was disappointed that a chat service didn&amp;rsquo;t display all online friends in one group.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -395,8 +399,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</guid>
-      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -405,8 +408,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</guid>
-      <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;br /&gt;
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:&lt;/p&gt;</description>
     </item>
     
     <item>

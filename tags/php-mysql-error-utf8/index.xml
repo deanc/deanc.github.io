@@ -17,8 +17,7 @@
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</guid>
-      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.&lt;/p&gt;</description>
     </item>
     
   </channel>

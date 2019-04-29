@@ -61,8 +61,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Thu, 19 Jul 2012 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</guid>
-      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&amp;rsquo;t over-write a file which has the same name. ZF provides this facility but it&amp;rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,8 +70,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</guid>
-      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&amp;rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&amp;rsquo;d defined.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -6,10 +6,28 @@
     <description>Recent content in Tags on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://deanclatworthy.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Crashplan</title>
+      <link>https://deanclatworthy.com/tags/crashplan.html</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/crashplan.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Electron</title>
+      <link>https://deanclatworthy.com/tags/electron.html</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/electron.html</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Hugo</title>
@@ -39,6 +57,15 @@
     </item>
     
     <item>
+      <title>Linux</title>
+      <link>https://deanclatworthy.com/tags/linux.html</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/linux.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Php Mysql Error Utf8</title>
       <link>https://deanclatworthy.com/tags/php-mysql-error-utf8.html</link>
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
@@ -62,6 +89,15 @@
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/tags/testing.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>https://deanclatworthy.com/tags/ubuntu.html</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/ubuntu.html</guid>
       <description></description>
     </item>
     
