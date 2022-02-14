@@ -32,8 +32,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -82,7 +81,9 @@
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>Bad character encoding causing MySQL errors in PHP</h1>
 
@@ -94,24 +95,9 @@
 
 			<article>
 				<p>Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.</p>
-
 <p>We received an Italian translation file and I proceeded to import it until my colleague noticed a few translations were missing. Baffled, I looked into this further and debugged until I spotted some MySQL errors in the logs. The query looked fine, but gave MySQL error number 1366. After a bit of googling I came across users who had received a similar error and had put it down to character encoding issues. It turns out that the translation file had been saved as ISO 8859-1 (Latin-1) rather than UTF-8. It turned out that MySQL was actually refusing to execute the query because the target string I was inserting into a UTF-8 column wasn&rsquo;t valid.</p>
-
 <p>Rather than go through the complicated process of trying to cast different character sets coming in from various translators I came up with a simple solution which was to open the translation file and check it&rsquo;s contents are strict UTF-8. This is pretty simple to do:</p>
-
-<div class="wp_syntax">
-  <table>
-    <tr>
-      <td class="code">
-        <pre class="php" style="font-family:monospace;"><span style="color: #b1b100;">if</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><span style="color: #990000;">mb_detect_encoding</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$str</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'UTF-8'</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
-<span style="color: #009900;">&#123;</span>
-    <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> TranslationException<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'File is invalid UTF-8'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #009900;">&#125;</span></pre>
-      </td>
-    </tr>
-  </table>
-</div>
-
+<!-- raw HTML omitted -->
 <p>As a quick side note, omit the last parameter if you don&rsquo;t want to be 100% strict.</p>
 			</article>
 
@@ -133,17 +119,49 @@
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

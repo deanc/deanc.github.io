@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Php on Hello. I&#39;m Dean Clatworthy</title>
+    <title>PHP on Hello. I&#39;m Dean Clatworthy</title>
     <link>https://deanclatworthy.com/categories/php.html</link>
-    <description>Recent content in Php on Hello. I&#39;m Dean Clatworthy</description>
+    <description>Recent content in PHP on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deanclatworthy.com/categories/php/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 15 Jul 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/categories/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting a twitter user&#39;s latest posts using API v1.1 and Guzzle (PHP)</title>
       <link>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</link>
@@ -82,7 +78,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <description>(Thanks to Derick Rethans for the picture)
 Introductions
 I was lucky enough to be given the opportunity last week to attend JumpInCamp, a developers conference/workshop ran by Microsoft in the beautiful setting of Zurich. The brief was as follows
- As a participant you will spend four unforgettable and instructive days in the Panorama Resort &amp;amp; Spa Feusisberg, Switzerland – all-inclusive, for free. A live blog – to which you will contribute &amp;#8211; will put all your friends and colleagues in the picture while you’re at the Camp.</description>
+ As a participant you will spend four unforgettable and instructive days in the Panorama Resort &amp;amp; Spa Feusisberg, Switzerland – all-inclusive, for free. A live blog – to which you will contribute – will put all your friends and colleagues in the picture while you’re at the Camp.</description>
     </item>
     
   </channel>

@@ -18,14 +18,12 @@
 	
 	<meta name="description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the WP Super Cache plugin for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
 
-
 Minify and join CSS &amp; Javascript files
 Load JS asynchronously at the bottom of the page where possible
 Load static pages if you can
 Let the user cache everything if possible.
 " />
 	<meta property="og:description" content="I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the WP Super Cache plugin for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):
-
 
 Minify and join CSS &amp; Javascript files
 Load JS asynchronously at the bottom of the page where possible
@@ -46,8 +44,7 @@ Let the user cache everything if possible.
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -96,7 +93,9 @@ Let the user cache everything if possible.
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>How to speed up your WordPress site by 200% in less than 5 minutes and save bandwidth</h1>
 
@@ -108,24 +107,17 @@ Let the user cache everything if possible.
 
 			<article>
 				<p>I&rsquo;ve been meaning to tweak my WordPress install for a while now. I&rsquo;ve been using the <a href="http://wordpress.org/extend/plugins/wp-super-cache/">WP Super Cache plugin</a> for about half a year, but I&rsquo;ve been unimpressed by the performance. Anyone who has spent time optimising a site will already know the basic following checklist (plenty of things left out):</p>
-
 <ul>
 <li>Minify and join CSS &amp; Javascript files</li>
 <li>Load JS asynchronously at the bottom of the page where possible</li>
 <li>Load static pages if you can</li>
 <li>Let the user cache everything if possible.</li>
 </ul>
-
 <p>The WP Super Cache plugin basically did all these things. What I didn&rsquo;t like is that as I&rsquo;m using  shared hosting for this simple blog, it cached pages to disk which isn&rsquo;t as quick as caching to memcache or something more efficient. I also didn&rsquo;t like how I had to go through a script to check to see if my minified and joined files were already cached and then make another read to disk. WP Super Cache does a great job at taking a bare bones WordPress and speeding it up on shared hosting but I wondered what else I could do.</p>
-
 <p>Those of you lucky folks on VPS&rsquo;s and your own boxes aren&rsquo;t bound by these limitations, and have access to memcache, APC or something like Varnish, so you can <em>probably</em> stop reading now.</p>
-
 <p>My solution was to use the fantastic, and <strong>free</strong> service provided by <a href="http://www.cloudflare.com">Cloudflare</a>. Essentially, what Cloudflare does is cache your whole site, optimise your static assets automatically and then delivers it efficiently using their Content Delivery Network (CDN). They also provided different levels of protection from hacking, so you are less likely to be attacked by an SQL injection or XSS attack on your WordPress install when security issues arise. I&rsquo;ve not had any practical experience using this feature though.</p>
-
 <p>The huge advantage of Cloudflare is that it serves your website for you, not your hosting provider. Everything is still hosted on your servers, but as Clouldflare caches it, they can deliver the page and assets for you, meaning you don&rsquo;t use as much bandwidth. Furthermore, as they have servers distributed all over the world they can deliver your content to your users in a more efficient way than you can by detecting where the user came from and delivering it from the closest location possible to them.</p>
-
 <p>So to summarise:</p>
-
 <ul>
 <li>Cloudflare delivers your pages and static content (most of the time) saving you bandwidth.</li>
 <li>Cloudflare can keep your site online if your hosting goes down because it has cached versions of the pages and static assets.</li>
@@ -133,13 +125,9 @@ Let the user cache everything if possible.
 <li>Cloudflare can automatically minify and join your CSS/Javascript files</li>
 <li>Cloudflare can load your JS files asynchronously if you don&rsquo;t do this already.</li>
 </ul>
-
 <p>Setting up your site to use Cloudflare is incredibly simple but make sure you disable any caching or minifying plugins before you begin. Because the Cloudflare setup process is so simple I&rsquo;m not going to write a long tutorial with screenshots as they&rsquo;ve made it so easy. All you&rsquo;ll need to do is sign up, add your domain, check that it imported your DNS settings correctly (99% of you won&rsquo;t need to change any of these values) then choose the Cloudflare features you want to enable. Finally, change your DNS to point at Cloudflare. You can do all of this within five minutes.</p>
-
 <p>The way I measured my performance increase was using <a href="http://tools.pingdom.com/fpt">Pingdom&rsquo;s website performance tool</a>. Sadly it only measures performance from three locations but even from those three locations I saw an increase in average page load from 2.5s to 1.2s. I should point out that the initial page load test before Cloudflare was installed, was using WP Super Cache and WP Minify to cache the pages and minify and combine the static assets.</p>
-
 <p>Finally, this is by no means an empirical test, but I believe that Cloudflare is a no brainer for anyone wanting to be able to deliver their WordPress site to a global audience in the quickest time possible.</p>
-
 <p>Please let me know your results in the comments.</p>
 			</article>
 
@@ -161,17 +149,49 @@ Let the user cache everything if possible.
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

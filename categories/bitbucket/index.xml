@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bitbucket on Hello. I&#39;m Dean Clatworthy</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Bitbucket on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 14 Jan 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deanclatworthy.com/categories/bitbucket/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 14 Jan 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/categories/bitbucket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to avoid relying on github: mirror your repository</title>
       <link>https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</link>

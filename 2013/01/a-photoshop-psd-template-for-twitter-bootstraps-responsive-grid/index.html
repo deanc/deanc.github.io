@@ -17,10 +17,8 @@
 
 	
 	<meta name="description" content="Edit: This article is a little out-dated now, as Bootstrap is on version 3 featuring a completely different and fluid grid. It&rsquo;s still applicable if you are working with the older Bootstrap (up to version 2.3.2)
-
 One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its scaffolding guide it talks about breakpoints at 1200px and 980px but you don&rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid." />
 	<meta property="og:description" content="Edit: This article is a little out-dated now, as Bootstrap is on version 3 featuring a completely different and fluid grid. It&rsquo;s still applicable if you are working with the older Bootstrap (up to version 2.3.2)
-
 One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its scaffolding guide it talks about breakpoints at 1200px and 980px but you don&rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid." />
 	
 
@@ -36,8 +34,7 @@ One of the challenges I have faced when doing my front-end work is trying to com
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -86,7 +83,9 @@ One of the challenges I have faced when doing my front-end work is trying to com
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>A Photoshop PSD template for Twitter Bootstrap&#39;s responsive grid</h1>
 
@@ -98,19 +97,12 @@ One of the challenges I have faced when doing my front-end work is trying to com
 
 			<article>
 				<p><strong>Edit:</strong> This article is a little out-dated now, as Bootstrap is on version 3 featuring a completely different and fluid grid. It&rsquo;s still applicable if you are working with the older Bootstrap (up to version 2.3.2)</p>
-
 <p>One of the challenges I have faced when doing my front-end work is trying to communicate to designers who have not done too much responsive work with Bootstrap, how the grid works. It&rsquo;s not as simple as telling someone to make a 968px wide layout anymore. One has to consider differing breakpoints. One of the interesting things about Twitter bootstrap is that in its <a href="http://getbootstrap.com/2.3.2/scaffolding.html#responsive">scaffolding guide</a> it talks about breakpoints at 1200px and 980px but you don&rsquo;t actually have that much width to work with. There is always a margin applied to the left of the layout resulting in only 1170px of available space on a 1200px grid.</p>
-
 <p>Furthermore, one has to then consider the margins in between the columns on the grid. Rather than leave this to interpretation I created this PSD template. You can just rip out the layers from it and put it on top of your existing design, or use it as a starting point to any of your designs which will utilise Bootstrap. It overlays a translucent grid for the top 3 bootstrap breakpoints: 1200px, 980px and 768px.</p>
-
-<p><a href="http://www.deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/bootstrap-guide/" rel="attachment wp-att-288"><img class="alignnone size-large wp-image-288" alt="Bootstrap-Guide" src="//deanclatworthy.com/img/uploads/2013/01/Bootstrap-Guide-1024x682.png" width="625" height="416" /></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <p>You can utilise any of the space in green, but do not place anything on the leftmost or rightmost red areas.</p>
-
 <p><em>I should, at this point, also stress that if you can/want to use the fluid layout of Bootstrap then this template will obviously be of no use to you.</em></p>
-
 <p>You can download the template by clicking here:</p>
-
 <p><a href="http://bit.ly/Z1jp00">Download Now</a></p>
 			</article>
 
@@ -132,17 +124,49 @@ One of the challenges I have faced when doing my front-end work is trying to com
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

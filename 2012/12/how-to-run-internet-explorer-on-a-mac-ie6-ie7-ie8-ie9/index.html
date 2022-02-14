@@ -34,8 +34,7 @@ Essentially though, it&rsquo;s a simple as typing this command in the terminal:"
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -84,7 +83,9 @@ Essentially though, it&rsquo;s a simple as typing this command in the terminal:"
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>How to run Internet Explorer on a Mac (IE6, IE7, IE8, IE9, IE10, IE11)</h1>
 
@@ -97,12 +98,9 @@ Essentially though, it&rsquo;s a simple as typing this command in the terminal:"
 			<article>
 				<p>Just a quick tip for anyone doing web development on macs, it&rsquo;s quite easy to get internet explorer running now with a brilliant tool created by Greg Thornton over at github. This essential automates the creation of the free Microsoft testing virtual machines for IE and builds them in to virtualbox. Make sure you install virtualbox first and then follow the instructions over at github:
 <a href="https://github.com/xdissent/ievms">https://github.com/xdissent/ievms</a></p>
-
 <p>Essentially though, it&rsquo;s a simple as typing this command in the terminal:</p>
-
 <pre><code>curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | bash
 </code></pre>
-
 <p>This will install IE6-IE11. Make sure you give it some time as it has to download over 10GB of data.</p>
 
 			</article>
@@ -125,17 +123,49 @@ Essentially though, it&rsquo;s a simple as typing this command in the terminal:"
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

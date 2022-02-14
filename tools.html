@@ -31,8 +31,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -81,35 +80,28 @@
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/">&laquo; Back to homepage</a></p>
+			
 
-			<h1>Tools</h1>
+			<h1>🛠️ Tools</h1>
 
 			
 
 			<article>
-				
-
-<p>As a programmer, I like to experiment and build tools to help make my life or others lives easier. On this page you&rsquo;ll
+				<p>As a programmer, I like to experiment and build tools to help make my life or others lives easier. On this page you&rsquo;ll
 find some of the tools I have built.</p>
-
 <h3 id="silex-starter-pack">Silex starter pack</h3>
-
 <p>A boilerplate project to get you started quickly with the Silex PHP template. Features include:</p>
-
 <ul>
 <li>Clearly defined application hierarchy and structure.</li>
 <li>Admin control panel controller, with styling out the box using using <a href="http://getbootstrap.com">Bootstrap</a>.</li>
 <li>Template for loading console tasks.</li>
 <li>A basic Symfony2 Security Component implementation.</li>
 </ul>
-
 <p><a href="https://github.com/deanc/silex-starter-pack">The project is hosted on Github</a>.</p>
-
 <h3 id="silex-web-translator">Silex Web Translator</h3>
-
 <p>A simple provider for Silex which allows web-based translation of translation files.</p>
-
 <p><a href="https://github.com/deanc/silex-web-translator">The project is hosted on Github</a>.</p>
 
 			</article>
@@ -120,17 +112,49 @@ find some of the tools I have built.</p>
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

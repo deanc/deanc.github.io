@@ -32,8 +32,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -82,7 +81,9 @@
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>Intel X25-M SSD&#39;s don&#39;t work with Mac OSX 10.8.3</h1>
 
@@ -94,19 +95,12 @@
 
 			<article>
 				<p>I&rsquo;m writing this informative post to try and help anyone who had the same problem as me. I upgraded to OSX 10.8.3, and after it restarted the machine the Apple logo and spinner was on screen for about a minute followed by a stop/forbidden/no entry symbol that looks like this:</p>
-
-<p><a href="//deanclatworthy.com/wp-content/uploads/2013/04/osx-noentry.jpg"><img class="alignnone size-full wp-image-335" alt="osx-noentry" src="/img/uploads/2013/04/osx-noentry.jpg" /></a></p>
-
-<p>&nbsp;</p>
-
+<p><a href="//deanclatworthy.com/wp-content/uploads/2013/04/osx-noentry.jpg"><!-- raw HTML omitted --></a></p>
+<p> </p>
 <p>I couldn&rsquo;t boot into safe mode (by holding shift on boot). I could enter the internet recovery mode, but a drive repair and permissions fix did nothing. I tried using the internet recovery mode to reinstall OSX (without losing data) and that didn&rsquo;t work.</p>
-
 <p>Next I reinstalled OSX from a bootable USB recovery drive. This installed 10.8.2 again which worked perfectly. I immediately upgraded to 10.8.3 and the no entry sign was back. This told me there was some issue with my hardware and 10.8.3. A quick google around found that Intel X25-M drives don&rsquo;t work on 10.8.3 unless you upgrade to the most recent firmware. The good news is this is super easy.</p>
-
 <p>Download the <a href="http://www.intel.com/go/ssdtoolbox">Intel SSD toolbox</a> on a windows machine. Shut down the machine and insert the drive from your mac. Boot up again and run the toolbox and update the firmware. It takes less than 20 seconds and then put the drive back in your mac and it should boot into 10.8.3 without issue.</p>
-
 <p>Don&rsquo;t do what I did and wipe your data, as there is no need!</p>
-
 <p>Hopefully this article will be of help to a few people out there! Let me know in the comments if it was.</p>
 			</article>
 
@@ -128,17 +122,49 @@
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

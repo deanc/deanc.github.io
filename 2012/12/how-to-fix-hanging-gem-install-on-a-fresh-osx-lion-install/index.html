@@ -16,10 +16,10 @@
 	
 
 	
-	<meta name="description" content="I&rsquo;ve now tried to use gem install &lt;package&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&rdquo; 2011 and Macbook Pro 15&rdquo; 2012. Both have suffered from the same issue of the gem installer hanging.
+	<meta name="description" content="I&rsquo;ve now tried to use gem install &lt;package&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&quot; 2011 and Macbook Pro 15&quot; 2012. Both have suffered from the same issue of the gem installer hanging.
 This was my symptom.
  $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt;  The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message." />
-	<meta property="og:description" content="I&rsquo;ve now tried to use gem install &lt;package&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&rdquo; 2011 and Macbook Pro 15&rdquo; 2012. Both have suffered from the same issue of the gem installer hanging.
+	<meta property="og:description" content="I&rsquo;ve now tried to use gem install &lt;package&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&quot; 2011 and Macbook Pro 15&quot; 2012. Both have suffered from the same issue of the gem installer hanging.
 This was my symptom.
  $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt;  The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message." />
 	
@@ -36,8 +36,7 @@ This was my symptom.
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -86,7 +85,9 @@ This was my symptom.
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>How to fix hanging gem install on a fresh OSX Lion install</h1>
 
@@ -97,30 +98,27 @@ This was my symptom.
 			
 
 			<article>
-				<p>I&rsquo;ve now tried to use <code>gem install &lt;package&gt;</code> on two fresh installs of OSX Lion on a Macbook Pro 13&rdquo; 2011 and Macbook Pro 15&rdquo; 2012. Both have suffered from the same issue of the gem installer hanging.</p>
-
+				<p>I&rsquo;ve now tried to use <code>gem install &lt;package&gt;</code> on two fresh installs of OSX Lion on a Macbook Pro 13&quot; 2011 and Macbook Pro 15&quot; 2012. Both have suffered from the same issue of the gem installer hanging.</p>
 <p>This was my symptom.</p>
-
 <pre><code>    $ gem install cocoapods
     ERROR:  While executing gem ... (Gem::FilePermissionError)
     You don't have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt;
 </code></pre>
-
-<p>The strange thing was, if this was solely an issue with permissions, then it should not take almost <em>three minutes</em> to give that error message. Something more sinister is obviously going on&#8230;</p>
-
+<p>The strange thing was, if this was solely an issue with permissions, then it should not take almost <em>three minutes</em> to give that error message. Something more sinister is obviously going on…</p>
 <p>After some investigation I came across several topics on stackoverflow discussing gem install hanging, but all of them implied it was some connection issue and suggesting several solutions. None of them worked individually, but here is what worked for me:</p>
-
 <ol>
-<li>Open up Xcode and go to XCode &gt; Preferences and switch to the Downloads tab. Once there, install the command line tools if you haven&rsquo;t already.<a href="http://www.deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/screen-shot-2012-12-26-at-1-18-35-pm/" rel="attachment wp-att-259"><img class="alignnone size-medium wp-image-259" alt="Screen Shot 2012-12-26 at 1.18.35 PM" src="//deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-26-at-1.18.35-PM-300x219.png" width="300" height="219" /></a></li>
-
-<li><p>Install RVM and the latest stable version of Ruby by typing this on command line:</p>
-
+<li>
+<p>Open up Xcode and go to XCode &gt; Preferences and switch to the Downloads tab. Once there, install the command line tools if you haven&rsquo;t already.<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>Install RVM and the latest stable version of Ruby by typing this on command line:</p>
 <pre><code>curl -L https://get.rvm.io | bash -s stable --ruby
-</code></pre></li>
-
-<li><p>Now you should be able to install gems.</p></li>
+</code></pre>
+</li>
+<li>
+<p>Now you should be able to install gems.</p>
+</li>
 </ol>
-
 <p>Enjoy the guide, and please, if you have any feedback on why gem install doesn&rsquo;t work out the box then share it in the comments.</p>
 
 			</article>
@@ -143,17 +141,49 @@ This was my symptom.
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

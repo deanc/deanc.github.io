@@ -36,8 +36,7 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
 	
 	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.f34856f3bf19d54c14ae9099350d5786a09a2dd1339ff06950bef1a0e6d86bf2.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -86,7 +85,9 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
   
 
 
-			<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
 
 			<h1>WordPress plugin deployment script (GIT to SVN)</h1>
 
@@ -98,25 +99,19 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
 
 			<article>
 				<p><strong>Short Version:</strong> This script will allow you to manage your wordpress plugins in git, and deploy them to wordpress.org SVN.</p>
-
 <p><strong>Long Version:</strong></p>
-
 <p>Recently at work I was required to build a wordpress plugin. After trawling through the documentation to figure out what I needed to do, it became apparent that to get my plugin listed in the WordPress plugins directory I would be required to host the code in their SVN repository. Along with most developers nowadays, I&rsquo;ve switched to Git (for numerous reasons), so I was left with the dilemna of how to manage my plugin within git and host it on Github, but sync all changes to the SVN repository whenever a new version was ready. There&rsquo;s quite a lot of work involved when trying to do this so I wanted to automate the whole thing. The result is a bash script shown below which will:</p>
-
 <ol>
 <li>Check that the version numbers in your readme.txt match up with those in your PHP file.</li>
 <li>Commit the latest outstanding changes to your git repository if any are left</li>
 <li>Push the latest changes to github</li>
 <li>Export the contents at the HEAD of your &lsquo;master&rsquo; branch in git to the trunk of your SVN repository.</li>
 <li>Commit the changes to SVN and therefore push them  back to wordpress.org</li>
-<li>Create an SVN tag for wordpress.org to use and commit it (this will be the same value as Stable Tag: <tagnumber> in your readme.txt)</li>
+<li>Create an SVN tag for wordpress.org to use and commit it (this will be the same value as Stable Tag: <!-- raw HTML omitted --> in your readme.txt)</li>
 <li>Update the version number for future reference.</li>
 </ol>
-
 <p>Hopefully this should make life a little easier for those WordPress plugin developers who wish to manage their projects in GIT :)</p>
-
 <p><a href="https://github.com/deanc/wordpress-plugin-git-svn">Download the script here</a></p>
-
 <p>Enjoy!</p>
 
 			</article>
@@ -139,17 +134,49 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
 		
 
   <footer>
-    <p>&copy; 2019 Dean Clatworthy | <a href="#top">Back to top</a></p>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
   </footer>
 
 </main>
-
-  <p id="darkmode">Ohhh, you're viewing this site in <a target="_blank" href="https://paulmillr.com/posts/using-dark-mode-in-css/">dark mode</a> 👻 Spooky!</p>
 
 
   
       
   
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

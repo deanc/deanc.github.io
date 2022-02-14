@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Hello. I&#39;m Dean Clatworthy</title>
@@ -6,13 +6,9 @@
     <description>Recent content in Tags on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deanclatworthy.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Crashplan</title>
+      <title>crashplan</title>
       <link>https://deanclatworthy.com/tags/crashplan.html</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -21,7 +17,7 @@
     </item>
     
     <item>
-      <title>Electron</title>
+      <title>electron</title>
       <link>https://deanclatworthy.com/tags/electron.html</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -30,34 +26,7 @@
     </item>
     
     <item>
-      <title>Hugo</title>
-      <link>https://deanclatworthy.com/tags/hugo.html</link>
-      <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://deanclatworthy.com/tags/hugo.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://deanclatworthy.com/tags/javascript.html</link>
-      <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://deanclatworthy.com/tags/javascript.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jekyll</title>
-      <link>https://deanclatworthy.com/tags/jekyll.html</link>
-      <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://deanclatworthy.com/tags/jekyll.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
+      <title>linux</title>
       <link>https://deanclatworthy.com/tags/linux.html</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
@@ -66,7 +35,34 @@
     </item>
     
     <item>
-      <title>Php Mysql Error Utf8</title>
+      <title>ubuntu</title>
+      <link>https://deanclatworthy.com/tags/ubuntu.html</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/ubuntu.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://deanclatworthy.com/tags/hugo.html</link>
+      <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/hugo.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://deanclatworthy.com/tags/jekyll.html</link>
+      <pubDate>Thu, 15 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/jekyll.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php mysql error utf8</title>
       <link>https://deanclatworthy.com/tags/php-mysql-error-utf8.html</link>
       <pubDate>Thu, 09 Jun 2011 00:00:00 +0000</pubDate>
       
@@ -75,7 +71,16 @@
     </item>
     
     <item>
-      <title>Selenium</title>
+      <title>javascript</title>
+      <link>https://deanclatworthy.com/tags/javascript.html</link>
+      <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/tags/javascript.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>selenium</title>
       <link>https://deanclatworthy.com/tags/selenium.html</link>
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
@@ -84,20 +89,11 @@
     </item>
     
     <item>
-      <title>Testing</title>
+      <title>testing</title>
       <link>https://deanclatworthy.com/tags/testing.html</link>
       <pubDate>Tue, 25 Jan 2011 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/tags/testing.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubuntu</title>
-      <link>https://deanclatworthy.com/tags/ubuntu.html</link>
-      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://deanclatworthy.com/tags/ubuntu.html</guid>
       <description></description>
     </item>
     

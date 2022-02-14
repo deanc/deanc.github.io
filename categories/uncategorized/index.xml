@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Uncategorized on Hello. I&#39;m Dean Clatworthy</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Uncategorized on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Apr 2013 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://deanclatworthy.com/categories/uncategorized/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 12 Apr 2013 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/categories/uncategorized/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intel X25-M SSD&#39;s don&#39;t work with Mac OSX 10.8.3</title>
       <link>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</link>
@@ -75,8 +71,7 @@ Javascript:
       <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2010/04/jump-in-camp-video/</guid>
-      <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:
-  </description>
+      <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:</description>
     </item>
     
   </channel>
