@@ -17,9 +17,9 @@
 
 	
 	<meta name="description" content="When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:
-Hat tip to mr_dbr on reddit for this." />
+  launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist     Hat tip to mr_dbr on reddit for this." />
 	<meta property="og:description" content="When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:
-Hat tip to mr_dbr on reddit for this." />
+  launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist     Hat tip to mr_dbr on reddit for this." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/">
@@ -97,7 +97,15 @@ Hat tip to mr_dbr on reddit for this." />
 
 			<article>
 				<p>When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:</p>
-<!-- raw HTML omitted -->
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="code">
+        <pre class="bash" style="font-family:monospace;">launchctl unload <span style="color: #660033;">-w</span> <span style="color: #000000; font-weight: bold;">/</span>System<span style="color: #000000; font-weight: bold;">/</span>Library<span style="color: #000000; font-weight: bold;">/</span>LaunchAgents<span style="color: #000000; font-weight: bold;">/</span>org.openbsd.ssh-agent.plist</pre>
+      </td>
+    </tr>
+  </table>
+</div>
 <p>Hat tip to <a href="http://www.reddit.com/r/apple/comments/9fnnc/ask_rapple_how_do_i_disable_sshagent/c0cmh99">mr_dbr on reddit</a> for this.</p>
 
 			</article>

@@ -35,7 +35,9 @@ For those of you currently running Jekyll before you decide to switch, make sure
       <pubDate>Wed, 14 Oct 2015 14:10:32 +0300</pubDate>
       
       <guid>https://deanclatworthy.com/contact.html</guid>
-      <description>To get in touch with me, you can fill in the form below, or try and tweet me.</description>
+      <description>To get in touch with me, you can fill in the form below, or try and tweet me.
+ -- Your Email: Subject: Message: 
+Submit  </description>
     </item>
     
     <item>
@@ -64,7 +66,7 @@ PHP PHP has been my language of choice for over 15 years. I took an early intere
       
       <guid>https://deanclatworthy.com/portfolio.html</guid>
       <description>I have been developing websites now for over fifteen years and had the pleasure of working with some wonderful people over the course of my career so far. I have worked with small businesses &amp;amp; large corporations on their online presence and helped them become more successful as an online entity.
-I have won numerous awards for my work and will try to highlight them below.
+ I have won numerous awards for my work and will try to highlight them below.
 Below are some of my most recent clients &amp;amp; projects.</description>
     </item>
     
@@ -95,7 +97,7 @@ Silex starter pack A boilerplate project to get you started quickly with the Sil
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/</guid>
-      <description>One of the problems I&amp;rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale(e.g. en_GB vs en) it doesn&amp;rsquo;t use the translations that come shipped with the Validation component.
+      <description>One of the problems I&amp;rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&amp;rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
  $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&amp;gt;share($app-&amp;gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&amp;gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&amp;gt;addResource(&#39;xlf&#39;, __DIR__.</description>
@@ -266,7 +268,7 @@ The good news is the fix is simple. Simply send the following header:</descripti
       
       <guid>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
       <description>When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:
-Hat tip to mr_dbr on reddit for this.</description>
+  launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist     Hat tip to mr_dbr on reddit for this.</description>
     </item>
     
     <item>
@@ -441,7 +443,8 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
       <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2010/04/jump-in-camp-video/</guid>
-      <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:</description>
+      <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:
+ </description>
     </item>
     
     <item>

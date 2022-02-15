@@ -107,7 +107,7 @@ Scenario #1 You have accidentally made a few commits to a branch and you wish to
 <p><strong>Solution:</strong></p>
 <pre><code>    git reset --hard origin/
 </code></pre>
-<p>This resets your current branch to an identical state of the current HEAD of the origin <!-- raw HTML omitted --></p>
+<p>This resets your current branch to an identical state of the current HEAD of the origin <branch></p>
 <h2 id="scenario-2">Scenario #2</h2>
 <p>You have created a branch B from branch A and made a few commits. Assuming you write useful commit messages it&rsquo;s useful for other developers to see the changes you&rsquo;ve made and the features you&rsquo;ve added since you branched. To do this type the following command:</p>
 <pre><code>    git log $(git merge-base A B)..B #

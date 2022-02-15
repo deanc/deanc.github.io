@@ -97,7 +97,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 
 			<article>
 				<p>I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.</p>
-<p>In your SF2 bundle create a new file <strong><!-- raw HTML omitted -->/Resources/views/Form/field_errors.html.twig</strong>:</p>
+<p>In your SF2 bundle create a new file <strong><BundleName>/Resources/views/Form/field_errors.html.twig</strong>:</p>
 <pre><code>    {% raw %}
     {# YourBundleName/Resources/views/Form/field_errors.html.twig #}
     {% block field_errors %}

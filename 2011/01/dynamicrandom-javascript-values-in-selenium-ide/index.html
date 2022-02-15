@@ -95,9 +95,25 @@
 
 			<article>
 				<p>One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:</p>
-<!-- raw HTML omitted -->
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="code">
+        <pre class="javascript" style="font-family:monospace;">javascript<span style="color: #009900;">&#123;</span><span style="color: #009900;">&#91;</span>code goes here<span style="color: #009900;">&#93;</span><span style="color: #009900;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
 <p>So let&rsquo;s do this using a more practical example. You have a form where you can&rsquo;t enter the same data twice for example a registration form would require a unique email address. So, record your test as normal, entering real data then once you&rsquo;re finished go back and edit the <code>type</code> command for the email address field and set the value to:</p>
-<!-- raw HTML omitted -->
+<div class="wp_syntax">
+  <table>
+    <tr>
+      <td class="code">
+        <pre class="javascript" style="font-family:monospace;">javascript<span style="color: #009900;">&#123;</span><span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">"@example.com"</span><span style="color: #009900;">&#125;</span></pre>
+      </td>
+    </tr>
+  </table>
+</div>
 <p>Now you have random data you can pass into your test to ensure it passes any unique validation tests every time.</p>
 			</article>
 

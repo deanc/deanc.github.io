@@ -16,11 +16,11 @@
 	
 
 	
-	<meta name="description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale(e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component.
+	<meta name="description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
  $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__." />
-	<meta property="og:description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale(e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component.
+	<meta property="og:description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
  $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__." />
@@ -101,7 +101,7 @@ The way around this is to simply load them into the correct domain when initiali
 
 			<article>
 				<p>One of the problems I&rsquo;ve encountered using the Symfony <code>Translation</code> component in Silex
-is that when using a <!-- raw HTML omitted -->fully qualified locale<!-- raw HTML omitted -->
+is that when using a <a target="_blank" href="https://en.wikipedia.org/wiki/IETF_language_tag">fully qualified locale</a>
 (e.g. <code>en_GB</code> vs <code>en</code>) it doesn&rsquo;t use the translations that come shipped with the <code>Validation</code> component.</p>
 <p>This is because they are named <code>validators.en.xlf</code> and not <code>validators.en_GB.xlf</code>.</p>
 <p>The way around this is to simply load them into the correct domain when initialising the <code>TranslationServiceProvider</code></p>
