@@ -158,7 +158,9 @@ subjects that interest me and will hopefully interest others. I may even post ra
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

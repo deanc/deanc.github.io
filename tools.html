@@ -153,7 +153,9 @@ find some of the tools I have built.</p>
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

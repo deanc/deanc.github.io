@@ -184,7 +184,9 @@ is that when using a <a target="_blank" href="https://en.wikipedia.org/wiki/IETF
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

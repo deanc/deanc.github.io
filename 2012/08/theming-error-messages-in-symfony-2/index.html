@@ -181,7 +181,9 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

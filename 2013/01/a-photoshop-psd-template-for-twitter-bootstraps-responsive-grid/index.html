@@ -165,7 +165,9 @@ One of the challenges I have faced when doing my front-end work is trying to com
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

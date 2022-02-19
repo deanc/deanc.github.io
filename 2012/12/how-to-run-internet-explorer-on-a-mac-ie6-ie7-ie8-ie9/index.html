@@ -164,7 +164,9 @@ Essentially though, it&rsquo;s a simple as typing this command in the terminal:"
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

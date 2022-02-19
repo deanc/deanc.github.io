@@ -201,7 +201,9 @@ I was lucky enough to be given the opportunity last week to attend JumpInCamp, a
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

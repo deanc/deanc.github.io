@@ -91,6 +91,8 @@
 
 			<ul>
 				
+				<li><a href="https://deanclatworthy.com/2022-02-17-live-bbc-channels-in-720p-hd/">Stream live BBC channels in HD using streamlink</a></li>
+				
 				<li><a href="https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/">Running Crashplan on Ubuntu 18.10</a></li>
 				
 				<li><a href="https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/">Migrating Jekyll to Hugo - my experience</a></li>
@@ -215,7 +217,9 @@
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

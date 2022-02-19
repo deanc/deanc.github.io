@@ -6,7 +6,20 @@
     <description>Recent content on Hello. I&#39;m Dean Clatworthy</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stream live BBC channels in HD using streamlink</title>
+      <link>https://deanclatworthy.com/2022-02-17-live-bbc-channels-in-720p-hd/</link>
+      <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://deanclatworthy.com/2022-02-17-live-bbc-channels-in-720p-hd/</guid>
+      <description>Been trying to watch a live event on iPlayer in your browser only to have low quality streaming? It seems that the BBC iPlayer browser client doesn&amp;rsquo;t support above 480p. Fortunately there&amp;rsquo;s a solution.
+Install streamlink @ https://streamlink.github.io/install.html
+Install VLC player @ https://videolan.org
+Create an account on the BBC website and take note of your credentials. Create the following script and name it bbc1.sh:
+streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbciplayer-username=user@example.com --bbciplayer-password=yourpassword  Save it and chmod +x bbc1.</description>
+    </item>
+    
     <item>
       <title>Running Crashplan on Ubuntu 18.10</title>
       <link>https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/</link>
@@ -47,7 +60,9 @@ Submit  </description>
       
       <guid>https://deanclatworthy.com/skills.html</guid>
       <description>On this page I&amp;rsquo;ll detail my areas of expertise.
-PHP PHP has been my language of choice for over 15 years. I took an early interest in the language when trying to modify forum software. Since then I&amp;rsquo;ve specialised in it, and built more websites than I can count with it. The PHP ecosystem has changed drastically in the last few years. Gone are the days of includes, magic quotes and addslashes and PHP now has a fantastic toolset to build modern, maintainable and quick web applications.</description>
+Back-end Node.js JS is everywhere nowadays, with the back-end no exception. I&amp;rsquo;ve worked at startups, and at project-level building back-end services in NodeJS with a strong preference for Typescript.
+Serverless architecture More recently I have worked on projects using Serverless framework, deployed to Lambda @ AWS.
+PHP I&amp;rsquo;ve over 20 years of experience using PHP. I took an early interest in the language when trying to modify forum software.</description>
     </item>
     
     <item>
@@ -65,7 +80,7 @@ PHP PHP has been my language of choice for over 15 years. I took an early intere
       <pubDate>Wed, 14 Oct 2015 14:10:32 +0300</pubDate>
       
       <guid>https://deanclatworthy.com/portfolio.html</guid>
-      <description>I have been developing websites now for over fifteen years and had the pleasure of working with some wonderful people over the course of my career so far. I have worked with small businesses &amp;amp; large corporations on their online presence and helped them become more successful as an online entity.
+      <description>I have been developing websites now for over twenty years and had the pleasure of working with some wonderful people over the course of my career so far. I have worked with small businesses &amp;amp; large corporations on their online presence and helped them become more successful as an online entity.
  I have won numerous awards for my work and will try to highlight them below.
 Below are some of my most recent clients &amp;amp; projects.</description>
     </item>

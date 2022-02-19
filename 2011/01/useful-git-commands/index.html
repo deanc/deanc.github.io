@@ -177,7 +177,9 @@ Scenario #1 You have accidentally made a few commits to a branch and you wish to
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

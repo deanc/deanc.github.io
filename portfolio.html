@@ -87,7 +87,7 @@
     
 
     <article>
-        <p>I have been developing websites now for over fifteen years and had the pleasure of working with some wonderful people
+        <p>I have been developing websites now for over twenty years and had the pleasure of working with some wonderful people
 over the course of my career so far. I have worked with small businesses &amp; large corporations on their online presence
 and helped them become more successful as an online entity.</p>
 <p><i class="fa fa-trophy" style="color: #ffcc33"></i> I have won numerous awards for my work and will try to highlight them below.</p>
@@ -816,7 +816,9 @@ employees to share their knowledge about the interesting thing the company does.
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>

@@ -2,35 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://deanclatworthy.com/tags/crashplan.html</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/electron.html</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/linux.html</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/post.html</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-02-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://deanclatworthy.com/2022-02-17-live-bbc-channels-in-720p-hd/</loc>
+    <lastmod>2022-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/</loc>
     <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags.html</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/ubuntu.html</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/hugo.html</loc>
-    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/jekyll.html</loc>
-    <lastmod>2015-10-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/</loc>
     <lastmod>2015-10-15T00:00:00+00:00</lastmod>
@@ -65,61 +47,22 @@
     <loc>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</loc>
     <lastmod>2014-10-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories.html</loc>
-    <lastmod>2013-07-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/07/stopping-mass-login-attempts-to-wordpress-using-nginx/</loc>
-    <lastmod>2013-07-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/wordpress.html</loc>
     <lastmod>2013-07-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</loc>
     <lastmod>2013-07-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/php.html</loc>
-    <lastmod>2013-07-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/twitter.html</loc>
-    <lastmod>2013-07-15T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/facebook.html</loc>
-    <lastmod>2013-06-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/06/facebook-the-new-giant-of-advertising/</loc>
     <lastmod>2013-06-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/css.html</loc>
-    <lastmod>2013-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/firefox.html</loc>
-    <lastmod>2013-06-11T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/06/web-fonts-not-loading-in-firefox/</loc>
-    <lastmod>2013-06-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/webfonts.html</loc>
     <lastmod>2013-06-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2013/05/ensuring-facebook-canvas-applications-work-in-ie9/</loc>
     <lastmod>2013-05-17T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/internet-explorer.html</loc>
-    <lastmod>2013-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/microsoft.html</loc>
-    <lastmod>2013-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/silex.html</loc>
-    <lastmod>2013-05-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/debian.html</loc>
-    <lastmod>2013-05-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</loc>
-    <lastmod>2013-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/linux.html</loc>
     <lastmod>2013-05-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</loc>
@@ -128,41 +71,17 @@
     <loc>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</loc>
     <lastmod>2013-04-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/symfony2.html</loc>
-    <lastmod>2013-04-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/04/intel-x25-m-ssds-dont-work-with-mac-osx-10-8-3/</loc>
     <lastmod>2013-04-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/uncategorized.html</loc>
-    <lastmod>2013-04-12T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/apache.html</loc>
-    <lastmod>2013-02-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/</loc>
-    <lastmod>2013-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/nginx.html</loc>
     <lastmod>2013-02-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2013/02/browse-safely-and-avoid-drive-by-attacks-in-google-chrome/</loc>
     <lastmod>2013-02-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/bitbucket.html</loc>
-    <lastmod>2013-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/github.html</loc>
-    <lastmod>2013-01-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2013/01/how-to-avoid-relying-on-github-mirror-your-repository/</loc>
     <lastmod>2013-01-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/osx.html</loc>
-    <lastmod>2013-01-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/ssh.html</loc>
-    <lastmod>2013-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</loc>
     <lastmod>2013-01-10T00:00:00+00:00</lastmod>
@@ -171,18 +90,6 @@
     <lastmod>2013-01-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2013/01/a-photoshop-psd-template-for-twitter-bootstraps-responsive-grid/</loc>
-    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/bash.html</loc>
-    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/bootstrap.html</loc>
-    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/git.html</loc>
-    <lastmod>2013-01-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/photoshop.html</loc>
     <lastmod>2013-01-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</loc>
@@ -194,28 +101,16 @@
     <loc>https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</loc>
     <lastmod>2012-12-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/ruby.html</loc>
-    <lastmod>2012-12-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/ruby-gems.html</loc>
-    <lastmod>2012-12-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2012/12/how-to-run-internet-explorer-on-a-mac-ie6-ie7-ie8-ie9/</loc>
     <lastmod>2012-12-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/</loc>
     <lastmod>2012-09-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/symfony-2.html</loc>
-    <lastmod>2012-08-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2012/08/theming-error-messages-in-symfony-2/</loc>
     <lastmod>2012-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/</loc>
-    <lastmod>2012-07-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/zend-framework.html</loc>
     <lastmod>2012-07-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2012/01/how-to-rip-music-from-the-hype-machine/</loc>
@@ -224,28 +119,10 @@
     <loc>https://deanclatworthy.com/2011/09/a-chrome-extension-to-revert-to-the-old-style-facebook-chat/</loc>
     <lastmod>2011-09-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/categories/google-chrome.html</loc>
-    <lastmod>2011-09-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/</loc>
     <lastmod>2011-06-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://deanclatworthy.com/tags/php-mysql-error-utf8.html</loc>
-    <lastmod>2011-06-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/</loc>
-    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/javascript.html</loc>
-    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/selenium.html</loc>
-    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/selenium-ide.html</loc>
-    <lastmod>2011-01-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/tags/testing.html</loc>
     <lastmod>2011-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2011/01/useful-git-commands/</loc>
@@ -267,9 +144,6 @@
     <lastmod>2010-04-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://deanclatworthy.com/2010/04/jump-in-camp/</loc>
-    <lastmod>2010-04-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://deanclatworthy.com/categories/random.html</loc>
     <lastmod>2010-04-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>

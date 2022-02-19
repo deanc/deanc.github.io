@@ -257,7 +257,9 @@ I&rsquo;ll cut straight to the chase. There&rsquo;s some great information alrea
         status.innerHTML = "Oops! There was a problem submitting your form"
       });
     }
-    form.addEventListener("submit", handleSubmit)
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
 </script>
 
 <script>
