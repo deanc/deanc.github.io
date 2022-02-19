@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 17 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://deanclatworthy.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stream live BBC channels in HD using streamlink</title>
-      <link>https://deanclatworthy.com/2022-02-17-live-bbc-channels-in-720p-hd/</link>
+      <link>https://deanclatworthy.com/2022/02/17/live-bbc-channels-in-720p-hd/</link>
       <pubDate>Thu, 17 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://deanclatworthy.com/2022-02-17-live-bbc-channels-in-720p-hd/</guid>
+      <guid>https://deanclatworthy.com/2022/02/17/live-bbc-channels-in-720p-hd/</guid>
       <description>Been trying to watch a live event on iPlayer in your browser only to have low quality streaming? It seems that the BBC iPlayer browser client doesn&amp;rsquo;t support above 480p. Fortunately there&amp;rsquo;s a solution.
 Install streamlink @ https://streamlink.github.io/install.html
 Install VLC player @ https://videolan.org

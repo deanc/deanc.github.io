@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<meta charset="utf-8">
+	<meta name="generator" content="" />
+
+	<title>
+		
+		Stream live BBC channels in HD using streamlink
+		
+	</title>
+
+	
+	<meta property="og:title" content="Stream live BBC channels in HD using streamlink" />
+	
+
+	
+	<meta name="description" content="Been trying to watch a live event on iPlayer in your browser only to have low quality streaming? It seems that the BBC iPlayer browser client doesn&rsquo;t support above 480p. Fortunately there&rsquo;s a solution.
+Install streamlink @ https://streamlink.github.io/install.html
+Install VLC player @ https://videolan.org
+Create an account on the BBC website and take note of your credentials. Create the following script and name it bbc1.sh:
+streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbciplayer-username=user@example.com --bbciplayer-password=yourpassword  Save it and chmod &#43;x bbc1." />
+	<meta property="og:description" content="Been trying to watch a live event on iPlayer in your browser only to have low quality streaming? It seems that the BBC iPlayer browser client doesn&rsquo;t support above 480p. Fortunately there&rsquo;s a solution.
+Install streamlink @ https://streamlink.github.io/install.html
+Install VLC player @ https://videolan.org
+Create an account on the BBC website and take note of your credentials. Create the following script and name it bbc1.sh:
+streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbciplayer-username=user@example.com --bbciplayer-password=yourpassword  Save it and chmod &#43;x bbc1." />
+	
+
+	<meta property="og:url" content="https://deanclatworthy.com/2022/02/17/live-bbc-channels-in-720p-hd/">
+	<meta property="og:site_name" content="DeanClatworthy.com">
+	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta name="theme-color" content="#DE6262"/>
+
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picnic/6.5.0/picnic.min.css" integrity="sha256-utb14vNizAIlqHW/4zR4OYUrQbV1BYXm3yiCC54mfSg=" crossorigin="anonymous" />
+	
+	
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.9790719a56a0445c42d80d3fcdbd98dfe633bc1a95c0bb42598de2cc2da8d4b4.css">
+
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="theme-color" content="#ffffff">
+
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+
+</head>
+
+	<body>
+		<a id="top"></a>
+<main>
+
+
+
+
+
+  
+  
+  
+
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+
+			
+				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
+			
+
+			<h1>Stream live BBC channels in HD using streamlink</h1>
+
+			
+			<p class="date">
+				02 February 2022
+			</p>
+			
+
+			<article>
+				<p>Been trying to watch a live event on iPlayer in your browser only to have low quality streaming? It
+seems that the BBC iPlayer browser client doesn&rsquo;t support above 480p. Fortunately there&rsquo;s a solution.</p>
+<p>Install streamlink @ <a href="https://streamlink.github.io/install.html">https://streamlink.github.io/install.html</a></p>
+<p>Install VLC player @ <a href="https://videolan.org">https://videolan.org</a></p>
+<p>Create an account on the BBC website and take note of your credentials. Create the following script
+and name it <code>bbc1.sh</code>:</p>
+<pre><code>streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbciplayer-username=user@example.com --bbciplayer-password=yourpassword
+</code></pre>
+<p>Save it and <code>chmod +x bbc1.sh</code>. Usage: <code>./bbc1.sh</code>. This&rsquo;ll open VLC and stream BBC1 in HD.</p>
+<p>To watch BBC2 just change <code>bbcone</code> to <code>bbctwo</code> (I suggest making a <code>bbc2.sh</code> script or parameterize the script yourself).</p>
+<p>I haven&rsquo;t yet found a way to pipe the output of this over airplay to a receiever. If anyone has any suggestions I&rsquo;d love to hear them as currently
+I&rsquo;m only able to mirror using my macbook&rsquo;s screen sharing to my tv (via airplay).</p>
+
+			</article>
+
+			
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+				var disqus_developer = 0;
+				var disqus_shortname = 'deanclatworthy';
+					(function() {
+						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+					})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			
+
+
+		
+
+  <footer>
+    <p>&copy; 2022 Dean Clatworthy | <a href="#top">Back to top</a></p>
+  </footer>
+
+</main>
+
+
+  
+      
+  
+
+
+<script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          status.innerHTML = "Thanks for your submission!";
+          form.reset()
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+            } else {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            }
+          })
+        }
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    if(form) {
+      form.addEventListener("submit", handleSubmit)
+    }
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-310266-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	</body>
+</html>
