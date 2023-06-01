@@ -18,10 +18,10 @@
 	
 	<meta name="description" content="Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code:
 Javascript:
- $(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &lt; 1200 &amp;&amp; width &gt;= 980) { col = 240; } else if(width &lt; 980 &amp;&amp; width &gt;= 768) { col = 186; } return col; } }); });  Demo (make sure you resize the frame in the bottom right):" />
+$(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &lt; 1200 &amp;&amp; width &gt;= 980) { col = 240; } else if(width &lt; 980 &amp;&amp; width &gt;= 768) { col = 186; } return col; } }); }); Demo (make sure you resize the frame in the bottom right):" />
 	<meta property="og:description" content="Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code:
 Javascript:
- $(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &lt; 1200 &amp;&amp; width &gt;= 980) { col = 240; } else if(width &lt; 980 &amp;&amp; width &gt;= 768) { col = 186; } return col; } }); });  Demo (make sure you resize the frame in the bottom right):" />
+$(document).ready(function () { $(&quot;#posts&quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&quot;.container&quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &lt; 1200 &amp;&amp; width &gt;= 980) { col = 240; } else if(width &lt; 980 &amp;&amp; width &gt;= 768) { col = 186; } return col; } }); }); Demo (make sure you resize the frame in the bottom right):" />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/">
@@ -35,7 +35,7 @@ Javascript:
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.d56e58659f408a80665fcc77136edf2a7d1085cfa2e8d25b69ab0cd5cb43508d.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -150,7 +150,7 @@ Javascript:
 		
 
   <footer>
-    <p>&copy; 2022 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>
@@ -196,15 +196,14 @@ Javascript:
     }
 </script>
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-310266-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'G-BKE986PPRZ');
 </script>
 	</body>
 </html>

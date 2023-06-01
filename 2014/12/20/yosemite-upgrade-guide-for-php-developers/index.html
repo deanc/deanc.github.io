@@ -18,12 +18,12 @@
 	
 	<meta name="description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
- Include /private/etc/apache2/extra/httpd-vhosts.conf  Also find the &lt;Directory /&gt; block and make sure it reads as follows:
- &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt;  Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows:
+&lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
 	<meta property="og:description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
- Include /private/etc/apache2/extra/httpd-vhosts.conf  Also find the &lt;Directory /&gt; block and make sure it reads as follows:
- &lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt;  Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows:
+&lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/">
@@ -37,7 +37,7 @@ Search for vhosts and uncomment the line:
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.d56e58659f408a80665fcc77136edf2a7d1085cfa2e8d25b69ab0cd5cb43508d.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -145,7 +145,7 @@ Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/
 		
 
   <footer>
-    <p>&copy; 2022 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>
@@ -191,15 +191,14 @@ Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/
     }
 </script>
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-310266-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'G-BKE986PPRZ');
 </script>
 	</body>
 </html>

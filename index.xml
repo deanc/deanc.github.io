@@ -17,7 +17,7 @@
 Install streamlink @ https://streamlink.github.io/install.html
 Install VLC player @ https://videolan.org
 Create an account on the BBC website and take note of your credentials. Create the following script and name it bbc1.sh:
-streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbciplayer-username=user@example.com --bbciplayer-password=yourpassword  Save it and chmod +x bbc1.</description>
+streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbciplayer-username=user@example.com --bbciplayer-password=yourpassword Save it and chmod +x bbc1.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@ streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p --bbciplayer-hd --bbci
       <guid>https://deanclatworthy.com/2019/04/29/running-crashplan-on-ubuntu-18.10/</guid>
       <description>Crashplan for Small Business is not supported (as of the time of writing) on any other Ubuntu version than 18.04 LTS. This appears to be related to an Electron/glibc issue which has long been fixed. Unfortunately Crashplan seem unwilling to upgrade their client.
 Fortunately there is a workaround. Add this PPA:
-sudo add-apt-repository ppa:maarten-fonville/ppa sudo apt-get update  You will almost certainly need to accept this PPA&amp;rsquo;s keys:
+sudo add-apt-repository ppa:maarten-fonville/ppa sudo apt-get update You will almost certainly need to accept this PPA&amp;rsquo;s keys:
 sudo apt-key adv --keyserver keyserver.</description>
     </item>
     
@@ -49,8 +49,7 @@ For those of you currently running Jekyll before you decide to switch, make sure
       
       <guid>https://deanclatworthy.com/contact.html</guid>
       <description>To get in touch with me, you can fill in the form below, or try and tweet me.
- -- Your Email: Subject: Message: 
-Submit  </description>
+Your Email: Subject: Message: Submit </description>
     </item>
     
     <item>
@@ -81,7 +80,7 @@ PHP I&amp;rsquo;ve over 20 years of experience using PHP. I took an early intere
       
       <guid>https://deanclatworthy.com/portfolio.html</guid>
       <description>I have been developing websites now for over twenty years and had the pleasure of working with some wonderful people over the course of my career so far. I have worked with small businesses &amp;amp; large corporations on their online presence and helped them become more successful as an online entity.
- I have won numerous awards for my work and will try to highlight them below.
+I have won numerous awards for my work and will try to highlight them below.
 Below are some of my most recent clients &amp;amp; projects.</description>
     </item>
     
@@ -92,7 +91,7 @@ Below are some of my most recent clients &amp;amp; projects.</description>
       
       <guid>https://deanclatworthy.com/testimonials.html</guid>
       <description>After working on projects with my clients, I like to ask them about how they felt the project went, and if I delivered what they needed. Here is a small list of feedback that I receieved:
-Andrew Robins  Dean joined my team at School Stickers, and then subsequently at Vizwoz, in 2007 /08. Joining as a member of a small team, Dean proved himself from the first day to be a highly dependable member of staff, imaginative in his approach to problem solving, and indeed flagging up potential problems we had not foreseen.</description>
+Andrew Robins Dean joined my team at School Stickers, and then subsequently at Vizwoz, in 2007 /08. Joining as a member of a small team, Dean proved himself from the first day to be a highly dependable member of staff, imaginative in his approach to problem solving, and indeed flagging up potential problems we had not foreseen.</description>
     </item>
     
     <item>
@@ -103,7 +102,7 @@ Andrew Robins  Dean joined my team at School Stickers, and then subsequently at 
       <guid>https://deanclatworthy.com/tools.html</guid>
       <description>As a programmer, I like to experiment and build tools to help make my life or others lives easier. On this page you&amp;rsquo;ll find some of the tools I have built.
 Silex starter pack A boilerplate project to get you started quickly with the Silex PHP template. Features include:
- Clearly defined application hierarchy and structure. Admin control panel controller, with styling out the box using using Bootstrap. Template for loading console tasks.</description>
+Clearly defined application hierarchy and structure. Admin control panel controller, with styling out the box using using Bootstrap. Template for loading console tasks.</description>
     </item>
     
     <item>
@@ -115,7 +114,7 @@ Silex starter pack A boilerplate project to get you started quickly with the Sil
       <description>One of the problems I&amp;rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&amp;rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
- $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&amp;gt;share($app-&amp;gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&amp;gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&amp;gt;addResource(&#39;xlf&#39;, __DIR__.</description>
+$app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&amp;gt;share($app-&amp;gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&amp;gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&amp;gt;addResource(&#39;xlf&#39;, __DIR__.</description>
     </item>
     
     <item>
@@ -137,8 +136,8 @@ Another tip to see what&amp;rsquo;s going on if a vhost doesn&amp;rsquo;t load a
       <guid>https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/</guid>
       <description>Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
- Include /private/etc/apache2/extra/httpd-vhosts.conf  Also find the &amp;lt;Directory /&amp;gt; block and make sure it reads as follows:
- &amp;lt;Directory /&amp;gt; AllowOverride All Require all granted &amp;lt;/Directory&amp;gt;  Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow.</description>
+Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &amp;lt;Directory /&amp;gt; block and make sure it reads as follows:
+&amp;lt;Directory /&amp;gt; AllowOverride All Require all granted &amp;lt;/Directory&amp;gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow.</description>
     </item>
     
     <item>
@@ -149,7 +148,7 @@ Search for vhosts and uncomment the line:
       <guid>https://deanclatworthy.com/2014/10/18/using-a-self-signed-certificate-with-cloudflares-full-ssl-on-nginx/</guid>
       <description>Overview Cloudflare recently launched the biggest deployment of SSL in the history of the internet, and better yet they made it free. For users, it&amp;rsquo;s as simple as flicking a switch, but there a few steps you should take to make it more secure.
 Cloudflare offers two levels of SSL on their free package:
- Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page.</description>
+Flexible SSL - When a visitor visits your site the connection between them goes first through the Cloudflare network which in turn downloads or delivers the cached version of the page.</description>
     </item>
     
     <item>
@@ -172,10 +171,10 @@ http://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-editi
       <guid>https://deanclatworthy.com/2013/07/getting-a-twitter-users-latest-posts-using-api-v1-1-and-guzzle-php/</guid>
       <description>I&amp;rsquo;ll keep this brief. Install Guzzle however you wish, but I recommend using composer:
 {% highlight javascript %}
- { &amp;quot;require&amp;quot;: { &amp;quot;guzzle/guzzle&amp;quot;: &amp;quot;~3.1.1&amp;quot; } }  {% endhighlight %}
+{ &amp;quot;require&amp;quot;: { &amp;quot;guzzle/guzzle&amp;quot;: &amp;quot;~3.1.1&amp;quot; } } {% endhighlight %}
 Then use the following code:
 {% highlight php startinline %}
- $twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&amp;gt; &#39;1.1&#39; )); $twitter_client-&amp;gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&amp;gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&amp;gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&amp;gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&amp;gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&amp;gt;get(&#39;statuses/user_timeline.json&#39;); $request-&amp;gt;getQuery()-&amp;gt;set(&#39;count&#39;, 5); $request-&amp;gt;getQuery()-&amp;gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&amp;gt;send(); $tweets = json_decode($response-&amp;gt;getBody());  {% endhighlight %}</description>
+$twitter_client = new \Guzzle\Http\Client(&#39;https://api.twitter.com/{version}&#39;, array( &#39;version&#39; =&amp;gt; &#39;1.1&#39; )); $twitter_client-&amp;gt;addSubscriber(new \Guzzle\Plugin\Oauth\OauthPlugin(array( &#39;consumer_key&#39; =&amp;gt; TWITTER_CONSUMER_KEY, &#39;consumer_secret&#39; =&amp;gt; TWITTER_CONSUMER_SECRET, &#39;token&#39; =&amp;gt; TWITTER_ACCESS_TOKEN, &#39;token_secret&#39; =&amp;gt; TWITTER_ACCESS_TOKEN_SECRET ))); $request = $twitter_client-&amp;gt;get(&#39;statuses/user_timeline.json&#39;); $request-&amp;gt;getQuery()-&amp;gt;set(&#39;count&#39;, 5); $request-&amp;gt;getQuery()-&amp;gt;set(&#39;screen_name&#39;, &#39;YOURUSERNAME&#39;); $response = $request-&amp;gt;send(); $tweets = json_decode($response-&amp;gt;getBody()); {% endhighlight %}</description>
     </item>
     
     <item>
@@ -214,7 +213,7 @@ The good news is the fix is simple. Simply send the following header:</descripti
       
       <guid>https://deanclatworthy.com/2013/05/how-to-install-different-locales-on-a-fresh-debian-installation/</guid>
       <description>Simples:
- sudo dpkg-reconfigure locale  This will load a GUI where you should select the new locales to install, then follow the onscreen instructions.</description>
+sudo dpkg-reconfigure locale This will load a GUI where you should select the new locales to install, then follow the onscreen instructions.</description>
     </item>
     
     <item>
@@ -225,7 +224,7 @@ The good news is the fix is simple. Simply send the following header:</descripti
       <guid>https://deanclatworthy.com/2013/05/silex-tip-1-how-to-quickly-invalidate-a-form-field-in-your-controller/</guid>
       <description>You should be using custom constraints to validate your form fields, however there are some use-cases where you need to quickly invalidate in a controller. To do this it&amp;rsquo;s quite easy:
 {% highlight php startinline %}
- $form-&amp;gt;get(&#39;username&#39;)-&amp;gt;addError(new \Symfony\Component\Form\FormError(&amp;quot;This email is already in use&amp;quot;));  {% endhighlight %}</description>
+$form-&amp;gt;get(&#39;username&#39;)-&amp;gt;addError(new \Symfony\Component\Form\FormError(&amp;quot;This email is already in use&amp;quot;)); {% endhighlight %}</description>
     </item>
     
     <item>
@@ -235,8 +234,8 @@ The good news is the fix is simple. Simply send the following header:</descripti
       
       <guid>https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/</guid>
       <description>Just a small gotcha for anyone using Symfony2&amp;rsquo;s DomCrawler component. The standard behaviour of the class (from the current docs) is:
- $crawler = new Crawler($html); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; }  However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
- $crawler = new Crawler; $crawler-&amp;gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; }  The second parameter to addHTMLContent is UTF-8 by default, but I&amp;rsquo;ve added it to illustrate that you could use other character sets too.</description>
+$crawler = new Crawler($html); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; } However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
+$crawler = new Crawler; $crawler-&amp;gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;); foreach ($crawler as $domElement) { print $domElement-&amp;gt;nodeName; } The second parameter to addHTMLContent is UTF-8 by default, but I&amp;rsquo;ve added it to illustrate that you could use other character sets too.</description>
     </item>
     
     <item>
@@ -283,7 +282,7 @@ The good news is the fix is simple. Simply send the following header:</descripti
       
       <guid>https://deanclatworthy.com/2013/01/stop-osx-saving-ssh-private-key-password/</guid>
       <description>When logging in to a server via SSH using a private key with a password, OSX saves your password. The next time you try to login it will not prompt you for your password. To disable this behaviour simply run this command:
-  launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist     Hat tip to mr_dbr on reddit for this.</description>
+launchctl unload -w /System/Library/LaunchAgents/org.openbsd.ssh-agent.plist Hat tip to mr_dbr on reddit for this.</description>
     </item>
     
     <item>
@@ -294,8 +293,8 @@ The good news is the fix is simple. Simply send the following header:</descripti
       <guid>https://deanclatworthy.com/2013/01/a-bash-alias-to-export-a-git-repository-to-a-zip-file/</guid>
       <description>I&amp;rsquo;ll keep this short and sweet. This bash alias will allow you to export your git repo&amp;rsquo;s master branch to a zip file.
 To use it:
- Make sure that your work is committed. Make sure you are in the root directory of your project.  To make this script work run the following commands:
- echo alias gitpack=\&#39;git archive --format zip --output download_$(date +%d-%m-%Y-%H.%M).zip master\&#39; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc  Now just type gitpack and you will get a zip file.</description>
+Make sure that your work is committed. Make sure you are in the root directory of your project. To make this script work run the following commands:
+echo alias gitpack=\&#39;git archive --format zip --output download_$(date +%d-%m-%Y-%H.%M).zip master\&#39; &amp;gt;&amp;gt; ~/.bashrc source ~/.bashrc Now just type gitpack and you will get a zip file.</description>
     </item>
     
     <item>
@@ -315,7 +314,7 @@ To use it:
       
       <guid>https://deanclatworthy.com/2012/12/how-to-remove-wordpress-admin-other-pointless-wordpress-things-from-your-google-analytics/</guid>
       <description>I have spent the last few hours taking a look at the Google Analytics for my blog and whilst doing so I realised that it&amp;rsquo;s logging a lot of stuff that I don&amp;rsquo;t need. This tutorial will allow you to exclude any traffic to your wordpress admin, or login script (that which you see before landing on the admin page) from your Google Analytics.
- Log into Google Analytics Click &amp;lsquo;Admin&amp;rsquo; in the top right.</description>
+Log into Google Analytics Click &amp;lsquo;Admin&amp;rsquo; in the top right.</description>
     </item>
     
     <item>
@@ -341,7 +340,7 @@ To use it:
       <guid>https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/</guid>
       <description>I&amp;rsquo;ve now tried to use gem install &amp;lt;package&amp;gt; on two fresh installs of OSX Lion on a Macbook Pro 13&amp;quot; 2011 and Macbook Pro 15&amp;quot; 2012. Both have suffered from the same issue of the gem installer hanging.
 This was my symptom.
- $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&amp;lt;/pre&amp;gt;  The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message.</description>
+$ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&amp;lt;/pre&amp;gt; The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message.</description>
     </item>
     
     <item>
@@ -362,7 +361,7 @@ Essentially though, it&amp;rsquo;s a simple as typing this command in the termin
       <guid>https://deanclatworthy.com/2012/09/responsive-twitter-bootstrap-masonry/</guid>
       <description>Getting twitter bootstrap&amp;rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&amp;rsquo;s the code:
 Javascript:
- $(document).ready(function () { $(&amp;quot;#posts&amp;quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&amp;quot;.container&amp;quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &amp;lt; 1200 &amp;amp;&amp;amp; width &amp;gt;= 980) { col = 240; } else if(width &amp;lt; 980 &amp;amp;&amp;amp; width &amp;gt;= 768) { col = 186; } return col; } }); });  Demo (make sure you resize the frame in the bottom right):</description>
+$(document).ready(function () { $(&amp;quot;#posts&amp;quot;).masonry({ itemSelector: &#39;.post&#39;, isAnimated: true, columnWidth: function( containerWidth ) { // do nothing for browsers with no media query support // .container will always be 940px if($(&amp;quot;.container&amp;quot;).width() == 940) { return 240; } var width = $(window).width(); var col = 300; if(width &amp;lt; 1200 &amp;amp;&amp;amp; width &amp;gt;= 980) { col = 240; } else if(width &amp;lt; 980 &amp;amp;&amp;amp; width &amp;gt;= 768) { col = 186; } return col; } }); }); Demo (make sure you resize the frame in the bottom right):</description>
     </item>
     
     <item>
@@ -428,7 +427,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
       <guid>https://deanclatworthy.com/2011/01/useful-git-commands/</guid>
       <description>I&amp;rsquo;ll use this post as a personal reference for useful GIT commands as I find them. Hopefully they&amp;rsquo;ll help you also.
 Scenario #1 You have accidentally made a few commits to a branch and you wish to undo them so they are identical to the origin. You&amp;rsquo;ll probably see something like this when you run git status
- # On branch devel # Your branch is ahead of origin/devel by 2 commits.</description>
+# On branch devel # Your branch is ahead of origin/devel by 2 commits.</description>
     </item>
     
     <item>
@@ -449,7 +448,7 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
       
       <guid>https://deanclatworthy.com/2010/09/facebook-privacy-issue-with-tagged-photos/</guid>
       <description>Facebook has garnered a rather bad reputation over its privacy controls in recent months, but things are now beginning to stabilise. You can control the privacy of:
- Individual wall posts Almost all aspects of your profile (location, interests etc.) Individual photo albums Individual videos  With the addition of friend lists it makes it fairly simple to filter content to certain people, as long as you don&amp;rsquo;t have too many friends.</description>
+Individual wall posts Almost all aspects of your profile (location, interests etc.) Individual photo albums Individual videos With the addition of friend lists it makes it fairly simple to filter content to certain people, as long as you don&amp;rsquo;t have too many friends.</description>
     </item>
     
     <item>
@@ -458,8 +457,7 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
       <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
       
       <guid>https://deanclatworthy.com/2010/04/jump-in-camp-video/</guid>
-      <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:
- </description>
+      <description>Yuri just posted up the final video on twitter from the camp. Hopefully the pixelating issue will be fixed soon:</description>
     </item>
     
     <item>
@@ -469,9 +467,8 @@ Recently at work I was required to build a wordpress plugin. After trawling thro
       
       <guid>https://deanclatworthy.com/2010/04/css-grid-layouts-using-hashgrid/</guid>
       <description>Just a heads up to anyone who&amp;rsquo;s planning on designing their next project using a grid. The folks over at Analog have created a nifty little tool called Hashgrid to overlay a grid over your web page like so:
-
 Installation is pretty simple but I ran into a couple of minor issues which hopefully can be remedied in a future version:
- The negative margin in the example is half the width of your grid, and whilst that&amp;rsquo;s probably obvious it may be worth adding a comment in the CSS on hashgrid.</description>
+The negative margin in the example is half the width of your grid, and whilst that&amp;rsquo;s probably obvious it may be worth adding a comment in the CSS on hashgrid.</description>
     </item>
     
     <item>
@@ -492,7 +489,7 @@ Installation is pretty simple but I ran into a couple of minor issues which hope
       <description>(Thanks to Derick Rethans for the picture)
 Introductions
 I was lucky enough to be given the opportunity last week to attend JumpInCamp, a developers conference/workshop ran by Microsoft in the beautiful setting of Zurich. The brief was as follows
- As a participant you will spend four unforgettable and instructive days in the Panorama Resort &amp;amp; Spa Feusisberg, Switzerland – all-inclusive, for free. A live blog – to which you will contribute – will put all your friends and colleagues in the picture while you’re at the Camp.</description>
+As a participant you will spend four unforgettable and instructive days in the Panorama Resort &amp;amp; Spa Feusisberg, Switzerland – all-inclusive, for free. A live blog – to which you will contribute – will put all your friends and colleagues in the picture while you’re at the Camp.</description>
     </item>
     
   </channel>

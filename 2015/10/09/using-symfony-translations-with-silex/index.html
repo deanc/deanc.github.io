@@ -19,11 +19,11 @@
 	<meta name="description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
- $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__." />
+$app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__." />
 	<meta property="og:description" content="One of the problems I&rsquo;ve encountered using the Symfony Translation component in Silex is that when using a fully qualified locale (e.g. en_GB vs en) it doesn&rsquo;t use the translations that come shipped with the Validation component.
 This is because they are named validators.en.xlf and not validators.en_GB.xlf.
 The way around this is to simply load them into the correct domain when initialising the TranslationServiceProvider
- $app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__." />
+$app[&#39;locale&#39;] = &#39;en_GB&#39;; $app[&#39;translator&#39;] = $app-&gt;share($app-&gt;extend(&#39;translator&#39;, function($translator, $app) { // load SF validation messages $translator-&gt;addLoader(&#39;xlf&#39;, new Symfony\Component\Translation\Loader\XliffFileLoader()); $translator-&gt;addResource(&#39;xlf&#39;, __DIR__." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2015/10/09/using-symfony-translations-with-silex/">
@@ -37,7 +37,7 @@ The way around this is to simply load them into the correct domain when initiali
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.d56e58659f408a80665fcc77136edf2a7d1085cfa2e8d25b69ab0cd5cb43508d.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
 
 	
 	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
@@ -142,7 +142,7 @@ is that when using a <a target="_blank" href="https://en.wikipedia.org/wiki/IETF
 		
 
   <footer>
-    <p>&copy; 2022 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>
@@ -188,15 +188,14 @@ is that when using a <a target="_blank" href="https://en.wikipedia.org/wiki/IETF
     }
 </script>
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-310266-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'G-BKE986PPRZ');
 </script>
 	</body>
 </html>
