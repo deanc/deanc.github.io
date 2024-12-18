@@ -1,259 +1,59 @@
-<!DOCTYPE html>
-<html>
-	<head>
-
-	<meta charset="utf-8">
-	<meta name="generator" content="" />
-
-	<title>
-		
-		Migrating Jekyll to Hugo - my experience
-		
-	</title>
-
-	
-	<meta property="og:title" content="Migrating Jekyll to Hugo - my experience" />
-	
-
-	
-	<meta name="description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator
+<!doctype html><html><head><meta charset=utf-8><meta name=generator content><title>Migrating Jekyll to Hugo - my experience
+</title><meta property="og:title" content="Migrating Jekyll to Hugo - my experience"><meta name=description content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator
 built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even
-with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
-For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
-correctly first, specifically making sure you only
-include/exclude relevent files from your build process. If you have, and
-it&rsquo;s still too slow for your taste and you feel like trying something new then carry on reading below." />
-	<meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator
+with this few pages & posts Jekyll takes between 5-10 seconds to generate my tiny site."><meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator
 built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even
-with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
-For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
+with this few pages & posts Jekyll takes between 5-10 seconds to generate my tiny site."><meta property="og:url" content="https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/"><meta property="og:site_name" content="DeanClatworthy.com"><meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"><meta name=theme-color content="#DE6262"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><link media=all rel=stylesheet href=https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css><link rel=apple-touch-icon sizes=180x180 href=https://deanclatworthy.com//img/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://deanclatworthy.com//img/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://deanclatworthy.com//img/favicons/favicon-16x16.png><link rel=manifest href=https://deanclatworthy.com//img/favicons/site.webmanifest><link rel=mask-icon href=https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#000000"><meta name=theme-color content="#ffffff"><link rel=alternate type=application/rss+xml title=RSS href=https://deanclatworthy.com//index.xml></head><body><a id=top></a><main><p class=go-back><a class=button href=/archive.html>&#171; Back to all articles</a></p><h1>Migrating Jekyll to Hugo - my experience</h1><p class=date>10 October 2015</p><article><p>For those that haven&rsquo;t yet heard about it <a href=http://gohugo.io>Hugo</a> is a lightning-fast, and powerful static generator
+built using golang. For the last couple of years I&rsquo;ve used <a href=https://jekyllrb.com/>Jekyll</a> to build this site, but even
+with this few pages & posts Jekyll takes between 5-10 seconds to generate my tiny site.</p><p>For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
 correctly first, specifically making sure you only
-include/exclude relevent files from your build process. If you have, and
-it&rsquo;s still too slow for your taste and you feel like trying something new then carry on reading below." />
-	
-
-	<meta property="og:url" content="https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/">
-	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
-	<meta name="theme-color" content="#DE6262"/>
-
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-
-	
-	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
-
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="theme-color" content="#ffffff">
-
-	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
-
-</head>
-
-	<body>
-		<a id="top"></a>
-<main>
-
-
-
-
-
-  
-  
-  
-
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-
-
-			
-				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
-			
-
-			<h1>Migrating Jekyll to Hugo - my experience</h1>
-
-			
-			<p class="date">
-				10 October 2015
-			</p>
-			
-
-			<article>
-				<p>For those that haven&rsquo;t yet heard about it <a href="http://gohugo.io">Hugo</a> is a lightning-fast, and powerful static generator
-built using golang. For the last couple of years I&rsquo;ve used <a href="https://jekyllrb.com/">Jekyll</a> to build this site, but even
-with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.</p>
-<p>For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
-correctly first, specifically making sure you only
-<a href="http://jekyllrb.com/docs/configuration/">include/exclude relevent files from your build process</a>. If you have, and
-it&rsquo;s still too slow for your taste and you feel like trying something new then carry on reading below.</p>
-<p>I&rsquo;m not going to go through every little detail here on setting up hugo. The documentation is awesome so go
-<a href="https://gohugo.io/overview/quickstart/">set up hugo</a> first. I&rsquo;ll now outline the things that caught me off-guard
-when trying to migrate my content and theme.</p>
-<h3 id="using-html-extensions-for-pages">Using *.html extensions for pages</h3>
-<p>Set up <code>uglyURLs: &quot;true&quot;</code> in your <code>config.yml</code>.</p>
-<h3 id="migrating-your-post-urls">Migrating your post URLs</h3>
-<p>Follow this checklist:</p>
-<ul>
-<li>Move all your posts under <code>content/post</code></li>
-<li>Open up each file and make sure your front-matter contains the URL you want e.g. <code>url: /2012/01/how-to-rip-music-from-the-hype-machine/</code></li>
-</ul>
-<p>An alternative to this is to configure permalinks for posts via <code>config.yml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#9854f1">permalinks</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">post</span>: /:year/:month/:day/:slug/
-</span></span></code></pre></div><p>The downside to this is that a) you must define a <code>date</code> key in your front-matter &amp; b) the slug that is generated
-may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.</p>
-<h3 id="how-to-access-the-current-date-in-templates">How to access the current date in templates</h3>
-<p>This is pretty straightforward:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>{{ .Date.Format &#34;2006&#34; }}
-</span></span></code></pre></div><h3 id="how-to-create-a-global-site-menu">How to create a global site menu</h3>
-<p>The documentation on menus is pretty good but here&rsquo;s some info on quickly setting it up. Define your homepage URL in
-<code>config.yml</code> if you want it to appear in the menu:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#9854f1">menu</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">main</span>:
-</span></span><span style="display:flex;"><span>		- <span style="color:#9854f1">Name</span>: <span style="color:#587539">&#34;Home&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#9854f1">Weight</span>: <span style="color:#8c6c3e">1</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#9854f1">Identifier</span>: <span style="color:#587539">&#34;home&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#9854f1">URL</span>: <span style="color:#587539">&#34;/&#34;</span>
+<a href=http://jekyllrb.com/docs/configuration/>include/exclude relevent files from your build process</a>. If you have, and
+it&rsquo;s still too slow for your taste and you feel like trying something new then carry on reading below.</p><p>I&rsquo;m not going to go through every little detail here on setting up hugo. The documentation is awesome so go
+<a href=https://gohugo.io/overview/quickstart/>set up hugo</a> first. I&rsquo;ll now outline the things that caught me off-guard
+when trying to migrate my content and theme.</p><h3 id=using-html-extensions-for-pages>Using *.html extensions for pages</h3><p>Set up <code>uglyURLs: "true"</code> in your <code>config.yml</code>.</p><h3 id=migrating-your-post-urls>Migrating your post URLs</h3><p>Follow this checklist:</p><ul><li>Move all your posts under <code>content/post</code></li><li>Open up each file and make sure your front-matter contains the URL you want e.g. <code>url: /2012/01/how-to-rip-music-from-the-hype-machine/</code></li></ul><p>An alternative to this is to configure permalinks for posts via <code>config.yml</code>:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#9854f1>permalinks</span>:
+</span></span><span style=display:flex><span>	<span style=color:#9854f1>post</span>: /:year/:month/:day/:slug/
+</span></span></code></pre></div><p>The downside to this is that a) you must define a <code>date</code> key in your front-matter & b) the slug that is generated
+may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.</p><h3 id=how-to-access-the-current-date-in-templates>How to access the current date in templates</h3><p>This is pretty straightforward:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md><span style=display:flex><span>{{ .Date.Format &#34;2006&#34; }}
+</span></span></code></pre></div><h3 id=how-to-create-a-global-site-menu>How to create a global site menu</h3><p>The documentation on menus is pretty good but here&rsquo;s some info on quickly setting it up. Define your homepage URL in
+<code>config.yml</code> if you want it to appear in the menu:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#9854f1>menu</span>:
+</span></span><span style=display:flex><span>	<span style=color:#9854f1>main</span>:
+</span></span><span style=display:flex><span>		- <span style=color:#9854f1>Name</span>: <span style=color:#587539>&#34;Home&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#9854f1>Weight</span>: <span style=color:#8c6c3e>1</span>
+</span></span><span style=display:flex><span>		<span style=color:#9854f1>Identifier</span>: <span style=color:#587539>&#34;home&#34;</span>
+</span></span><span style=display:flex><span>		<span style=color:#9854f1>URL</span>: <span style=color:#587539>&#34;/&#34;</span>
 </span></span></code></pre></div><p>If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
-for the content e.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#9854f1">menu</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">main</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">weight</span>: <span style="color:#8c6c3e">60</span>
-</span></span></code></pre></div><p>The weight is basically a display order.</p>
-<h3 id="how-to-not-go-insane-when-generating-meta-titledescription-tags">How to not go insane when generating meta title/description tags</h3>
-<p>Just use this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#9854f1">title</span>&gt;
-</span></span><span style="display:flex;"><span>	{{ if isset .Params &#34;og_title&#34; }}
-</span></span><span style="display:flex;"><span>	{{ .Params.og_title }}
-</span></span><span style="display:flex;"><span>	{{ else if eq .URL &#34;/&#34; }}
-</span></span><span style="display:flex;"><span>	{{ .Site.Params.TitleSuffix }}
-</span></span><span style="display:flex;"><span>	{{ else if eq .Section &#34;post&#34; }}
-</span></span><span style="display:flex;"><span>	{{ .Title }}
-</span></span><span style="display:flex;"><span>	{{ else }}
-</span></span><span style="display:flex;"><span>	{{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#9854f1">title</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{{ if isset .Params &#34;og_title&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Params.og_title }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ else if eq .URL &#34;/&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ else if eq .Section &#34;post&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Title }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ else }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ end }}
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{{ if eq .URL &#34;/&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">name</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ else if eq .Section &#34;post&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">name</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Summary }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Summary }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ else }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">name</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Description }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Description }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>{{ end }}
-</span></span></code></pre></div>
-			</article>
-
-			
-			<div id="disqus_thread"></div>
-			<script type="text/javascript">
-				var disqus_developer = 0;
-				var disqus_shortname = 'deanclatworthy';
-					(function() {
-						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-			
-
-
-		
-
-  <footer>
-    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
-  </footer>
-
-</main>
-
-
-  
-      
-  
-
-
-<script>
-    var form = document.getElementById("my-form");
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("my-form-status");
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
-          form.reset()
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              status.innerHTML = "Oops! There was a problem submitting your form"
-            }
-          })
-        }
-      }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
-      });
-    }
-    if(form) {
-      form.addEventListener("submit", handleSubmit)
-    }
-</script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BKE986PPRZ');
-</script>
-	</body>
-</html>
+for the content e.g.</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#9854f1>menu</span>:
+</span></span><span style=display:flex><span>	<span style=color:#9854f1>main</span>:
+</span></span><span style=display:flex><span>	<span style=color:#9854f1>weight</span>: <span style=color:#8c6c3e>60</span>
+</span></span></code></pre></div><p>The weight is basically a display order.</p><h3 id=how-to-not-go-insane-when-generating-meta-titledescription-tags>How to not go insane when generating meta title/description tags</h3><p>Just use this:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#9854f1>title</span>&gt;
+</span></span><span style=display:flex><span>	{{ if isset .Params &#34;og_title&#34; }}
+</span></span><span style=display:flex><span>	{{ .Params.og_title }}
+</span></span><span style=display:flex><span>	{{ else if eq .URL &#34;/&#34; }}
+</span></span><span style=display:flex><span>	{{ .Site.Params.TitleSuffix }}
+</span></span><span style=display:flex><span>	{{ else if eq .Section &#34;post&#34; }}
+</span></span><span style=display:flex><span>	{{ .Title }}
+</span></span><span style=display:flex><span>	{{ else }}
+</span></span><span style=display:flex><span>	{{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
+</span></span><span style=display:flex><span>&lt;/<span style=color:#9854f1>title</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{ if isset .Params &#34;og_title&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:title&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Params.og_title }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ else if eq .URL &#34;/&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:title&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ else if eq .Section &#34;post&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:title&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Title }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ else }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:title&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ end }}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>{{ if eq .URL &#34;/&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>name</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;description&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:description&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ else if eq .Section &#34;post&#34; }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>name</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;description&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Summary }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:description&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Summary }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ else }}
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>name</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;description&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Description }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#9854f1>meta</span> <span style=color:#2e7de9>property</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;og:description&#34;</span> <span style=color:#2e7de9>content</span><span style=color:#587539;font-weight:700>=</span><span style=color:#587539>&#34;{{ .Description }}&#34;</span> /&gt;
+</span></span><span style=display:flex><span>{{ end }}
+</span></span></code></pre></div></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//deanclatworthy.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a><footer><p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href=#top>Back to top</a></p></footer></main><script src=/js/form.b721ea0c53adde10805845e816a2dd7821ed44493cf37adb15087e9f75a19f99.js integrity="sha256-tyHqDFOt3hCAWEXoFqLdeCHtREk883rbFQh+n3Whn5k=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-BKE986PPRZ")</script></body></html>

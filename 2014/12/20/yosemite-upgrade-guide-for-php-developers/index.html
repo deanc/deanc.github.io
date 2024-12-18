@@ -1,216 +1,33 @@
-<!DOCTYPE html>
-<html>
-	<head>
-
-	<meta charset="utf-8">
-	<meta name="generator" content="" />
-
-	<title>
-		
-		OSX Yosemite upgrade guide for PHP developers
-		
-	</title>
-
-	
-	<meta property="og:title" content="OSX Yosemite upgrade guide for PHP developers" />
-	
-
-	
-	<meta name="description" content="Yosemite upgrade guide v1.0
+<!doctype html><html><head><meta charset=utf-8><meta name=generator content><title>OSX Yosemite upgrade guide for PHP developers
+</title><meta property="og:title" content="OSX Yosemite upgrade guide for PHP developers"><meta name=description content="Yosemite upgrade guide v1.0
 Apache
 Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
 Include /private/etc/apache2/extra/httpd-vhosts.conf
-Also find the &lt;Directory /&gt; block and make sure it reads as follows:
-&lt;Directory /&gt;
+Also find the <Directory /> block and make sure it reads as follows:
+<Directory />
         AllowOverride All
         Require all granted
-&lt;/Directory&gt;
+</Directory>
 Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow.
-Remove them and change to:" />
-	<meta property="og:description" content="Yosemite upgrade guide v1.0
+Remove them and change to:"><meta property="og:description" content="Yosemite upgrade guide v1.0
 Apache
 Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
 Include /private/etc/apache2/extra/httpd-vhosts.conf
-Also find the &lt;Directory /&gt; block and make sure it reads as follows:
-&lt;Directory /&gt;
+Also find the <Directory /> block and make sure it reads as follows:
+<Directory />
         AllowOverride All
         Require all granted
-&lt;/Directory&gt;
+</Directory>
 Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow.
-Remove them and change to:" />
-	
-
-	<meta property="og:url" content="https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/">
-	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
-	<meta name="theme-color" content="#DE6262"/>
-
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
-
-	
-	
-	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
-
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#000000">
-	<meta name="theme-color" content="#ffffff">
-
-	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
-
-</head>
-
-	<body>
-		<a id="top"></a>
-<main>
-
-
-
-
-
-  
-  
-  
-
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  
-
-
-			
-				<p class="go-back"><a class="button" href="/archive.html">&laquo; Back to all articles</a></p>
-			
-
-			<h1>OSX Yosemite upgrade guide for PHP developers</h1>
-
-			
-			<p class="date">
-				12 December 2014
-			</p>
-			
-
-			<article>
-				<h2 id="yosemite-upgrade-guide-v10">Yosemite upgrade guide v1.0</h2>
-<h3 id="apache">Apache</h3>
-<p>Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the <code>/etc/apache/httpd.conf</code> file. In this file you need to do a few things:</p>
-<p>Search for <code>vhosts</code> and uncomment the line:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#587539">Include</span> <span style="color:#587539">/private/etc/apache2/extra/httpd-vhosts.conf</span>
-</span></span></code></pre></div><p>Also find the <code>&lt;Directory /&gt;</code> block and make sure it reads as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#9854f1">&lt;Directory</span> <span style="color:#587539">/</span><span style="color:#9854f1">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#587539">AllowOverride</span> <span style="color:#9854f1">All</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#587539">Require</span> <span style="color:#9854f1">all</span> granted
-</span></span><span style="display:flex;"><span><span style="color:#9854f1">&lt;/Directory&gt;</span>
+Remove them and change to:"><meta property="og:url" content="https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/"><meta property="og:site_name" content="DeanClatworthy.com"><meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"><meta name=theme-color content="#DE6262"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=5"><link media=all rel=stylesheet href=https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css><link rel=apple-touch-icon sizes=180x180 href=https://deanclatworthy.com//img/favicons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=https://deanclatworthy.com//img/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=https://deanclatworthy.com//img/favicons/favicon-16x16.png><link rel=manifest href=https://deanclatworthy.com//img/favicons/site.webmanifest><link rel=mask-icon href=https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#000000"><meta name=theme-color content="#ffffff"><link rel=alternate type=application/rss+xml title=RSS href=https://deanclatworthy.com//index.xml></head><body><a id=top></a><main><p class=go-back><a class=button href=/archive.html>&#171; Back to all articles</a></p><h1>OSX Yosemite upgrade guide for PHP developers</h1><p class=date>12 December 2014</p><article><h2 id=yosemite-upgrade-guide-v10>Yosemite upgrade guide v1.0</h2><h3 id=apache>Apache</h3><p>Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the <code>/etc/apache/httpd.conf</code> file. In this file you need to do a few things:</p><p>Search for <code>vhosts</code> and uncomment the line:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-apache data-lang=apache><span style=display:flex><span><span style=color:#587539>Include</span> <span style=color:#587539>/private/etc/apache2/extra/httpd-vhosts.conf</span>
+</span></span></code></pre></div><p>Also find the <code>&lt;Directory /></code> block and make sure it reads as follows:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-apache data-lang=apache><span style=display:flex><span><span style=color:#9854f1>&lt;Directory</span> <span style=color:#587539>/</span><span style=color:#9854f1>&gt;</span>
+</span></span><span style=display:flex><span>        <span style=color:#587539>AllowOverride</span> <span style=color:#9854f1>All</span>
+</span></span><span style=display:flex><span>        <span style=color:#587539>Require</span> <span style=color:#9854f1>all</span> granted
+</span></span><span style=display:flex><span><span style=color:#9854f1>&lt;/Directory&gt;</span>
 </span></span></code></pre></div><p>Then open up <code>/etc/apache2/extra/vhosts.conf</code> and find any instances that begin with <code>Allow from</code> or <code>Order allow,deny</code> or <code>Order deny,allow</code>.
-Remove them and change to:</p>
-<pre tabindex="0"><code>Require all granted
-</code></pre><p>After all this make sure you restart apache: <code>sudo apachectl restart</code></p>
-<p>Finally, if you still have problems, try to start Apache in debug mode and see what errors you get:</p>
-<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
-</span></span></code></pre></div><h2 id="mysql">MySQL</h2>
-<p>It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
-Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/775007">launch MySQL automatically</a>.</p>
-<h2 id="phpstorm">PHPStorm</h2>
-<p>PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. <a href="https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks">More info here</a></p>
-
-			</article>
-
-			
-			<div id="disqus_thread"></div>
-			<script type="text/javascript">
-				var disqus_developer = 0;
-				var disqus_shortname = 'deanclatworthy';
-					(function() {
-						var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-						dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-					})();
-			</script>
-			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-			
-
-
-		
-
-  <footer>
-    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
-  </footer>
-
-</main>
-
-
-  
-      
-  
-
-
-<script>
-    var form = document.getElementById("my-form");
-    
-    async function handleSubmit(event) {
-      event.preventDefault();
-      var status = document.getElementById("my-form-status");
-      var data = new FormData(event.target);
-      fetch(event.target.action, {
-        method: form.method,
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          status.innerHTML = "Thanks for your submission!";
-          form.reset()
-        } else {
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
-            } else {
-              status.innerHTML = "Oops! There was a problem submitting your form"
-            }
-          })
-        }
-      }).catch(error => {
-        status.innerHTML = "Oops! There was a problem submitting your form"
-      });
-    }
-    if(form) {
-      form.addEventListener("submit", handleSubmit)
-    }
-</script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BKE986PPRZ');
-</script>
-	</body>
-</html>
+Remove them and change to:</p><pre tabindex=0><code>Require all granted
+</code></pre><p>After all this make sure you restart apache: <code>sudo apachectl restart</code></p><p>Finally, if you still have problems, try to start Apache in debug mode and see what errors you get:</p><div class=highlight><pre tabindex=0 style=color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=display:flex><span>sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
+</span></span></code></pre></div><h2 id=mysql>MySQL</h2><p>It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
+Next, follow these instructions to <a href=http://stackoverflow.com/a/26706416/775007>launch MySQL automatically</a>.</p><h2 id=phpstorm>PHPStorm</h2><p>PHPStorm is not yet compatible with Yosemite as it ships a new version of Java. Unfortunately you have to downgrade for now. <a href=https://intellij-support.jetbrains.com/entries/27854363-IDE-doesn-t-start-after-updating-to-Mac-OS-Yosemite-or-Mavericks>More info here</a></p></article><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//deanclatworthy.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a><footer><p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href=#top>Back to top</a></p></footer></main><script src=/js/form.b721ea0c53adde10805845e816a2dd7821ed44493cf37adb15087e9f75a19f99.js integrity="sha256-tyHqDFOt3hCAWEXoFqLdeCHtREk883rbFQh+n3Whn5k=" crossorigin=anonymous></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-BKE986PPRZ"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-BKE986PPRZ")</script></body></html>
