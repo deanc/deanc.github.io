@@ -24,7 +24,7 @@ I&rsquo;ll cut straight to the chase. There&rsquo;s some great information alrea
 
 	<meta property="og:url" content="https://deanclatworthy.com/2013/02/migrating-from-apache-to-nginx-wordpress-edition/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -33,19 +33,19 @@ I&rsquo;ll cut straight to the chase. There&rsquo;s some great information alrea
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -99,102 +99,96 @@ I&rsquo;ll cut straight to the chase. There&rsquo;s some great information alrea
 <p>I&rsquo;ll cut straight to the chase. There&rsquo;s some <a href="http://codex.wordpress.org/Nginx">great information</a> <a href="http://wiki.nginx.org/WordPress">already available</a>. At the time of this writing though, both sets of instructions didn&rsquo;t work for me. I&rsquo;ll come to why later.</p>
 <p>The first thing you want to do is install nginx and php5-fpm. Before you do this <a href="http://www.dotdeb.org/instructions/">add dotdeb to your sources list</a>. Don&rsquo;t forget to update your packages.</p>
 <p>Now we can install nginx and php5-fpm:</p>
-<pre><code>    sudo apt-get install nginx php5-fpm
-</code></pre>
-<p>In nginx, there&rsquo;s no such thing as virtual hosts. We call them server blocks, but they work similarly. Let&rsquo;s create one. Create a file at
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-get install nginx php5-fpm
+</span></span></code></pre></div><p>In nginx, there&rsquo;s no such thing as virtual hosts. We call them server blocks, but they work similarly. Let&rsquo;s create one. Create a file at
 <code>/etc/nginx/sites-available/</code> called <code>yourdomain.com</code> with these contents:</p>
-<pre><code>    server {
-        listen 80;
-        server_name yourdomain.com;
-
-        access_log /var/log/nginx/yourdomain.com.access_log;
-        error_log /var/log/nginx/yourdomain.com.error_log;
-
-        root /var/www/yourdomain.com/public_html;
-        index index.php index.htm index.html;
-
-        include /etc/nginx/global/wordpress.conf;
-        include /etc/nginx/global/restrictions.conf;
-    }
-</code></pre>
-<p>This creates a server block, which listens on port 80, with webroot at /var/www/yourdomain.com/public_html. It then includes two configuration files which we&rsquo;ll come to now.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#c3e88d">server</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">listen</span> <span style="color:#ffc777">80</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">server_name</span> yourdomain.com;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">access_log</span> <span style="color:#c3e88d">/var/log/nginx/yourdomain.com.access_log</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">error_log</span> <span style="color:#c3e88d">/var/log/nginx/yourdomain.com.error_log</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">root</span> <span style="color:#c3e88d">/var/www/yourdomain.com/public_html</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">index</span> index.php index.htm index.html;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">include</span> <span style="color:#c3e88d">/etc/nginx/global/wordpress.conf</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">include</span> <span style="color:#c3e88d">/etc/nginx/global/restrictions.conf</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span></code></pre></div><p>This creates a server block, which listens on port 80, with webroot at /var/www/yourdomain.com/public_html. It then includes two configuration files which we&rsquo;ll come to now.</p>
 <p>Now create a file at <code>/etc/nginx/global/wordpress.conf</code> with contents:</p>
-<pre><code>    # WordPress single blog rules.
-    # Designed to be included in any server {} block.
-
-    # This order might seem weird - this is attempted to match last if rules below fail.
-    # http://wiki.nginx.org/HttpCoreModule
-    location / {
-            try_files $uri $uri/ /index.php?$args;
-    }
-
-    # Add trailing slash to */wp-admin requests.
-    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
-
-    # Directives to send expires headers and turn off 404 error logging.
-    location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
-           access_log off; log_not_found off; expires max;
-    }
-
-    # Uncomment one of the lines below for the appropriate caching plugin (if used).
-    #include global/wordpress-wp-super-cache.conf;
-    #include global/wordpress-w3-total-cache.conf;
-
-    # Pass all .php files onto a php-fpm/php-fcgi server.
-    location ~ \.php$ {
-            # Zero-day exploit defense.
-            # http://forum.nginx.org/read.php?2,88845,page=3
-            # Won't work properly (404 error) if the file is not stored on this server, which is entirely possible with php-fpm/php-fcgi.
-            # Comment the 'try_files' line out if you set up php-fpm/php-fcgi on another machine.  And then cross your fingers that you won't get hacked.
-            try_files $uri =404;
-
-            fastcgi_split_path_info ^(.+\.php)(/.+)$;
-            #NOTE: You should have &quot;cgi.fix_pathinfo = 0;&quot; in php.ini
-
-            include fastcgi_params;
-            fastcgi_index index.php;
-            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    #       fastcgi_intercept_errors on;
-            fastcgi_pass unix:/var/run/php5-fpm.sock;
-    }
-</code></pre>
-<p>This file is very important and one value particularly is of interest to us. The <code>fastcgi_pass</code> variable is critical if you want PHP to work. When PHP-FPM is running, it listens on a socket. Dependent on your distribution and package this value might be different. Every tutorial I tried suggested pointing this value to <code>127.0.0.1:9000</code> but this was not the case with my system. If you open <code>/etc/php5/fpm/pool.d/www.conf</code> there is a configuration value called <code>listen</code>. This is what you should set the <code>fastcgi_pass</code> variable to.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># WordPress single blog rules.</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Designed to be included in any server {} block.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># This order might seem weird - this is attempted to match last if rules below fail.</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># http://wiki.nginx.org/HttpCoreModule</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> / {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">try_files</span> $uri $uri/ <span style="color:#c3e88d">/index.php</span>?$args;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Add trailing slash to */wp-admin requests.</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">rewrite</span> <span style="color:#c3e88d">/wp-admin</span>$ $scheme://$host$uri/ permanent;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Directives to send expires headers and turn off 404 error logging.</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">access_log</span> <span style="color:#c099ff">off</span>; log_not_found <span style="color:#c099ff">off</span>; expires max;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Uncomment one of the lines below for the appropriate caching plugin (if used).</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">#include global/wordpress-wp-super-cache.conf;</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">#include global/wordpress-w3-total-cache.conf;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Pass all .php files onto a php-fpm/php-fcgi server.</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> ~ \.php$ {
+</span></span><span style="display:flex;"><span>        <span style="color:#444a73;font-style:italic"># Zero-day exploit defense.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#444a73;font-style:italic"># http://forum.nginx.org/read.php?2,88845,page=3</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#444a73;font-style:italic"># Won&#39;t work properly (404 error) if the file is not stored on this server, which is entirely possible with php-fpm/php-fcgi.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#444a73;font-style:italic"># Comment the &#39;try_files&#39; line out if you set up php-fpm/php-fcgi on another machine.  And then cross your fingers that you won&#39;t get hacked.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">try_files</span> $uri =404;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">fastcgi_split_path_info</span> ^(.+\.php)(/.+)$;
+</span></span><span style="display:flex;"><span>        <span style="color:#444a73;font-style:italic">#NOTE: You should have &#34;cgi.fix_pathinfo = 0;&#34; in php.ini</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">include</span> fastcgi_params;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">fastcgi_index</span> index.php;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">fastcgi_param</span> SCRIPT_FILENAME $document_root$fastcgi_script_name;
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">#       fastcgi_intercept_errors on;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">fastcgi_pass</span> unix:/var/run/php5-fpm.sock;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span></code></pre></div><p>This file is very important and one value particularly is of interest to us. The <code>fastcgi_pass</code> variable is critical if you want PHP to work. When PHP-FPM is running, it listens on a socket. Dependent on your distribution and package this value might be different. Every tutorial I tried suggested pointing this value to <code>127.0.0.1:9000</code> but this was not the case with my system. If you open <code>/etc/php5/fpm/pool.d/www.conf</code> there is a configuration value called <code>listen</code>. This is what you should set the <code>fastcgi_pass</code> variable to.</p>
 <p>Finally, create a file at <code>/etc/nginx/global/restrictions.conf</code> to handle some security:</p>
-<pre><code>    # Global restrictions configuration file.
-    # Designed to be included in any server {} block.&amp;lt;/p&gt;
-    location = /favicon.ico {
-            log_not_found off;
-            access_log off;
-    }
-
-    location = /robots.txt {
-            allow all;
-            log_not_found off;
-            access_log off;
-    }
-
-    # Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).
-    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
-    location ~ /\. {
-            deny all;
-    }
-
-    # Deny access to any files with a .php extension in the uploads directory
-    # Works in sub-directory installs and also in multisite network
-    # Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)
-    location ~* /(?:uploads|files)/.*\.php$ {
-            deny all;
-    }
-</code></pre>
-<p>Now all of our configuration is in place, we need to shut down apache, and start nginx and php5-fpm:</p>
-<pre><code>    sudo /etc/init.d/apache2 stop
-    sudo /etc/init.d/php5-fpm restart
-    sudo /etc/init.d/nginx start
-</code></pre>
-<p>Your site should now be running nginx. Confirm this by visiting it and of course checking to see if the process is running:</p>
-<pre><code>    ps aux | grep nginx
-</code></pre>
-<p>Enjoy!</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Global restrictions configuration file.</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Designed to be included in any server {} block.&amp;lt;/p&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> = <span style="color:#c3e88d">/favicon.ico</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">log_not_found</span> <span style="color:#c099ff">off</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">access_log</span> <span style="color:#c099ff">off</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> = <span style="color:#c3e88d">/robots.txt</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">allow</span> <span style="color:#c099ff">all</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">log_not_found</span> <span style="color:#c099ff">off</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">access_log</span> <span style="color:#c099ff">off</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Deny all attempts to access hidden files such as .htaccess, .htpasswd, .DS_Store (Mac).</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> ~ /\. {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">deny</span> <span style="color:#c099ff">all</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Deny access to any files with a .php extension in the uploads directory</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Works in sub-directory installs and also in multisite network</span>
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"># Keep logging the requests to parse later (or to pass to firewall utilities such as fail2ban)</span>
+</span></span><span style="display:flex;"><span><span style="color:#c3e88d">location</span> ~* /(?:uploads|files)/.*\.php$ {
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">deny</span> <span style="color:#c099ff">all</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c53b53">}</span>
+</span></span></code></pre></div><p>Now all of our configuration is in place, we need to shut down apache, and start nginx and php5-fpm:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo /etc/init.d/apache2 stop
+</span></span><span style="display:flex;"><span>sudo /etc/init.d/php5-fpm restart
+</span></span><span style="display:flex;"><span>sudo /etc/init.d/nginx start
+</span></span></code></pre></div><p>Your site should now be running nginx. Confirm this by visiting it and of course checking to see if the process is running:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>ps aux | grep nginx
+</span></span></code></pre></div><p>Enjoy!</p>
 			</article>
 
 			
@@ -215,7 +209,7 @@ I&rsquo;ll cut straight to the chase. There&rsquo;s some great information alrea
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

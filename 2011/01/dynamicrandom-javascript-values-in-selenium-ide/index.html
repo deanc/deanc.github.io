@@ -22,7 +22,7 @@
 
 	<meta property="og:url" content="https://deanclatworthy.com/2011/01/dynamicrandom-javascript-values-in-selenium-ide/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -31,19 +31,19 @@
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -94,26 +94,10 @@
 
 			<article>
 				<p>One of the common questions I see from new users to Selenium is how to insert random values into a form. Well it turns out this is quite easy. Simply change your value to some javascript surrounded by some special syntax:</p>
-<div class="wp_syntax">
-  <table>
-    <tr>
-      <td class="code">
-        <pre class="javascript" style="font-family:monospace;">javascript<span style="color: #009900;">&#123;</span><span style="color: #009900;">&#91;</span>code goes here<span style="color: #009900;">&#93;</span><span style="color: #009900;">&#125;</span></pre>
-      </td>
-    </tr>
-  </table>
-</div>
-<p>So let&rsquo;s do this using a more practical example. You have a form where you can&rsquo;t enter the same data twice for example a registration form would require a unique email address. So, record your test as normal, entering real data then once you&rsquo;re finished go back and edit the <code>type</code> command for the email address field and set the value to:</p>
-<div class="wp_syntax">
-  <table>
-    <tr>
-      <td class="code">
-        <pre class="javascript" style="font-family:monospace;">javascript<span style="color: #009900;">&#123;</span><span style="color: #000066; font-weight: bold;">new</span> <span style="">Date</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span>.<span style="color: #660066;">getTime</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span> <span style="color: #339933;">+</span> <span style="color: #3366CC;">"@example.com"</span><span style="color: #009900;">&#125;</span></pre>
-      </td>
-    </tr>
-  </table>
-</div>
-<p>Now you have random data you can pass into your test to ensure it passes any unique validation tests every time.</p>
+<pre tabindex="0"><code>javascript{[code goes here]}
+</code></pre><p>So let&rsquo;s do this using a more practical example. You have a form where you can&rsquo;t enter the same data twice for example a registration form would require a unique email address. So, record your test as normal, entering real data then once you&rsquo;re finished go back and edit the <code>type</code> command for the email address field and set the value to:</p>
+<pre tabindex="0"><code>javascript{new Date().getTime() + &#34;@example.com&#34;}
+</code></pre><p>Now you have random data you can pass into your test to ensure it passes any unique validation tests every time.</p>
 			</article>
 
 			
@@ -134,7 +118,7 @@
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

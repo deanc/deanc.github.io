@@ -22,7 +22,7 @@
 
 	<meta property="og:url" content="https://deanclatworthy.com/2012/07/unique-filenames-when-uploading-using-zend_filter_file_rename-zend-framework/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -31,19 +31,19 @@
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -96,52 +96,37 @@
 				<p>I came across a scenario today where I needed to ensure that files uploaded always had a unique name and wouldn&rsquo;t over-write a file which has the same name. ZF provides this facility but it&rsquo;s not particularly well documented and I had some troubles using a couple of examples I found across the web. Alas, here is the solution.</p>
 <p><strong>Create a new form element</strong></p>
 <p>Whether you do this in a new instance of Zend_Form or one you instantiate in your controller is up to you. My example adds it to an instance of Zend_Form:</p>
-<div class="wp_syntax">
-  <table>
-    <tr>
-      <td class="code">
-        <pre class="php" style="font-family:monospace;"><span style="color: #000088;">$element</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Zend_Form_Element_File<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'screenshot'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #000088;">$element</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setLabel</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">null</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setDestination</span><span style="color: #009900;">&#40;</span>APPLICATION_PATH <span style="color: #339933;">.</span> <span style="color: #0000ff;">'/path/to/uploads'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #000088;">$element</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">addValidator</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Count'</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">,</span> <span style="color: #cc66cc;">5</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #000088;">$element</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">addValidator</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'Extension'</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'jpg,png,gif'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #000088;">$element</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">setRequired</span><span style="color: #009900;">&#40;</span><span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">addElement</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$element</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'foo'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span></pre>
-      </td>
-    </tr>
-  </table>
-</div>
-<p><strong>Handle the upload before the file is saved in your controller:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$element <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Zend_Form_Element_File(<span style="color:#c3e88d">&#39;screenshot&#39;</span>);
+</span></span><span style="display:flex;"><span>$element<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">setLabel</span>(<span style="color:#c099ff">null</span>)<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">setDestination</span>(APPLICATION_PATH <span style="color:#c3e88d;font-weight:bold">.</span> <span style="color:#c3e88d">&#39;/path/to/uploads&#39;</span>);
+</span></span><span style="display:flex;"><span>$element<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">addValidator</span>(<span style="color:#c3e88d">&#39;Count&#39;</span>, <span style="color:#c099ff">false</span>, <span style="color:#ffc777">5</span>);
+</span></span><span style="display:flex;"><span>$element<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">addValidator</span>(<span style="color:#c3e88d">&#39;Extension&#39;</span>, <span style="color:#c099ff">false</span>, <span style="color:#c3e88d">&#39;jpg,png,gif&#39;</span>);
+</span></span><span style="display:flex;"><span>$element<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">setRequired</span>(<span style="color:#c099ff">true</span>);
+</span></span><span style="display:flex;"><span>$this<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">addElement</span>($element, <span style="color:#c3e88d">&#39;foo&#39;</span>);
+</span></span></code></pre></div><p><strong>Handle the upload before the file is saved in your controller:</strong></p>
 <p>By getting access to Zend_File_Transfer_Adapter_Http we can intercept the file before it is moved to the already-defined destination path. At this point we apply a filter to the upload which will rename the file.</p>
-<div class="wp_syntax">
-  <table>
-    <tr>
-      <td class="code">
-        <pre class="php" style="font-family:monospace;"><span style="color: #000088;">$post</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$request</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getPost</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span> <span style="color: #666666; font-style: italic;">// This contains the POST params</span>
-&nbsp;
-        <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$request</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">isPost</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-            <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #000088;">$form</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">isValid</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$post</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-&nbsp;
-                <span style="color: #000088;">$upload</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Zend_File_Transfer_Adapter_Http<span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-                <span style="color: #000088;">$filename</span> <span style="color: #339933;">=</span> <span style="color: #000088;">$upload</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">getFilename</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-                <span style="color: #000088;">$filename</span> <span style="color: #339933;">=</span> <span style="color: #990000;">basename</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$filename</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-&nbsp;
-&nbsp;
-                <span style="color: #000088;">$uniqueToken</span> <span style="color: #339933;">=</span> <span style="color: #990000;">md5</span><span style="color: #009900;">&#40;</span><span style="color: #990000;">uniqid</span><span style="color: #009900;">&#40;</span><span style="color: #990000;">mt_rand</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-                <span style="color: #000088;">$filterRename</span> <span style="color: #339933;">=</span> <span style="color: #000000; font-weight: bold;">new</span> Zend_Filter_File_Rename<span style="color: #009900;">&#40;</span><span style="color: #990000;">array</span><span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'target'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #0000ff;">'/path/to/uploads/'</span> <span style="color: #339933;">.</span> <span style="color: #000088;">$uniqueToken</span><span style="color: #339933;">.</span><span style="color: #000088;">$filename</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'overwrite'</span> <span style="color: #339933;">=&gt;</span> <span style="color: #009900; font-weight: bold;">false</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-                <span style="color: #000088;">$upload</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">addFilter</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$filterRename</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-&nbsp;
-                <span style="color: #b1b100;">if</span> <span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><span style="color: #000088;">$upload</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">receive</span><span style="color: #009900;">&#40;</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span> <span style="color: #009900;">&#123;</span>
-                    <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">view</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'Error receiving the file'</span><span style="color: #339933;">;</span>
-                    <span style="color: #b1b100;">return</span><span style="color: #339933;">;</span>
-                <span style="color: #009900;">&#125;</span>
-&nbsp;
-                <span style="color: #000088;">$this</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">view</span><span style="color: #339933;">-&gt;</span><span style="color: #004000;">message</span> <span style="color: #339933;">=</span> <span style="color: #0000ff;">'Screenshot(s) successfully uploaded'</span><span style="color: #339933;">;</span>
-            <span style="color: #009900;">&#125;</span>
-        <span style="color: #009900;">&#125;</span></pre>
-      </td>
-    </tr>
-  </table>
-</div>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$post <span style="color:#c3e88d;font-weight:bold">=</span> $request<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">getPost</span>(); <span style="color:#444a73;font-style:italic">// This contains the POST params
+</span></span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"></span> 
+</span></span><span style="display:flex;"><span><span style="color:#c099ff">if</span> ($request<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">isPost</span>()) {
+</span></span><span style="display:flex;"><span>    <span style="color:#c099ff">if</span> ($form<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">isValid</span>($post)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $upload <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Zend_File_Transfer_Adapter_Http();
+</span></span><span style="display:flex;"><span>        $filename <span style="color:#c3e88d;font-weight:bold">=</span> $upload<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">getFilename</span>();
+</span></span><span style="display:flex;"><span>        $filename <span style="color:#c3e88d;font-weight:bold">=</span> basename($filename);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $uniqueToken <span style="color:#c3e88d;font-weight:bold">=</span> md5(uniqid(mt_rand(), <span style="color:#c099ff">true</span>));
+</span></span><span style="display:flex;"><span>        $filterRename <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Zend_Filter_File_Rename(<span style="color:#c099ff">array</span>(<span style="color:#c3e88d">&#39;target&#39;</span> <span style="color:#c3e88d;font-weight:bold">=&gt;</span> <span style="color:#c3e88d">&#39;/path/to/uploads/&#39;</span> <span style="color:#c3e88d;font-weight:bold">.</span> $uniqueToken<span style="color:#c3e88d;font-weight:bold">.</span>$filename, <span style="color:#c3e88d">&#39;overwrite&#39;</span> <span style="color:#c3e88d;font-weight:bold">=&gt;</span> <span style="color:#c099ff">false</span>));
+</span></span><span style="display:flex;"><span>        $upload<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">addFilter</span>($filterRename);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c099ff">if</span> (<span style="color:#c3e88d;font-weight:bold">!</span>$upload<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">receive</span>()) {
+</span></span><span style="display:flex;"><span>            $this<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">view</span><span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">message</span> <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c3e88d">&#39;Error receiving the file&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#c099ff">return</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        $this<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">view</span><span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">message</span> <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c3e88d">&#39;Screenshot(s) successfully uploaded&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
 			</article>
 
 			
@@ -162,7 +147,7 @@
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

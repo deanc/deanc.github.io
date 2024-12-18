@@ -16,15 +16,25 @@
 	
 
 	
-	<meta name="description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
-For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
-	<meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
-For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it correctly first, specifically making sure you only include/exclude relevent files from your build process." />
+	<meta name="description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator
+built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even
+with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
+For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
+correctly first, specifically making sure you only
+include/exclude relevent files from your build process. If you have, and
+it&rsquo;s still too slow for your taste and you feel like trying something new then carry on reading below." />
+	<meta property="og:description" content="For those that haven&rsquo;t yet heard about it Hugo is a lightning-fast, and powerful static generator
+built using golang. For the last couple of years I&rsquo;ve used Jekyll to build this site, but even
+with this few pages &amp; posts Jekyll takes between 5-10 seconds to generate my tiny site.
+For those of you currently running Jekyll before you decide to switch, make sure first of all that you configure it
+correctly first, specifically making sure you only
+include/exclude relevent files from your build process. If you have, and
+it&rsquo;s still too slow for your taste and you feel like trying something new then carry on reading below." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2015/10/15/migrating-jekyll-to-hugo-my-experience/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -33,19 +43,19 @@ For those of you currently running Jekyll before you decide to switch, make sure
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -114,67 +124,62 @@ when trying to migrate my content and theme.</p>
 <li>Open up each file and make sure your front-matter contains the URL you want e.g. <code>url: /2012/01/how-to-rip-music-from-the-hype-machine/</code></li>
 </ul>
 <p>An alternative to this is to configure permalinks for posts via <code>config.yml</code>:</p>
-<pre><code>permalinks:
-  post: /:year/:month/:day/:slug/
-</code></pre>
-<p>The downside to this is that a) you must define a <code>date</code> key in your front-matter &amp; b) the slug that is generated
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#c099ff">permalinks</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">post</span>: /:year/:month/:day/:slug/
+</span></span></code></pre></div><p>The downside to this is that a) you must define a <code>date</code> key in your front-matter &amp; b) the slug that is generated
 may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.</p>
 <h3 id="how-to-access-the-current-date-in-templates">How to access the current date in templates</h3>
 <p>This is pretty straightforward:</p>
-<pre><code>{{ .Date.Format &quot;2006&quot; }}
-</code></pre>
-<h3 id="how-to-create-a-global-site-menu">How to create a global site menu</h3>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>{{ .Date.Format &#34;2006&#34; }}
+</span></span></code></pre></div><h3 id="how-to-create-a-global-site-menu">How to create a global site menu</h3>
 <p>The documentation on menus is pretty good but here&rsquo;s some info on quickly setting it up. Define your homepage URL in
 <code>config.yml</code> if you want it to appear in the menu:</p>
-<pre><code>menu:
-  main:
-      - Name: &quot;Home&quot;
-        Weight: 1
-        Identifier: &quot;home&quot;
-        URL: &quot;/&quot;
-</code></pre>
-<p>If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#c099ff">menu</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">main</span>:
+</span></span><span style="display:flex;"><span>		- <span style="color:#c099ff">Name</span>: <span style="color:#c3e88d">&#34;Home&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#c099ff">Weight</span>: <span style="color:#ffc777">1</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#c099ff">Identifier</span>: <span style="color:#c3e88d">&#34;home&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#c099ff">URL</span>: <span style="color:#c3e88d">&#34;/&#34;</span>
+</span></span></code></pre></div><p>If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
 for the content e.g.</p>
-<pre><code>menu:
-  main:
-    weight: 60
-</code></pre>
-<p>The weight is basically a display order.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#c099ff">menu</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">main</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">weight</span>: <span style="color:#ffc777">60</span>
+</span></span></code></pre></div><p>The weight is basically a display order.</p>
 <h3 id="how-to-not-go-insane-when-generating-meta-titledescription-tags">How to not go insane when generating meta title/description tags</h3>
 <p>Just use this:</p>
-<pre><code>&lt;title&gt;
-	{{ if isset .Params &quot;og_title&quot; }}
-	{{ .Params.og_title }}
-	{{ else if eq .URL &quot;/&quot; }}
-	{{ .Site.Params.TitleSuffix }}
-	{{ else if eq .Section &quot;post&quot; }}
-	{{ .Title }}
-	{{ else }}
-	{{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
-&lt;/title&gt;
-
-{{ if isset .Params &quot;og_title&quot; }}
-&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Params.og_title }}&quot; /&gt;
-{{ else if eq .URL &quot;/&quot; }}
-&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Site.Params.TitleSuffix }}&quot; /&gt;
-{{ else if eq .Section &quot;post&quot; }}
-&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Title }}&quot; /&gt;
-{{ else }}
-&lt;meta property=&quot;og:title&quot; content=&quot;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&quot; /&gt;
-{{ end }}
-
-{{ if eq .URL &quot;/&quot; }}
-&lt;meta name=&quot;description&quot; content=&quot;{{ .Site.Params.Tagline }}&quot; /&gt;
-&lt;meta property=&quot;og:description&quot; content=&quot;{{ .Site.Params.Tagline }}&quot; /&gt;
-{{ else if eq .Section &quot;post&quot; }}
-&lt;meta name=&quot;description&quot; content=&quot;{{ .Summary }}&quot; /&gt;
-&lt;meta property=&quot;og:description&quot; content=&quot;{{ .Summary }}&quot; /&gt;
-{{ else }}
-&lt;meta name=&quot;description&quot; content=&quot;{{ .Description }}&quot; /&gt;
-&lt;meta property=&quot;og:description&quot; content=&quot;{{ .Description }}&quot; /&gt;
-{{ end }}
-</code></pre>
-
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#c099ff">title</span>&gt;
+</span></span><span style="display:flex;"><span>	{{ if isset .Params &#34;og_title&#34; }}
+</span></span><span style="display:flex;"><span>	{{ .Params.og_title }}
+</span></span><span style="display:flex;"><span>	{{ else if eq .URL &#34;/&#34; }}
+</span></span><span style="display:flex;"><span>	{{ .Site.Params.TitleSuffix }}
+</span></span><span style="display:flex;"><span>	{{ else if eq .Section &#34;post&#34; }}
+</span></span><span style="display:flex;"><span>	{{ .Title }}
+</span></span><span style="display:flex;"><span>	{{ else }}
+</span></span><span style="display:flex;"><span>	{{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#c099ff">title</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ if isset .Params &#34;og_title&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Params.og_title }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ else if eq .URL &#34;/&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ else if eq .Section &#34;post&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Title }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ else }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{{ if eq .URL &#34;/&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">name</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ else if eq .Section &#34;post&#34; }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">name</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Summary }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Summary }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ else }}
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">name</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Description }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Description }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>{{ end }}
+</span></span></code></pre></div>
 			</article>
 
 			
@@ -195,7 +200,7 @@ for the content e.g.</p>
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

@@ -16,19 +16,35 @@
 	
 
 	
-	<meta name="description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
+	<meta name="description" content="Yosemite upgrade guide v1.0
+Apache
+Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
-Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows:
-&lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
-	<meta property="og:description" content="Yosemite upgrade guide v1.0 Apache Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
+Include /private/etc/apache2/extra/httpd-vhosts.conf
+Also find the &lt;Directory /&gt; block and make sure it reads as follows:
+&lt;Directory /&gt;
+        AllowOverride All
+        Require all granted
+&lt;/Directory&gt;
+Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow.
+Remove them and change to:" />
+	<meta property="og:description" content="Yosemite upgrade guide v1.0
+Apache
+Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the /etc/apache/httpd.conf file. In this file you need to do a few things:
 Search for vhosts and uncomment the line:
-Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory /&gt; block and make sure it reads as follows:
-&lt;Directory /&gt; AllowOverride All Require all granted &lt;/Directory&gt; Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow." />
+Include /private/etc/apache2/extra/httpd-vhosts.conf
+Also find the &lt;Directory /&gt; block and make sure it reads as follows:
+&lt;Directory /&gt;
+        AllowOverride All
+        Require all granted
+&lt;/Directory&gt;
+Then open up /etc/apache2/extra/vhosts.conf and find any instances that begin with Allow from or Order allow,deny or Order deny,allow.
+Remove them and change to:" />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2014/12/20/yosemite-upgrade-guide-for-php-developers/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -37,19 +53,19 @@ Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -103,23 +119,19 @@ Include /private/etc/apache2/extra/httpd-vhosts.conf Also find the &lt;Directory
 <h3 id="apache">Apache</h3>
 <p>Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the <code>/etc/apache/httpd.conf</code> file. In this file you need to do a few things:</p>
 <p>Search for <code>vhosts</code> and uncomment the line:</p>
-<pre><code>    Include /private/etc/apache2/extra/httpd-vhosts.conf
-</code></pre>
-<p>Also find the <code>&lt;Directory /&gt;</code> block and make sure it reads as follows:</p>
-<pre><code>    &lt;Directory /&gt;
-        AllowOverride All
-        Require all granted
-    &lt;/Directory&gt;
-</code></pre>
-<p>Then open up <code>/etc/apache2/extra/vhosts.conf</code> and find any instances that begin with <code>Allow from</code> or <code>Order allow,deny</code> or <code>Order deny,allow</code>.
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#c3e88d">Include</span> <span style="color:#c3e88d">/private/etc/apache2/extra/httpd-vhosts.conf</span>
+</span></span></code></pre></div><p>Also find the <code>&lt;Directory /&gt;</code> block and make sure it reads as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#c099ff">&lt;Directory</span> <span style="color:#c3e88d">/</span><span style="color:#c099ff">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">AllowOverride</span> <span style="color:#c099ff">All</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">Require</span> <span style="color:#c099ff">all</span> granted
+</span></span><span style="display:flex;"><span><span style="color:#c099ff">&lt;/Directory&gt;</span>
+</span></span></code></pre></div><p>Then open up <code>/etc/apache2/extra/vhosts.conf</code> and find any instances that begin with <code>Allow from</code> or <code>Order allow,deny</code> or <code>Order deny,allow</code>.
 Remove them and change to:</p>
-<pre><code>    Require all granted
-</code></pre>
-<p>After all this make sure you restart apache: <code>sudo apachectl restart</code></p>
+<pre tabindex="0"><code>Require all granted
+</code></pre><p>After all this make sure you restart apache: <code>sudo apachectl restart</code></p>
 <p>Finally, if you still have problems, try to start Apache in debug mode and see what errors you get:</p>
-<pre><code>    sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
-</code></pre>
-<h2 id="mysql">MySQL</h2>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
+</span></span></code></pre></div><h2 id="mysql">MySQL</h2>
 <p>It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
 Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/775007">launch MySQL automatically</a>.</p>
 <h2 id="phpstorm">PHPStorm</h2>
@@ -145,7 +157,7 @@ Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

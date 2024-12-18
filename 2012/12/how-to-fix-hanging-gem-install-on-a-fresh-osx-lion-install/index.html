@@ -18,15 +18,23 @@
 	
 	<meta name="description" content="I&rsquo;ve now tried to use gem install &lt;package&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&quot; 2011 and Macbook Pro 15&quot; 2012. Both have suffered from the same issue of the gem installer hanging.
 This was my symptom.
-$ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt; The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message." />
+    $ gem install cocoapods
+    ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt;
+
+The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message. Something more sinister is obviously going on…" />
 	<meta property="og:description" content="I&rsquo;ve now tried to use gem install &lt;package&gt; on two fresh installs of OSX Lion on a Macbook Pro 13&quot; 2011 and Macbook Pro 15&quot; 2012. Both have suffered from the same issue of the gem installer hanging.
 This was my symptom.
-$ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError) You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt; The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message." />
+    $ gem install cocoapods
+    ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don&#39;t have write permissions into the /Library/Ruby/Gems/1.8 directory.&lt;/pre&gt;
+
+The strange thing was, if this was solely an issue with permissions, then it should not take almost three minutes to give that error message. Something more sinister is obviously going on…" />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -35,19 +43,19 @@ $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -106,17 +114,12 @@ $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError
 <p>The strange thing was, if this was solely an issue with permissions, then it should not take almost <em>three minutes</em> to give that error message. Something more sinister is obviously going on…</p>
 <p>After some investigation I came across several topics on stackoverflow discussing gem install hanging, but all of them implied it was some connection issue and suggesting several solutions. None of them worked individually, but here is what worked for me:</p>
 <ol>
-<li>
-<p>Open up Xcode and go to XCode &gt; Preferences and switch to the Downloads tab. Once there, install the command line tools if you haven&rsquo;t already.<a href="http://www.deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/screen-shot-2012-12-26-at-1-18-35-pm/" rel="attachment wp-att-259"><img class="alignnone size-medium wp-image-259" alt="Screen Shot 2012-12-26 at 1.18.35 PM" src="//deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-26-at-1.18.35-PM-300x219.png" width="300" height="219" /></a></p>
-</li>
-<li>
-<p>Install RVM and the latest stable version of Ruby by typing this on command line:</p>
-<pre><code>curl -L https://get.rvm.io | bash -s stable --ruby
-</code></pre>
-</li>
-<li>
-<p>Now you should be able to install gems.</p>
-</li>
+<li>Open up Xcode and go to XCode &gt; Preferences and switch to the Downloads tab. Once there, install the command line tools if you haven&rsquo;t already.<a href="http://www.deanclatworthy.com/2012/12/how-to-fix-hanging-gem-install-on-a-fresh-osx-lion-install/screen-shot-2012-12-26-at-1-18-35-pm/" rel="attachment wp-att-259"><img class="alignnone size-medium wp-image-259" alt="Screen Shot 2012-12-26 at 1.18.35 PM" src="//deanclatworthy.com/img/uploads/2012/12/Screen-Shot-2012-12-26-at-1.18.35-PM-300x219.png" width="300" height="219" /></a></li>
+<li>Install RVM and the latest stable version of Ruby by typing this on command line:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -L https://get.rvm.io | bash -s stable --ruby
+</span></span></code></pre></div><ol start="3">
+<li>Now you should be able to install gems.</li>
 </ol>
 <p>Enjoy the guide, and please, if you have any feedback on why gem install doesn&rsquo;t work out the box then share it in the comments.</p>
 
@@ -140,7 +143,7 @@ $ gem install cocoapods ERROR: While executing gem ... (Gem::FilePermissionError
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

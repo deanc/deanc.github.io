@@ -17,16 +17,38 @@
 
 	
 	<meta name="description" content="Just a small gotcha for anyone using Symfony2&rsquo;s DomCrawler component. The standard behaviour of the class (from the current docs) is:
-$crawler = new Crawler($html); foreach ($crawler as $domElement) { print $domElement-&gt;nodeName; } However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
-$crawler = new Crawler; $crawler-&gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;); foreach ($crawler as $domElement) { print $domElement-&gt;nodeName; } The second parameter to addHTMLContent is UTF-8 by default, but I&rsquo;ve added it to illustrate that you could use other character sets too." />
+$crawler = new Crawler($html);
+
+foreach ($crawler as $domElement) {
+    print $domElement-&gt;nodeName;
+}
+However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
+$crawler = new Crawler;
+$crawler-&gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;);
+
+foreach ($crawler as $domElement) {
+    print $domElement-&gt;nodeName;
+}
+The second parameter to addHTMLContent is UTF-8 by default, but I&rsquo;ve added it to illustrate that you could use other character sets too." />
 	<meta property="og:description" content="Just a small gotcha for anyone using Symfony2&rsquo;s DomCrawler component. The standard behaviour of the class (from the current docs) is:
-$crawler = new Crawler($html); foreach ($crawler as $domElement) { print $domElement-&gt;nodeName; } However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
-$crawler = new Crawler; $crawler-&gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;); foreach ($crawler as $domElement) { print $domElement-&gt;nodeName; } The second parameter to addHTMLContent is UTF-8 by default, but I&rsquo;ve added it to illustrate that you could use other character sets too." />
+$crawler = new Crawler($html);
+
+foreach ($crawler as $domElement) {
+    print $domElement-&gt;nodeName;
+}
+However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:
+$crawler = new Crawler;
+$crawler-&gt;addHTMLContent(file_get_contents(&#39;http://www.columbia.edu/~fdc/utf8/&#39;), &#39;UTF-8&#39;);
+
+foreach ($crawler as $domElement) {
+    print $domElement-&gt;nodeName;
+}
+The second parameter to addHTMLContent is UTF-8 by default, but I&rsquo;ve added it to illustrate that you could use other character sets too." />
 	
 
 	<meta property="og:url" content="https://deanclatworthy.com/2013/04/crawling-utf-8-pages-using-the-symfony2-domcrawler-component/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -35,19 +57,19 @@ $crawler = new Crawler; $crawler-&gt;addHTMLContent(file_get_contents(&#39;http:
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -98,21 +120,19 @@ $crawler = new Crawler; $crawler-&gt;addHTMLContent(file_get_contents(&#39;http:
 
 			<article>
 				<p>Just a small gotcha for anyone using Symfony2&rsquo;s <code>DomCrawler</code> component. The standard behaviour of the class (from the current docs) is:</p>
-<pre><code>    $crawler = new Crawler($html);
-
-    foreach ($crawler as $domElement) {
-        print $domElement-&gt;nodeName;
-    }
-</code></pre>
-<p>However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:</p>
-<pre><code>    $crawler = new Crawler;
-    $crawler-&gt;addHTMLContent(file_get_contents('http://www.columbia.edu/~fdc/utf8/'), 'UTF-8');
-
-    foreach ($crawler as $domElement) {
-        print $domElement-&gt;nodeName;
-    }
-</code></pre>
-<p>The second parameter to <code>addHTMLContent</code> is <code>UTF-8</code> by default, but I&rsquo;ve added it to illustrate that you could use other character sets too.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$crawler <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Crawler($html);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c099ff">foreach</span> ($crawler <span style="color:#c099ff">as</span> $domElement) {
+</span></span><span style="display:flex;"><span>    <span style="color:#c099ff">print</span> $domElement<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">nodeName</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$crawler <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Crawler;
+</span></span><span style="display:flex;"><span>$crawler<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">addHTMLContent</span>(file_get_contents(<span style="color:#c3e88d">&#39;http://www.columbia.edu/~fdc/utf8/&#39;</span>), <span style="color:#c3e88d">&#39;UTF-8&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c099ff">foreach</span> ($crawler <span style="color:#c099ff">as</span> $domElement) {
+</span></span><span style="display:flex;"><span>    <span style="color:#c099ff">print</span> $domElement<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">nodeName</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The second parameter to <code>addHTMLContent</code> is <code>UTF-8</code> by default, but I&rsquo;ve added it to illustrate that you could use other character sets too.</p>
 
 			</article>
 
@@ -134,7 +154,7 @@ $crawler = new Crawler; $crawler-&gt;addHTMLContent(file_get_contents(&#39;http:
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

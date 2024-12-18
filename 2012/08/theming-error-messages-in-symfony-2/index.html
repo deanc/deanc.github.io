@@ -24,7 +24,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 
 	<meta property="og:url" content="https://deanclatworthy.com/2012/08/theming-error-messages-in-symfony-2/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -33,19 +33,19 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -97,27 +97,25 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 			<article>
 				<p>I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.</p>
 <p>In your SF2 bundle create a new file <strong><BundleName>/Resources/views/Form/field_errors.html.twig</strong>:</p>
-<pre><code>    {% raw %}
-    {# YourBundleName/Resources/views/Form/field_errors.html.twig #}
-    {% block field_errors %}
-    {% spaceless %}
-    {% if errors|length &gt; 0 %}
-    &lt;ul class=&quot;error_list&quot;&gt;
-        {% for error in errors %}
-        &lt;li&gt;{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}&lt;/li&gt;
-        {% endfor %}
-    &lt;/ul&gt;
-    {% endif %}
-    {% endspaceless %}
-    {% endblock field_errors %}
-    {% endraw %}
-</code></pre>
-<p>Then import this into your TWIG template like so:</p>
-<pre><code>{% raw %}
-{% form_theme form '&lt;YourNamespace&gt;&lt;BundleName&gt;:Form:field_errors.html.twig' %}
-{% endraw %}
-</code></pre>
-<p>One key point to note here is that you must concatenate your name space and bundle name. So <strong>Namespace:BundleName</strong> won&rsquo;t work but <strong>NamespaceBundleName</strong> will. This is the mistake I was making. It turns out that when you create a bundle it&rsquo;s given an alias and by default it&rsquo;s a concatenation of your namespace and bundlename, so when referencing it in TWIG it appears you need to use this alias.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-twig" data-lang="twig"><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">raw</span> <span style="color:#444a73;font-style:italic">%}</span>
+</span></span><span style="display:flex;"><span>{# YourBundleName/Resources/views/Form/field_errors.html.twig #}
+</span></span><span style="display:flex;"><span>{% block field_errors %}
+</span></span><span style="display:flex;"><span>{% spaceless %}
+</span></span><span style="display:flex;"><span>{% if errors|length &gt; 0 %}
+</span></span><span style="display:flex;"><span>&lt;ul class=&#34;error_list&#34;&gt;
+</span></span><span style="display:flex;"><span>    {% for error in errors %}
+</span></span><span style="display:flex;"><span>    &lt;li&gt;{{ error.messageTemplate|trans(error.messageParameters, &#39;validators&#39;) }}&lt;/li&gt;
+</span></span><span style="display:flex;"><span>    {% endfor %}
+</span></span><span style="display:flex;"><span>&lt;/ul&gt;
+</span></span><span style="display:flex;"><span>{% endif %}
+</span></span><span style="display:flex;"><span>{% endspaceless %}
+</span></span><span style="display:flex;"><span>{% endblock field_errors %}
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">endraw</span> <span style="color:#444a73;font-style:italic">%}</span>
+</span></span></code></pre></div><p>Then import this into your TWIG template like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-twig" data-lang="twig"><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">raw</span> <span style="color:#444a73;font-style:italic">%}</span>
+</span></span><span style="display:flex;"><span>{% form_theme form &#39;&lt;YourNamespace&gt;&lt;BundleName&gt;:Form:field_errors.html.twig&#39; %}
+</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">endraw</span> <span style="color:#444a73;font-style:italic">%}</span>
+</span></span></code></pre></div><p>One key point to note here is that you must concatenate your name space and bundle name. So <strong>Namespace:BundleName</strong> won&rsquo;t work but <strong>NamespaceBundleName</strong> will. This is the mistake I was making. It turns out that when you create a bundle it&rsquo;s given an alias and by default it&rsquo;s a concatenation of your namespace and bundlename, so when referencing it in TWIG it appears you need to use this alias.</p>
 
 			</article>
 
@@ -139,7 +137,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>

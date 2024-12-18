@@ -22,7 +22,7 @@
 
 	<meta property="og:url" content="https://deanclatworthy.com/2011/06/bad-character-encoding-causing-mysql-errors-in-php/">
 	<meta property="og:site_name" content="DeanClatworthy.com">
-	<meta property="og:image" content="https://deanclatworthy.com/img/share.jpg"/>
+	<meta property="og:image" content="https://deanclatworthy.com//img/share.jpg"/>
 	<meta name="theme-color" content="#DE6262"/>
 
 	
@@ -31,19 +31,19 @@
 	
 	
 	
-	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.ce666c8870b3560b70b0ea6adbb4e02f748aa9a0d4809421b707b850c0e0f673.css">
+	<link media="all" rel="stylesheet" href="https://deanclatworthy.com/sass/main.min.8e3fe7718d895633b1b830026830784f4c3ac51495021032bfeb5afd98621397.css">
 
 	
-	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com/img/favicons/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com/img/favicons/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com/img/favicons/favicon-16x16.png">
-	<link rel="manifest" href="https://deanclatworthy.com/img/favicons/site.webmanifest">
-	<link rel="mask-icon" href="https://deanclatworthy.com/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="apple-touch-icon" sizes="180x180" href="https://deanclatworthy.com//img/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="https://deanclatworthy.com//img/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="https://deanclatworthy.com//img/favicons/favicon-16x16.png">
+	<link rel="manifest" href="https://deanclatworthy.com//img/favicons/site.webmanifest">
+	<link rel="mask-icon" href="https://deanclatworthy.com//img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#000000">
 	<meta name="theme-color" content="#ffffff">
 
 	
-	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com/index.xml">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="https://deanclatworthy.com//index.xml">
 
 </head>
 
@@ -96,19 +96,10 @@
 				<p>Today at work I encountered a peculiar problem when working with some translations. I developed a system whereby we can send out translations to our translators and they&rsquo;ll fill in the blanks and send it back to use which is then imported. Part of this project involved coding a parser for a custom file format to send out to our translators. The benefit of this is it allowed me to validate incoming translation files, as well as easily export them according to the spec I&rsquo;d defined.</p>
 <p>We received an Italian translation file and I proceeded to import it until my colleague noticed a few translations were missing. Baffled, I looked into this further and debugged until I spotted some MySQL errors in the logs. The query looked fine, but gave MySQL error number 1366. After a bit of googling I came across users who had received a similar error and had put it down to character encoding issues. It turns out that the translation file had been saved as ISO 8859-1 (Latin-1) rather than UTF-8. It turned out that MySQL was actually refusing to execute the query because the target string I was inserting into a UTF-8 column wasn&rsquo;t valid.</p>
 <p>Rather than go through the complicated process of trying to cast different character sets coming in from various translators I came up with a simple solution which was to open the translation file and check it&rsquo;s contents are strict UTF-8. This is pretty simple to do:</p>
-<div class="wp_syntax">
-  <table>
-    <tr>
-      <td class="code">
-        <pre class="php" style="font-family:monospace;"><span style="color: #b1b100;">if</span><span style="color: #009900;">&#40;</span><span style="color: #339933;">!</span><span style="color: #990000;">mb_detect_encoding</span><span style="color: #009900;">&#40;</span><span style="color: #000088;">$str</span><span style="color: #339933;">,</span> <span style="color: #0000ff;">'UTF-8'</span><span style="color: #339933;">,</span> <span style="color: #009900; font-weight: bold;">true</span><span style="color: #009900;">&#41;</span><span style="color: #009900;">&#41;</span>
-<span style="color: #009900;">&#123;</span>
-    <span style="color: #b1b100;">throw</span> <span style="color: #000000; font-weight: bold;">new</span> TranslationException<span style="color: #009900;">&#40;</span><span style="color: #0000ff;">'File is invalid UTF-8'</span><span style="color: #009900;">&#41;</span><span style="color: #339933;">;</span>
-<span style="color: #009900;">&#125;</span></pre>
-      </td>
-    </tr>
-  </table>
-</div>
-<p>As a quick side note, omit the last parameter if you don&rsquo;t want to be 100% strict.</p>
+<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#c099ff">if</span>(<span style="color:#c3e88d;font-weight:bold">!</span>mb_detect_encoding($str, <span style="color:#c3e88d">&#39;UTF-8&#39;</span>, <span style="color:#c099ff">true</span>)) {
+</span></span><span style="display:flex;"><span>    <span style="color:#c099ff">throw</span> <span style="color:#c099ff">new</span> TranslationException(<span style="color:#c3e88d">&#39;File is invalid UTF-8&#39;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As a quick side note, omit the last parameter if you don&rsquo;t want to be 100% strict.</p>
 			</article>
 
 			
@@ -129,7 +120,7 @@
 		
 
   <footer>
-    <p>&copy; 2023 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
+    <p>&copy; 2024 Dean Clatworthy | <a rel="nofollow noindex" href="#top">Back to top</a></p>
   </footer>
 
 </main>
