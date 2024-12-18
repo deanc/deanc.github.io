@@ -118,10 +118,10 @@ other Ubuntu version than 18.04 LTS. This appears to be related to an Electron/g
 issue which has long been fixed. Unfortunately Crashplan seem unwilling to upgrade
 their client.</p>
 <p>Fortunately there is a workaround. Add this PPA:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo add-apt-repository ppa:maarten-fonville/ppa
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo add-apt-repository ppa:maarten-fonville/ppa
 </span></span><span style="display:flex;"><span>sudo apt-get update
 </span></span></code></pre></div><p>You will almost certainly need to accept this PPA&rsquo;s keys:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv &lt;whatever-the-id-is-in-the-error-message&gt;
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv &lt;whatever-the-id-is-in-the-error-message&gt;
 </span></span></code></pre></div><p>I have also seen a mention about patching <code>libnode.so</code> in the crash plan app itself
 but I have not tried this.</p>
 

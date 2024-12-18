@@ -97,7 +97,7 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 			<article>
 				<p>I spent a large portion of my day today trying to customize the HTML produced by Symfony 2 for form errors. The documentation has a section on how to do this, but for the life of me, I could not make it work. Here is a working, re-usable solution, with a brief explanation of the mistake I made at the end.</p>
 <p>In your SF2 bundle create a new file <strong><BundleName>/Resources/views/Form/field_errors.html.twig</strong>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-twig" data-lang="twig"><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">raw</span> <span style="color:#444a73;font-style:italic">%}</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-twig" data-lang="twig"><span style="display:flex;"><span><span style="color:#a1a6c5;font-style:italic">{%</span> <span style="color:#9854f1">raw</span> <span style="color:#a1a6c5;font-style:italic">%}</span>
 </span></span><span style="display:flex;"><span>{# YourBundleName/Resources/views/Form/field_errors.html.twig #}
 </span></span><span style="display:flex;"><span>{% block field_errors %}
 </span></span><span style="display:flex;"><span>{% spaceless %}
@@ -110,11 +110,11 @@ In your SF2 bundle create a new file /Resources/views/Form/field_errors.html.twi
 </span></span><span style="display:flex;"><span>{% endif %}
 </span></span><span style="display:flex;"><span>{% endspaceless %}
 </span></span><span style="display:flex;"><span>{% endblock field_errors %}
-</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">endraw</span> <span style="color:#444a73;font-style:italic">%}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a1a6c5;font-style:italic">{%</span> <span style="color:#9854f1">endraw</span> <span style="color:#a1a6c5;font-style:italic">%}</span>
 </span></span></code></pre></div><p>Then import this into your TWIG template like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-twig" data-lang="twig"><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">raw</span> <span style="color:#444a73;font-style:italic">%}</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-twig" data-lang="twig"><span style="display:flex;"><span><span style="color:#a1a6c5;font-style:italic">{%</span> <span style="color:#9854f1">raw</span> <span style="color:#a1a6c5;font-style:italic">%}</span>
 </span></span><span style="display:flex;"><span>{% form_theme form &#39;&lt;YourNamespace&gt;&lt;BundleName&gt;:Form:field_errors.html.twig&#39; %}
-</span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic">{%</span> <span style="color:#c099ff">endraw</span> <span style="color:#444a73;font-style:italic">%}</span>
+</span></span><span style="display:flex;"><span><span style="color:#a1a6c5;font-style:italic">{%</span> <span style="color:#9854f1">endraw</span> <span style="color:#a1a6c5;font-style:italic">%}</span>
 </span></span></code></pre></div><p>One key point to note here is that you must concatenate your name space and bundle name. So <strong>Namespace:BundleName</strong> won&rsquo;t work but <strong>NamespaceBundleName</strong> will. This is the mistake I was making. It turns out that when you create a bundle it&rsquo;s given an alias and by default it&rsquo;s a concatenation of your namespace and bundlename, so when referencing it in TWIG it appears you need to use this alias.</p>
 
 			</article>

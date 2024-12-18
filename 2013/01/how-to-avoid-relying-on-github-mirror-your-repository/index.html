@@ -98,24 +98,24 @@
 <ol>
 <li>Firstly, I&rsquo;m going to assume you have a remote set up already for github named “origin”. Rename it to “github:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git remote rename origin github
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git remote rename origin github
 </span></span></code></pre></div><ol start="2">
 <li>Create a new repository on bitbucket and name it the same as the one on github.</li>
 <li>Add it as a remote using the instructions provided. But make sure you call it “bitbucket” and not “origin”. Something like so:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git remote add bitbucket ssh://git@bitbucket.org/username/somerepo.git
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git remote add bitbucket ssh://git@bitbucket.org/username/somerepo.git
 </span></span><span style="display:flex;"><span>git push -u bitbucket --all
 </span></span></code></pre></div><ol start="4">
 <li>Next type:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git config -e
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git config -e
 </span></span></code></pre></div><p>This will open up a text editor and allow you to edit your git configuration.</li></p>
 <ol start="5">
 <li>We need to add the urls for every remote so far (github and bitbucket) into a new remote called “origin”. It should look something like this:</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#c099ff">[remote &#34;origin&#34;]</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#82aaff">url</span> <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c3e88d">git@github.com:username/somerepo.git
-</span></span></span><span style="display:flex;"><span><span style="color:#c3e88d">        url = ssh://git@bitbucket.org/username/somerepo.git</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#9854f1">[remote &#34;origin&#34;]</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#2e7de9">url</span> <span style="color:#587539;font-weight:bold">=</span> <span style="color:#587539">git@github.com:username/somerepo.git
+</span></span></span><span style="display:flex;"><span><span style="color:#587539">        url = ssh://git@bitbucket.org/username/somerepo.git</span>
 </span></span></code></pre></div><ol start="6">
 <li>Next time you run <code>git push origin </code> it will push to both</li>
 </ol>

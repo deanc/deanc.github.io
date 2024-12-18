@@ -155,30 +155,30 @@ http://jsfiddle.net/mWtmY/288/" />
 			<article>
 				<p>Getting twitter bootstrap&rsquo;s responsive layout and masonry to play alongside each other is pretty simple. Assuming you are not using the fluid container (container-fluid) here&rsquo;s the code:</p>
 <p>Javascript:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>$(<span style="color:#c3e88d">document</span>).ready(<span style="color:#c099ff">function</span> () {
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>$(<span style="color:#587539">document</span>).ready(<span style="color:#9d7cd8">function</span> () {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        $(<span style="color:#c3e88d">&#34;#posts&#34;</span>).masonry({
-</span></span><span style="display:flex;"><span>            itemSelector<span style="color:#c3e88d;font-weight:bold">:</span> <span style="color:#c3e88d">&#39;.post&#39;</span>,
-</span></span><span style="display:flex;"><span>            isAnimated<span style="color:#c3e88d;font-weight:bold">:</span> <span style="color:#ffc777">true</span>,
-</span></span><span style="display:flex;"><span>            columnWidth<span style="color:#c3e88d;font-weight:bold">:</span> <span style="color:#c099ff">function</span>( containerWidth ) {
+</span></span><span style="display:flex;"><span>        $(<span style="color:#587539">&#34;#posts&#34;</span>).masonry({
+</span></span><span style="display:flex;"><span>            itemSelector<span style="color:#587539;font-weight:bold">:</span> <span style="color:#587539">&#39;.post&#39;</span>,
+</span></span><span style="display:flex;"><span>            isAnimated<span style="color:#587539;font-weight:bold">:</span> <span style="color:#8c6c3e">true</span>,
+</span></span><span style="display:flex;"><span>            columnWidth<span style="color:#587539;font-weight:bold">:</span> <span style="color:#9d7cd8">function</span>( containerWidth ) {
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#444a73;font-style:italic">// do nothing for browsers with no media query support
-</span></span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"></span>                <span style="color:#444a73;font-style:italic">// .container will always be 940px
-</span></span></span><span style="display:flex;"><span><span style="color:#444a73;font-style:italic"></span>                <span style="color:#c099ff">if</span>($(<span style="color:#c3e88d">&#34;.container&#34;</span>).width() <span style="color:#c3e88d;font-weight:bold">==</span> <span style="color:#ffc777">940</span>) {
-</span></span><span style="display:flex;"><span>                    <span style="color:#c099ff">return</span> <span style="color:#ffc777">240</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a1a6c5;font-style:italic">// do nothing for browsers with no media query support
+</span></span></span><span style="display:flex;"><span><span style="color:#a1a6c5;font-style:italic"></span>                <span style="color:#a1a6c5;font-style:italic">// .container will always be 940px
+</span></span></span><span style="display:flex;"><span><span style="color:#a1a6c5;font-style:italic"></span>                <span style="color:#9854f1">if</span>($(<span style="color:#587539">&#34;.container&#34;</span>).width() <span style="color:#587539;font-weight:bold">==</span> <span style="color:#8c6c3e">940</span>) {
+</span></span><span style="display:flex;"><span>                    <span style="color:#9854f1">return</span> <span style="color:#8c6c3e">240</span>;
 </span></span><span style="display:flex;"><span>                }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#c099ff">var</span> width <span style="color:#c3e88d;font-weight:bold">=</span> $(<span style="color:#c3e88d">window</span>).width();
-</span></span><span style="display:flex;"><span>                <span style="color:#c099ff">var</span> col <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#ffc777">300</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#9d7cd8">var</span> width <span style="color:#587539;font-weight:bold">=</span> $(<span style="color:#587539">window</span>).width();
+</span></span><span style="display:flex;"><span>                <span style="color:#9d7cd8">var</span> col <span style="color:#587539;font-weight:bold">=</span> <span style="color:#8c6c3e">300</span>;
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#c099ff">if</span>(width <span style="color:#c3e88d;font-weight:bold">&lt;</span> <span style="color:#ffc777">1200</span> <span style="color:#c3e88d;font-weight:bold">&amp;&amp;</span> width <span style="color:#c3e88d;font-weight:bold">&gt;=</span> <span style="color:#ffc777">980</span>) {
-</span></span><span style="display:flex;"><span>                    col <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#ffc777">240</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#9854f1">if</span>(width <span style="color:#587539;font-weight:bold">&lt;</span> <span style="color:#8c6c3e">1200</span> <span style="color:#587539;font-weight:bold">&amp;&amp;</span> width <span style="color:#587539;font-weight:bold">&gt;=</span> <span style="color:#8c6c3e">980</span>) {
+</span></span><span style="display:flex;"><span>                    col <span style="color:#587539;font-weight:bold">=</span> <span style="color:#8c6c3e">240</span>;
 </span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>                <span style="color:#c099ff">else</span> <span style="color:#c099ff">if</span>(width <span style="color:#c3e88d;font-weight:bold">&lt;</span> <span style="color:#ffc777">980</span> <span style="color:#c3e88d;font-weight:bold">&amp;&amp;</span> width <span style="color:#c3e88d;font-weight:bold">&gt;=</span> <span style="color:#ffc777">768</span>) {
-</span></span><span style="display:flex;"><span>                    col <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#ffc777">186</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#9854f1">else</span> <span style="color:#9854f1">if</span>(width <span style="color:#587539;font-weight:bold">&lt;</span> <span style="color:#8c6c3e">980</span> <span style="color:#587539;font-weight:bold">&amp;&amp;</span> width <span style="color:#587539;font-weight:bold">&gt;=</span> <span style="color:#8c6c3e">768</span>) {
+</span></span><span style="display:flex;"><span>                    col <span style="color:#587539;font-weight:bold">=</span> <span style="color:#8c6c3e">186</span>;
 </span></span><span style="display:flex;"><span>                }
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#c099ff">return</span> col;
+</span></span><span style="display:flex;"><span>                <span style="color:#9854f1">return</span> col;
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        });
 </span></span><span style="display:flex;"><span>});

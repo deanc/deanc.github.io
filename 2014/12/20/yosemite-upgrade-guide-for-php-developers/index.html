@@ -119,18 +119,18 @@ Remove them and change to:" />
 <h3 id="apache">Apache</h3>
 <p>Apache will break as it’s upgraded from v2.2 to v2.4. It will revert the <code>/etc/apache/httpd.conf</code> file. In this file you need to do a few things:</p>
 <p>Search for <code>vhosts</code> and uncomment the line:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#c3e88d">Include</span> <span style="color:#c3e88d">/private/etc/apache2/extra/httpd-vhosts.conf</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#587539">Include</span> <span style="color:#587539">/private/etc/apache2/extra/httpd-vhosts.conf</span>
 </span></span></code></pre></div><p>Also find the <code>&lt;Directory /&gt;</code> block and make sure it reads as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#c099ff">&lt;Directory</span> <span style="color:#c3e88d">/</span><span style="color:#c099ff">&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">AllowOverride</span> <span style="color:#c099ff">All</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#c3e88d">Require</span> <span style="color:#c099ff">all</span> granted
-</span></span><span style="display:flex;"><span><span style="color:#c099ff">&lt;/Directory&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-apache" data-lang="apache"><span style="display:flex;"><span><span style="color:#9854f1">&lt;Directory</span> <span style="color:#587539">/</span><span style="color:#9854f1">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#587539">AllowOverride</span> <span style="color:#9854f1">All</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#587539">Require</span> <span style="color:#9854f1">all</span> granted
+</span></span><span style="display:flex;"><span><span style="color:#9854f1">&lt;/Directory&gt;</span>
 </span></span></code></pre></div><p>Then open up <code>/etc/apache2/extra/vhosts.conf</code> and find any instances that begin with <code>Allow from</code> or <code>Order allow,deny</code> or <code>Order deny,allow</code>.
 Remove them and change to:</p>
 <pre tabindex="0"><code>Require all granted
 </code></pre><p>After all this make sure you restart apache: <code>sudo apachectl restart</code></p>
 <p>Finally, if you still have problems, try to start Apache in debug mode and see what errors you get:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo /usr/sbin/httpd -k start -e Debug -E /dev/stdout
 </span></span></code></pre></div><h2 id="mysql">MySQL</h2>
 <p>It seems MySQL doesn’t start by default. First go to the Settings on your Mac and start the MySQL service. Check everything works.
 Next, follow these instructions to <a href="http://stackoverflow.com/a/26706416/775007">launch MySQL automatically</a>.</p>

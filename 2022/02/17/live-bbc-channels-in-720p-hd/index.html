@@ -119,10 +119,10 @@ seems that the BBC iPlayer browser client doesn&rsquo;t support above 480p. Fort
 <p>Install VLC player @ <a href="https://videolan.org">https://videolan.org</a></p>
 <p>Create an account on the BBC website and take note of your credentials. Create the following script
 and name it <code>bbc1.sh</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p <span style="color:#82aaff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#82aaff"></span>    --bbciplayer-hd <span style="color:#82aaff">\ </span>
-</span></span><span style="display:flex;"><span>    --bbciplayer-username<span style="color:#c3e88d;font-weight:bold">=</span>user@example.com <span style="color:#82aaff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#82aaff"></span>    --bbciplayer-password<span style="color:#c3e88d;font-weight:bold">=</span>yourpassword
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>streamlink https://www.bbc.co.uk/iplayer/live/bbcone 720p <span style="color:#2e7de9">\
+</span></span></span><span style="display:flex;"><span><span style="color:#2e7de9"></span>    --bbciplayer-hd <span style="color:#2e7de9">\ </span>
+</span></span><span style="display:flex;"><span>    --bbciplayer-username<span style="color:#587539;font-weight:bold">=</span>user@example.com <span style="color:#2e7de9">\
+</span></span></span><span style="display:flex;"><span><span style="color:#2e7de9"></span>    --bbciplayer-password<span style="color:#587539;font-weight:bold">=</span>yourpassword
 </span></span></code></pre></div><p>Save it and <code>chmod +x bbc1.sh</code>. Usage: <code>./bbc1.sh</code>. This&rsquo;ll open VLC and stream BBC1 in HD.</p>
 <p>To watch BBC2 just change <code>bbcone</code> to <code>bbctwo</code> (I suggest making a <code>bbc2.sh</code> script or parameterize the script yourself).</p>
 <p>I haven&rsquo;t yet found a way to pipe the output of this over airplay to a receiever. If anyone has any suggestions I&rsquo;d love to hear them as currently

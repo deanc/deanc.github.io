@@ -118,8 +118,8 @@ Now just type gitpack and you will get a zip file." />
 <li>Make sure you are in the root directory of your project.</li>
 </ol>
 <p>To make this script work run the following commands:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#c3e88d">echo</span> <span style="color:#c3e88d">alias</span> gitpack<span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#82aaff">\&#39;</span>git archive --format zip --output download_<span style="color:#c099ff">$(</span>date +%d-%m-%Y-%H.%M<span style="color:#c099ff">)</span>.zip master<span style="color:#82aaff">\&#39;</span> &gt;&gt; ~/.bashrc
-</span></span><span style="display:flex;"><span><span style="color:#c3e88d">source</span> ~/.bashrc
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#587539">echo</span> <span style="color:#587539">alias</span> gitpack<span style="color:#587539;font-weight:bold">=</span><span style="color:#2e7de9">\&#39;</span>git archive --format zip --output download_<span style="color:#9854f1">$(</span>date +%d-%m-%Y-%H.%M<span style="color:#9854f1">)</span>.zip master<span style="color:#2e7de9">\&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span><span style="color:#587539">source</span> ~/.bashrc
 </span></span></code></pre></div><p>Now just type <code>gitpack</code> and you will get a zip file.</p>
 
 			</article>

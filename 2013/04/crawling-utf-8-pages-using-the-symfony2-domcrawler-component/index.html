@@ -120,17 +120,17 @@ The second parameter to addHTMLContent is UTF-8 by default, but I&rsquo;ve added
 
 			<article>
 				<p>Just a small gotcha for anyone using Symfony2&rsquo;s <code>DomCrawler</code> component. The standard behaviour of the class (from the current docs) is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$crawler <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Crawler($html);
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$crawler <span style="color:#587539;font-weight:bold">=</span> <span style="color:#9854f1">new</span> Crawler($html);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#c099ff">foreach</span> ($crawler <span style="color:#c099ff">as</span> $domElement) {
-</span></span><span style="display:flex;"><span>    <span style="color:#c099ff">print</span> $domElement<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">nodeName</span>;
+</span></span><span style="display:flex;"><span><span style="color:#9854f1">foreach</span> ($crawler <span style="color:#9854f1">as</span> $domElement) {
+</span></span><span style="display:flex;"><span>    <span style="color:#9854f1">print</span> $domElement<span style="color:#587539;font-weight:bold">-&gt;</span><span style="color:#2e7de9">nodeName</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>However, this will assume the document is ISO-8859-1. If you want to crawl a UTF-8 page correctly do it like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$crawler <span style="color:#c3e88d;font-weight:bold">=</span> <span style="color:#c099ff">new</span> Crawler;
-</span></span><span style="display:flex;"><span>$crawler<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">addHTMLContent</span>(file_get_contents(<span style="color:#c3e88d">&#39;http://www.columbia.edu/~fdc/utf8/&#39;</span>), <span style="color:#c3e88d">&#39;UTF-8&#39;</span>);
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$crawler <span style="color:#587539;font-weight:bold">=</span> <span style="color:#9854f1">new</span> Crawler;
+</span></span><span style="display:flex;"><span>$crawler<span style="color:#587539;font-weight:bold">-&gt;</span><span style="color:#2e7de9">addHTMLContent</span>(file_get_contents(<span style="color:#587539">&#39;http://www.columbia.edu/~fdc/utf8/&#39;</span>), <span style="color:#587539">&#39;UTF-8&#39;</span>);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#c099ff">foreach</span> ($crawler <span style="color:#c099ff">as</span> $domElement) {
-</span></span><span style="display:flex;"><span>    <span style="color:#c099ff">print</span> $domElement<span style="color:#c3e88d;font-weight:bold">-&gt;</span><span style="color:#82aaff">nodeName</span>;
+</span></span><span style="display:flex;"><span><span style="color:#9854f1">foreach</span> ($crawler <span style="color:#9854f1">as</span> $domElement) {
+</span></span><span style="display:flex;"><span>    <span style="color:#9854f1">print</span> $domElement<span style="color:#587539;font-weight:bold">-&gt;</span><span style="color:#2e7de9">nodeName</span>;
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The second parameter to <code>addHTMLContent</code> is <code>UTF-8</code> by default, but I&rsquo;ve added it to illustrate that you could use other character sets too.</p>
 

@@ -109,11 +109,11 @@ Solution:" />
 <pre tabindex="0"><code># On branch devel
 # Your branch is ahead of origin/devel by 2 commits.
 </code></pre><p><strong>Solution:</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git reset --hard origin/
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git reset --hard origin/
 </span></span></code></pre></div><p>This resets your current branch to an identical state of the current HEAD of the origin <branch></p>
 <h2 id="scenario-2">Scenario #2</h2>
 <p>You have created a branch B from branch A and made a few commits. Assuming you write useful commit messages it&rsquo;s useful for other developers to see the changes you&rsquo;ve made and the features you&rsquo;ve added since you branched. To do this type the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git log <span style="color:#c099ff">$(</span>git merge-base A B<span style="color:#c099ff">)</span>..B
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>git log <span style="color:#9854f1">$(</span>git merge-base A B<span style="color:#9854f1">)</span>..B
 </span></span></code></pre></div><h2 id="scenario-3">Scenario #3</h2>
 <p>List all branches, ordered by last-commit date (with last-commit date visible):</p>
 <pre><code>    for k in `git branch|perl -pe s/^..//`;do echo -e `git show &amp;#8211;pretty=format:&amp;#8221;%Cgreen%ci %Cblue%cr%Creset&amp;#8221; $k|head -n 1`\\t$k;done|sort -r

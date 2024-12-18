@@ -124,31 +124,31 @@ when trying to migrate my content and theme.</p>
 <li>Open up each file and make sure your front-matter contains the URL you want e.g. <code>url: /2012/01/how-to-rip-music-from-the-hype-machine/</code></li>
 </ul>
 <p>An alternative to this is to configure permalinks for posts via <code>config.yml</code>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#c099ff">permalinks</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">post</span>: /:year/:month/:day/:slug/
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#9854f1">permalinks</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">post</span>: /:year/:month/:day/:slug/
 </span></span></code></pre></div><p>The downside to this is that a) you must define a <code>date</code> key in your front-matter &amp; b) the slug that is generated
 may be a bit different from Jekyll. It is much safer to hardcode your URLs sadly.</p>
 <h3 id="how-to-access-the-current-date-in-templates">How to access the current date in templates</h3>
 <p>This is pretty straightforward:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>{{ .Date.Format &#34;2006&#34; }}
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>{{ .Date.Format &#34;2006&#34; }}
 </span></span></code></pre></div><h3 id="how-to-create-a-global-site-menu">How to create a global site menu</h3>
 <p>The documentation on menus is pretty good but here&rsquo;s some info on quickly setting it up. Define your homepage URL in
 <code>config.yml</code> if you want it to appear in the menu:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#c099ff">menu</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">main</span>:
-</span></span><span style="display:flex;"><span>		- <span style="color:#c099ff">Name</span>: <span style="color:#c3e88d">&#34;Home&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#c099ff">Weight</span>: <span style="color:#ffc777">1</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#c099ff">Identifier</span>: <span style="color:#c3e88d">&#34;home&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#c099ff">URL</span>: <span style="color:#c3e88d">&#34;/&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#9854f1">menu</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">main</span>:
+</span></span><span style="display:flex;"><span>		- <span style="color:#9854f1">Name</span>: <span style="color:#587539">&#34;Home&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#9854f1">Weight</span>: <span style="color:#8c6c3e">1</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#9854f1">Identifier</span>: <span style="color:#587539">&#34;home&#34;</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#9854f1">URL</span>: <span style="color:#587539">&#34;/&#34;</span>
 </span></span></code></pre></div><p>If you want any additional URLs to appear in the menu, just define the menu in which it should appear in the front-matter
 for the content e.g.</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#c099ff">menu</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">main</span>:
-</span></span><span style="display:flex;"><span>	<span style="color:#c099ff">weight</span>: <span style="color:#ffc777">60</span>
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#9854f1">menu</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">main</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#9854f1">weight</span>: <span style="color:#8c6c3e">60</span>
 </span></span></code></pre></div><p>The weight is basically a display order.</p>
 <h3 id="how-to-not-go-insane-when-generating-meta-titledescription-tags">How to not go insane when generating meta title/description tags</h3>
 <p>Just use this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#c8d3f5;background-color:#222436;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#c099ff">title</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#3760bf;background-color:#e1e2e7;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#9854f1">title</span>&gt;
 </span></span><span style="display:flex;"><span>	{{ if isset .Params &#34;og_title&#34; }}
 </span></span><span style="display:flex;"><span>	{{ .Params.og_title }}
 </span></span><span style="display:flex;"><span>	{{ else if eq .URL &#34;/&#34; }}
@@ -157,27 +157,27 @@ for the content e.g.</p>
 </span></span><span style="display:flex;"><span>	{{ .Title }}
 </span></span><span style="display:flex;"><span>	{{ else }}
 </span></span><span style="display:flex;"><span>	{{ .Title }} | {{ .Site.Params.TitleSuffix }}{{ end }}
-</span></span><span style="display:flex;"><span>&lt;/<span style="color:#c099ff">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#9854f1">title</span>&gt;
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{{ if isset .Params &#34;og_title&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Params.og_title }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Params.og_title }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ else if eq .URL &#34;/&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ else if eq .Section &#34;post&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Title }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Title }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ else }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:title&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:title&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Title }} | {{ .Site.Params.TitleSuffix }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{{ if eq .URL &#34;/&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">name</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">name</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Site.Params.Tagline }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ else if eq .Section &#34;post&#34; }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">name</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Summary }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Summary }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">name</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Summary }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Summary }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ else }}
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">name</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Description }}&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#c099ff">meta</span> <span style="color:#82aaff">property</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;og:description&#34;</span> <span style="color:#82aaff">content</span><span style="color:#c3e88d;font-weight:bold">=</span><span style="color:#c3e88d">&#34;{{ .Description }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">name</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Description }}&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#9854f1">meta</span> <span style="color:#2e7de9">property</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;og:description&#34;</span> <span style="color:#2e7de9">content</span><span style="color:#587539;font-weight:bold">=</span><span style="color:#587539">&#34;{{ .Description }}&#34;</span> /&gt;
 </span></span><span style="display:flex;"><span>{{ end }}
 </span></span></code></pre></div>
 			</article>
